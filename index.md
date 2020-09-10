@@ -1,3 +1,17 @@
+## intro
+
+Hello, I'm a software engineer and live in shanghai currently.
+I'm interested in machine learning and deep learning and I write blogs about it.
+Welcome to discuss with me!
+
+I begin with a tutorial video created by ***Josh Gordon*** and
+write a blog about what I get from it.
+
+[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
+
+After that I will read the book ***Hands-On Machine Learning with Scikit-Learn & TensorFlow***
+and then record the progress.
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/hzget/hzget.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
