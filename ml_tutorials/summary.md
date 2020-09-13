@@ -1,10 +1,7 @@
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 # Summary
 
 Machine Learning is the study of algrithm to learn from examples
 and experiece.
-
-$$a^2 + b^2 = c^2$$
 
 Traditional method is that a programmer finds patterns
 from examples and writes hard code rules to resolve the problem.

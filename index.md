@@ -7,10 +7,12 @@ Welcome to discuss with me!
 I begin with a tutorial video created by ***Josh Gordon*** and
 write a blog about what I get from it.
 
-[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
-
 After that I will read the book ***Hands-On Machine Learning with Scikit-Learn & TensorFlow***
 and then record the progress.
+
+[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
+
+[Neural Networks tutorial](./neural_networks/neural_networks.md)
 
 ## Welcome to GitHub Pages
 
