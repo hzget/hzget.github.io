@@ -38,14 +38,13 @@ takes several binary inputs and produces a single binary output.
 
 We can give its math description:
 
-\begin{eqnarray}
-  \mbox{output} = \left\{
-    \begin{array}{ll}
-      1 & \mbox{if } w\cdot x + b > 0 \\
-      0 & otherwise
-    \end{array}
-  \right.
-\tag{1-1}\end{eqnarray}
+$$\begin{equation*}
+  \mbox{output} =
+    \begin{cases}
+      1 & \text{if } w\cdot x + b > 0 \\
+      0 & \mbox{otherwise}
+    \end{cases}
+\tag{1-1}\end{equation*}$$
 
 The model tells how each input affects the output.
 ***The params `w` and `b` are what to "learn" from examples.***
