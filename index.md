@@ -1,4 +1,4 @@
-## intro
+## Intro
 
 Hello, I'm a software engineer and live in shanghai currently.
 I'm interested in machine learning and deep learning and I write blogs about it.
@@ -6,9 +6,8 @@ Welcome to discuss with me!
 
 I begin with a tutorial video created by ***Josh Gordon*** and
 write a blog about what I get from it.
-
 After that I will read the book ***Hands-On Machine Learning with Scikit-Learn & TensorFlow***
-and then record the progress.
+and then record the progress. Besides, I begin the study of **Neural Networks and Deep learning**.
 
 [Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
 
