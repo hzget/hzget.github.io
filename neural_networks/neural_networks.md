@@ -9,9 +9,10 @@ I start the study of deep learning from a blog
 [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html)
 and record what I get & think during the progress.
 
-Lession 1: introduce the neural nets
+Lession 1: neural nets  
+[Lession 2](./cost_function_math.md) underlying principles of learning
 
-## 01 introduce the neural nets
+## 01 neural nets
 
 [Deep learning](https://en.wikipedia.org/wiki/Deep_learning)
 (also known as deep structured learning) is part of a broader family of
@@ -53,12 +54,12 @@ Do you know how to "learn" from the training data?
 
 There're intial values for `w` and `b`.
 With the training data, we can make a small change
-$$\Delta w$$ to make $$|y - \hat{y}|$$ smaller.
-We then repeat it until we get a good result.
+$$\Delta w$$ to make $$\|y - \hat{y}\|$$ smaller.
+We then repeat the process until we get a good result.
 
 However, this isn't what happens when our network contains perceptrons.
-Perceptron is a "step function". Its output is a binary value,
-a small change $$\Delta w$$ may cause output changing from 0 to 1 or 1 to 0.
+Perceptron is a "step function", its output is a binary value.
+A small change $$\Delta w$$ may cause output changing from 0 to 1 or 1 to 0.
 The "small change" is not possible for the output. It is not expected.
 
 ### Sigmoid neurons
@@ -69,6 +70,6 @@ $$\begin{eqnarray}
   \sigma(z) = \frac{1}{1+e^{-z}} \;\; and \;\; z = w \cdot x+b
 \tag{1-2}\end{eqnarray}$$
 
-Its shape is a smoothed out version of a step function. And it makes the "small change" possible.
+Its shape is a ***smoothed*** out version of a step function. And it makes the "small change" possible.
 
 ![the sigmoid function](./pic/Logistic-curve.png)
