@@ -4,7 +4,7 @@
 
 ## Get params of the neurone
 
-As we displayed previously, a neurone model contains
+As was discussed before, a neurone model contains
 params to be learnt from examples. We also showed how
 to learn it:
 
@@ -14,7 +14,7 @@ output $$\hat{y}$$ approach the actual value `y` from training data.
 In other words, to make $$\|y-\hat{y}\|$$ smaller.
 3. repeat the process until the delta is enough small
 
-We can develop a math model to discribe this algrithm --
+We can develop a math model for investigation --
 a cost function represents that delta:
 
 $$\begin{equation*}
