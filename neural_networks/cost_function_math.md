@@ -2,10 +2,10 @@
 
 # underlying principles of the deep learning
 
-## get params of the neurone
+## Get params of the neurone
 
 As we displayed previously, a neurone model contains
-params to be learnt from examples (formula 1-1). We also showed how
+params to be learnt from examples. We also showed how
 to learn it:
 
 1. give an initial value: $$w_0$$ and $$b_0$$
@@ -22,10 +22,10 @@ $$\begin{equation*}
 \tag{2-1}\end{equation*}$$
 
 We use the activation `a` as the output $$\hat{y}$$. Our goal is to
-get the smallest `C(w,b)` which depend on value of `w` and `b`.
+***get the smallest `C(w,b)` which depends on value of `w` and `b`***.
 How to get it?
 
-## intuition of the steps of changes
+## Intuition of the steps of changes
 
 From the equation, we can take the cost function as a curved surface.
 We then go step by step from the initial point to the lowest
@@ -72,8 +72,9 @@ $$\begin{eqnarray}
 \tag{2-5}\end{eqnarray}$$
 
 From (2-4) and (2-5) we get $$\Delta C = - \eta \|\nabla C\|^2 < 0$$, i.e.,
-the cost function becomes smaller after the step. Then repeat the process
-until go to the lowest point.
+the cost function becomes smaller after the step.
+***With $$\eta$$, we go with a "big" step; with $$\nabla C$$, we go towards the fast direction to approach the "lowest" point***.
+Repeat the process to go to the lowest point.
 
 Before we get to the final equation, let's go back to defination of cost function (2-1).
 The cost function is an average of values
