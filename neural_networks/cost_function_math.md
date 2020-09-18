@@ -2,7 +2,7 @@
 
 # 02 Underlying Principles
 
-## Get params of the neurone
+## Model of the cost function
 
 As was discussed before, a neurone model contains
 params to be learnt from examples. We also showed how
@@ -26,7 +26,7 @@ We use the activation `a` as the output $$\hat{y}$$.
 In other words, our goal is to get appropriate `w` and `b` that can
 make a smallest `C(w,b)`. How to get it?
 
-## Intuition of the steps of changes
+## Intuition of finding smallest cost
 
 From the equation, we can take the cost function as a curved surface.
 Then go step by step from the initial point to the lowest
@@ -41,7 +41,7 @@ the direction a name "gradient" (In fact, direction shall
 be opposite of "gradient"). The "step size" is to be adjusted by experience.
 "gradient" is a concept of math.
 
-## deduction with math
+## The steps towards lowest point
 
 The readers shall have basic foundation on
 [Total devirative](https://en.wikipedia.org/wiki/Total_derivative) and
@@ -66,7 +66,7 @@ $$
 \tag{2-4}
 \end{equation*}$$
 
-We can design a "step size" to make the point go towards the lowest point ***quickly***:
+We can design a "step size" to make the point walk towards the lowest point ***quickly***:
 
 $$\begin{eqnarray}
 \Delta v = -\eta \nabla C , \; i.e., \; v \rightarrow v' = v-\eta \nabla C
@@ -74,7 +74,7 @@ $$\begin{eqnarray}
 
 From (2-4) and (2-5) we get $$\Delta C = - \eta \|\nabla C\|^2 < 0$$, i.e.,
 the cost function becomes smaller after the step.
-***With $$\eta$$, we go with a "big" step size; with $$\nabla C$$, we go towards the fast direction to approach the "lowest" point***.
+***With $$\eta$$, it walks with a "big" step size; with $$\nabla C$$, it walks towards the fast direction to approach the "lowest" point***.
 Repeat the process to go to the lowest point.
 
 Before we get to the final equation, let's go back to defination of cost function (2-1).
@@ -91,3 +91,5 @@ $$\begin{eqnarray}
   b_l & \rightarrow & b_l' = b_l-\frac{\eta}{n}
   \sum_j \frac{\partial C_{X_j}}{\partial b_l}
 \tag{2-6}\end{eqnarray}$$
+
+After "some" step, we will get the smallest cost. Do you know how to end the iteration?
