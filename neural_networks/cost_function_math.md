@@ -1,6 +1,6 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# underlying principles of the deep learning
+# 02 Underlying Principles
 
 ## Get params of the neurone
 
@@ -12,7 +12,7 @@ to learn it:
 2. make a small change of `w` and `b` to make
 output $$\hat{y}$$ approach the actual value `y` from training data.
 In other words, to make $$\|y-\hat{y}\|$$ smaller.
-3. repeat the process until the delta is enough small
+3. repeat the process until the delta is small enough.
 
 We can develop a math model for investigation --
 a cost function represents that delta:
@@ -21,23 +21,24 @@ $$\begin{equation*}
   C(w,b) = \frac{1}{2n} \sum_x \| y(x) - a\|^2
 \tag{2-1}\end{equation*}$$
 
-We use the activation `a` as the output $$\hat{y}$$. Our goal is to
-***get the smallest `C(w,b)` which depends on value of `w` and `b`***.
-How to get it?
+We use the activation `a` as the output $$\hat{y}$$.
+***Our goal is to get the smallest `C(w,b)` which depends on value of `w` and `b`***.
+In other words, our goal is to get appropriate `w` and `b` that can
+make a smallest `C(w,b)`. How to get it?
 
 ## Intuition of the steps of changes
 
 From the equation, we can take the cost function as a curved surface.
-We then go step by step from the initial point to the lowest
-point: $$C_0(w_0, b_0) ---> C_{smallest}(w, b)$$:
+Then go step by step from the initial point to the lowest
+point: $$C_0(w_0, b_0) \rightarrow C_1 \rightarrow C_2 \rightarrow \cdots \rightarrow  C_{smallest}(w, b)$$:
 
 ![gradient pic](./pic/gradient.png)
 
-The obvious method is to have a ***big step*** towards the
+The obvious way is to have a ***big step size*** towards the
 direction that ***goes down most quickly***.
-We give the "step" a name "learning rate" $$\eta$$ and
+We give the "step size" a name "learning rate" $$\eta$$ and
 the direction a name "gradient" (In fact, direction shall
-be opposite of "gradient"). The "step" is to be adjusted by experience.
+be opposite of "gradient"). The "step size" is to be adjusted by experience.
 "gradient" is a concept of math.
 
 ## deduction with math
@@ -45,7 +46,7 @@ be opposite of "gradient"). The "step" is to be adjusted by experience.
 The readers shall have basic foundation on
 [Total devirative](https://en.wikipedia.org/wiki/Total_derivative) and
 [Gradient](https://en.wikipedia.org/wiki/Gradient).
-We'll show how to get a step of a point, so that the cost function becomes smaller.
+We'll show how to get a step size of a point, so that the cost function becomes smaller.
 
 $$
 \begin{equation*}
@@ -65,7 +66,7 @@ $$
 \tag{2-4}
 \end{equation*}$$
 
-We can design a "step" to make the point go towards the lowest direction ***quickly***:
+We can design a "step size" to make the point go towards the lowest point ***quickly***:
 
 $$\begin{eqnarray}
 \Delta v = -\eta \nabla C , \; i.e., \; v \rightarrow v' = v-\eta \nabla C
@@ -73,7 +74,7 @@ $$\begin{eqnarray}
 
 From (2-4) and (2-5) we get $$\Delta C = - \eta \|\nabla C\|^2 < 0$$, i.e.,
 the cost function becomes smaller after the step.
-***With $$\eta$$, we go with a "big" step; with $$\nabla C$$, we go towards the fast direction to approach the "lowest" point***.
+***With $$\eta$$, we go with a "big" step size; with $$\nabla C$$, we go towards the fast direction to approach the "lowest" point***.
 Repeat the process to go to the lowest point.
 
 Before we get to the final equation, let's go back to defination of cost function (2-1).
