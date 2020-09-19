@@ -83,12 +83,12 @@ $$\begin{eqnarray}
   
   b_l & \rightarrow & b_l' = b_l-\frac{\eta}{n}
   \sum_j \frac{\partial C_{X_j}}{\partial b_l}
-\tag{2-7}\end{eqnarray}$$
+\tag{2-7}\label{eq:step}\end{eqnarray}$$
 
 ## Algrithm
 
 Now we come to the final algrithm:
 
 1. take intial values: $$w_0, \; b_0$$
-2. with the step formula, walks one step each time to get a smaller cost function
+2. with the step equation $$\eqref{eq:step}$$, walks one step each time to get a smaller cost function
 3. repeat the process until the cost is small enough
