@@ -2,19 +2,18 @@
 
 # Neural Networks and Deep Learning
 
-This is a tutorial about deep learning. It just resolve one thing:
-recognize the handwritten digits.
+This is a tutorial about deep learning, the 2nd part of the series.
 
-I start the study of deep learning from a blog
+I start the investigation of deep learning from a blog
 [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html)
 and record what I get & think during the progress.
 
-Lession 1: neural nets  
-[Lession 2](./cost_function_math.md) underlying principles
+Lession 1: Neural Nets  
+[Lession 2](./cost_function_math.md) Underlying Principles
 
 ## Intro
 
-From the ***Machine Learning Tutorial***, we know that
+From the [Machine Learning Tutorial](../ml_tutorials/ml_tutorials.md), we know that
 the ML app learns rules from examples and create a classifier
 containing these rules. And then it can predict new input.
 
@@ -24,8 +23,14 @@ the training data "works" on it --- rules are learnt.
 Thus the model with the adjusted params contains rules from examples.
 
 We will discuss the model in deep learning: neural networks.
+And resove only one problem via it: recognize the handwritten digits:  
+![handwritten digits](./pic/digits.png)
 
-## 01 neural nets
+I will write code from scratch and talk about some math principles.
+But I will not spend much time on some details because its a brief tutorial.
+Programmers shall be able to fill in the gap.
+
+## 01 Neural Nets
 
 [Deep learning](https://en.wikipedia.org/wiki/Deep_learning)
 (also known as deep structured learning) is part of a broader family of
@@ -71,7 +76,7 @@ Then repeat the process until we get a good result.
 
 However, this isn't what happens when our network contains perceptrons.
 Perceptron is a "step function", its output is a binary value.
-A small change $$\Delta w$$ may cause output jumping from 0 to 1 or 1 to 0.
+A small change $$\Delta w$$ or $$\Delta b$$ may make output jump from 0 to 1 or from 1 to 0.
 The "small change" is not possible for the output. It is not expected.
 
 ### Sigmoid neurons

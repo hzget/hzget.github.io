@@ -10,10 +10,9 @@ We can develop a math model for investigation --
 a cost function represents that delta:
 
 $$\begin{equation*}
-  C(w,b) = \frac{1}{2n} \sum_x \| y(x) - a\|^2
+  C(w,b) = \frac{1}{2n} \sum_x \| y(x) - \hat{y}\|^2
 \tag{2-1}\end{equation*}$$
 
-We use the activation `a` as the output $$\hat{y}$$.
 ***Our goal is to get the smallest `C(w,b)` which depends on value of `w` and `b`***.
 In other words, our goal is to get appropriate `w` and `b` that can
 make a smallest `C(w,b)`. How to get it?
@@ -22,16 +21,17 @@ make a smallest `C(w,b)`. How to get it?
 
 From the equation, we can take the cost function as a curved surface.
 Then go step by step from the initial point to the lowest
-point: $$C_0(w_0, b_0) \rightarrow C_1 \rightarrow C_2 \rightarrow \cdots \rightarrow  C_{smallest}(w, b)$$:
+point $$C_0(w_0, b_0) \rightarrow C_1 \rightarrow C_2 \rightarrow \cdots \rightarrow  C_{smallest}(w, b)$$
 
 ![gradient pic](./pic/gradient.png)
 
 The obvious way is to have a ***big step size*** towards the
 direction that ***goes down most quickly***.
-We give the "step size" a name "learning rate" $$\eta$$ and
-the direction a name "gradient" (In fact, direction shall
-be opposite of "gradient"). The "step size" is to be adjusted by experience.
-"gradient" is a concept of math.
+We give the "step size" a name ***learning rate $$\eta$$*** and
+the direction a name ***gradient descent***.
+$$\eta$$ is to be adjusted by experience and "gradient descent"
+is a math concept. For the word "big", I mean that we can choose
+a proper $$\eta$$ so that the point can walk with a big step size.
 
 ## The steps towards lowest point
 
