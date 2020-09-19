@@ -89,6 +89,6 @@ $$\begin{eqnarray}
 
 Now we come to the final algrithm:
 
-1. Take intial values: $$w_0, \; b_0$$
-2. With formula $$2-7$$, walks one step each time to get a smaller cost function
-3. Repeat the process until the cost is small enough
+1. take intial values: $$w_0, \; b_0$$
+2. with the step formula, walks one step each time to get a smaller cost function
+3. repeat the process until the cost is small enough
