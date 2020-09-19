@@ -10,7 +10,20 @@ I start the study of deep learning from a blog
 and record what I get & think during the progress.
 
 Lession 1: neural nets  
-[Lession 2](./cost_function_math.md) underlying principles of learning
+[Lession 2](./cost_function_math.md) underlying principles
+
+## Intro
+
+From the ***Machine Learning Tutorial***, we know that
+the ML app learns rules from examples and create a classifier
+containing these rules. And then it can predict new input.
+
+Deep learning is a model-based ML algrithm that
+works as follows: it adjusts its params so that
+the training data "works" on it --- rules are learnt.
+Thus the model with the adjusted params contains rules from examples.
+
+We will discuss the model in deep learning: neural networks.
 
 ## 01 neural nets
 
@@ -52,14 +65,13 @@ The model tells how each input affects the output.
 With that, the model can predict new input.
 Do you know how to "learn" from the training data?
 
-There're intial values for `w` and `b`.
 With the training data, we can make a small change
-$$\Delta w$$ to make $$\|y - \hat{y}\|$$ smaller.
-We then repeat the process until we get a good result.
+$$\Delta w$$ and $$\Delta b$$ to make $$\|y - \hat{y}\|$$ smaller.
+Then repeat the process until we get a good result.
 
 However, this isn't what happens when our network contains perceptrons.
 Perceptron is a "step function", its output is a binary value.
-A small change $$\Delta w$$ may cause output changing from 0 to 1 or 1 to 0.
+A small change $$\Delta w$$ may cause output jumping from 0 to 1 or 1 to 0.
 The "small change" is not possible for the output. It is not expected.
 
 ### Sigmoid neurons

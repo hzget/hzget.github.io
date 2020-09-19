@@ -5,15 +5,7 @@
 ## Model of the cost function
 
 As was discussed before, a neurone model contains
-params to be learnt from examples. We also showed how
-to learn it:
-
-1. give an initial value: $$w_0$$ and $$b_0$$
-2. make a small change of `w` and `b` to make
-output $$\hat{y}$$ approach the actual value `y` from training data.
-In other words, to make $$\|y-\hat{y}\|$$ smaller.
-3. repeat the process until the delta is small enough.
-
+params to be learnt from examples.
 We can develop a math model for investigation --
 a cost function represents that delta:
 
