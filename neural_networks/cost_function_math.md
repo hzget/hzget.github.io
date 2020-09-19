@@ -7,7 +7,7 @@
 As was discussed before, a neurone model contains
 params to be learnt from examples.
 We can develop a math model for investigation --
-a cost function represents that delta:
+a cost function:
 
 $$\begin{equation*}
   C(w,b) = \frac{1}{2n} \sum_x \| y(x) - \hat{y}\|^2
@@ -21,24 +21,24 @@ make a smallest `C(w,b)`. How to get it?
 
 From the equation, we can take the cost function as a curved surface.
 Then go step by step from the initial point to the lowest
-point $$C_0(w_0, b_0) \rightarrow C_1 \rightarrow C_2 \rightarrow \cdots \rightarrow  C_{smallest}(w, b)$$
+point $$C_0(w_0, b_0) \rightarrow C_1 \rightarrow C_2 \rightarrow \cdots \rightarrow  C_{smallest}(w, b)$$:
 
 ![gradient pic](./pic/gradient.png)
 
-The obvious way is to have a ***big step size*** towards the
+The obvious way is to walk with a ***proper step size*** towards the
 direction that ***goes down most quickly***.
 We give the "step size" a name ***learning rate $$\eta$$*** and
 the direction a name ***gradient descent***.
 $$\eta$$ is to be adjusted by experience and "gradient descent"
-is a math concept. For the word "big", I mean that we can choose
+is a math concept. For the word "proper", I mean that we can choose
 a proper $$\eta$$ so that the point can walk with a big step size.
 
-## The steps towards lowest point
+## Get the step equation
 
 The readers shall have basic foundation on
 [Total devirative](https://en.wikipedia.org/wiki/Total_derivative) and
 [Gradient](https://en.wikipedia.org/wiki/Gradient).
-We'll show how to get a step size of a point, so that the cost function becomes smaller.
+We'll show how to get a "step" of a point, so that the cost function becomes smaller.
 
 $$
 \begin{equation*}
@@ -63,18 +63,19 @@ We can design a "step size" to make the point walk towards the lowest point ***q
 $$\begin{eqnarray}
 \Delta v = -\eta \nabla C , \; i.e., \; v \rightarrow v' = v-\eta \nabla C
 \tag{2-5}\end{eqnarray}$$
+$$\begin{eqnarray}
+\Delta C = - \eta \|\nabla C\|^2 < 0
+\tag{2-6}\end{eqnarray}$$
 
-From (2-4) and (2-5) we get $$\Delta C = - \eta \|\nabla C\|^2 < 0$$, i.e.,
-the cost function becomes smaller after the step.
-***With $$\eta$$, it walks with a "big" step size; with $$\nabla C$$, it walks towards the fast direction to approach the "lowest" point***.
+***With $$\eta$$, the point walks with a proper step size; with $$\nabla C$$, it walks towards the fast direction to approach the "lowest" point***.
+The cost function becomes smaller after the step.
 Repeat the process to go to the lowest point.
 
 Before we get to the final equation, let's go back to defination of cost function (2-1).
 The cost function is an average of values
-that "cost" on every example `x`: $$C = \frac{1}{n} \sum_x C_x$$.
+that "cost" on every example: $$C = \frac{1}{n} \sum_x C_x$$.
 Thus we have $$\nabla C = \frac{1}{n} \sum_x \nabla C_x$$.
-
-Now we come to the final equation:
+Now we have the step equation:
 
 $$\begin{eqnarray}
   w_k & \rightarrow & w_k' = w_k-\frac{\eta}{n}
@@ -82,6 +83,12 @@ $$\begin{eqnarray}
   
   b_l & \rightarrow & b_l' = b_l-\frac{\eta}{n}
   \sum_j \frac{\partial C_{X_j}}{\partial b_l}
-\tag{2-6}\end{eqnarray}$$
+\tag{2-7}\end{eqnarray}$$
 
-After "some" step, we will get the smallest cost. Do you know how to end the iteration?
+## Algrithm
+
+Now we come to the final algrithm:
+
+1. Take intial values: $$w_0, \; b_0$$
+2. With formula $$2-7$$, walks one step each time to get a smaller cost function
+3. Repeat the process until the cost is small enough

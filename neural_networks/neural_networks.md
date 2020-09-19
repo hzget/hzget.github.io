@@ -8,7 +8,7 @@ I start the investigation of deep learning from a blog
 [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html)
 and record what I get & think during the progress.
 
-Lession 1: Neural Nets  
+Lession 1 Neural Nets  
 [Lession 2](./cost_function_math.md) Underlying Principles
 
 ## Intro
@@ -66,6 +66,7 @@ $$\begin{equation*}
 \tag{1-1}\end{equation*}$$
 
 The model tells how each input affects the output.
+(`w` stands for weight and `b` stands for bias.)
 ***The params `w` and `b` are what to "learn" from examples.***
 With that, the model can predict new input.
 Do you know how to "learn" from the training data?
