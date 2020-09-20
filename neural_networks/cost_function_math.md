@@ -20,8 +20,8 @@ make a smallest `C(w,b)`. How to get it?
 ## Intuition of finding smallest cost
 
 From the equation, we can take the cost function as a curved surface.
-Then go step by step from the initial point to the lowest
-point $$C_0(w_0, b_0) \rightarrow C_1 \rightarrow C_2 \rightarrow \cdots \rightarrow  C_{smallest}(w, b)$$:
+Then go step by step from the initial point to the point whose cost function is smallest:
+$$(w_0, b_0) \rightarrow \cdots \rightarrow (w_m, b_m), \; C_{min} = C(w_m, b_m)$$:
 
 ![gradient pic](./pic/gradient.png)
 
@@ -32,6 +32,9 @@ the direction a name ***gradient descent***.
 $$\eta$$ is to be adjusted by experience and "gradient descent"
 is a math concept. For the word "proper", I mean that we can choose
 a proper $$\eta$$ so that the point can walk with a big step size.
+If we look from upside, the movement looks like the following:
+
+![gradient descent pic](./pic/Gradient_descent.svg.png)
 
 ## Get the step equation
 
