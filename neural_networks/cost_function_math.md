@@ -32,9 +32,6 @@ the direction a name ***gradient descent***.
 $$\eta$$ is to be adjusted by experience and "gradient descent"
 is a math concept. For the word "proper", I mean that we can choose
 a proper $$\eta$$ so that the point can walk with a big step size.
-If we look from upside, the movement looks like the following:
-
-![gradient descent pic](./pic/Gradient_descent.svg.png)
 
 ## Get the step equation
 
