@@ -21,11 +21,11 @@ make a smallest `C(w,b)`. How to get it?
 
 From the equation, we can take the cost function as a curved surface.
 Then go step by step from the initial point to the point whose cost function is smallest:
-$$(w_0, b_0) \rightarrow \cdots \rightarrow (w_m, b_m), \; C_{min} = C(w_m, b_m)$$:
+$$(w_0, b_0) \rightarrow \cdots \rightarrow (w_m, b_m), \; C_{min} = C(w_m, b_m)$$
 
 ![gradient pic](./pic/gradient.png)
 
-The obvious way is to walk with a ***proper step size*** towards the
+An efficient way is to walk with a ***proper step size*** towards the
 direction that ***goes down most quickly***.
 We give the "step size" a name ***learning rate $$\eta$$*** and
 the direction a name ***gradient descent***.
