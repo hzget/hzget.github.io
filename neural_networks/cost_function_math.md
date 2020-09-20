@@ -55,7 +55,7 @@ $$
 $$
 \begin{equation*}
   \Delta C = \nabla C \cdot \Delta v, \;\;\; v = (w, b)
-\tag{2-4}
+\tag{2-4}\label{eq:dotproduct}
 \end{equation*}$$
 
 We can design a "step size" to make the point walk towards the lowest point ***quickly***:
@@ -67,9 +67,14 @@ $$\begin{eqnarray}
 \Delta C = - \eta \|\nabla C\|^2 < 0
 \tag{2-6}\end{eqnarray}$$
 
-***With $$\eta$$, the point walks with a proper step size; with $$\nabla C$$, it walks towards the fast direction to approach the "lowest" point***.
-The cost function becomes smaller after the step.
-Repeat the process to go to the lowest point.
+***With $$\eta$$, the point walks with a proper step size; with $$\nabla C$$, it walks towards the fast direction to make cost function smallest***.
+The cost function becomes smaller after this step.
+
+Do you know why $$\nabla C$$ is the fast direction?
+From $$\eqref{eq:dotproduct}$$, we know that delta equals dot product of two vectors.
+And it gets the max value when the two vectors are in the same direction.
+(dot prodcut equals norm of projection of one vector multipies norm of the other vector.)
+It is the key principle!
 
 Before we get to the final equation, let's go back to defination of cost function (2-1).
 The cost function is an average of values
