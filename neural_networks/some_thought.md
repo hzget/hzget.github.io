@@ -1,3 +1,5 @@
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 # 03 Some Thought on Neural Nets/Network
 
 We have already shown how a neural net works in deep learning.
@@ -23,9 +25,9 @@ in the future.
 ## cost function
 
 From the previous discussion, we will use a quadratic
-cost function $$\frac{1}{2n} \sum_x \| y(x) - a\|^2$$. It is usually
+cost function $$\frac{1}{2n} \sum_x \| y(x) - \hat{y}\|^2$$. It is usually
 called Mean Square Error MSE. Why not use the form of
-Mean Absolute Error MAE:$$\frac{1}{n} \sum_x \| y(x) - a\|$$, or
+Mean Absolute Error MAE:$$\frac{1}{n} \sum_x \| y(x) - \hat{y}\|$$, or
 some other forms?
 
 Let's disscuss it in the future.

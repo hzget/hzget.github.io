@@ -1,14 +1,15 @@
-# Programming
+# 04 Implementation
 
 It's time to implement the function. Before that,
 we need to download the data set MNIST. It contains
 70000 images and each of them is a handwritten digit.
 These digits are used for training and testing.
 
-The code is self-explained thus I will not give too much redundant detail.
+The code is in the git repo [machine learning](https://github.com/hzget/machine-learning).
+It is self-explained thus I will not give too much redundant detail.
 Just gives the usage.
 
-## usage of the lib
+## Usage of the lib
 
 ### Load the data set
 
