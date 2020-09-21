@@ -74,6 +74,7 @@ Do you know how to "learn" from the training data?
 With the training data, we can make a small change
 $$\Delta w$$ and $$\Delta b$$ to make $$\|y - \hat{y}\|$$ smaller.
 Then repeat the process until we get a good result.
+$$\hat{y}$$ is the output and $$y$$ is the actual value from training data.
 
 However, this isn't what happens when our network contains perceptrons.
 Perceptron is a "step function", its output is a binary value.
