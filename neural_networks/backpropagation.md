@@ -35,7 +35,7 @@ $$ \begin{equation*}
 &  = \frac{\partial C}{\partial z^l_j}
      \cdot \frac{\partial z^l_j}{\partial w^l_{jk}} \\
 &  = \delta^l_j \cdot \frac{\partial}{\partial w^l_{jk}}
-     \left( \sum_m w^l_{jm} a^{l-1}_m + b^l_m \right) \\
+     \left( \sum_m w^l_{jm} a^{l-1}_m + b^l_j \right) \\
 &  = \delta^l_j \cdot a^{l-1}_k
 \end{split}
 \end{equation*}
@@ -51,6 +51,7 @@ $$ \begin{equation*}
      \cdot \frac{\partial z^{l+1}_m}{\partial z^l_j} \\
 &  = \sum_m \delta^{l+1}_m \cdot \frac{\partial}{\partial z^l_j}
     \left( \sum_n w^{l+1}_{mn} \sigma \left(z^l_n \right) + b^{l+1}_m \right) \\
+&  = \sum_m \delta^{l+1}_m \cdot w^{l+1}_{mj} \cdot \sigma'(z^l_j) \\
 &  = \sigma'(z^l_j) \cdot \sum_m \delta^{l+1}_m w^{l+1}_{mj}
 \end{split}
 \end{equation*}
