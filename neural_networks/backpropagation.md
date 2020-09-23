@@ -62,7 +62,7 @@ We can write the algorithm now:
 
 1. Feedforward: For each l=2,3,…,L compute
 
-    $$z^{l} = w^l a^{l-1}+b^l$$ and $$a^{l} = \sigma(z^{l})$$
+    $$z^{l} = w^l a^{l-1}+b^l \; \mbox{and} \; a^{l} = \sigma(z^{l})$$
 
 2. Output error $$\delta^L$$: Compute the vector
 
@@ -74,5 +74,5 @@ We can write the algorithm now:
 
 4. Output: The gradient of the cost function is given by
 
-    $$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j$$
-   and $$\frac{\partial C}{\partial b^l_j} = \delta^l_j$$
+    $$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j \; \mbox{and} \;;
+      \frac{\partial C}{\partial b^l_j} = \delta^l_j$$
