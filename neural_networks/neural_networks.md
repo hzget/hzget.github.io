@@ -11,7 +11,8 @@ and record what I get & think during the progress.
 Lession 1 Neural Nets  
 [Lession 2](./cost_function_math.md) Underlying Principles  
 [Lession 3](./some_thought.md) Some Thought on Neural Nets/Network  
-[Lession 4](./implementation.md) Implementation
+[Lession 4](./implementation.md) Implementation  
+[Lession 5](./backpropagation.md) Backpropagation
 
 ## Intro
 
