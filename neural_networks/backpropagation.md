@@ -41,7 +41,7 @@ $$ \begin{equation*}
 \end{equation*}
 $$
 
-with multivariate derivatives:
+and:
 
 $$ \begin{equation*}
 \begin{split}
@@ -50,7 +50,7 @@ $$ \begin{equation*}
 &  = \sum_m \frac{\partial C}{\partial z^{l+1}_m}
      \cdot \frac{\partial z^{l+1}_m}{\partial z^l_j} \\
 &  = \sum_m \delta^{l+1}_m \cdot \frac{\partial}{\partial z^l_j}
-    \left( \sum_n w^{l+1}_{mn} \sigma \left(z^l_n \right) \right) \\
+    \left( \sum_n w^{l+1}_{mn} \sigma \left(z^l_n \right) + b^{l+1}_m \right) \\
 &  = \sigma'(z^l_j) \cdot \sum_m \delta^{l+1}_m w^{l+1}_{mj}
 \end{split}
 \end{equation*}
@@ -74,5 +74,5 @@ We can write the algorithm now:
 
 4. Output: The gradient of the cost function is given by
 
-    $$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j \; \mbox{and} \;;
+    $$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j \; \mbox{and} \;
       \frac{\partial C}{\partial b^l_j} = \delta^l_j$$
