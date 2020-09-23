@@ -18,7 +18,7 @@ I will discuss how to calculate in this class. First begin with some convention:
 From the digram, we know the meaning of $$w^{l}_{jk}, \; a^{l}_k, \; b^{l}_k$$.
 Besides, we have the formula:
 
-$$a^l_j = \sigma\left(z^l_j \right) \; \;
+$$a^l_j = \sigma\left(z^l_j \right) \; and \;
   z^l_j = \sum_k w^{l}_{jk} a^{l-1}_k + b^l_j$$
 
 Take the the vectorized form:
@@ -60,12 +60,19 @@ $$
 
 We can write the algorithm now:
 
-1. Feedforward: For each l=2,3,…,L compute  
+1. Feedforward: For each l=2,3,…,L compute
+
     $$z^{l} = w^l a^{l-1}+b^l$$ and $$a^{l} = \sigma(z^{l})$$
-2. Output error $$\delta^L$$: Compute the vector  
+
+2. Output error $$\delta^L$$: Compute the vector
+
     $$\delta^{L} = \nabla_a C \odot \sigma'(z^L)$$
-3. Backpropagate the error: For each l=L−1,L−2,…,2 compute  
+
+3. Backpropagate the error: For each l=L−1,L−2,…,2 compute:
+
     $$\delta^{l} = ((w^{l+1})^T \delta^{l+1}) \odot \sigma'(z^{l})$$
-4. Output: The gradient of the cost function is given by  
+
+4. Output: The gradient of the cost function is given by
+
     $$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j$$
    and $$\frac{\partial C}{\partial b^l_j} = \delta^l_j$$
