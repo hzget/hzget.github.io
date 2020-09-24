@@ -9,7 +9,10 @@ I start the investigation of deep learning from a blog
 and record what I get & think during the progress.
 
 Lession 1 Neural Nets  
-[Lession 2](./cost_function_math.md) Underlying Principles
+[Lession 2](./cost_function_math.md) Underlying Principles  
+[Lession 3](./some_thought.md) Some Thought on Neural Nets/Network  
+[Lession 4](./implementation.md) Implementation  
+[Lession 5](./backpropagation.md) Backpropagation
 
 ## Intro
 
@@ -74,6 +77,7 @@ Do you know how to "learn" from the training data?
 With the training data, we can make a small change
 $$\Delta w$$ and $$\Delta b$$ to make $$\|y - \hat{y}\|$$ smaller.
 Then repeat the process until we get a good result.
+$$\hat{y}$$ is the output and $$y$$ is the actual value from training data.
 
 However, this isn't what happens when our network contains perceptrons.
 Perceptron is a "step function", its output is a binary value.
