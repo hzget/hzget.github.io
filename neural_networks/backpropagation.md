@@ -24,6 +24,9 @@ $$a^l_j = \sigma\left(z^l_j \right) \; and \;
 Take the the vectorized form:
 $$ a^l = \sigma(z^l) \; and \; z^l \equiv w^l a^{l-1}+b^l$$
 
+Note: $$a^l_j$$ is the output of the $$j^{th}$$ neuron in layer l
+and some article use other symbols instead, for example: $$o^l_j$$.
+
 ## Deriving the Gradients
 
 The reader shall have the math foundation of partial derivatives
