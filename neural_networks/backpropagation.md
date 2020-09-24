@@ -57,6 +57,18 @@ $$ \begin{equation*}
 \end{equation*}
 $$
 
+The sigmoid function has a good property: its derivative is simple:
+
+$$\sigma'(z) = \sigma(z) (1 - \sigma(z))$$
+
+It simplifies the calculation of derivatives: just reuse the
+output of the neuron: $$a^l_j$$ that was calculated from the forward phrase:
+
+$$ \begin{equation*}
+\delta^l_j = a^l_j \cdot (1 - a^l_j) \cdot \sum_m \delta^{l+1}_m w^{l+1}_{mj}
+\end{equation*}
+$$
+
 ## The backpropagation algorithm
 
 We can write the algorithm now:
@@ -71,7 +83,7 @@ We can write the algorithm now:
 
 3. Backpropagate the error: For each l=L−1,L−2,…,2 compute:
 
-    $$\delta^{l} = ((w^{l+1})^T \delta^{l+1}) \odot \sigma'(z^{l})$$
+    $$\delta^{l} =  a^l \odot (1 - a^l) \odot ((w^{l+1})^T \delta^{l+1})$$
 
 4. Output: The gradient of the cost function is given by
 
