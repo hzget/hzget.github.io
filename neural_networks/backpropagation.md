@@ -15,7 +15,7 @@ I will discuss how to calculate in this class. First begin with some convention:
 
 ![params in neural networks](./pic/params_in_nn.png)
 
-From the digram, we know the meaning of $$w^{l}_{jk}, \; a^{l}_k, \; b^{l}_k$$.
+From the digram, we know the meaning of $$w^{l}_{jk}, \; a^{l}_j, \; b^{l}_j$$.
 Besides, we have the formula:
 
 $$a^l_j = \sigma\left(z^l_j \right) \; and \;
@@ -25,7 +25,7 @@ Take the the vectorized form:
 $$ a^l = \sigma(z^l) \; and \; z^l \equiv w^l a^{l-1}+b^l$$
 
 Note: $$a^l_j$$ is the output of the $$j^{th}$$ neuron in layer l
-and some article use other symbols instead, for example: $$o^l_j$$.
+and some article makes use of other symbols instead, for example: $$o^l_j$$.
 
 ## Deriving the Gradients
 
