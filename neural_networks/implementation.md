@@ -5,9 +5,14 @@ we need to download the data set MNIST. It contains
 70000 images and each of them is a handwritten digit.
 These digits are used for training and testing.
 
+where to download: [MNIST Database (mnist.pkl.gz) - Academic Torrents](https://academictorrents.com/details/323a0048d87ca79b68f12a6350a57776b6a3b7fb)
+
 The code is in the git repo [machine learning](https://github.com/hzget/machine-learning).
-It is self-explained thus I will not give too much redundant detail.
-Just gives the usage.
+It is self-explained so I will not give too much redundant detail.
+Just give the usage.
+
+Note: math of the backpropagation will be introduced in next chapter.
+Thus you can bypass this code section and go back after learning its math principle.
 
 ## Usage of the lib
 
@@ -176,3 +181,35 @@ The prediction is equal to the actual "label" from the testing data.
 2
 >>>  
 ```
+
+## time performance
+
+Checking time performance is a good way to verify our improvement each time
+when we optimize the code.
+
+I write a script tool to check time performance of the function SGD().
+It just runs 10 times and with each time it runs one epoch.
+Its params for the following are:  
+mini-batch = 10  
+learning rate = 3
+
+```python
+(base) D:\proj\machine-learning\dl_tutorial>python spantime.py
+Epoch 0: 8146 / 10000
+Epoch 0: 8321 / 10000
+Epoch 0: 8387 / 10000
+Epoch 0: 8448 / 10000
+Epoch 0: 8429 / 10000
+Epoch 0: 8449 / 10000
+Epoch 0: 9434 / 10000
+Epoch 0: 9449 / 10000
+Epoch 0: 9437 / 10000
+Epoch 0: 9443 / 10000
+[6.572347164154053, 6.527853012084961, 6.497987270355225, 6.528003931045532, 6.532996416091919, 6.54304575920105, 6.522977113723755, 6.505988836288452, 6.550999164581299, 6.504012584686279] 6.528621125221252
+
+(base) D:\proj\machine-learning\dl_tutorial>
+```
+
+It draws a picture:
+
+![time performance](./pic/time_performance.png)
