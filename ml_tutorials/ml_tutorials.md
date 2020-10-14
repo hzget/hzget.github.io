@@ -90,12 +90,12 @@ and gives the result - the label.
 
 ```python
 from sklearn import tree
-# feature : smooth: 0; bumpy: 1;
-# label:    orange: 0; apple: 1;
-features = [[140, 1], [130, 1], [150, 0], [170, 0]]
+# smooth: 0; bumpy: 1;
+# orange: 0; apple: 1;
+features = [[140, 1], [130, 1], [150, 0], [170, 0]] # collect examples
 labels = [0, 0, 1, 1]
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(features, labels)
+clf = tree.DecisionTreeClassifier()  # select the model of the classifier
+clf = clf.fit(features, labels)      # train the classifier with examples
 print(clf.predict([[150, 0]]))
 
 # the following is to run the program
