@@ -73,8 +73,9 @@ And the cost function becomes smaller after this step.
 Do you know why $$\pm \nabla C$$ is the fast direction to increase/decrease?
 From $$\eqref{eq:dotproduct}$$, we know $$\Delta C$$ is equal to dot product of two vectors.
 And it gets the max value when the two vectors are in the same direction.
-(dot prodcut is equal to projection of one vector
-multipied by the other vector. That's the reason!)
+(from [Cauchy–Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality),
+$${\displaystyle |\langle \mathbf {u} ,\mathbf {v} \rangle |\leq \|\mathbf {u} \|\|\mathbf {v} \|}$$,
+the two sides are equal if and only if `u` and `v`are linearly dependent)
 
 Before we get to the final equation, let's go back to defination of cost function (2-1).
 The cost function is an average of values
