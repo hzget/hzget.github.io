@@ -25,7 +25,7 @@ we can take ML as subfield of Artificial Intelligence:
 * early AI program: one AI program resolves one problem - Example: Deep Blue
 * today AI program: one AI program resolves many problems without even to be written - Example: Alpha Go
 
-ML makes that possible. It's the study of algorithms that ***learn from examples and experience*** instead of relying on hard-coded rules.
+ML makes that possible. It's the study of algorithms that ***learn from examples and experience automatically*** instead of relying on hard-coded rules.
 
 ### An example
 
@@ -35,10 +35,11 @@ how to tell the differece between an apple and an orange?
 
 #### Traditional method
 
-The programmer writes hard code rules - rate of green and yellow pixels. The drawbacks:
+The programmer writes hard code rules - ratio of green and yellow pixels. The drawbacks:
 
+* have to find rules and write code manually
 * can not handle new situations: grey image; images do not contain apples or oranges in them at all
-* A new problem needs to write new code (rules)
+* can not handle new problems (need to re-write the code -- new rules)
 
 ![hard coded rules](./pic/hard_coded_rules.png)
 
@@ -47,8 +48,9 @@ instead of writing them by hand. That is what ML does.
 
 #### ML method
 
-The ML program finds patterns (rules) from examples - train the classifier (create a function).
-The classifier takes the input (the problem), analyzes it (run the function) and then gives an output (type of the fruit).
+The ML program finds patterns (rules) from examples **automatically** - it
+is the process of training the classifier (in other words, creating a function).
+And then, the classifier takes the input (the problem), analyzes it (run the function) and then gives an output (type of the fruit).
 
 ![ml classify apple](./pic/apple_classifier.png)
 
