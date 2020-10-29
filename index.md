@@ -6,7 +6,7 @@ as a C programmer.
 Interests:
 
 * Protocols
-* AI: Machine Learning and Deep Learning
+* AI
 * Math
 
 To keep track of the learning progress and some thoughts, I start the blog.
