@@ -32,7 +32,8 @@ $$|\langle u , v \rangle| \leq \|u\| \|v\| \;\;\; \mbox{for} \; u, v \in V$$
 
 It resolves all problems that conform to properties of inner product. Example:
 
-* Cauchy: $$|x_1 y_1 + \ldots + x_n y_n|^2 \leq (x_1^2 + \ldots + x_n^2)(y_1^2 + \ldots + y_n^2)$$
+* Cauchy: $$\left|x_1 y_1 + \ldots + x_n y_n\right|^2 \leq
+(x_1^2 + \ldots + x_n^2)(y_1^2 + \ldots + y_n^2)$$
 * Scharz: $$\left|\int_{-1}^1 \!f(x)g(x) \, \mathrm{d}x\right|^2 \leq
 \left(\int_{-1}^1 \left(f(x)\right)^2 \, \mathrm{d}x\right)
 \left(\int_{-1}^1 \left(g(x)\right)^2 \, \mathrm{d}x\right)$$
