@@ -23,17 +23,22 @@ the concept of norm $$\| \; \|$$ and inner product $$\langle \; , \rangle$$
 
 ## Advantages
 
-With generalization, we can investigate common property deeply and
-give a solution to issues in different domains. As an illustration
+With generalization, we can investigate common issues and
+give a universal solution. As an illustration
 of this pros, consider the Cauchy-Scharz Inequality in the form
 of inner product:
 
 $$|\langle u , v \rangle| \leq \|u\| \|v\| \;\;\; \mbox{for} \; u, v \in V$$
 
-It resolves all problems that conform to properties of inner product. Example:
+It resolves all cases that conform to properties of inner product. Example:
 
-* Cauchy: $$\left|x_1 y_1 + \ldots + x_n y_n\right|^2 \leq
+* Cauchy:
+
+$$\left|x_1 y_1 + \ldots + x_n y_n\right|^2 \leq
 (x_1^2 + \ldots + x_n^2)(y_1^2 + \ldots + y_n^2)$$
-* Scharz: $$\left|\int_{-1}^1 \!f(x)g(x) \, \mathrm{d}x\right|^2 \leq
-\left(\int_{-1}^1 \left(f(x)\right)^2 \, \mathrm{d}x\right)
-\left(\int_{-1}^1 \left(g(x)\right)^2 \, \mathrm{d}x\right)$$
+
+* Scharz:
+
+$$\left|\int_{-1}^1 \!f(x)g(x) \, \mathrm{d}x\right|^2 \leq
+\left(\int_{-1}^1 \!\left(f(x)\right)^2 \, \mathrm{d}x\right)
+\left(\int_{-1}^1 \!\left(g(x)\right)^2 \, \mathrm{d}x\right)$$
