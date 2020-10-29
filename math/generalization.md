@@ -17,13 +17,13 @@ of $$R^2 \; and \; R^3$$ to the concept of vector space ***V*** over ***F***
 ### inner product
 
 with vectors from $$R^n$$, generalize length and dot product to
-the concept of norm $$\| \; \|$$ and inner product $$\langle \; , \; \rangle$$
+the concept of norm $$\| \; \|$$ and inner product $$\langle \; , \rangle$$
 
 [wiki generalization]: https://en.wikipedia.org/wiki/Generalization
 
 ## Advantages
 
-With generalization, we can study common property deeply and
+With generalization, we can investigate common property deeply and
 give a solution to issues in different domains. As an illustration
 of this pros, consider the Cauchy-Scharz Inequality in the form
 of inner product:
