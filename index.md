@@ -1,11 +1,15 @@
 # Intro
 
-Hello, I'm a software engineer and living in shanghai.
-I have many years of experience on network devices as a C programmer.
-Now, I'm studying the field of Machine Learning and Deep learning.
-Welcome to discuss with me!
+A software engineer with years of experience on network devices
+as a C programmer.
 
-To keep track of the process, I start the blog.
+Interests:
+
+* Protocols
+* AI: Machine Learning and Deep Learning
+* Math
+
+To keep track of the learning progress and some thoughts, I start the blog.
 
 ## Maching Learning & Deep Learning
 
@@ -20,6 +24,12 @@ topics of the book ***Hands-On Machine Learning with Scikit-Learn & TensorFlow**
 [Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
 
 [Neural Networks tutorial](./neural_networks/neural_networks.md)
+
+## Math Learning
+
+I read some math books and write what I like.
+
+[Generalization](./math/generalization.md)
 
 ## Some programming skills
 
