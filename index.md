@@ -20,9 +20,12 @@ To keep track of the learning progress and some thoughts, I start the blog.
 
 I read several math books and write what I like.
 
-[Generalization](./math/generalization.md)
+[Generalization](./math/generalization.md),
+[Decomposition](./math/decomposition.md),
+[Function](./math/function.md),
+[Set](./math/set.md)
 
 ## Some thoughts on Programming
 
-* logs
+* [Logs](./programming/log.md)
 * security
