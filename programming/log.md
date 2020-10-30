@@ -29,8 +29,9 @@ The engineer shall check the reason of this abnormal time span.
 
 A process may run several threads at the same time and
 the thread id in the logs help us to ***exclude noises*** when
-we track clues in one thread.
+we track clues along one thread.
 
 Every thing that can identity some "object" can be
-taken as an "Id". For example, the "process name" and some
-***type*** of logs can be taken as id.
+taken as an "Id". For example, the "process name", the
+***type*** of logs and even a special ***style*** of logs
+can be taken as an id.
