@@ -5,8 +5,6 @@ It can help users and support engineers to check some information.
 Further more, it can be analyzed by the AI program for special aims.
 Besides that, it also helps engineers to debug issues.
 
-Thus the well designed logs can improve the productivity.
-
 ## skills to check logs
 
 With an existing log, the engineer shall find useful info from it.
@@ -35,3 +33,21 @@ Every thing that can identity some "object" can be
 taken as an "Id". For example, the "process name", the
 ***type*** of logs and even a special ***style*** of logs
 can be taken as an id.
+
+## design of logs
+
+Well designed logs can improve the productivity.
+
+### for debugging issues
+
+To help "detectives" to find "clues", the logs shall give
+the following info:
+
+* timestamp of each piece of logs
+* id
+* info of special events
+
+### for AI program
+
+To help AI analysis, the log shall give info with
+special patterns according to the AI requirement.
