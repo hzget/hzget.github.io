@@ -19,9 +19,9 @@ $$T(v) = a_1 T(v_1) + \cdots + a_n T(v_n)$$
 
 ## direct sum and orthogonal complement
 
-A vector space can have a direct decompositon
+A vector space can have a direct sum decompositon
 
-$$V = U \oplus U^{\bot}$$,
+$$V = U \oplus U^{\bot}$$
 
 all vectors in U are orthogonal to every vector in $$U^{\bot}$$.
 
@@ -33,7 +33,7 @@ $$ v = P_{U}(v) + (v - P_{U}(v))$$
 
 The mininization problem often arises: given a subspace U of V
 and a point v from V , find a point u from U such that
-$$\|v - u\|$$ is as small as possible. We can solve this by
+$$\|v - u \|$$ is as small as possible. We can solve this by
 an orthogonal projection:
 
 $$ u = P_{U}v = \langle v , e_1 \rangle e_1 + \cdots +
