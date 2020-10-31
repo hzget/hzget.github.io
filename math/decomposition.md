@@ -32,9 +32,8 @@ $$ v = P_{U}(v) + (v - P_{U}(v))$$
 (The operator $$P_{U}$$ is the orthogonal projection of V onto U.)
 
 The mininization problem often arises: given a subspace U of V
-and a point v from V , find a point u from U such that
-$$\|v - u \|$$ is as small as possible. We can solve this by
-an orthogonal projection:
+and a point v from V , find a point u from U such that $$\|v - u\|$$ is
+as small as possible. We can solve this by an orthogonal projection:
 
 $$ u = P_{U}v = \langle v , e_1 \rangle e_1 + \cdots +
                 \langle v , e_m \rangle e_m $$
