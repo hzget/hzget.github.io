@@ -34,8 +34,8 @@ It resolves all cases that conform to properties of inner product. Example:
 
 * Cauchy:
 
-$$\left|x_1 y_1 + \ldots + x_n y_n\right|^2 \leq
-(x_1^2 + \ldots + x_n^2)(y_1^2 + \ldots + y_n^2)$$
+$$\left|x_1 y_1 + \cdots + x_n y_n\right|^2 \leq
+(x_1^2 + \cdots + x_n^2)(y_1^2 + \cdots + y_n^2)$$
 
 * Scharz:
 
