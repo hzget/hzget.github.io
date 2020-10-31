@@ -19,8 +19,6 @@ of $$R^2 \; and \; R^3$$ to the concept of vector space ***V*** over ***F***
 with vectors from $$R^n$$, generalize length and dot product to
 the concept of norm $$\| \; \|$$ and inner product $$\langle \; , \rangle$$
 
-[wiki generalization]: https://en.wikipedia.org/wiki/Generalization
-
 ## Advantages
 
 With generalization, we can investigate common issues and
@@ -42,3 +40,5 @@ $$\left|x_1 y_1 + \cdots + x_n y_n\right|^2 \leq
 $$\left|\int_{-1}^1 \!f(x)g(x) \, \mathrm{d}x\right|^2 \leq
 \left(\int_{-1}^1 \!\left(f(x)\right)^2 \, \mathrm{d}x\right)
 \left(\int_{-1}^1 \!\left(g(x)\right)^2 \, \mathrm{d}x\right)$$
+
+[wiki generalization]: https://en.wikipedia.org/wiki/Generalization
