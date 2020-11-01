@@ -28,6 +28,10 @@ Fix the basis of V and W, we get an invertible linear map:
 
 $$\mathcal{M}: \mathcal{L}(V, W) \rightarrow Mat(m, n, F)$$
 
+It explains the concept:
+A matrix records a linear map T from a basis of V to a basis of W.
+It is called matrix of T with respect to "some" basis.
+
 ## linear functional
 
 A linear functional on V is a linear map from V to the
