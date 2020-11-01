@@ -60,11 +60,12 @@ function $$v \rightarrow \langle v , w \rangle$$ is a linear map from V to F.
 Let $$T \in \mathcal{L}(V, W)$$, fix w from W,
 consider the linear functional $$ \varphi : v \rightarrow \langle Tv , w \rangle$$.
 
-The adjoint of T, denoted $$T^\ast$$, is a function from W to V:
+The adjoint of T is a function $$T^\ast : W \rightarrow V$$.
+It is defined as follows:
 $$T^\ast w$$ is the unique vector in V such that
 $$\langle Tv , w \rangle = \langle v , T^{\ast}w \rangle $$.
 
-The function $$T \rightarrow T^{\ast}$$ has the following properties:
+The function $$\ast : T \rightarrow T^{\ast}$$ has the following properties:
 
 $$
 (S + T)^\ast = S^\ast + T^\ast,
