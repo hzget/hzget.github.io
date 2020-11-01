@@ -16,6 +16,18 @@ $$T(u + v) = Tu + Tv \; \mbox{for all} \; u, v \in V$$
 homogeneity:
 $$T(\lambda v) = \lambda \, Tv \; \mbox{for all} \; \lambda \in F \; , \; v \in V$$
 
+## linear map of linear map
+
+Suppose that
+$$\mathcal{L}(V, W)$$ is the vector space of
+linear maps from V to W; and that
+Mat(m, n, F) is the vector space of
+m-by-n matrices with entries in F.
+
+Fix the basis of V and W, we get an invertible linear map:
+
+$$\mathcal{M}: \mathcal{L}(V, W) \rightarrow Mat(m, n, F)$$
+
 ## linear functional
 
 A linear functional on V is a linear map from V to the
@@ -26,9 +38,25 @@ $$\begin{align*}
 \varphi: P_6(R) \rightarrow R: \;\;\; & \varphi(p) = \int_0^1 \! p(x)(cos(x)) \; \mathrm{d}x
 \end{align*}$$
 
+## polynomials applied to operators
+
+Suppose that $$ T \in \mathcal{L}(V), \; p \in \mathcal{P}(F):
+p(z) = a_0 + a_1 z + a_2 z^2 + \cdots + a_m z^m$$, we define
+a function from $$ \mathcal{P}(F) \; \mbox{to} \; \mathcal{L}(V)$$
+given by $$ p \rightarrow p(T)$$:
+
+$$p(T) = a_0 + a_1 T + a_2 T^2 + \cdots + a_m T^m$$
+
+Obviously, the function is linear and it has the following property:
+
+$$
+(pq)(z) = p(z)q(z) \Rightarrow (pq)(T) = p(T)q(T) \\
+p(T)q(T) = q(T)p(T)
+$$
+
 ## norm
 
-A norm on a vector space U is a function $$\| \; \|: U \rightarrow [0, \infty]$$
+A norm on a vector space U is a function $$\| \; \|: U \rightarrow [0, \infty)$$
 such that:
 
 [1] $$\| u \| = 0 \; \mbox{if and only if} \; u = 0$$
