@@ -49,10 +49,10 @@ $$p(T) = a_0 + a_1 T + a_2 T^2 + \cdots + a_m T^m$$
 
 Obviously, the function is linear and it has the following property:
 
-$$
+$$\begin{align*}
 (pq)(z) = p(z)q(z) \Rightarrow (pq)(T) = p(T)q(T) \\
 p(T)q(T) = q(T)p(T)
-$$
+\end{align*}$$
 
 ## norm
 
