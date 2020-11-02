@@ -23,7 +23,8 @@ I read several math books and write what I like.
 [Generalization](./math/generalization.md),
 [Decomposition](./math/decomposition.md),
 [Function](./math/function.md),
-[Set](./math/set.md)
+[Set](./math/set.md),
+[Proof](./math/proof_method.md)
 
 ## Some thoughts on Programming
 
