@@ -24,6 +24,7 @@ I read several math books and write what I like.
 [Decomposition](./math/decomposition.md),
 [Function](./math/function.md),
 [Set](./math/set.md),
+[Induction](./math/proof/induction.md),
 [Proof](./math/proof_method.md)
 
 ## Some thoughts on Programming

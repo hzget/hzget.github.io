@@ -22,7 +22,7 @@ $$\overline{\lambda}$$ is an eigenvalue of $$T^\ast$$.
 
 PROOF:
 
-The equivalence is the following:
+Its equivalent is the following:
 $$\lambda$$ is not an eigenvalue of T if and only if
 $$\overline{\lambda}$$ is not an eigenvalue of $$T^\ast$$
 
@@ -50,7 +50,7 @@ It works in the same way for the case of inequation.
 Suppose V is a complex inner product space
 and $$T \in \mathcal{L}(V)$$. Then T is
 self-adjoint if and only if $$\langle Tv , v \rangle \in R$$
-for every v 2 V.
+for every v from V.
 
 PROOF:
 
@@ -60,6 +60,7 @@ Thus we can start the proof from
 $$\langle Tv , v \rangle - \overline{\langle Tv , v \rangle}$$.
 
 the proof:
+
 $$\begin{align*}
 \langle Tv , v \rangle - \overline{\langle Tv , v \rangle}
 & = \langle Tv , v \rangle - \langle v , Tv \rangle \\
