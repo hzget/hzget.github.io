@@ -18,7 +18,8 @@ such as falling dominoes or climbing a ladder:
 
 ## The example of Real Spectral Theorem
 
-***Real Spectral Theoremi***: Suppose $$F = R \mbox{ and } T \in \mathcal{L}(V)$$.
+***Real Spectral Theorem*** : Suppose that V is
+a real inner-product space and $$T \in \mathcal{L}(V)$$.
 Then the following are equivalent:  
 (a) T is self-adjoint.  
 (b) V has an orthonormal basis consisting of eigenvectors of T.
@@ -29,10 +30,10 @@ PROOF:
 We will focus on (a) to (b).
 
 We will prove that (a) implies (b) by induction on dim V.  
-***base case***:
+***base case*** :
 To get started, note that if dim V = 1 , then (a) implies (b).  
 
-***induction step***:
+***induction step*** :
 Now assume that dim V > 1 and that (a) implies (b)
 for all real inner product spaces of smaller dimension.
 
@@ -42,8 +43,10 @@ of $$U^\bot$$ (U=span(u)) consisting of eigenvectors
 of $$T|_{U^\bot}$$.
 
 Now for the details, the most important of which is
-verifying that $$T|_{U^\bot}$$ is self-adjoint
-(***this allows us to apply the induction hypothesis***).
+verifying that $$T|_{U^\bot}$$ is self-adjoint.
+In other words, we need to find
+***a connection between the self-adjoint operator S on $$U^\bot$$ and T***
+(this allows us to apply the induction hypothesis).
 
 * $$U^\bot$$ is invariant under T
 
@@ -56,7 +59,7 @@ $$\langle u, Tv \rangle = \langle Tu, v \rangle
 Thus $$Tv \in U^\bot$$. In other words, $$U^\bot$$ is
 invariant under T.
 
-* correspondint operator is self-adjoint on $$U^\bot$$
+* find an operator that is self-adjoint on $$U^\bot$$
 
 Thus we can define an operator
 $$S \in \mathcal{L}(U^\bot) \mbox{ by } S=T|_{U^\bot}$$.
@@ -70,8 +73,8 @@ which shows that S is self-adjoint.
 
 Thus, by our induction hypothesis, there is an
 orthonormal basis of $$U^\bot$$ consisting of
-eigenvectors of S. Clearly every eigenvector of S
-is an eigenvector of T (because Sv = Tv for every
+eigenvectors of S. ***Clearly every eigenvector of S
+is an eigenvector of T*** (because Sv = Tv for every
 $$v \in U^\bot$$).
 
 Thus adjoining u to orthonormal basis of $$U^\bot$$
@@ -88,9 +91,9 @@ PROOF:
 
 We will use induction on the dimension of V.
 
-***base case***: Clearly the desired result holds if dim V = 1.
+***base case*** : Clearly the desired result holds if dim V = 1.
 
-***induction step***: Suppose now that dim V > 1 and
+***induction step*** : Suppose now that dim V > 1 and
 the desired result holds for all complex vector spaces
 of smaller dimension:
 

@@ -25,9 +25,15 @@ I read several math books and write what I like.
 [Function](./math/function.md),
 [Set](./math/set.md),
 [Induction](./math/proof/induction.md),
+[Defination](./math/defination.md),
+[Design](./math/design.md),
+[Complete description](./math/complete.md),
+[Equality](./math/equality.md),
+[Unique](./math/unique.md),
 [Proof](./math/proof_method.md)
 
 ## Some thoughts on Programming
 
 * [Logs](./programming/log.md)
+* [Tools](./programming/tools/tools.md)
 * security
