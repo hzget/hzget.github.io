@@ -5,7 +5,9 @@
 Design is to construct an object that obeys some rules,
 and with it, we can resolve some problems or deal with complicated situations.
 
-## Example of isomorphic vector spaces
+## Examples
+
+### Design an invertible linear map
 
 ***Theorem*** : Two finite-dimensional vector spaces over F
 are isomorphic if and only if they have the same dimension.
@@ -24,7 +26,13 @@ $$T(a_1 v_1 + \cdots + a_m v_m) = a_1 w_1 + \cdots + a_m w_m$$
 Then T is surjective and injective, so it is invertible.
 Hence V and W are isomorphic, as desired.
 
-## Example of Positive Operators
+Surjective: any w from W, we have
+$$w = a_1 w_1 + \cdots + a_m w_m = T(a_1 v_1 + \cdots + a_m v_m) \in range\, T$$
+
+Let's examine this linear map closely. It shows that
+the matrix of T with respect to these two basis equals I.
+
+### Design a positive square root
 
 ***Theorem*** : Let $$T \in \mathcal{L}(V)$$.
 The the following are equivalent:  
@@ -36,9 +44,7 @@ The the following are equivalent:
 
 PROOF: We'll focus on (b) to (c).
 
-Suppose (b) holds, so that T is self-adjoint and
-all the eigenvalues of T are nonnegtive.
-By the spectral theorem, there is
+Suppose (b) holds. By the spectral theorem, there is
 an orthonormal basis ($$e_1, \cdots, e_n$$) of V
 consisting of eigenvectors of T.
 Let $$\lambda_1, \cdots, \lambda_n$$ be the eigenvalues
@@ -52,25 +58,24 @@ Further more, $$S^2 e_j = \lambda_j e_j = T e_j$$ for each j,
 which implies that $$S^2 = T$$. Thus S is a positive
 square root of T.
 
-## Exmaple of Polar Decompositon
+### Design an isometry for Polar Decompositon
 
 ***Polar Decomposition:*** If $$T \in \mathcal{L}(V)$$,
 then there exists an isometry $$S \in \mathcal{L}(V)$$
 such that $$T = S \sqrt{T^\ast T}$$.
 
-some Thought:
+**Some Thought:**
 
 We shall notice that the square symbol means
 that $$\sqrt{T^\ast T}$$ is ***positive square root***
 of the positive operator $$T^\ast T$$.
 
 We shall find or design the desired S.
-
 From the requirement, for any v from V, we shall have
 
 $$Tv = S \sqrt{T^\ast T} v = S(\sqrt{T^\ast T}v)$$
 
-Thus we're tempted to define(design) S by:
+Then we're tempted to define(design) S by:
 
 $$S(\sqrt{T^\ast T}v) = Tv$$
 
@@ -80,13 +85,12 @@ a linear map $$range\, \sqrt{T^\ast T} \rightarrow range\, T$$.
 In other words, S is not defined on the vector space V,
 but on $$range\, \sqrt{T^\ast T} \subset V$$.
 
-Thus we shall also define S on its
+We shall also define S on its
 orthogonal complement$$(range\, \sqrt{T^\ast T})^\bot$$
-
 And then conbine the two parts we get the operator S
 on vector space V. After that, we shall prove if S is an isometry.
 
-PROOF:
+**PROOF:**
 
 Define a linear map $$S_1: range\, \sqrt{T^\ast T}
 \rightarrow range\, T$$ by
@@ -101,22 +105,22 @@ $$\begin{align*} \|Tv\|^2
 & = \langle \sqrt{T^\ast T}\sqrt{T^\ast T}v, v \rangle \\
 & = \langle \sqrt{T^\ast T}v, \sqrt{T^\ast T}v \rangle \\
 & = \| \sqrt{T^\ast T}v \|^2
-\end{align*}$$
+\end{align*}$$,
 
-Thus we have $$\|S_1 u\| = \|u\| \mbox{ for all }
+We have $$\|S_1 u\| = \|u\| \mbox{ for all }
 u \in range\, \sqrt{T^\ast T}$$. This operator is
 injective. It shows that
-$$dim\, range\, \sqrt{T^\ast T} = dim\, range\, T$$
-
-Thus we have $$dim\, (range\, \sqrt{T^\ast T})^\bot
+$$dim\, range\, \sqrt{T^\ast T} = dim\, range\, T$$,
+so we have $$dim\, (range\, \sqrt{T^\ast T})^\bot
 = dim\, (range\, T)^\bot$$.
-Thus orthonormal bases $$e_1, \cdots, e_m$$
+
+The orthonormal bases $$e_1, \cdots, e_m$$
 of $$(range\, \sqrt{T^\ast T})^\bot$$ and
 the orthonormal basis $$f_1, \cdots, f_m$$
 of $$(range\, T)^\bot$$ can be chosen.
 The key point is that they have the same dimension.
 
-Now we define a linear map $$S_2: (range\, \sqrt{T^\ast T})^\bot
+Now we can define a linear map $$S_2: (range\, \sqrt{T^\ast T})^\bot
 \rightarrow (range\, T)^\bot$$ by
 
 $$S_2(a_1e_1 + \cdots + a_me_m) = a_1f_1 + \cdots + a_mf_m$$
@@ -141,7 +145,7 @@ and that
 
 $$S(\sqrt{T^\ast T}v) = S_1(\sqrt{T^\ast T}v) = Tv \mbox{ for any } v \in V$$
 
-Thus $$T = S \sqrt{T^\ast T}$$, as desired.
+Thus $$T = S \sqrt{T^\ast T}$$.
 The last step is to prove that S is an isometry.
 
 $$\begin{align*} \|Sv\|^2

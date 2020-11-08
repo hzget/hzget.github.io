@@ -4,9 +4,10 @@ A software engineer with years of experiences on network devices.
 
 Interests:
 
-* Protocols
+* Network Protocols
 * AI
 * Math
+* Debugging
 
 To keep track of the learning progress and some thoughts, I start the blog.
 
@@ -25,7 +26,7 @@ I read several math books and write what I like.
 [Function](./math/function.md),
 [Set](./math/set.md),
 [Induction](./math/proof/induction.md),
-[Defination](./math/defination.md),
+[Defination](./math/definition.md),
 [Design](./math/design.md),
 [Complete description](./math/complete.md),
 [Equality](./math/equality.md),
