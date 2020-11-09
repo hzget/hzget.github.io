@@ -31,6 +31,7 @@ I read several math books and write what I like.
 [Complete description](./math/complete.md),
 [Equality](./math/equality.md),
 [Unique](./math/unique.md),
+[Proof Contradiction](./math/proof/contradiction.md),
 [Proof](./math/proof_method.md)
 
 ## Some thoughts on Programming
