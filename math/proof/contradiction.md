@@ -17,35 +17,37 @@ or the direct proof spends lots of time.
 3. Deduce something known to be false (a logical contradiction).
 4. Write, "This is a contradiction. Therefore, P must be true."
 
-## An Example: direct proof is difficult
+## when direct proof is difficult
 
-***Theorem*** $$\sqrt{2}$$ is irrational.
+***Theorem:*** There is no rational p such that $$p^2=2$$.
 
-***Hint:*** Remember that a number
-is rational if it is equal to a ratio of integers,
-for example, 3.5 = 7/2.
+***Hint:*** rational numbers: the numbers of the form m/n,
+where m and n are integers and n is not 0.
 
 ***PROOF:*** We use proof by contradiction.
-Suppose the claim is false, and $$\sqrt{2}$$ is rational.
-Then we can write $$\sqrt{2}$$ as a fraction n/d in lowest terms.
+Suppose the claim is false, and there were
+such a rational p that $$p^2=2$$. We can write $$p=m/n$$
+where m and n are integers that are not
+both even. Lets assume this is done.
 
-Squaring both sides gives $$2=n^2/d^2$$ and so $$2d^2=n^2$$.
-This implies that n is even.
-Therefore $$n^2$$ must be a multiple of 4.
-But since $$2d^2=n^2$$, we know $$2d^2$$ is a multiple of 4
-and so $$d^2$$ is even. This implies that d is even.
+Then $$p^2=2$$ implies that $$m^2=2n^2$$. This
+shows that $$m^2$$ is even. Hence m is even,
+and so $$m^2$$ is divisible by 4. It follows
+that the right side is devisible by 4, so
+that $$n^2$$ is even, which implies that n is even.
 
-So, the assumption that ***$$\sqrt{2}$$ is rational*** leads
-to the conclusion that both n and d are even for $$\sqrt{2}=n/d$$,
-contrary to the fact that n/d is in lowest terms.
-Thus, $$\sqrt{2}$$ must be irrational.
+The assumption that "such a rational p exists
+for $$p^2=2$$" leads to the conclusion that
+both m and n are even, contrary to our choice
+of m and n. Hence, $$p^2=2$$ is not possible for
+rational p.
 
-## An Example: direct proof is a waste of time
+## when direct proof needs a great effort
 
 Make $$\mathcal{P}_2(R)$$ into an inner-product space
 by defining
 
-$$\langle p, q \rangle = \int_0^1 \!p(x)q(x)\, \mathrm{d}x$$.
+$$\langle p, q \rangle = \int_0^1 \!p(x)q(x)\, \mathrm{d}x$$
 
 Define $$T \in \mathcal{L}(\mathcal{P}_2(R))$$
 by $$T(a_0 + a_1x + a_2x^2) = a_1x$$.  
@@ -60,22 +62,16 @@ We can consider the indirect method.
 
 ***PROOF:***
 
-Sppose T is self-adjoint, by the definition of self-adjoint,
-we have
+We use proof by contradiction. Suppose the claim is false,
+and T is self-adjoint. Then, by the definition of adjoint,
+for any $$v, w \in \mathcal{P}_2(R)$$, we
+have $$\langle Tv, w \rangle = \langle v, Tw \rangle$$.
 
-$$\begin{eqnarray}
-\langle Tv, v \rangle = \langle v, Tv \rangle
-\mbox{ for any } v \in V
-\tag{1}\label{eq:not-self-adjoint}\end{eqnarray}$$
+Turn to the vectors $$1\, , \, x \in \mathcal{P}_2(R)$$.
+We have $$\langle T1, x \rangle = \langle 0, x \rangle = 0$$  
+and $$ \langle 1, Tx \rangle = \langle 1, 1 \rangle = 1$$.
 
-We can find a contradiction with a conterexample:
-
-$$\begin{align*} \langle T1, x \rangle
-& = \langle 0, x \rangle = 0 \\
-\langle 1, Tx \rangle
-& = \langle 1, 1 \rangle = 1
-\end{align*}$$
-
-We have $$\langle T1, x \rangle \neq \langle 1, Tx \rangle$$,
-contrary to the conclusion $$\eqref{eq:not-self-adjoint}$$ of the assumption.
+The assumption (that "T is self-adjoint") leads to
+the conclusion $$\langle Tv, w \rangle = \langle v, Tw \rangle$$,
+contrary to the fact that $$\langle T1, x \rangle \neq \langle 1, Tx \rangle$$.
 Hence T is not self-adjoint.

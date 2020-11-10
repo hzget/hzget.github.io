@@ -5,17 +5,26 @@ A software engineer with years of experiences on network devices.
 Interests:
 
 * Network Protocols
-* AI
+* Artificial Intelligence
 * Math
 * Debugging
 
-To keep track of the learning progress and some thoughts, I start the blog.
+The blog is intended to keep track of the learning progress
+and review some knowledge learnt in the past.
 
-## Maching Learning & Deep Learning
+## Network Protocols
 
-[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
+[Netconf/Yang](https://en.wikipedia.org/wiki/NETCONF) - RFC 6241, RFC 7950 by IETF  
+[CWMP](https://en.wikipedia.org/wiki/TR-069) - TR069 by Broadband Forum  
+Security: ssh, https
 
-[Neural Networks tutorial](./neural_networks/neural_networks.md)
+## Aritificial Intelligence
+
+I have written tutorials to introduce two topics in AI:  
+[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md) and
+[Neural Networks tutorial](./neural_networks/neural_networks.md).
+
+The code entry: [ML](https://github.com/hzget/machine-learning).
 
 ## Math
 
@@ -25,14 +34,16 @@ I read several math books and write what I like.
 [Decomposition](./math/decomposition.md),
 [Function](./math/function.md),
 [Set](./math/set.md),
-[Induction](./math/proof/induction.md),
-[Defination](./math/definition.md),
-[Design](./math/design.md),
 [Complete description](./math/complete.md),
 [Equality](./math/equality.md),
-[Unique](./math/unique.md),
-[Proof Contradiction](./math/proof/contradiction.md),
-[Proof](./math/proof_method.md)
+[Unique](./math/unique.md),  
+Definition:
+[Definition](./math/definition.md),
+[Design](./math/design.md),  
+Proof:
+[Proof](./math/proof_method.md),
+[Induction](./math/proof/induction.md),
+[Proof by Contradiction](./math/proof/contradiction.md),
 
 ## Some thoughts on Programming
 
