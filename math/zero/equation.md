@@ -1,13 +1,12 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# equations and zero
+# Equations and Zero
 
 Zero is a special object and it helps a lot
-when we exploit properties of some concept.
+when we exploit properties of many concepts.
 
 Suppose a = b, we have a - b = 0. To prove something
 with the equation, we can start from `0 = a - b`.
-It works in the same way for the case of inequation.
 
 ## Example 1
 
@@ -16,7 +15,7 @@ Prove that P is orthogonal projection if and only if
 P is self-adjoint.
 
 Note: we only focus on one direction: if P is orthogonal
-then P is self-adjoint. The other directon is omitted.
+projection then P is self-adjoint. The other directon is omitted.
 
 ***Hint:*** P is self-adjoint, we have $$P=P^\ast$$.
 
@@ -39,6 +38,7 @@ In a word, P is a projection of V onto range P.
 
 If P is orthogonal, we have $$\langle u,v \rangle = 0$$.
 Thus we have
+
 $$\begin{align*}
 \langle(P - P^\ast)v, v'\rangle
 & = \langle Pv, v'\rangle - \langle P^\ast v, v'\rangle \\
@@ -75,7 +75,7 @@ Because V is a complex inner-product vector space,
 we have:
 
 $$\langle Tv , v \rangle \in R
-\Leftrightarrow \color{red}{0 = \langle Tv , v \rangle - \overline{\langle Tv , v \rangle}}
+\Leftrightarrow {\color{red}{0 = \langle Tv , v \rangle - \overline{\langle Tv , v \rangle}}}
 \Leftrightarrow T - T^\ast = 0$$
 
 ## Inequation
@@ -96,7 +96,7 @@ $$\alpha \neq \beta \Rightarrow \alpha - \beta \neq 0$$
 Thus we can begin with it for the proof:
 
 $$\begin{align*}
-\color{red}{(\alpha - \beta)}\langle u , v \rangle
+{\color{red}{(\alpha - \beta)}}\langle u , v \rangle
 & = \langle \alpha u , v \rangle - \langle u , \overline{\beta}v \rangle \\
 & = \langle Tu , v \rangle - \langle u , T^\ast v \rangle \\
 & = 0 \\

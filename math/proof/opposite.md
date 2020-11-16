@@ -26,9 +26,9 @@ exploit its opposite and find something.
 
 ***PROOF:*** Let L be the set of all lower bounds
 of B. We'll prove that $$\alpha = \mbox{ sup }L$$
-exists in S and $$\alpha = \mbox{ inf }S$$.
+exists in S and $$\alpha = \mbox{ inf }B$$.
 
-Since S is bounded below, L is not empty. Since L
+Since B is bounded below, L is not empty. Since L
 consists of exactly those $$y \in S$$ which satisfy
 the inequality $$y \leq x$$ for every $$x \in B$$,
 we see that every $$x \in B$$ is an upper bound of L.
@@ -36,11 +36,11 @@ Thus L is bounded above. Our hypothesis about S
 implies therefore that L has a supermum in S; call
 it $$\alpha$$.
 
-If $$\gamma < \alpha$$ then $$\gamma$$ is not an
+* If $$\gamma < \alpha$$ then $$\gamma$$ is not an
 upper bound of L, hence $$\gamma \notin B$$. It
 follows that $$\alpha \leq x$$ for every $$x \in B$$.
 Thus $$\alpha \in L$$.
-If $$\alpha < \beta$$ then $$\beta \notin L$$,
+* If $$\alpha < \beta$$ then $$\beta \notin L$$,
 since $$\alpha$$ is an upper bound of L.
 
 We have show that $$\alpha \in L$$ but $$\beta \notin L$$
