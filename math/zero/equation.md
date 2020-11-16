@@ -52,6 +52,25 @@ Hence P is self-adjoint.
 
 ## Example 2
 
+An operator $$T \in \mathcal{L}(V)$$ is normal
+if and only if $$\|Tv\|=\|T^\ast v\|$$.
+
+***PROOF:*** T is normal means that $$TT^\ast=T^\ast T$$.
+We have the following equivalent:
+
+$$\begin{align*} TT^\ast=T^\ast T
+& \Leftrightarrow \color{red}{TT^\ast \! - T^\ast T = 0} \\
+& \Leftrightarrow \langle (TT^\ast-T^\ast T)v, v\rangle=0 \;\; \forall v \in V \;
+(\mbox{Note: } TT^\ast \! - \! T^\ast T \mbox{ is self-adjoint})\\
+& \Leftrightarrow \langle TT^\ast v, v\rangle - \langle T^\ast Tv, v\rangle=0 \;\; \forall v \in V \\
+& \Leftrightarrow {\color{red}{\|T^\ast v\|^2 - \|Tv\|^2 =0}} \;\; \forall v \in V \\
+& \Leftrightarrow \|T^\ast v\| = \|Tv\| \;\; \forall v \in V
+\end{align*}$$
+
+Note: We can look backward of the derivation.
+
+## Example 3
+
 Suppose V is a complex inner product space
 and $$T \in \mathcal{L}(V)$$. Then T is
 self-adjoint if and only if $$\langle Tv , v \rangle \in R$$
