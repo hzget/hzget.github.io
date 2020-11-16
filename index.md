@@ -43,7 +43,11 @@ Definition:
 Proof:
 [Proof](./math/proof_method.md),
 [Induction](./math/proof/induction.md),
-[Proof by Contradiction](./math/proof/contradiction.md),
+[Contradiction](./math/proof/contradiction.md),
+[Opposite](./math/proof/opposite.md),
+[Equation](./math/zero/equation.md),  
+Zero:
+[Equation](./math/zero/equation.md),
 
 ## Some thoughts on Programming
 

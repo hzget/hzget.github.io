@@ -19,6 +19,8 @@ or the direct proof spends lots of time.
 
 ## when direct proof is difficult
 
+### Example 1
+
 ***Theorem:*** There is no rational p such that $$p^2=2$$.
 
 ***Hint:*** rational numbers: the numbers of the form m/n,
@@ -26,7 +28,7 @@ where m and n are integers and n is not 0.
 
 ***PROOF:*** We use proof by contradiction.
 Suppose the claim is false, and there were
-such a rational p that $$p^2=2$$. We can write $$p=m/n$$
+such a rational p for the equation. We can write $$p=m/n$$
 where m and n are integers that are not
 both even. Lets assume this is done.
 
@@ -41,6 +43,20 @@ for $$p^2=2$$" leads to the conclusion that
 both m and n are even, contrary to our choice
 of m and n. Hence, $$p^2=2$$ is not possible for
 rational p.
+
+### Example 2
+
+***Propositon:*** Suppose x and y are from
+a field: $$x, y \in F$$. If $$x \neq 0$$
+and $$y \neq 0$$, then $$xy \neq 0$$.
+
+***PROOF:*** We use proof by contradiction.
+Suppose the claim is false. Assume $$x \neq 0$$,
+and $$y \neq 0$$, but $$xy=0$$. There is a contradiction:
+
+$$ 1 = (\frac1y)(\frac1x)xy = (\frac1y)(\frac1x)0 = 0$$
+
+Thus we have $$xy=0$$.
 
 ## when direct proof needs a great effort
 
