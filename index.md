@@ -35,8 +35,7 @@ I read several math books and write what I like.
 [Function](./math/function.md),
 [Set](./math/set.md),
 [Complete description](./math/complete.md),
-[Equality](./math/equality.md),
-[Unique](./math/unique.md),  
+[Equality](./math/equality.md),  
 Definition:
 [Definition](./math/definition.md),
 [Design](./math/design.md),  
@@ -48,6 +47,7 @@ Proof:
 [Equation](./math/zero/equation.md),  
 Zero:
 [Equation](./math/zero/equation.md),
+[Unique](./math/zero/uniqueness.md),
 
 ## Some thoughts on Programming
 

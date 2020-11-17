@@ -33,10 +33,11 @@ for any $$v, v' \in V$$.
 
 From $$P^2=P$$, we have $$V=range\,P \oplus null\,P$$
 and that any vector v from V has a unique
-decompositon: $$v=u+w \mbox{ with } Pu=u,\,Pw=0$$.
+decompositon: $$v=u+w$$ where $$u \in range\, P$$
+and $$w \in null\, P$$. We also have $$ Pu=u,\,Pw=0$$.
 In a word, P is a projection of V onto range P.
 
-If P is orthogonal, we have $$\langle u,v \rangle = 0$$.
+If P is orthogonal, we have $$\langle u, w\rangle = 0$$.
 Thus we have
 
 $$\begin{align*}
@@ -49,6 +50,8 @@ $$\begin{align*}
 \end{align*}$$
 
 Hence P is self-adjoint.
+
+Note: There's another way to prove it in the [uniqueness](./uniqueness.md) page.
 
 ## Example 2
 
@@ -67,7 +70,7 @@ $$\begin{align*} TT^\ast=T^\ast T
 & \Leftrightarrow \|T^\ast v\| = \|Tv\| \;\; \forall v \in V
 \end{align*}$$
 
-Note: We can look backward of the derivation.
+Note: We can look backward of the reasoning.
 
 ## Example 3
 
