@@ -2,7 +2,12 @@
 
 # Uniqueness
 
+Uniqueness is a special case and we will probably
+find important properties when exploit it.
 Uniqueness is always verified with 0.
+
+We'll show several important concepts introduced
+by uniqueness.
 
 ## linear combination and linear independent
 
@@ -31,15 +36,35 @@ of $$v_1,\cdots,v_m$$.
 which means $$a_j=\hat{a}_j$$ (and thus the choice
 of a's is unique).
 
-(The uniqueness leads to an important concept:
+The uniqueness leads to an important concept:
 A list $$v_1,\cdots,v_m \in V$$ is called
 ***linear independent*** if the only choice
 of $$a_1,\cdots,a_m \in F$$ that makes $$a_1v_1+\cdots+a_mv_m$$
-equal 0 is $$a_1=\cdots=a_m=0$$.)
+equal 0 is $$a_1=\cdots=a_m=0$$.
 
 Each time we need to check uniqueness, just
 only need to check linear independence which is
-defined with 0.  
+defined with 0.
+
+## direct sum
+
+Suppose $$U_1,\cdots,U_m$$ are subspaces of U
+such that $$V=U_1+\cdots+U_m$$. Thus every
+element of V can be written in the form
+
+$$u_1+\cdots+u_m$$,
+
+where each $$u_j \in U_j$$. We will be especially
+interested in cases where each vector in V can be
+uniquely represented in the form above. This
+situation is so important that we give it a special
+name: direct sum.
+
+Specifically, we say that V is the ***direct sum***
+of subspaces $$U_1,\cdots,U_m$$,
+written $$V=U_1 \oplus \cdots \oplus U_m$$, if each
+element of V can be written ***uniquely*** as
+a sum $$u_1+\cdots+u_m$$, where each $$u_j \in U_j$$.
 
 ## injective
 
@@ -86,7 +111,7 @@ the desired vector v is unique.
 This example shows how we verify the uniqueness
 with 0.
 
-## an application of uniqueness
+## adjoint and an application of uniqueness
 
 Suppose $$P=\mathcal{L}(V)$$ is such that $$P^2=P$$.
 Prove that P is orthogonal projection if and only if
@@ -118,8 +143,9 @@ Consider the definition of adjoint,
 > such that
 > $$\langle Tv , w \rangle = \langle v , T^{\ast}w \rangle $$.
 
-From the uniqueness property of linear functional,
-we have that $$T^\ast w$$ is unique.
+$$T^\ast w$$ is the unique vector in V
+that gives the linear functional $$\varphi : v \rightarrow \langle Tv , w \rangle$$.
+
 we have $$Pv'=P^\ast v'$$ for any $$v' \in V$$.
 It means that $$P^\ast = P$$.
 
