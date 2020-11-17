@@ -106,10 +106,10 @@ In a word, P is a projection of V onto range P.
 If P is orthogonal, we have $$\langle u, w\rangle = 0$$.
 Thus we have
 
-$$\color{red}{\langle v, Pv'\rangle}
+$$\langle v, {\color{red}{Pv'}}\rangle
 = \langle u, u'\rangle
 = \langle Pv, v'\rangle
-= \color{red}{\langle v, P^\ast v'\rangle}$$
+= \langle v, {\color{red}{P^\ast v'}}\rangle$$
 
 Consider the definition of adjoint,
 
