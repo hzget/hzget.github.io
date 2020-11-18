@@ -16,15 +16,17 @@ By the definition of span, there exists $$a_1,\cdots,a_m \in F$$ such that
 
 $$v = a_1v_1 + \cdots + a_mv_m$$
 
-Consider the question of whether the choice of a's
+***Consider the question of*** whether the choice of a's
 in the equation above is unique.
+
+How to make it possible?
 
 Suppose $$\hat{a}_1,\cdots,\hat{a}_m$$ is another
 set of scalars such that
 
 $$v = \hat{a}_1v_1 + \cdots + \hat{a}_mv_m$$
 
-Substract two equations, we have
+Substract these two equations, we have
 
 $$0 = (a_1-\hat{a}_1)v_1 + \cdots + (a_m-\hat{a}_m)v_m$$
 
@@ -49,24 +51,49 @@ defined with 0.
 ## direct sum
 
 Suppose $$U_1,\cdots,U_m$$ are subspaces of U
-such that $$V=U_1+\cdots+U_m$$. Thus every
-element of V can be written in the form
+such that $$V=U_1+\cdots+U_m$$. Thus every $$v \in V$$
+can be written in the form
 
-$$u_1+\cdots+u_m$$,
+$$v=u_1+\cdots+u_m$$
 
-where each $$u_j \in U_j$$. We will be especially
-interested in cases where each vector in V can be
+where each $$u_j \in U_j$$.
+***We will be especially interested in cases***
+where each vector in V can be
 uniquely represented in the form above. This
 situation is so important that we give it a special
 name: direct sum.
 
 Specifically, we say that V is the ***direct sum***
 of subspaces $$U_1,\cdots,U_m$$,
-written $$V=U_1 \oplus \cdots \oplus U_m$$, if each
-element of V can be written ***uniquely*** as
-a sum $$u_1+\cdots+u_m$$, where each $$u_j \in U_j$$.
+written $$V=U_1 \oplus \cdots \oplus U_m$$, if
+each $$v \in V$$ can be written ***uniquely*** as
+a sum $$v=u_1+\cdots+u_m$$, where each $$u_j \in U_j$$.
+
+How to make the uniqueness possible?
+
+Suppose we also have
+
+$$v=v_1+\cdots+v_m$$
+
+where each $$v_j \in U_j$$. Substract these two equations,
+we have
+
+$$0=(u_1-v_1)+\cdots+(u_m-v_m)$$
+
+Thus we have written 0 in the same form.
+
+If the only way to do this is to take every element to 0,
+then each $$u_j-v_j$$ is 0, we have $$u_j=v_j$$, which
+implies the uniqueness.
 
 ## injective
+
+Suppose $$T: V \rightarrow W$$, and we have
+$$T(u) \in W$$ where $$u \in U$$.
+***Consider the question of*** whether T(u) corresponds
+to a unique u.
+
+The uniqueness leads to the concept of injective.
 
 A linear map $$T: V \rightarrow W$$ is called
 ***injective*** if whenever $$u, v \in V$$
@@ -82,7 +109,7 @@ Just consider the case of null T = {0}. It makes
 u - v = 0. Thus we can check whether T is injective
 via checking whether null T = {0}.
 
-## linear functional
+## linear functional and inner product
 
 Suppose $$\varphi$$ is a linear functional on V.
 Then there is a ***unique*** vector $$v \in V$$
