@@ -100,6 +100,30 @@ $$\langle Tv , v \rangle \in R
 \Leftrightarrow {\color{red}{0 = \langle Tv , v \rangle - \overline{\langle Tv , v \rangle}}}
 \Leftrightarrow T - T^\ast = 0$$
 
+## Example 4
+
+Propositon: Every eigenvalue of a self-adjoint
+operator is real.
+
+***PROOF:*** Suppose T is a self-adjoint operator
+on V. Let $$\lambda$$ be an eigenvalue of T,
+and let v be a nonzero vecotor such that $$Tv=\lambda v$$.
+
+We want to prove that $$\lambda$$ is real,
+which means that $$\lambda = \overline{\lambda}$$.
+Consider the following:
+
+$$\begin{align*}
+{\color{red}{(\lambda - \overline{\lambda})}} \langle v, v\rangle
+& = \langle \lambda v, v\rangle - \langle v, \lambda v\rangle \\
+& = \langle Tv, v\rangle - \langle v, Tv\rangle \\
+& = 0
+\end{align*}$$
+
+Since v is nonzero vector, we have that $$\langle v, v\rangle$$
+is not zero. Thus we have $$\lambda - \overline{\lambda} =0$$,
+which means that the eigenvalue is real.
+
 ## Inequation
 
 Suppose $$T \in \mathcal{L}(V)$$ is normal.
