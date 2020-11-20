@@ -180,7 +180,7 @@ that $$R=\sqrt{T^\ast T}$$.
 $$\begin{align*} T=SR
 & \Rightarrow T-SR=0 \\
 & \Rightarrow (T-SR)v=0 \mbox{ for any }v \in V \\
-& \Rightarrow \langle (T^\ast T-R^2)v,v\rangle =0
+& \Rightarrow \langle (T-SR)v,SRv\rangle = 0 \mbox{ for any }v \in V \\
 \end{align*}$$
 
 Thus we have

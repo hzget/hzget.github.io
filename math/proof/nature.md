@@ -33,7 +33,7 @@ the vector form
 
 $$Sv = S'v$$
 
-If it is true for any $$v \in V$$. Then it imples S = S'.
+If it is true for any $$v \in V$$, then it imples S = S'.
 From the polar decomposition, we have
 
 $$S \sqrt{T^\ast T} v = Tv = S' \sqrt{T^\ast T}v$$
