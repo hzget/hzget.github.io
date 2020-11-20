@@ -44,6 +44,7 @@ Proof:
 [Induction](./math/proof/induction.md),
 [Contradiction](./math/proof/contradiction.md),
 [Opposite](./math/proof/opposite.md),
+[Nature](./math/proof/nature.md),
 [Equation](./math/zero/equation.md),  
 Zero:
 [Equation](./math/zero/equation.md),

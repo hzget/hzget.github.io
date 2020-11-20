@@ -82,13 +82,18 @@ $$S(\sqrt{T^\ast T}v) = Tv$$
 It seems the remaining is to proves that S is an isometry.
 However, it is not the truth. In fact this definition is
 a linear map $$range\, \sqrt{T^\ast T} \rightarrow range\, T$$.
-In other words, S is not defined on the vector space V,
+In other words, S is not defined on the whole vector space V,
 but on $$range\, \sqrt{T^\ast T} \subset V$$.
 
 We shall also define S on its
 orthogonal complement$$(range\, \sqrt{T^\ast T})^\bot$$
 And then conbine the two parts we get the operator S
-on vector space V. After that, we shall prove if S is an isometry.
+on whole vector space V.
+After that, we shall prove if S is an isometry.
+
+In other words, we shall define an operator
+on the ***whole*** vector space.
+The exact form: Sv for ***any*** $$v \in V$$.
 
 **PROOF:**
 
@@ -123,8 +128,9 @@ The key point is that they have the same dimension.
 Now we can define a linear map $$S_2: (range\, \sqrt{T^\ast T})^\bot
 \rightarrow (range\, T)^\bot$$ by
 
-$$S_2(a_1e_1 + \cdots + a_me_m) = a_1f_1 + \cdots + a_mf_m$$
+$$S_2(a_1e_1 + \cdots + a_me_m) = c_1f_1 + \cdots + c_mf_m$$
 
+where $$|a_k|=|c_k|$$.
 Thus we have $$\|S_2 u\| = \|u\| \mbox{ for all }
 u \in (range\, \sqrt{T^\ast T})^\bot$$.
 

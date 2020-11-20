@@ -148,3 +148,53 @@ $$\begin{align*}
 & = 0 \\
 \alpha \neq \beta & \Rightarrow \langle u , v \rangle = 0
 \end{align*}$$
+
+## Example 6
+
+Suppose T is a positive operator on V, then
+all eigenvalues of T are nonnegative.
+
+***PROOF:***
+Let $$\lambda$$ be an eigenvalue of T,
+and let v be a nonzero vecotor such that $$Tv=\lambda v$$.
+To prove that $$\lambda \geq 0$$, we can consider
+the expression of $$\lambda \langle v,v\rangle$$:
+
+$$\begin{align*}
+{\color{red}{\lambda}} \langle v, v\rangle
+& = \langle \lambda v, v\rangle \\
+& = \langle Tv, v\rangle \geq 0 \\
+\langle v, v\rangle > 0
+& \Rightarrow \lambda \geq 0
+\end{align*}$$
+
+## Example 7
+
+Suppose $$T \in \mathcal{L}(V)$$, $$S \in \mathcal{L}(V)$$
+is an isometry, and $$R \in \mathcal{L}(V)$$ is a
+positive operator such that $$T=SR$$. Prove
+that $$R=\sqrt{T^\ast T}$$.
+
+***PROOF:*** From the condition, we have the following:
+
+$$\begin{align*} T=SR
+& \Rightarrow T-SR=0 \\
+& \Rightarrow (T-SR)v=0 \mbox{ for any }v \in V \\
+& \Rightarrow \langle (T^\ast T-R^2)v,v\rangle =0
+\end{align*}$$
+
+Thus we have
+
+$$\begin{align*} 0
+& = \langle (T-SR)v,SRv\rangle \\
+& = \langle Tv,SRv\rangle - \langle SRv,SRv\rangle \\
+& = \langle Tv,Tv\rangle  - \langle Rv,Rv\rangle \\
+& = \langle T^\ast Tv,v\rangle + \langle R^\ast Rv,v\rangle \\
+& = \langle (T^\ast T-R^2)v,v\rangle
+\end{align*}$$
+
+for any $$v \in V$$. Because $$T^\ast T-R^2$$ is self-adjoint,
+we have $$T^\ast T-R^2=0$$ which implies $$T^\ast T=R^2$$.
+R is positive, we have $$R=\sqrt{T^\ast T}$$.
+
+There's another way to prove it in [nature](../proof/nature.md) page.
