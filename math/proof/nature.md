@@ -13,11 +13,13 @@ When we're talking about the operator, we shall
 write down the vector form T(v) and then exploit it
 via properties of the operator.
 
-### polar decomposition
+### some concept
 
 ***Polar Decomposition:*** If $$T \in \mathcal{L}(V)$$,
 then there exists an isometry $$S \in \mathcal{L}(V)$$
 such that $$T = S \sqrt{T^\ast T}$$
+
+### Example 1
 
 Question: Prove that T is invertible if and only if
 such S is unique.
@@ -57,7 +59,7 @@ we have that $$\sqrt{T^\ast T}e_1,\cdots,\sqrt{T^\ast T}e_n$$
 is a basis of V.
 Take any $$v \in V$$ as a linear combination of that basis
 
-$$v=a_1\sqrt{T^\ast T}e_1 + \cdots + a_ne\sqrt{T^\ast T}_n$$
+$$v=a_1\sqrt{T^\ast T}e_1 + \cdots + a_n\sqrt{T^\ast T}e_n$$
 
 we have
 
@@ -70,6 +72,22 @@ $$\begin{align*} Sv
 
 for any $$v \in V$$. Thus we have S=S'. Hence the desired
 isometry is unique.
+
+#### method 2
+
+As was discuss before, $$\sqrt{T^\ast T}$$ is invertible.
+By the definition, there exists an
+operator $$\sqrt{T^\ast T}^{-1}$$ such that
+
+$$\sqrt{T^\ast T}\sqrt{T^\ast T}^{-1}=\sqrt{T^\ast T}^{-1}\sqrt{T^\ast T}=I$$
+
+We can make use of this property for the proof.
+Because $$T = S \sqrt{T^\ast T}$$, we have that
+
+$$S=SI=S\sqrt{T^\ast T}\sqrt{T^\ast T}^{-1}=T \sqrt{T^\ast T}^{-1}$$
+
+Fix an operator T, the operator S is represent exactly
+with $$T \sqrt{T^\ast T}^{-1}$$. Thus the required isometry is unique.
 
 ### Example 2
 
