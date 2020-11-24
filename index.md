@@ -55,3 +55,10 @@ Zero:
 * [Logs](./programming/log.md)
 * [Tools](./programming/tools/tools.md)
 * security
+
+## Reading Notes
+
+Linear Algebra Done Right
+
+The Practice of Programming:
+[style](./books/the_practice_of_programming/style.md)

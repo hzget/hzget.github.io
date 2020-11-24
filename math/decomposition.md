@@ -141,7 +141,7 @@ $$Sv = s_1\langle v, e_1\rangle f_1 + \cdots + s_n\langle v, e_n\rangle f_n$$
 
 We have
 
-$$\begin{align*} s_1=\cdots=s_n
+$$\begin{align*} s_1=\cdots=s_n=1
 & \Rightarrow Sv=\langle v, e_1\rangle f_1 + \cdots + \langle v, e_n\rangle f_n \\
 & \Rightarrow \|Sv\|^2=|\langle v, e_1\rangle|^2 + \cdots + |\langle v, e_n\rangle|^2=\|v\|^2\\
 & \Rightarrow \|Sv\|=\|v\|, \mbox{ i.e., S is an isometry} \\
