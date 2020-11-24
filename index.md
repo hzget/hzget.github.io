@@ -58,7 +58,4 @@ Zero:
 
 ## Reading Notes
 
-Linear Algebra Done Right
-
-The Practice of Programming:
-[style](./books/the_practice_of_programming/style.md)
+[notes](./notes/note.md)
