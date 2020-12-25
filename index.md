@@ -46,9 +46,14 @@ Proof:
 [Opposite](./math/proof/opposite.md),
 [Nature](./math/proof/nature.md),
 [Equation](./math/zero/equation.md),  
+Logic:
+[logic](./math/logic/logic.md),
+[is-to-and-how](./math/logic/is_to.md),  
 Zero:
 [Equation](./math/zero/equation.md),
-[Unique](./math/zero/uniqueness.md),
+[Unique](./math/zero/uniqueness.md),  
+Perspective:
+[Reasoning](./math/perspective/reasoning.md),  
 
 ## Some thoughts on Programming
 
