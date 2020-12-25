@@ -44,8 +44,8 @@ $$\begin{align*} p(\lambda)v
 & = a_0v+a_1\lambda v+a_2\lambda^2v+\cdots+a_{m-1}\lambda^{m-1}v+\lambda^mv \\
 & = a_0Iv+a_1Tv+a_2T^2v+\cdots+a_{m-1}T^{m-1}v+T^mv \\
 & = (a_0I+a_1T+a_2T^2+\cdots+a_{m-1}T^{m-1}+T^m)v \\
-& = p(T)v \\
-& = 0
+& = p(T)v=0 \\
+v \neq 0 & \Rightarrow p(\lambda)=0
 \end{align*}$$
 
 The equation means that eigenvalues of T
