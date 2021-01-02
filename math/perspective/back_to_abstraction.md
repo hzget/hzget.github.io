@@ -12,6 +12,9 @@
 > you have studied previously.  
 > ---- "introduction to probability"
 
+In fact it's a process of connecting a concrete issue
+to an abstract concept/result.
+
 ## Example of counting
 
 ### Example of Club officers
@@ -78,3 +81,7 @@ possibilities.
 
 ***hints:*** Firstly, it is a problem of ***Multiplication rule***.
 Each of the sub-experiment is a problem of ***n choose k***.
+
+***Note:*** There are no chronological orders that which
+sub-experiments are performed first. In other words,
+we can also choose where to put the I's and then others.
