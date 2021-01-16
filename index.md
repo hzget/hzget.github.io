@@ -53,7 +53,8 @@ Zero:
 [Equation](./math/zero/equation.md),
 [Unique](./math/zero/uniqueness.md),  
 Perspective:
-[Abstraction](./math/perspective/back_to_abstraction.md),
+[Back to Abstraction](./math/perspective/back_to_abstraction.md),
+[Begin with what you known](./math/perspective/known.md),
 [Reasoning](./math/perspective/reasoning.md),  
 
 ## Some thoughts on Programming

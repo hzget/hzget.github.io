@@ -85,3 +85,5 @@ Each of the sub-experiment is a problem of ***n choose k***.
 ***Note:*** There are no chronological orders that which
 sub-experiments are performed first. In other words,
 we can also choose where to put the I's and then others.
+(The counting result contains all possibilities, so the order
+does not matter.)
