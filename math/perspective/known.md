@@ -1,6 +1,6 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# Begin with what we know
+# Begin with known problems
 
 Sometimes it is not easy to solve the required problem,
 we can turn to find another problem that already has a solution.
@@ -22,15 +22,15 @@ position after n steps. Find the PMF of Y .
 ***Solution:***
 
 The only movement at each step is to move right or to move left.
-We're tempted to consider the number of right steps
-and left steps after all movement. And then we get the position
-by adding up these steps:
+We're tempted to consider the number of right movements and
+the number of left movements after n steps. And then get the position
+by adding them up:
 
-* if the number of right steps is $$x$$
-* then the number of left steps is $$n-x$$
-* and the position is $$x-(n-x)=2x-n$$
+* if the number of right movements is $$x$$
+* then the number of left movements is $$n-x$$
+* and then the position is $$x-(n-x)=2x-n$$
 
-Let X be the number of right steps after n steps.
+Let X be the number of right movements after n steps.
 Its distribution and PMF are known:
 
 $$X\sim Bin(n,1/2)$$

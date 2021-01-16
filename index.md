@@ -54,7 +54,7 @@ Zero:
 [Unique](./math/zero/uniqueness.md),  
 Perspective:
 [Back to Abstraction](./math/perspective/back_to_abstraction.md),
-[Begin with what you known](./math/perspective/known.md),
+[Begin with known problems](./math/perspective/known.md),
 [Reasoning](./math/perspective/reasoning.md),  
 
 ## Some thoughts on Programming
