@@ -6,7 +6,7 @@ Decomposition is a way of investigating properties of an object.
 The object is cut into pieces with special relationship between them.
 We can look deeply into the key point.
 
-## linear combination
+## Example: linear combination
 
 A vector can be taken as a linear combination of a basis of
 its vector space. Thus we can make use of theorem on a basis.
@@ -16,6 +16,43 @@ $$ v = a_1 v_1 + \cdots + a_n v_n$$
 We can get the value of a linear map on this vector:
 
 $$T(v) = a_1 T(v_1) + \cdots + a_n T(v_n)$$
+
+## Example: Law of total probability (LOTP)
+
+***Theorem 2.3.6*** (Law of total probability).
+Let $$A_1,\cdots,A_n$$ be a partition of the
+sample space S (i.e., the $$A_i$$ are disjoint events
+and their union is S), with $$P(A_i)>0$$ for all i. Then
+
+$$P(B)=\sum_i P(B\cap A_i)=\sum^n_{i=1} P(B|A_i)P(A_i)$$
+
+The following picture shows the LOTP:
+
+![law of total probability](../pic/law_of_total_probability.png)
+
+LOTP is used to decompose complicated probability problems
+into simpler pieces, and it is often used in tandem with Bayes’ rule.
+
+***Example 2.3.7*** (Random coin). You have one fair coin, and one biased coin which
+lands Heads with probability 3/4. You pick one of the coins at random and flip
+it three times. It lands Heads all three times. Given this information, what is the
+probability that the coin you picked is the fair one?
+
+***solution***
+
+Let A be the event that the chosen coin lands Heads three times and let F be the
+event that we picked the fair coin. We are interested in P(F|A), but it is easier to
+find P(A|F) since it helps to know which coin we have; this suggests
+using Bayes’ rule and the law of total probability. Doing so, we have
+
+$$\begin{align*} P(F|A)
+& = \frac{P(A|F)P(F)}{\color{red}{P(A)}} \\
+& = \frac{P(A|F)P(F)}{\color{red}{P(A|F)P(F)+P(A|F^C)P(F^C)}} \\
+& = \frac{(1/2)^3*1/2}{(1/2)^3*1/2+(3/4)^3*1/2} \\
+& \approx 0.23
+\end{align*}$$
+
+It is difficult to get P(A) directly. But LOTP helps to solve the issue.
 
 ## Orthogonal decomposition
 

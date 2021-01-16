@@ -31,7 +31,6 @@ The code entry: [ML](https://github.com/hzget/machine-learning).
 I read several math books and write what I like.
 
 [Generalization](./math/generalization.md),
-[Decomposition](./math/decomposition.md),
 [Function](./math/function.md),
 [Set](./math/set.md),
 [Complete description](./math/complete.md),
@@ -53,6 +52,7 @@ Zero:
 [Equation](./math/zero/equation.md),
 [Unique](./math/zero/uniqueness.md),  
 Perspective:
+[Decomposition](./math/perspective/decomposition.md),
 [Back to Abstraction](./math/perspective/back_to_abstraction.md),
 [Begin with known problems](./math/perspective/known.md),
 [Reasoning](./math/perspective/reasoning.md),  
