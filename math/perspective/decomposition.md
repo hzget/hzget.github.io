@@ -54,6 +54,52 @@ $$\begin{align*} P(F|A)
 
 It is difficult to get P(A) directly. But LOTP helps to solve the issue.
 
+## Example: linearity of Expectation
+
+***Theorem 4.2.1*** (Linearity of expectation).
+For any r.v.s X,Y and any constant c,
+$$\begin{align*}
+E(X+Y) & = E(X)+E(Y) \\
+E(cX)  & = cE(X)
+\end{align*}$$
+
+We'll prove the first equation.
+
+***hint***
+
+***Definition 4.1.1*** (Expectation of a discrete r.v.).
+The expected value (also called the expectation or mean)
+of a discrete r.v. X whose distinct possible values are
+$$x_1,x_2,\cdots$$ is defined by
+
+$$E(X)=\sum_j x_j P(X=x_j)$$
+
+The event $$X=x_j$$ may be different with the event $$Y=y_k$$.
+In other words, the corresponding outcomes maybe different.
+It is difficult to combine $$\sum_x xP(X=x)$$ and $$\sum_y yP(Y=y)$$.
+
+However, we can decompose the event $$X=x_j$$ into
+small pieces: the event contains all the outcomes
+corresponding to the value $$X(s)=x_j$$.
+Thus we have another equally valid way to
+calculate an average: we can take a weighted average
+of the values of individual pebbles. In other words, if
+X(s) is the value that X assigns to pebble s,
+we can take the weighted average
+
+$$E(X)=\sum_s X(s) P(\{s\})$$
+
+Each item in the sum formula corresponds to an outcome
+s of the sample space. And the Mass of s -- P({s}) is fixed
+for every r.v. defined on this sample space.
+Thus we can now combine E(X) and E(Y) in this "piece" form:
+
+$$\begin{align*} E(X)+E(Y)
+& = \sum_s X(s) P(\{s\}) + \sum_s Y(s) P(\{s\}) \\
+& = \sum_s (X+Y)(s) P(\{s\}) \\
+& = E(X+Y)
+\end{align*}$$
+
 ## Orthogonal decomposition
 
 ***Cauchy-Schwarz Inequality:*** If $$u,\,v\in V$$,
