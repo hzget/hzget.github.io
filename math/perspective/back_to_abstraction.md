@@ -48,12 +48,19 @@ $$\binom{n}{k} = \frac{n(n-1)\cdots (n-k+1)}{k!} = \frac{n!}{k!(n-k)!}$$
 ***Analysis***
 
 Firstly, we need to ***label object*** for counting.
-Every people id corresponds to a ball No.
+Each person has an Id and choosing one person from
+a group just like choosing a ball from a box of balls
+without replacement or choosing a seat from the cinema.
 
 Then we need to find whether it is a problem of ***Multiplication rule***
 or a problem of ***Binomial coeffient***. The former means there
 are 3 sub-experiments and each corresponds to one title, whereas
 the latter means "n choose k" without difference between them (there are no orders/titles in a subset).
+
+We can look at it in a different way. The former
+just chooses 3 persons and give them different titles or tokens,
+whereas the latter chooses 3 person and give them the same token/tag
+and they constitude a subset with that tag.
 
 ### Example of Permutations of a word
 

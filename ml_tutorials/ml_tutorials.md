@@ -20,12 +20,15 @@ Lession 1 gives the basic concept of ML and shows how it resolves a problem.
 
 ### what is machine learning
 
-we can take ML as subfield of Artificial Intelligence:
+To find a solution for common issues, the traditional method
+is that the engineers or scientists study cases in the context,
+find rules and then apply rules to the issues.
+Machine Learning just makes the ***learning process***
+automatically (without effort from human).
 
-* early AI program: one AI program resolves one problem - Example: Deep Blue
-* today AI program: one AI program resolves many problems without even to be written - Example: Alpha Go
+In a word, Machine Learning is a technique that learns rules from examples.
 
-ML makes that possible. It's the study of algorithms that ***learn from examples and experience automatically*** instead of relying on hard-coded rules.
+We can take ML as subfield of Artificial Intelligence.
 
 ### An example
 
@@ -35,7 +38,10 @@ how to tell the differece between an apple and an orange?
 
 #### Traditional method
 
-The programmer writes hard code rules - ratio of green and yellow pixels. The drawbacks:
+The programmer studies their properties and finds rules
+to distinguish them - ratio of green and yellow pixels.
+After that, he writes a hard coded program that contains this rule.
+The drawbacks:
 
 * have to find rules and write code manually
 * can not handle new situations: grey image; images do not contain apples or oranges in them at all
@@ -49,8 +55,9 @@ instead of writing them by hand. That is what ML does.
 #### ML method
 
 The ML program finds patterns (rules) from examples **automatically** - it
-is the process of training the classifier (in other words, creating a function).
-And then, the classifier takes the input (the problem), analyzes it (run the function) and then gives an output (type of the fruit).
+is a process of training the classifier (in other words, creating a function).
+The observed rules can then be used to resolve problems. For example,
+to classify an object, the classifier takes the input (the problem), analyzes it (run the function) and then gives an output (type of the fruit).
 
 ![ml classify apple](./pic/apple_classifier.png)
 
@@ -60,6 +67,7 @@ advantages:
 2. can resolve new situations of this problem (just update the training data)
 3. can resolve different problems (no need to be rewritten, just only re-train the classifier with new examples)
 4. can resolve problems that cannot be resolved with traditional way
+5. the computer runs fast than human and can upgrade constantly.
 
 steps for ML:
 

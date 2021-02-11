@@ -58,6 +58,7 @@ It is difficult to get P(A) directly. But LOTP helps to solve the issue.
 
 ***Theorem 4.2.1*** (Linearity of expectation).
 For any r.v.s X,Y and any constant c,
+
 $$\begin{align*}
 E(X+Y) & = E(X)+E(Y) \\
 E(cX)  & = cE(X)

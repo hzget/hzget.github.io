@@ -14,15 +14,36 @@ and review some knowledge learnt in the past.
 
 ## Network Protocols
 
+Devices on the networks talk with each other. We can
+stop at the side and find what they're talking about.
+
+Network protocols make the rule for the participant.
+It tells who can send a command and who will respond.
+For example, Alice can ask Bob to hand in the salary and
+Bob can accept or reject the request.
+
+In my past jobs, I work with the following two protocols.
+They're used as the machanism to manage network devices:
+auto-configuration, status collection and so on.
+
 [Netconf/Yang](https://en.wikipedia.org/wiki/NETCONF) - RFC 6241, RFC 7950 by IETF  
 [CWMP](https://en.wikipedia.org/wiki/TR-069) - TR069 by Broadband Forum  
 Security: ssh, https
 
 ## Aritificial Intelligence
 
+AI plays an increasingly important role in the society and
+deserves great attention. If we let it go, we'll be
+replaced before long. To avoid being defected by AI,
+we can join hands with it.
+
 I have written tutorials to introduce two topics in AI:  
 [Machine Learning tutorial](./ml_tutorials/ml_tutorials.md) and
 [Neural Networks tutorial](./neural_networks/neural_networks.md).
+
+Machine Learning is a technique that learns rules from examples.
+Neural Networks makes a good job as a subfield of ML.
+The underlying principles are theroems in math.
 
 The code entry: [ML](https://github.com/hzget/machine-learning).
 
