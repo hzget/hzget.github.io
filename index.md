@@ -14,13 +14,11 @@ and review some knowledge learnt in the past.
 
 ## Network Protocols
 
-Devices on the networks talk with each other. We can
-stop at the side and find what they're talking about.
-
-Network protocols make the rule for the participant.
-It tells who can send a command and who will respond.
-For example, Alice can ask Bob to hand in the salary and
-Bob can accept or reject the request.
+Devices on the networks talk with each other.
+Network protocols make the rule of the dialogue.
+It tells who can send which command and who will respond.
+For example, the server may request status of the client
+and the client may respond with that info.
 
 In my past jobs, I work with the following two protocols.
 They're used as the machanism to manage network devices:
@@ -41,7 +39,7 @@ I have written tutorials to introduce two topics in AI:
 [Machine Learning tutorial](./ml_tutorials/ml_tutorials.md) and
 [Neural Networks tutorial](./neural_networks/neural_networks.md).
 
-Machine Learning is a technique that learns rules from examples.
+Machine Learning is a technique that learns rules from examples automatically.
 Neural Networks makes a good job as a subfield of ML.
 The underlying principles are theroems in math.
 

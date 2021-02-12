@@ -2,16 +2,12 @@
 # Machine Learning Tutorial
 
 It's a quick guide of Machine Learning.
-I learned from a video ***Machine Learning Recipes with Josh Gordon***
-and write what I got & thought. I will write something new
-after reading other materials.
-
-From this blog, We'll learn the basic concept of Machine Learning and get some intuition via examples.
+From this blog, We'll learn the basic concept and get some intuition.
 
 Lession 1 gives the basic concept of ML and shows how it resolves a problem.  
-[Lession 2](./02.md) shows what a ML classifier looks like and how it classifies an input.  
+[Lession 2](./02.md) shows what a ML classifier looks like.  
 [Lession 3](./03.md) shows what makes a good feature.  
-[Lession 4](./04.md) shows how a classifier is trained -- how params are adjusted for the model.  
+[Lession 4](./04.md) shows how to train a classifier -- how params are adjusted for the model.  
 [Lession 5](./05.md) shows how to code a classifier -- implement the interface fit() and predict()  
 [Lession 6](./06.md) code another classifier from scratch -- a decision tree classifier  
 [Summary](./summary.md) review the knowledge
@@ -26,9 +22,8 @@ find rules and then apply rules to the issues.
 Machine Learning just makes the ***learning process***
 automatically (without effort from human).
 
-In a word, Machine Learning is a technique that learns rules from examples.
-
-We can take ML as subfield of Artificial Intelligence.
+In a word, Machine Learning is a technique that
+learns rules from examples automatically.
 
 ### An example
 
