@@ -20,7 +20,7 @@ To find a solution for common issues, the traditional method
 is that the engineers or scientists study cases in the context,
 find rules and then apply rules to the issues.
 Machine Learning just makes the ***learning process***
-automatically (without effort from human).
+run automatically (without effort from human).
 
 In a word, Machine Learning is a technique that
 learns rules from examples automatically.

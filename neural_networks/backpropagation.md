@@ -3,12 +3,12 @@
 # 05 Backpropagation
 
 There's one thing we did not talk about: how to calculate the partial derivatives?
-In other words, how to calculate $$\frac{\partial C_{X_j}}{\partial w}$$ for
+In other words, how to calculate $$\frac{\partial C_{X_i}}{\partial w}$$ for
 the "step" function:
 
  \begin{eqnarray}
   w & \rightarrow & w' = w-\frac{\eta}{n}
-  \sum_j \frac{\partial C_{X_j}}{\partial w}
+  \sum_j \frac{\partial C_{X_i}}{\partial w}
 \end{eqnarray}
 
 I will discuss how to calculate in this class. First begin with some convention:
@@ -74,7 +74,9 @@ $$
 
 ## The backpropagation algorithm
 
-We can write the algorithm now:
+For each example $$X_i$$, calculate its partial derivatives (by
+the following algrithms). After consuming all the examples,
+we get the step listed in the beginning of the page.
 
 1. Feedforward: For each l=2,3,…,L compute
 
@@ -90,5 +92,5 @@ We can write the algorithm now:
 
 4. Output: The gradient of the cost function is given by
 
-    $$\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j \; \mbox{and} \;
-      \frac{\partial C}{\partial b^l_j} = \delta^l_j$$
+    $$\frac{\partial C_{X_i}}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j \; \mbox{and} \;
+      \frac{\partial C_{X_i}}{\partial b^l_j} = \delta^l_j$$

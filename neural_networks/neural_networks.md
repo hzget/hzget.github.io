@@ -2,11 +2,10 @@
 
 # Neural Networks and Deep Learning
 
-This is a tutorial about deep learning, the 2nd part of the series.
+This is a tutorial about deep learning, the 2nd part of
+the [ML series](../ml_tutorials/ml_tutorials.md).
 
-I start the investigation of deep learning from a blog
-[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/index.html)
-and record what I get & think during the progress.
+I will give basic underlying priciples and some intuition.
 
 Lession 1 Neural Nets  
 [Lession 2](./cost_function_math.md) Underlying Principles  
@@ -17,8 +16,8 @@ Lession 1 Neural Nets
 ## Intro
 
 From the [Machine Learning Tutorial](../ml_tutorials/ml_tutorials.md), we know that
-the ML app learns rules from examples and create a classifier
-containing these rules. And then it can predict new input.
+the ML app learns rules from examples automatically and create a classifier
+containing these rules. And then it can apply the rules on new input.
 
 Deep learning is a model-based ML algrithm that
 works as follows: it adjusts its params so that
@@ -26,7 +25,8 @@ the training data "works" on it --- rules are learnt.
 Thus the model with the adjusted params contains rules from examples.
 
 We will discuss the model in deep learning: neural networks.
-And resove only one problem via it: recognize the handwritten digits:  
+And resolve only one problem via it: recognize the handwritten digits:
+
 ![handwritten digits](./pic/digits.png)
 
 I will write code from scratch and talk about some math principles.
@@ -35,12 +35,8 @@ Programmers shall be able to fill in the gap.
 
 ## 01 Neural Nets
 
-[Deep learning](https://en.wikipedia.org/wiki/Deep_learning)
-(also known as deep structured learning) is part of a broader family of
-machine learning methods based on **artificial neural networks**
-with representation learning.
-
-Thus we will begin from the concept of neuron.
+Neural Network is the model used in deep learning.
+We will begin from the concept of neuron.
 
 ### how neuron works
 
