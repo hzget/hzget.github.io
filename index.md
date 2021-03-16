@@ -6,8 +6,7 @@ Interests:
 
 * Network Protocols
 * Artificial Intelligence
-* Math
-* Debugging
+* Programming and Debugging
 
 The blog is intended to keep track of the learning progress
 and review some knowledge learnt in the past.
@@ -76,7 +75,7 @@ Perspective:
 [Begin with known problems](./math/perspective/known.md),
 [Reasoning](./math/perspective/reasoning.md),  
 
-## Some thoughts on Programming
+## Programming
 
 * [Logs](./programming/log.md)
 * [Tools](./programming/tools/tools.md)
