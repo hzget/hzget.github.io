@@ -182,6 +182,64 @@ The prediction is equal to the actual "label" from the testing data.
 >>>  
 ```
 
+## cost performance
+
+We train the neural network using mini-batch stochastic gradient descent.
+For example, consume first 10 examples (samples) from training set
+to "adjust" the params and then consume next 10 examples
+to "adjust" the params in previous step and move on util
+consuming all the data. After all examples are consumed,
+the rules are learnt -- the adjusted params contains the rules.
+In fact, the cost function moves from one point towards lower one
+in the process of learning. If we run the process again,
+the cost function will go down accordingly.
+
+After each adjustment, we can get the cost value.
+For one sample, get the diff of its predicted result and
+the label in the training data. And then get the norm of the diff.
+After that, average the value of all samples.
+From the result we can find that the first 7 points (about 70 examples)
+move down quickly.
+
+```python
+(base) D:\proj\machine-learning\dl_tutorial>python check_costs.py
+Epoch 0: initial average cost 2.0957424218157428
+Epoch 0 count 10: updated average cost 1.7439818300725332
+Epoch 0 count 20: updated average cost 1.3532854197310502
+Epoch 0 count 30: updated average cost 1.2982101070378387
+Epoch 0 count 40: updated average cost 1.218452896900201
+Epoch 0 count 50: updated average cost 1.1206892641045965
+Epoch 0 count 60: updated average cost 1.0538241701665976
+Epoch 0 count 70: updated average cost 1.0293428236384916
+Epoch 0 count 80: updated average cost 1.018684393074763
+Epoch 0 count 90: updated average cost 1.0117557258666785
+Epoch 0 count 100: updated average cost 1.005255957652576
+Epoch 0 count 110: updated average cost 0.9996249278107859
+Epoch 0 count 120: updated average cost 0.9985507188069835
+Epoch 0 count 130: updated average cost 0.9985162068856857
+...
+Epoch 0 count 47000: updated average cost 0.2240201392039186
+Epoch 0 count 48000: updated average cost 0.22742225890566345
+Epoch 0 count 49000: updated average cost 0.21618775671695706
+Epoch 0 count 50000: updated average cost 0.2252645995655769
+Epoch 0: updated average cost 0.2252645995655769
+Epoch 0: 9082 / 10000
+Epoch 1: updated average cost 0.17146706173153295
+Epoch 1: 9231 / 10000
+Epoch 2: updated average cost 0.144790093686286
+Epoch 2: 9299 / 10000
+Epoch 3: updated average cost 0.14262610226121752
+Epoch 3: 9334 / 10000
+Epoch 4: updated average cost 0.12740396485430303
+Epoch 4: 9378 / 10000
+
+(base) D:\proj\machine-learning\dl_tutorial>
+```
+
+It draws a picture:
+
+![check cost](./pic/check_cost.png)
+
 ## time performance
 
 Checking time performance is a good way to verify our improvement each time
