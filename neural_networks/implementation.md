@@ -14,7 +14,18 @@ Just give the usage.
 Note: math of the backpropagation will be introduced in next chapter.
 Thus you can bypass this code section and go back after learning its math principle.
 
-## Usage of the lib
+## GUI interface: online handwrite test
+
+The following is an implementation of the online handwrite test.
+The model has been trained and saved before the test.
+
+```python
+>>> python test_online.py
+```
+
+![handwritten online](./pic/hw_online.png)
+
+## CLI interface: Usage of the lib
 
 ### Load the data set
 
