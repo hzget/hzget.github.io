@@ -25,9 +25,10 @@ the training data "works" on it --- rules are learnt.
 Thus the model with the adjusted params contains rules from examples.
 
 We will discuss the model in deep learning: neural networks.
-And resolve only one problem via it: recognize the handwritten digits:
+And resolve only one problem via it: recognize the handwritten digits.
+The following the implementation that predicts online handwrite.
 
-![handwritten digits](./pic/digits.png)
+![handwritten online](./pic/hw_online.png)
 
 I will write code from scratch and talk about some math principles.
 But I will not spend much time on some details because its a brief tutorial.
