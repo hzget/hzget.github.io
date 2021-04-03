@@ -2,7 +2,7 @@
 
 The previous tutorials [Machine learning](../ml_tutorials/ml_tutorials.md)
 and [Neural Networks](../neural_networks/neural_networks.md) give
-an intuition about what a ML app looks like and how it works under the hood.
+an intuition about what ML looks like and how it works under the hood.
 
 Now we will turn to topics about what a professional engineer deals with
 in the actual works.
@@ -14,11 +14,16 @@ are mainly two important things to deal with:
 * data (the examples)
 * algorithms (how to learn rules)
 
-Lession 1: Challenges of Machine Learning  
-Lession 2: test  
-Lession 3: check list  
-Lession 4: useful tools  
-Lession 5: data clean  
+Well prepared data will make the trained model generalize well.
+It contains sampling, investigation, training/test data split,
+data clean, feature engineering, feature scaling, pipling.
+
+Lession : Challenges of Machine Learning  
+Lession : [collect data and visualize it](./data_collection_and_visualization.md)  
+Lession : test  
+Lession : check list  
+Lession : useful tools  
+Lession : data clean  
 
 ## challenges of Machine Learning
 
@@ -59,7 +64,7 @@ Solutions:
 * gather more training data
 * reduce noise in the training data
 
-#### under fitting the training data
+#### underfitting the training data
 
 It occurs when the model is too simple to learn
 the underlying structure of the data.
