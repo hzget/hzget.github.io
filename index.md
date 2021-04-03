@@ -39,7 +39,7 @@ I have written tutorials to introduce two topics in AI:
 [Neural Networks tutorial](./neural_networks/neural_networks.md).
 Machine Learning is a technique that learns rules from examples automatically.
 Neural Networks makes a good job as a subfield of ML.
-The tutorials just give an ***intuition*** about what ML looks like
+These two tutorials just give an ***intuition*** about what ML looks like
 and how it works under the hood. The neural networks tutorial also gives
 an implementation to recognize hand-written digit:
 [online handwritten recognition](./neural_networks/implementation.md).
@@ -47,7 +47,7 @@ an implementation to recognize hand-written digit:
 The code entry: [ML](https://github.com/hzget/machine-learning).
 
 I have written another tutorial to introduce what
-a professinal engineer deals with in the actual work:
+a professinal engineer deals with in his actual work:
 [Machine Learning tech](./ml_tech/ml_tech.md).
 
 ## Math

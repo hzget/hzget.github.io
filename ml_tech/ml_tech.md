@@ -16,10 +16,10 @@ are mainly two important things to deal with:
 
 Well prepared data will make the trained model generalize well.
 It contains sampling, investigation, training/test data split,
-data clean, feature engineering, feature scaling, pipling.
+data clean, feature engineering, feature scaling, pipeling.
 
 Lession : Challenges of Machine Learning  
-Lession : [collect data and visualize it](./data_collection_and_visualization.md)  
+Lession : [Data Collection and Visualization](./data_collection_and_visualization.md)  
 Lession : test  
 Lession : check list  
 Lession : useful tools  

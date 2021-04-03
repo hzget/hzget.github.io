@@ -7,6 +7,7 @@ As stated in its website, [pandas](https://pandas.pydata.org/) is
 a fast, powerful, flexible and easy to use open source
 data analysis and manipulation tool,
 built on top of the Python programming language.
+We'll use it for our investigation.
 
 Suppose we want to find the relationship between
 happeness and wealth, we download the Better Life Index
@@ -15,8 +16,8 @@ the IMF's website. Then we get two csv files: oecd_bli_2015.csv
 and gdp_per_capita.csv. With these data, we can train
 a model for the investigation.
 
-We can merge data from these two files and then visualize
-it by pandas to get insights.
+Merge data from these two files and then visualize
+it to get insights.
 
 ```Python
 import os
@@ -37,7 +38,7 @@ full_country_stats = pd.merge(left=oecd_bli, right=gdp_per_capita, left_index=Tr
 full_country_stats.sort_values(by="GDP per capita", inplace=True)
 ```
 
-And we can get a table like following:
+Get a table like following:
 
 ```Python
 gdp_and_bli = full_country_stats[["GDP per capita","Life satisfaction"]]
@@ -54,7 +55,7 @@ United States       55805.204                7.2
 
 ```
 
-We can visualize the data by pandas and matplotlib:
+Visualize the data by pandas and matplotlib:
 
 ```Python
 import matplotlib.pyplot as plt
@@ -63,7 +64,7 @@ gdp_and_bli.plot(kind='scatter', x="GDP per capita", y='Life satisfaction')
 plt.axis([0, 60000, 0, 10])
 ```
 
-From the plot picture, we can assume there's
-a "linear" relationship. And can train it with a linear model.
-
 ![gdp and better life index](./pic/gdp_bli_data.png)
+
+From the plot picture, we can assume there's
+a "linear" relationship. And we can train it with a linear model.
