@@ -1,7 +1,7 @@
 # Data Collection and Visualization
 
 There're many tools for data collection and visualization.
-We shall be familiar with one of these tools.
+We shall be familiar with some of these tools.
 
 As stated in its website, [pandas](https://pandas.pydata.org/) is
 a fast, powerful, flexible and easy to use open source
@@ -13,8 +13,7 @@ Suppose we want to find the relationship between
 happeness and wealth, we download the Better Life Index
 data from OECD's website and GDP per capita data from
 the IMF's website. Then we get two csv files: oecd_bli_2015.csv
-and gdp_per_capita.csv. With these data, we can train
-a model for the investigation.
+and gdp_per_capita.csv.
 
 Merge data from these two files and then visualize
 it to get insights.

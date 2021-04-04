@@ -47,7 +47,7 @@ an implementation to recognize hand-written digit:
 The code entry: [ML](https://github.com/hzget/machine-learning).
 
 I have written another tutorial to introduce what
-a professinal engineer deals with in his actual work:
+a professional engineer deals with in his actual work:
 [Machine Learning tech](./ml_tech/ml_tech.md).
 
 ## Math

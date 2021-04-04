@@ -19,11 +19,13 @@ It contains sampling, investigation, training/test data split,
 data clean, feature engineering, feature scaling, pipeling.
 
 Lession : Challenges of Machine Learning  
-Lession : [Data Collection and Visualization](./data_collection_and_visualization.md)  
-Lession : test  
-Lession : check list  
-Lession : useful tools  
-Lession : data clean  
+[Data Collection and Visualization](./data_collection_and_visualization.md)  
+[Data Prepare](./data_prepare.md): investigation, data clean, feature engineering,
+feature scaling, pipeling.  
+[Split data set](./split_data_set.md)  
+check list  
+useful tools  
+data clean  
 
 ## challenges of Machine Learning
 
