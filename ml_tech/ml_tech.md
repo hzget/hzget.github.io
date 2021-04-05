@@ -3,9 +3,17 @@
 The previous tutorials [Machine learning](../ml_tutorials/ml_tutorials.md)
 and [Neural Networks](../neural_networks/neural_networks.md) give
 an intuition about what ML looks like and how it works under the hood.
-
 Now we will turn to topics about what a professional engineer deals with
-in the actual works.
+in his actual works.
+
+## Topics in this tutorial
+
+[Challenges of Machine Learning](./ml_tech.md),
+[Data Collection and Visualization](./data_collection_and_visualization.md),  
+[Data Prepare](./data_prepare.md): investigation, data clean, feature engineering,
+feature scaling, [pipeline](./data_prepare_pipeline.md), [Split data set](./split_data_set.md)
+
+## Challenges of Machine Learning
 
 Machine Learning is a techonique to learn rules
 from examples (the data) automatcially. Thus there
@@ -14,20 +22,12 @@ are mainly two important things to deal with:
 * data (the examples)
 * algorithms (how to learn rules)
 
-Well prepared data will make the trained model generalize well.
-It contains sampling, investigation, training/test data split,
-data clean, feature engineering, feature scaling, pipeling.
+There're challenges to handle data and algorithms. Most of the work
+of ML project development is to resolve these challenges.
 
-Lession : Challenges of Machine Learning  
-[Data Collection and Visualization](./data_collection_and_visualization.md)  
-[Data Prepare](./data_prepare.md): investigation, data clean, feature engineering,
-feature scaling, pipeling.  
-[Split data set](./split_data_set.md)  
-check list  
-useful tools  
-data clean  
-
-## challenges of Machine Learning
+* bad data
+* bad algorithms
+* trade-off of algorithms, performance, and so on
 
 ### bad data
 
@@ -41,9 +41,10 @@ data clean
 * overfitting
 * underfitting
 
-The following picture shows models trained by three
-different algorithms. The training data was generated
+Suppose we have a data set generated
 using a quadratic model with gaussian noise.
+The following picture shows models trained by three
+different algorithms.
 
 ![overfitting and underfitting](./pic/overfitting_underfitting.png)
 
@@ -58,7 +59,7 @@ that are not real. For example:
 
 * training set is noisy: errors, outliers and so on
 * sampling noise because of small sampling
-* pure chance: feature names has some pattern
+* pure chance: e.g., feature names has some pattern
 
 Solutions:
 

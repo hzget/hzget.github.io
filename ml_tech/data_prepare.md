@@ -1,8 +1,12 @@
 # Data Prepare
 
-After we know the end goal of the ML project,
-we need to collect data, investigate the data,
-and preprocess it for the learning algorithms.
+Before we feed data to the training process,
+we need to preprocess the data to make it be "a good teacher".
+The works includes:
+
+* collect data (discussed in previous lessons)
+* transform data in a required form
+* resolve challenges in the data process
 
 Suppose we're going to predict the median house value
 and the census data is provided for analysis.
@@ -54,15 +58,17 @@ housing = strat_train_set.drop("median_house_value", axis=1) # drop labels for t
 housing_labels = strat_train_set["median_house_value"].copy()
 ```
 
-## investigation
+## Investigation
 
 We'll discuss the following topics:
 
 * feature engineering
+* feature scaling
 * poor data quality
 * representative data (discussed in [split data set][split data set page])
+* text attributes
 
-All the steps can be packed in one [pipeline](./data_prepare_pipeling.md)
+All the steps can be packed in one [pipeline](./data_prepare_pipeline.md)
 and run automatically.
 
 ### correlations
@@ -130,22 +136,22 @@ data missing.
 # make a copy for investigation
 housing = strat_train_set.copy()
 
-In [3]: housing.info()
+housing.info()
 <class 'pandas.core.frame.DataFrame'>
-RangeIndex: 20640 entries, 0 to 20639
+Int64Index: 16512 entries, 17606 to 15775
 Data columns (total 10 columns):
-longitude             20640 non-null float64
-latitude              20640 non-null float64
-housing_median_age    20640 non-null float64
-total_rooms           20640 non-null float64
-total_bedrooms        20433 non-null float64
-population            20640 non-null float64
-households            20640 non-null float64
-median_income         20640 non-null float64
-median_house_value    20640 non-null float64
-ocean_proximity       20640 non-null object
+longitude             16512 non-null float64
+latitude              16512 non-null float64
+housing_median_age    16512 non-null float64
+total_rooms           16512 non-null float64
+total_bedrooms        16354 non-null float64
+population            16512 non-null float64
+households            16512 non-null float64
+median_income         16512 non-null float64
+median_house_value    16512 non-null float64
+ocean_proximity       16512 non-null object
 dtypes: float64(9), object(1)
-memory usage: 1.6+ MB
+memory usage: 1.4+ MB
 ```
 
 There're missing data in the total_bedrooms column.
@@ -192,5 +198,51 @@ memory usage: 1.3 MB
 ```
 
 The "total_bedrooms" column does not miss values now.
+
+### handle text and categorical attributes
+
+Most ML algorithms prefer to work with numbers,
+so we need to convert text attribute (categories)
+to numerical attributes.
+
+Even a ML algorithm can handle text attributes,
+it may detect text patterns by chance, which is unexpected.
+
+```python
+# make a copy for investigation
+housing = strat_train_set.copy()
+
+housing["ocean_proximity"].value_counts()
+Out[42]:
+<1H OCEAN     7276
+INLAND        5263
+NEAR OCEAN    2124
+NEAR BAY      1847
+ISLAND           2
+Name: ocean_proximity, dtype: int64
+```
+
+There're five catogaries. If we just give five
+numbers [0, 1, 2, 3, 4] accordingly, there will be new issue:
+ML algorithms will assume ***two nearby values
+are more similar than two distant values***.
+It is not case for our situation.
+
+To fix the issue, we can add a binary attribute for each catogory.
+It is called one-hot encoding: one and only one of the attribute
+is 1 (hot), while other attributes are 0 (cold).
+
+```python
+housing_cat = housing[["ocean_proximity"]]
+
+from sklearn.preprocessing import OneHotEncoder
+
+cat_encoder = OneHotEncoder()
+housing_cat_1hot = cat_encoder.fit_transform(housing_cat)
+```
+
+### Feature Scaling
+
+The feature scaling discussion will be added in the future.
 
 [split data set page]: ./split_data_set.md
