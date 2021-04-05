@@ -11,7 +11,7 @@ in his actual works.
 [Challenges of Machine Learning](./ml_tech.md),
 [Data Collection and Visualization](./data_collection_and_visualization.md),  
 [Data Prepare](./data_prepare.md): investigation, data clean, feature engineering,
-feature scaling, [pipeline](./data_prepare_pipeline.md), [Split data set](./split_data_set.md)
+feature scaling, [Pipeline](./data_prepare_pipeline.md), [Split data set](./split_data_set.md)
 
 ## Challenges of Machine Learning
 

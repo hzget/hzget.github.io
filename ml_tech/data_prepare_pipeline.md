@@ -89,10 +89,35 @@ full_pipeline = ColumnTransformer([
         ("cat", OneHotEncoder(), cat_attribs),
     ])
 
+# look, we only use one line of code to prepare the data
 housing_prepared = full_pipeline.fit_transform(housing)
 
 type(housing_prepared), housing_prepared.shape
 Out[13]: (numpy.ndarray, (16512, 16))
+```
+
+Let's have a quick overview of how to train models by this data.
+Suppose we train a linear model to fit the prepared training data.
+
+```python
+from sklearn.linear_model import LinearRegression
+
+lin_reg = LinearRegression()
+lin_reg.fit(housing_prepared, housing_labels)
+
+# let's try the full preprocessing pipeline on a few training instances
+# we'll see how easy to use it
+some_data = housing.iloc[:5]
+some_labels = housing_labels.iloc[:5]
+# only need to call the transform() method
+some_data_prepared = full_pipeline.transform(some_data)
+
+print("Predictions:", lin_reg.predict(some_data_prepared))
+Predictions: [210644.60459286 317768.80697211 210956.43331178  59218.98886849
+ 189747.55849879]
+
+print("Labels:", list(some_labels))
+Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 ```
 
 [pipeline page]: https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline
