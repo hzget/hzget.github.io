@@ -1,5 +1,36 @@
 # Split data set
 
+Suppose we have trained a model and it performs well
+on the training data. If we deploy it to the production
+system, we usually find that it performs badly on the
+production system.
+
+It is called overfitting -- overfit the training data.
+
+To resolve the issue, we need to generalize to
+a test data set. If it performs badly on it, we need
+to go back to the training process and fine-tune the model.
+
+After the modified model performs well on test data set,
+we may believe that the overfitting issue is resolved and
+then deploy the model to the production system again. We may still
+find that it performs badly on the production system.
+
+What happened? The model overfits both the training data set
+and the test data set.
+
+To resolve the issue, we can split the training data into two
+parts: one part is used to train the model and then generalize the model
+to the other part. The process is called cross-validation and
+the second part is called validation data set. We can try different
+training/validation sets, train different models and different hyperparameters
+and select the best model.
+
+We can deem that there's no overfitting issue now.
+And then generalize the model to the test set.
+
+## split data set to training data set and test data set
+
 ```python
 import numpy as np
 

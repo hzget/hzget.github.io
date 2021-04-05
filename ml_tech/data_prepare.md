@@ -6,7 +6,7 @@ The works includes:
 
 * collect data (discussed in previous lessons)
 * transform data in a required form
-* resolve challenges in the data process
+* resolve challenges of data
 
 Suppose we're going to predict the median house value
 and the census data is provided for analysis.
