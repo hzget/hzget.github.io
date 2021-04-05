@@ -7,7 +7,7 @@ production system.
 
 It is called overfitting -- overfit the training data.
 
-To resolve the issue, we need to generalize to
+To resolve the issue, we need to generalize the model to
 a test data set. If it performs badly on it, we need
 to go back to the training process and fine-tune the model.
 
@@ -17,7 +17,7 @@ then deploy the model to the production system again. We may still
 find that it performs badly on the production system.
 
 What happened? The model overfits both the training data set
-and the test data set.
+and the test data set!
 
 To resolve the issue, we can split the training data into two
 parts: one part is used to train the model and then generalize the model
@@ -30,6 +30,10 @@ We can deem that there's no overfitting issue now.
 And then generalize the model to the test set.
 
 ## split data set to training data set and test data set
+
+Note that we use the stratified sampling to avoid
+the sampling bias. The sampling bias will make a
+nonpresentative training data set.
 
 ```python
 import numpy as np
