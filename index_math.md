@@ -50,6 +50,37 @@ I have written another tutorial to introduce what
 a professional engineer deals with in his actual work:
 [Machine Learning tech](./ml_tech/ml_tech.md).
 
+## Math
+
+I read several math books and write what I like.
+
+[Generalization](./math/generalization.md),
+[Function](./math/function.md),
+[Set](./math/set.md),
+[Complete description](./math/complete.md),
+[Equality](./math/equality.md),  
+Definition:
+[Definition](./math/definition.md),
+[Design](./math/design.md),  
+Proof:
+[Proof](./math/proof_method.md),
+[Induction](./math/proof/induction.md),
+[Contradiction](./math/proof/contradiction.md),
+[Opposite](./math/proof/opposite.md),
+[Nature](./math/proof/nature.md),
+[Equation](./math/zero/equation.md),  
+Logic:
+[logic](./math/logic/logic.md),
+[is-to-and-how](./math/logic/is_to.md),  
+Zero:
+[Equation](./math/zero/equation.md),
+[Unique](./math/zero/uniqueness.md),  
+Perspective:
+[Decomposition](./math/perspective/decomposition.md),
+[Back to Abstraction](./math/perspective/back_to_abstraction.md),
+[Begin with known problems](./math/perspective/known.md),
+[Reasoning](./math/perspective/reasoning.md),  
+
 ## Programming
 
 * [Logs](./programming/log.md)

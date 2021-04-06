@@ -8,10 +8,11 @@ in his actual works.
 
 ## Topics in this tutorial
 
-[Challenges of Machine Learning](./ml_tech.md),
+[Challenges of Machine Learning](./ml_tech.md),  
 [Data Collection and Visualization](./data_collection_and_visualization.md),  
-[Data Prepare](./data_prepare.md): investigation, data clean, feature engineering,
-feature scaling, [Pipeline](./data_prepare_pipeline.md), [Split data set](./split_data_set.md)
+[Data Prepare](./data_prepare.md),
+[Data Set Split](./split_data_set.md),
+[Pipeline](./data_prepare_pipeline.md)
 
 ## Challenges of Machine Learning
 
@@ -22,7 +23,7 @@ are mainly two important things to deal with:
 * data (the examples)
 * algorithms (how to learn rules)
 
-There're challenges to handle data and algorithms. Most of the work
+There're challenges to handle data and algorithms. Most work
 of ML project development is to resolve these challenges.
 
 * bad data
