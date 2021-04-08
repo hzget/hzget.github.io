@@ -1,7 +1,7 @@
 # Data Prepare
 
-Before we feed data to the training process,
-we need to preprocess the data to make it be "a good teacher".
+Before feeding data to the training process,
+we need to preprocess the data to make it "a good teacher".
 The works includes:
 
 * collect data (discussed in previous lessons)
@@ -42,7 +42,7 @@ Out[2]:
 ## Split data
 
 We need to exclude test data from the data set before
-further investigation. Otherwise, our brain will detect patterns
+further exploration. Otherwise, our brain will detect patterns
 from all data (including test data) and lead
 to select a particular kind of ML model. In a word,
 it is highly prone to overfitting. The page [split data set][split data set page]
@@ -58,7 +58,7 @@ housing = strat_train_set.drop("median_house_value", axis=1) # drop labels for t
 housing_labels = strat_train_set["median_house_value"].copy()
 ```
 
-## Investigation
+## Exploration
 
 We'll discuss the following topics:
 

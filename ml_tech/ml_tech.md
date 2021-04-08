@@ -23,12 +23,9 @@ are mainly two important things to deal with:
 * data (the examples)
 * algorithms (how to learn rules)
 
-There're challenges to handle data and algorithms. Most work
-of ML project development is to resolve these challenges.
-
-* bad data
-* bad algorithms
-* trade-off of algorithms, performance, and so on
+There're challenges to handle these data and algorithms. Most work
+of ML project is to resolve these challenges:
+bad data, bad algorithms, trade-off of algorithms, performance, and so on.
 
 ### bad data
 
@@ -58,9 +55,9 @@ to new cases.
 It happens when a complex algorithm detects subtle patterns
 that are not real. For example:
 
-* training set is noisy: errors, outliers and so on
-* sampling noise because of small sampling
-* pure chance: e.g., feature names has some pattern
+* training set is noisy: errors, outliers and noise (e.g., Gaussian noise)
+* sampling noise because of small sampling (i.e., nonrepresentative data)
+* pure chance: e.g., "category names" of "category" feature have some pattern
 
 Solutions:
 

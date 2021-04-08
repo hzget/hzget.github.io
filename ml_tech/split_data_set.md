@@ -5,7 +5,7 @@ on the training data. If we deploy it to the production
 system, we usually find that it performs badly on the
 production system.
 
-It is called overfitting -- overfit the training data.
+It is called ***overfitting -- overfit the training data***.
 
 To resolve the issue, we need to generalize the model to
 a test data set. If it performs badly on it, we need
@@ -16,18 +16,30 @@ we may believe that the overfitting issue is resolved and
 then deploy the model to the production system again. We may still
 find that it performs badly on the production system.
 
-What happened? The model overfits both the training data set
-and the test data set!
+What happened?
+***The model overfits both the training data set and the test data set!***
 
 To resolve the issue, we can split the training data into two
-parts: one part is used to train the model and then generalize the model
-to the other part. The process is called cross-validation and
+parts: one part is used to train the model wheares
+the other part is used to "validate" the performance.
+The process is called cross-validation and
 the second part is called validation data set. We can try different
 training/validation sets, train different models and different hyperparameters
-and select the best model.
+and finally select the best model.
 
-We can deem that there's no overfitting issue now.
-And then generalize the model to the test set.
+If the selected model performs well on both training data set
+and validation data set, we can believe that the overfitting
+issue does not exist now. Otherwise, we shall find a way to
+fix the issue during cross-validation until we get an accepted result.
+Then generalize the model to the test set.
+
+In summary,
+
+* training data: train the model
+* validation data is used for cross-validation:
+  * find the best model with fine-tuned hyperparameter(s)
+  * check overfitting and underfitting issue
+* test data set: test the performance
 
 ## split data set to training data set and test data set
 

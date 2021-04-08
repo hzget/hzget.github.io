@@ -19,7 +19,7 @@ It tells who can send which command and who will respond.
 For example, the server may request status of the client
 and the client may respond with that info.
 
-In my past jobs, I work with the following two protocols.
+In my past jobs, I worked with the following two protocols.
 They're used as the machanism to manage network devices:
 auto-configuration, status collection and so on.
 
@@ -30,7 +30,7 @@ Security: ssh, https
 ## Aritificial Intelligence
 
 AI plays an increasingly important role in the society and
-deserves great attention. If we let it go, we'll be
+deserves great attention. If we don't care about it, we'll be
 replaced before long. To avoid being defected by AI,
 we can join hands with it.
 
