@@ -12,7 +12,9 @@ in his actual works.
 [Data Collection and Visualization](./data_collection_and_visualization.md),  
 [Data Prepare](./data_prepare.md),
 [Data Set Split](./split_data_set.md),
-[Pipeline](./data_prepare_pipeline.md)
+[Pipeline](./data_prepare_pipeline.md),  
+fine-tune the model,  
+performance,  
 
 ## Challenges of Machine Learning
 
