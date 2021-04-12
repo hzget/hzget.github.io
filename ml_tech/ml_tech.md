@@ -13,6 +13,7 @@ in his actual works.
 [Data Prepare](./data_prepare.md),
 [Data Set Split](./split_data_set.md),
 [Pipeline](./data_prepare_pipeline.md),  
+[Cross Validation](./cross_validation.md),  
 fine-tune the model,  
 performance,  
 
