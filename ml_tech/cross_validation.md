@@ -6,7 +6,7 @@ overfitting & underfitting issue and fine-tune the model.
 
 We will go through the whole process to show how cross-validation works.
 
-## Underfitting and Overfiting issue
+## Underfitting and Overfitting issue
 
 Suppose we have prepared the data for training and
 we will try the linear model at first. The "prepare data"
@@ -34,7 +34,7 @@ Out[7]: 68628.19819848922
 
 It's not a good score: most median_housing_values range
 between \$120,000 and \$256,000.
-The model ***underfits the training data***. It happens
+The model ***underfitted the training data***. It happens
 when the features do not provide enough information to
 make a good prediction, or when the model is not powerful enough.
 
@@ -97,89 +97,14 @@ Standard deviation: 2439.4345041191004
 
 The scores shows that Decision Tree Model indeed
 ***overfitted*** the training data, it performs badly
-on the validation set. Is Decision Tree Model better
-than the Liear Model? Just run the cross-validation
-on the Linear Model for a check:
+on the validation sets.
 
-```python
-lin_scores = cross_val_score(lin_reg, housing_prepared, housing_labels,
-                             scoring="neg_mean_squared_error", cv=10)
-lin_rmse_scores = np.sqrt(-lin_scores)
-display_scores(lin_rmse_scores)
-
-Scores: [66782.73843989 66960.118071   70347.95244419 74739.57052552
- 68031.13388938 71193.84183426 64969.63056405 68281.61137997
- 71552.91566558 67665.10082067]
-Mean: 69052.46136345083
-Standard deviation: 2731.6740017983498
-```
-
-It shows that the Decision Tree Model is overfitting
-so badly that it performs worse than Linear Regression Model.
-The underfitting or overfitting issue is not resolved, we
-need to try more models.
-
-Try the Random Forests:
-
-```python
-from sklearn.ensemble import RandomForestRegressor
-
-forest_reg = RandomForestRegressor(n_estimators=100, random_state=42)
-forest_reg.fit(housing_prepared, housing_labels)
-
-# check underfitting issue
-housing_predictions = forest_reg.predict(housing_prepared)
-forest_mse = mean_squared_error(housing_labels, housing_predictions)
-forest_rmse = np.sqrt(forest_mse)
-forest_rmse
-Out[16]: 18603.515021376355
-
-# check overfitting issue
-forest_scores = cross_val_score(forest_reg, housing_prepared, housing_labels,
-                                scoring="neg_mean_squared_error", cv=10)
-forest_rmse_scores = np.sqrt(-forest_scores)
-display_scores(forest_rmse_scores)
-
-Scores: [49519.80364233 47461.9115823  50029.02762854 52325.28068953
- 49308.39426421 53446.37892622 48634.8036574  47585.73832311
- 53490.10699751 50021.5852922 ]
-Mean: 50182.303100336096
-Standard deviation: 2097.0810550985693
-```
-
-It looks much better. But the score on the training data
-is still much lower than on the validation sets, meaning
-that the model is still overfitting the training set.
-
-Try the Support Vector Machine. And the result shows
-Support Vector Machine performs worse.
-
-```python
-from sklearn.svm import SVR
-
-svm_reg = SVR(kernel="linear")
-svm_reg.fit(housing_prepared, housing_labels)
-housing_predictions = svm_reg.predict(housing_prepared)
-svm_mse = mean_squared_error(housing_labels, housing_predictions)
-svm_rmse = np.sqrt(svm_mse)
-svm_rmse
-Out[17]: 111094.6308539982
-
-# check overfitting issue
-svm_scores = cross_val_score(svm_reg, housing_prepared, housing_labels,
-                                scoring="neg_mean_squared_error", cv=10)
-svm_rmse_scores = np.sqrt(-svm_scores)
-display_scores(svm_rmse_scores)
-
-Scores: [105342.09141998 112489.24624123 110092.35042753 113403.22892482
- 110638.90119657 115675.8320024  110703.56887243 114476.89008206
- 113756.17971227 111520.1120808 ]
-Mean: 111809.84009600841
-Standard deviation: 2762.393664321567
-```
-
-Compare four models:
+Let's try different models to shortlist a few promising models.
+And then fine-tune these promising models to get a better one.
+The following is the result of several models:
 
 ![RMSE Compare](./pic/rmse_cross_validation.png)
 
-We have tried several models and shortlist a few promising models.
+Among these models, Random Forest is the best one. However, it
+still overfitted the training data. We can fine-tune the model
+so that it performs better.
