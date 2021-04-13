@@ -34,7 +34,7 @@ Out[7]: 68628.19819848922
 
 It's not a good score: most median_housing_values range
 between \$120,000 and \$256,000.
-The model ***underfitted the training data***. It happens
+The model ***underfits the training data***. It happens
 when the features do not provide enough information to
 make a good prediction, or when the model is not powerful enough.
 
@@ -57,7 +57,7 @@ Out[12]: 0.0
 The underfitting issue is resolved. And it seems
 this model is absolutely perfect. However, it is
 much more likely that the model has
-***badly overfitted the training data***. To check
+***badly overfits the training data***. To check
 whether there is an overfitting issue, we can make
 use of cross-validation introduced in [Split Data Set](./split_data_set.md)
 page: split the training set into two part, train
@@ -96,7 +96,7 @@ Standard deviation: 2439.4345041191004
 ```
 
 The scores shows that Decision Tree Model indeed
-***overfitted*** the training data, it performs badly
+***overfits*** the training data, it performs badly
 on the validation sets.
 
 Let's try different models to shortlist a few promising models.
@@ -106,5 +106,5 @@ The following is the result of several models:
 ![RMSE Compare](./pic/rmse_cross_validation.png)
 
 Among these models, Random Forest is the best one. However, it
-still overfitted the training data. We can fine-tune the model
+still overfits the training data. We can fine-tune the model
 so that it performs better.
