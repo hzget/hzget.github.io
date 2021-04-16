@@ -14,8 +14,8 @@ in his actual works.
 [Data Set Split](./split_data_set.md),
 [Pipeline](./data_prepare_pipeline.md),  
 [Cross Validation](./cross_validation.md),
-[fine-tune the model](./fine_tune_the_model.md),  
-performance,  
+[Fine-tune the model](./fine_tune_the_model.md),  
+[Performance Measures](./performance_measures.md),  
 
 ## Challenges of Machine Learning
 
@@ -26,8 +26,7 @@ are mainly two important things to deal with:
 * data (the examples)
 * algorithms (how to learn rules)
 
-There're challenges to handle these data and algorithms. Most work
-of ML project is to resolve these challenges:
+Most works of ML project are to resolve challenges of them:
 bad data, bad algorithms, trade-off of algorithms, performance, and so on.
 
 ### bad data

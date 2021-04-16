@@ -97,7 +97,8 @@ Standard deviation: 2439.4345041191004
 
 The scores shows that Decision Tree Model indeed
 ***overfits*** the training data, it performs badly
-on the validation sets.
+on the validation sets while performs perfectly on
+the training set.
 
 Let's try different models to shortlist a few promising models.
 And then fine-tune these promising models to get a better one.
@@ -105,6 +106,10 @@ The following is the result of several models:
 
 ![RMSE Compare](./pic/rmse_cross_validation.png)
 
+Linear Regression and SVM perform badly on both
+sets -- severe underfitting.
+Decision Tree performs perfectly on training set
+whereas badly on validation sets -- severe overfitting.
 Among these models, Random Forest is the best one. However, it
 still overfits the training data. We can fine-tune the model
 so that it performs better.
