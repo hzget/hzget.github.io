@@ -13,9 +13,8 @@ We will introduce 3 different performance measures for
 this classifier:
 
 * accuracy
-* Confusion Matrix
-  * precison and recall
-  * receiver operating characteristic -- ROC
+* precison and recall
+* receiver operating characteristic -- ROC
 
 ## Prepare data and the binary classifier
 
@@ -80,3 +79,68 @@ It demonstrates that accuracy is generally not
 a preferred performance mearsure, especially when
 we're dealing with skewed dataset. (i.e., when some
 classes are much more frequent than others).
+
+## Confusion Matrix
+
+A much better way to evaluate a classifier is to
+make use of the confusion matrix. The general idea
+is to count the number of times instance of class A
+are classified as class B. This information is preferred
+in many cases.
+
+The following code get the confusion matrix of our case.
+
+```python
+# Note: cross_val_predict return predictions, different with cross_val_score
+from sklearn.model_selection import cross_val_predict
+y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3)
+
+from sklearn.metrics import confusion_matrix
+confusion_matrix(y_train_5, y_train_pred)
+
+Out[3]:
+array([[53892,   687],
+       [ 1891,  3530]], dtype=int64)
+```
+
+We're using a binary classifier, thus the confusion matrix is 2 by 2.
+Let's create a table:
+
+ Confusion Matrix        | Predicted Negative         | Predicted Positive
+------------------------ | -------------------------- | ------------------
+Actual Negative | True Negative  (TN): 53892 | False Positive (FP): 687
+Actual Positive | False Negative (FN): 1891  | True Positive  (TP): 3530
+
+Each row of a confusion matrix represents an ***actual class***,
+while each column represents a ***predicted class***.
+And each element of the matrix represents
+the number of times instance of a specific actual class are
+classified as a specific predicted class.
+
+## Precison and Recall
+
+The confusion matrix gives lots of information,
+but sometimes we prefer a more concise metric.
+An interesting one is the accuracy of the positive predictions:
+***precision*** of the classifier: precison = TP / (TP+FP).
+It is typically used along with another metric named ***recall***,
+also called ***sensitivity*** or the ***true positive rate*** (TPR):
+recall = TP / (TP+FN).
+
+There're cases where we care about precision or recall or both. And it can
+be the metric of the performance measure.
+
+* ***care about precison***
+    Suppose we want to train a classifier to detect
+    videos that are safe for kids. We will prefer a classifier
+    that rejects many good videos but keeps only safe
+    ones (high precision), rather than a classifier with
+    high recall but lets a few bad videos show up in the product.
+* ***care about recall***
+    Suppose we want to train a classifier to detect
+    shoplifters in surveillance images. It is probably fine
+    if the classifier has only 30% precision as long as
+    it has 99% recall.
+
+There is a concept of ***precision/recall trade-off***: increasing
+precision reduce recall, and vice versa.
