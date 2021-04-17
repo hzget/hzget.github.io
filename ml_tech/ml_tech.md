@@ -16,6 +16,8 @@ in his actual works.
 [Cross Validation](./cross_validation.md),
 [Fine-tune the model](./fine_tune_the_model.md),  
 [Performance Measures](./performance_measures.md),  
+[Improvement](./improvement.md),  
+[Error Analysis](./error_analysis.md),  
 
 ## Challenges of Machine Learning
 

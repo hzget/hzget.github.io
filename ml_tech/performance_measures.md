@@ -117,6 +117,9 @@ And each element of the matrix represents
 the number of times instance of a specific actual class are
 classified as a specific predicted class.
 
+There're more analysis of confusion matrix, please refer to
+the [Error Analysis](./error_analysis.md) page.
+
 ## Precison and Recall
 
 The confusion matrix gives lots of information,
@@ -199,10 +202,10 @@ Recall always equals to 100%.
 But FNR always equals to 100%! It is an extremly bad performance.
 Its ROC AUC always equals to 0.
 
-## which performance measure to use ?
+## Which performance measure to use ?
 
-The precison/recall and ROC metrics tells different
-aspect of the performance, thus we need both.
+The precison/recall and ROC metrics tell different
+aspects of the performance, thus we need both.
 
 With the precison/recall metric, we can change
 threshold according to the actual requirment. And
