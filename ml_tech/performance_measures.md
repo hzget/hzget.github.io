@@ -198,3 +198,13 @@ Let's move back to the Never5Classifier model.
 Recall always equals to 100%.
 But FNR always equals to 100%! It is an extremly bad performance.
 Its ROC AUC always equals to 0.
+
+## which performance measure to use ?
+
+The precison/recall and ROC metrics tells different
+aspect of the performance, thus we need both.
+
+With the precison/recall metric, we can change
+threshold according to the actual requirment. And
+with the ROC AUC metric, we can compare different
+classifier and choose the best one.
