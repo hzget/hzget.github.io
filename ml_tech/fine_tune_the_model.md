@@ -80,7 +80,7 @@ Out[134]: 47730.22690385927
 There're a lot more to improve the model after the "first round" fine-tuning.
 We can gain good insights on the problem by inspecting
 the best estimator. For example, the RandomForestRegressor
-can indicate the relative importance of eahc attribute
+can indicate the relative importance of each attribute
 for making accurate predictions:
 
 ```python

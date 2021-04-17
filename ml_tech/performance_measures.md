@@ -142,5 +142,59 @@ be the metric of the performance measure.
     if the classifier has only 30% precision as long as
     it has 99% recall.
 
-There is a concept of ***precision/recall trade-off***: increasing
+## Precison/Recall Trade-off
+
+There is a concept of ***precision/recall trade-off*** : increasing
 precision reduce recall, and vice versa.
+
+For each instance, the classifier computes a score (or probability, or the-alike).
+If the score is greater than a ***threshold***, it assigns
+the instance to the positive class; otherwise it assigns it to
+the negative class. Thus decreasing the threshold will increase
+precison and reduce recall. Increasing the threshlod will change
+them accordingly.
+
+The following picture shows the relationship of precison, recall and threshold.
+
+![precision_recall_vs_threshold](./pic/precision_recall_vs_threshold.png)
+
+However, if we go back to the Never5Classifier model,
+precison/recall still does not show real performance.
+The precision always equals to 90% and recall always equals to 100%.
+
+## The ROC Curve
+
+The receiver operating characteristic (ROC) curve is
+another common tool used with binary classifiers. It
+plots recall (true positive rate) vs FPR (false positive rate).
+There's also a trade-off: the higher the recall (TPR),
+the more false positive (FPR) the classifier produces.
+
+The following shows ROC curve of two different models:
+
+![roc curve](./pic/roc_curve.png)
+
+The Random Forest model performs better (the ROC curve
+is much close to the top-left corner).
+
+There's a concise metric to compare classifiers:
+the ***area under the curve*** (AUC). A perfect classifier
+will have a ROC AUC equal to 1, whereas a purely random
+classifier (the dotted line) have a ROC AUC equal to 0.5.
+
+```python
+from sklearn.metrics import roc_auc_score
+sgd_roc_auc = roc_auc_score(y_train_5, y_scores)
+forest_roc_auc = roc_auc_score(y_train_5, y_scores_forest)
+
+In [58]: (sgd_roc_auc, forest_roc_auc)
+Out[58]: (0.9604938554008616, 0.9983436731328145)
+```
+
+As we can see, the Random Forest model has ROC AUC equal to 0.998.
+It's better than that of SGD model.
+
+Let's move back to the Never5Classifier model.
+Recall always equals to 100%.
+But FNR always equals to 100%! It is an extremly bad performance.
+Its ROC AUC always equals to 0.

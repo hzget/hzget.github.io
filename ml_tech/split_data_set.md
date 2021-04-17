@@ -22,10 +22,12 @@ What happened?
 To resolve the issue, we can split the training data into two
 parts: one part is used to train the model wheares
 the other part is used to "validate" the performance.
-The process is called cross-validation and
+The process is called ***cross-validation*** and
 the second part is called validation data set. We can try different
 training/validation sets, train different models and different hyperparameters
-and finally select the best model.
+and finally select the best model. (refer to
+[cross validatioon][cross validation page] and
+[fine-tune the mode][fine-tune the mode page] pages).
 
 If the selected model performs well on both training data set
 and validation data set, we can believe that the overfitting
@@ -64,3 +66,6 @@ for train_index, test_index in split.split(housing, housing["income_cat"]):
 for set_ in (strat_train_set, strat_test_set):
     set_.drop("income_cat", axis=1, inplace=True)
 ```
+
+[cross validation page]: ./cross_validation.md
+[fine-tune the mode page]: ./fine_tune_the_model.md
