@@ -10,14 +10,13 @@ in his actual works.
 
 [Challenges of Machine Learning](./ml_tech.md),  
 [Data Collection and Visualization](./data_collection_and_visualization.md),  
-[Data Prepare](./data_prepare.md),
+[Data Preparation](./data_prepare.md),
 [Data Set Split](./split_data_set.md),
 [Pipeline](./data_prepare_pipeline.md),  
 [Cross Validation](./cross_validation.md),
 [Fine-tune the model](./fine_tune_the_model.md),  
 [Performance Measures](./performance_measures.md),  
 [Improvement](./improvement.md),  
-[Error Analysis](./error_analysis.md),  
 
 ## Challenges of Machine Learning
 
@@ -29,16 +28,16 @@ are mainly two important things to deal with:
 * algorithms (how to learn rules)
 
 Most works of ML project are to resolve challenges of them:
-bad data, bad algorithms, trade-off of algorithms, performance, and so on.
+bad data, bad algorithms, performance, and so on.
 
-### bad data
+## bad data
 
 * Insufficient quantity of training data
 * Nonrepresentative training data. (sampling noise & sampling bias)
 * Poor-quality data (outliers, errors, noise) solution: data cleaning
 * Irrelevant features. solution: feature engineering
   
-### bad algorithms
+## bad algorithms
 
 * overfitting
 * underfitting
@@ -50,7 +49,7 @@ different algorithms.
 
 ![overfitting and underfitting](./pic/overfitting_underfitting.png)
 
-#### overfitting the training data
+### overfitting the training data
 
 Overfitting means that the model performs well on
 the training data, but it does not generalize well
@@ -69,7 +68,7 @@ Solutions:
 * gather more training data
 * reduce noise in the training data
 
-#### underfitting the training data
+### underfitting the training data
 
 It occurs when the model is too simple to learn
 the underlying structure of the data.
@@ -80,7 +79,7 @@ Solutions:
 * feed better features (feature engineering)
 * reduce the constrains on the model
 
-#### which is the case ?
+### which is the case ?
 
 How can you tell that your model is overfitting
 or underfitting the data?
@@ -100,7 +99,7 @@ the learning curves of the linear model and 10-th degree polynomial model.
 
 ![learning curves](./pic/learning_curves.png)
 
-#### generalization error
+### generalization error
 
 A model's generalization error can be expressed
 as three very different errors:

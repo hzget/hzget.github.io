@@ -19,6 +19,9 @@ lin_reg = LinearRegression()
 lin_reg.fit(housing_prepared, housing_labels)
 ```
 
+To evaluate the regression model, we can take
+the ***root mean square error*** (RMSE) as the
+performance measure metric.
 Check the regression model's RMSE on the whole
 training set:
 
