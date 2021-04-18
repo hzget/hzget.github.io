@@ -117,8 +117,10 @@ And each element of the matrix represents
 the number of times instance of a specific actual class are
 classified as a specific predicted class.
 
+With this concept, the previous accuracy equals to (TN+TP)/(FN+FP).
+
 There're more analysis of confusion matrix, please refer to
-the [Error Analysis](./error_analysis.md) page.
+the [Improvement](./improvement.md) page.
 
 ## Precison and Recall
 
