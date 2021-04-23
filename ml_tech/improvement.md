@@ -1,14 +1,24 @@
 # Improvement
 
-After we have found a promising model, we
-need to find ways to improve its performance
+After [Cross-Validation](./cross_validation.md)
+and [Fine-Tuning the models](./fine_tune_the_model.md),
+we get a promising model. Now it's time
+to find ways to improve its [performance](./performance_measures.md)
 as best as we can. For example,
 
-* data: optimize the data-preparation steps
-* algorithm: improve the underlying algorithms
-* output: analyze errors
+* data: optimize data-preparation steps
+* algorithm: fine-tune the model, optimize underlying algorithms
+* final output: analyze errors
 * performance measures: analyze metrics
 * introduce more techniques
+
+Note that the list contains steps that we have
+already gone through. In fact it's an iterative
+process: once we get the pipeline up and running,
+we can anaylze outputs of some steps to gain
+more insight, and then come back to the whole
+exploration steps to make some improvement.
+Repeat the process until we get an accepted performance.
 
 ## Data Preparation Steps
 

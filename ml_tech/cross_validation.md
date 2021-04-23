@@ -1,10 +1,13 @@
 # Cross Validation
 
-Cross-Validation plays an important role in the model
-selection and model fine-tuning. It helps a lot to check
-overfitting & underfitting issue and fine-tune the model.
-
+Cross-Validation plays an important role in model
+selection and model fine-tuning.
 We will go through the whole process to show how cross-validation works.
+The following topics will be discussed:
+
+* cross-validation for overfitting issue
+* cross-validation for model selection
+* cross-validation for [model fine-tuning](./fine_tune_the_model.md)
 
 ## Underfitting and Overfitting issue
 

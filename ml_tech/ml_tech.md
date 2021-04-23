@@ -4,9 +4,7 @@ The previous tutorials [Machine learning](../ml_tutorials/ml_tutorials.md)
 and [Neural Networks](../neural_networks/neural_networks.md) give
 an intuition about what ML looks like and how it works under the hood.
 Now we will turn to topics about what a professional engineer deals with
-in his actual works.
-
-## Topics in this tutorial
+in his actual works:
 
 [Challenges of Machine Learning](./ml_tech.md),  
 [Data Collection and Visualization](./data_collection_and_visualization.md),  
@@ -15,7 +13,7 @@ in his actual works.
 [Pipeline](./data_prepare_pipeline.md),  
 [Cross Validation](./cross_validation.md),
 [Fine-tune the model](./fine_tune_the_model.md),  
-[Performance Measures](./performance_measures.md),  
+[Performance Measures](./performance_measures.md),
 [Improvement](./improvement.md),  
 
 ## Challenges of Machine Learning
@@ -27,12 +25,11 @@ are mainly two important things to deal with:
 * data (the examples)
 * algorithms (how to learn rules)
 
-Most works of ML project are to resolve challenges of them:
+***Most works of ML project are to resolve the challenges*** :
 bad data, bad algorithms, performance, and so on.
 
 ## bad data
 
-* Insufficient quantity of training data
 * Nonrepresentative training data. (sampling noise & sampling bias)
 * Poor-quality data (outliers, errors, noise) solution: data cleaning
 * Irrelevant features. solution: feature engineering

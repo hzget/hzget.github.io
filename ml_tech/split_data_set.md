@@ -1,5 +1,12 @@
 # Split data set
 
+The following will be discussed:
+
+* overfitting & underfitting
+* cross-validation
+* data set split --- training set, validation set, test set
+* sampling bias
+
 Suppose we have trained a model and it performs well
 on the training data. If we deploy it to the production
 system, we usually find that it performs badly on the

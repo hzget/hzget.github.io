@@ -4,7 +4,7 @@ Before feeding data to the training process,
 we need to preprocess the data to make it "a good teacher".
 The works includes:
 
-* collect data (discussed in previous lessons)
+* [collect data](./data_collection_and_visualization.md)
 * transform data in a required form
 * resolve challenges of data
 

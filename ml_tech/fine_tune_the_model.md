@@ -1,13 +1,20 @@
 # Fine-Tune the model
 
 Since we have a shortlist of promising models, it's
-time to fine-tune the model. GridSearchCV can help us
+time to fine-tune the models. We will discuss
+following topics:
+
+* fine-tune the model with GridSearchCV
+* fine-tune data preparation steps
+* automate the whole process in one pipeline
+
+## Fine-Tune the model with GridSearchCV
+
+GridSearchCV can help us
 for this task. We just need to give it a list of
 hyperparameters to experiment, it will evaluate
 all combinations of these hyperparameter values during
 cross-validation.
-
-## Fine-Tune the model with GridSearchCV
 
 ```python
 from sklearn.model_selection import GridSearchCV
