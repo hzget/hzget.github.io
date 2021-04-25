@@ -17,13 +17,36 @@ Thus you can bypass this code section and go back after learning its math princi
 ## GUI interface: online handwrite test
 
 The following is an implementation of the online handwrite test.
-The model has been trained and saved before the test.
+It will load default model "my_model.pkl" trained by
+the command "python train_model.py".
 
 ```python
->>> python test_online.py
+(my_env) D:\proj\machine-learning\dl_tutorial>python test_online.py
 ```
 
 ![handwritten online](./pic/hw_online.png)
+
+## CLI interface: test image of digit
+
+The following command just predict the digit of the default image in 'pic/digit.png'.
+
+![digit image](./pic/digit.png)
+
+```python
+(my_env) D:\proj\machine-learning\dl_tutorial>python test_image.py
+scores of the digits 0~9:
+ [[2.73679845e-11]
+ [3.31265182e-08]
+ [9.99944508e-01]
+ [1.53740222e-11]
+ [5.78165936e-07]
+ [9.92570802e-11]
+ [2.66445137e-07]
+ [1.47497477e-05]
+ [5.54896149e-07]
+ [1.78630262e-04]]
+most likely to be: 2
+```
 
 ## CLI interface: Usage of the lib
 

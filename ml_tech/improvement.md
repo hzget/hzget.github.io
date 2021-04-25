@@ -6,8 +6,12 @@ we get a promising model. Now it's time
 to find ways to improve its [performance](./performance_measures.md)
 as best as we can. For example,
 
-* data: optimize data-preparation steps
-* algorithm: fine-tune the model, optimize underlying algorithms
+* data:
+  * more feature engineering
+  * tune hyperparameters of data-preparation steps
+* algorithm:
+  * compare many more models and tune hyperparameters
+  * optimize underlying algorithms
 * final output: analyze errors
 * performance measures: analyze metrics
 * introduce more techniques
