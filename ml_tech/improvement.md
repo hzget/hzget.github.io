@@ -7,6 +7,7 @@ to find ways to improve its [performance](./performance_measures.md)
 as best as we can. For example,
 
 * data:
+  * do more with challenges of bad data
   * more feature engineering
   * tune hyperparameters of data-preparation steps
 * algorithm:
@@ -23,6 +24,10 @@ we can anaylze outputs of some steps to gain
 more insight, and then come back to the whole
 exploration steps to make some improvement.
 Repeat the process until we get an accepted performance.
+
+Also note that the final goal is to reduce
+the [generalization error](./ml_tech.md): Bias, Variance
+and Inrreducible error. We shall reduce all these errors.
 
 ## Data Preparation Steps
 

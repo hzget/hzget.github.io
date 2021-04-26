@@ -15,6 +15,7 @@ in his actual works:
 [Fine-tune the model](./fine_tune_the_model.md),  
 [Performance Measures](./performance_measures.md),
 [Improvement](./improvement.md),  
+Computational Complexity
 
 ## Challenges of Machine Learning
 
@@ -117,3 +118,6 @@ and thus overfit the training data.
 * Irreducible error
 
 It is due to the noisiness of the data itself.
+The only way to reduce this type of error is to
+clean up the data (e.g., fix the data source,
+such as broken sensors, or detect and remove outliers).

@@ -28,7 +28,7 @@ the command "python train_model.py".)
 
 ## CLI interface: test image of digit
 
-The following command just predict the digit of the default image in 'pic/digit.png'.
+The following command just predict default digit image -- 'pic/digit.png'.
 
 ```python
 > python test_image.py
