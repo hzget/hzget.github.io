@@ -25,10 +25,6 @@ more insight, and then come back to the whole
 exploration steps to make some improvement.
 Repeat the process until we get an accepted performance.
 
-Also note that the final goal is to reduce
-the [generalization error](./ml_tech.md): Bias, Variance
-and Inrreducible error. We shall reduce all these errors.
-
 ## Data Preparation Steps
 
 We can go back to the data preparation stage and optimize
