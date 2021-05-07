@@ -46,7 +46,7 @@ scores of the digits 0~9:
 most likely to be: 2
 ```
 
-## CLI interface: Usage of the lib
+## Explore the lib
 
 ### Load the data set
 

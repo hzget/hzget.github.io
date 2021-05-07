@@ -44,8 +44,6 @@ and how it works under the hood. The neural networks tutorial also gives
 an implementation to recognize hand-written digit:
 [online handwritten recognition](./neural_networks/implementation.md).
 
-The code entry: [ML](https://github.com/hzget/machine-learning).
-
 I have written another tutorial to introduce what
 a professional engineer deals with in his actual work:
 [Machine Learning tech](./ml_tech/ml_tech.md).
