@@ -89,7 +89,7 @@ We can find ways to "reduce" the subtle patterns
 that only belong to the training data,
 or preclude the model from learning these patterns.
 
-***Ensemble Learning*** provides this advantages.
+***Ensemble Learning*** helps for this task.
 A Random Forest is an ensemble of Decision Trees,
 generally trained via the bagging method (or sometimes
 pasting). ***Bagging introduces extra diversity***
