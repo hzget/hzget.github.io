@@ -7,7 +7,7 @@ Suppose $$A \in \mathcal{L}(\mathcal{R}^n, \mathcal{R}^m)$$
 and $$b \in \mathcal{L}(\mathcal{R}^m)$$.
 Find $$x \in \mathcal{L}(\mathcal{R}^n)$$ to get $$min \|b - Ax\|$$.
 
-## Explore eigenvectors of $$A^A$$ and $$AA^T$$
+## Explore eigenvectors of $$A^TA$$ and $$AA^T$$
 
 $$\left(A^TA\right)^T = A^TA$$ shows that $$A^TA$$ is self-adjoint.
 Thus $$\mathcal{R}^n$$ has an orthonormal basis
@@ -103,6 +103,8 @@ min\|b-Ax\|^2 &= \|P_{U^\bot} b\|^2 = \sum_{i=r+1}^m(u_i^Tb)^2
 
 ## Singular Value Decomposition (SVD)
 
+We can also solve the issue via SVD.
+
 Suppose $$(v_1,\cdots,v_n)$$ is an orthonormal
 basis of $$A^TA \in \mathcal{L}(\mathcal{R}^n)$$.
 Construct matrix of $$S \in \mathcal{L}(\mathcal{R}^n)$$
@@ -140,6 +142,7 @@ Suppose $$(v_1,\cdots,v_n)$$ is an orthonormal
 basis of $$A^TA \in \mathcal{L}({\mathcal{R}^n})$$.
 And $$(u_1,\cdots,u_m)$$ is an orthonormal
 basis of $$AA^T \in \mathcal{L}({\mathcal{R}^m})$$.
+Thus we get the Singular Value Decomposition:
 
 $$A \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}
 = \begin{bmatrix} u_1 & \cdots & u_m \end{bmatrix}
@@ -153,10 +156,8 @@ $$A \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}
 \end{bmatrix}_{mn}
 $$
 
-We can write it in another form $$AV=U\Sigma$$,
-thus we get the Singular Value Decomposition:
-
-$$A=U\Sigma V^T$$
+We can write it in matrix form:
+$$AV=U\Sigma$$ or $$A=U\Sigma V^T$$
 
 How to get min of $$\|b - A_{mn}x\|$$ ?
 
