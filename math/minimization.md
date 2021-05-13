@@ -74,11 +74,7 @@ finding the orthogonal projection of b.
 ![minimization](./pic/projection_minimization.png)
 
 If $$Ax=P_Ub \,(U = \mbox{range} A)$$, we get the min:
-
-$$min\|b-Ax\|=\|P_{U^\bot}b\|$$.
-
-Suppose $$(v_1,\cdots,v_n)$$ is orthonormal basis
-of $$A^TA$$, we have
+$$min\|b-Ax\|=\|P_{U^\bot}b\|$$. Because
 
 $$\begin{align*}
 x    & = a_1v_1 + \cdots + a_nv_n \\
@@ -90,7 +86,7 @@ P_Ub & = \langle b, u_1 \rangle u_1 + \cdots +\langle b, u_r \rangle u_r
 Thus,
 
 $$\begin{align*} Ax = P_Ub
-& \Rightarrow a_i\sigma_i = u_i^T \\
+& \Rightarrow a_i\sigma_i = \langle b, u_i \rangle \\
 & \Rightarrow a_i = \frac{u_i^Tb}{\sigma_i}
 \end{align*}$$
 
@@ -105,15 +101,14 @@ min\|b-Ax\|^2 &= \|P_{U^\bot} b\|^2 = \sum_{i=r+1}^m(u_i^Tb)^2
 
 We can also solve the issue via SVD.
 
-Suppose $$(v_1,\cdots,v_n)$$ is an orthonormal
-basis of $$A^TA \in \mathcal{L}(\mathcal{R}^n)$$.
 Construct matrix of $$T \in \mathcal{L}(\mathcal{R}^n)$$
 with standard basis:
 
 $$M(T,(e_1,\cdots,e_n)) =
 \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}$$
 
-And
+And matrix of $$T^\ast \in \mathcal{L}(\mathcal{R}^n)$$
+with standard basis will be:
 
 $$M(T^\ast,(e_1,\cdots,e_n)) =
 \begin{bmatrix}
