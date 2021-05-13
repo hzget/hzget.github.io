@@ -81,6 +81,8 @@ Perspective:
 [Begin with known problems](./math/perspective/known.md),
 [Reasoning](./math/perspective/reasoning.md),  
 
+[Minimization Problem](./math/minimization.md),  
+
 ## Programming
 
 * [Logs](./programming/log.md)
