@@ -48,9 +48,9 @@ of M(A) is $$\mbox{range} A$$:
 $$Ax = \begin{bmatrix} C_1 & C_2 & \cdots & C_n \end{bmatrix} x$$
 
 The following equation shows that the row space
-of M(A) is $$\mbox{null} A^T$$.
+of M(A) is $$(\mbox{null} A)^\bot$$.
 
-$$Ax = \begin{bmatrix} A_1 \\ A_2 \\ \vdots \\ A_m \end{bmatrix} x$$
+$$Ax = \begin{bmatrix} A_1 \\ A_2 \\ \vdots \\ A_m \end{bmatrix} x = 0$$
 
 Explore the relationship of eigenvectors of $$A^TA$$
 and eigenvectors of $$AA^T$$. For i = 1,2,..., r:
