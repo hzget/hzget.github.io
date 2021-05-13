@@ -48,7 +48,7 @@ of M(A) is $$\mbox{range} A$$:
 $$Ax = \begin{bmatrix} C_1 & C_2 & \cdots & C_n \end{bmatrix} x$$
 
 The following equation shows that the row space
-of M(A) is $$\mbox{null} A$$.
+of M(A) is $$\mbox{null} A^T$$.
 
 $$Ax = \begin{bmatrix} A_1 \\ A_2 \\ \vdots \\ A_m \end{bmatrix} x$$
 
@@ -68,8 +68,8 @@ of $$AA^T$$.
 
 ## Orthogonal Projection for Minimization Problem
 
-We can solve the minimization problem via
-the orthogonal projection.
+We can solve the minimization problem by
+finding the orthogonal projection of b.
 
 ![minimization](./pic/projection_minimization.png)
 
@@ -107,33 +107,33 @@ We can also solve the issue via SVD.
 
 Suppose $$(v_1,\cdots,v_n)$$ is an orthonormal
 basis of $$A^TA \in \mathcal{L}(\mathcal{R}^n)$$.
-Construct matrix of $$S \in \mathcal{L}(\mathcal{R}^n)$$
+Construct matrix of $$T \in \mathcal{L}(\mathcal{R}^n)$$
 with standard basis:
 
-$$M(S,(e_1,\cdots,e_n)) =
+$$M(T,(e_1,\cdots,e_n)) =
 \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}$$
 
 And
 
-$$M(S^\ast,(e_1,\cdots,e_n)) =
+$$M(T^\ast,(e_1,\cdots,e_n)) =
 \begin{bmatrix}
 v_1^T \\ \vdots \\ v_n^T
 \end{bmatrix}$$
 
-Thus
+We'll explore the property of the linear map $$T$$ and $$T^\ast$$.
 
 $$\begin{align*}
 x        & = a_1v_1 + \cdots + a_nv_n \\
-S^\ast x & = a_1S^\ast v_1 + \cdots + a_nS^\ast v_n \\
+T^\ast x & = a_1T^\ast v_1 + \cdots + a_nT^\ast v_n \\
          & = a_1e_1 + \cdots + a_ne_n \\
 \end{align*}$$
 
-Thus $$\|S^\ast x\|  = \|x\|$$, in other words,
-$$S^\ast$$ is an isometry. Thus we have
+Thus $$\|T^\ast x\|  = \|x\|$$, in other words,
+$$T^\ast$$ is an isometry. Thus we have
 
 $$\begin{align*}
-S^\ast S & = SS^\ast = I \\
-S^\ast   & = S^{-1}
+T^\ast T & = TT^\ast = I \\
+T^\ast   & = T^{-1}
 \end{align*}$$
 
 Now turn to SVD.
