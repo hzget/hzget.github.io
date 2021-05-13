@@ -3,7 +3,7 @@
 # Minimization
 
 Suppose $$A \in \mathcal{L}(\mathcal{R}^n, \mathcal{R}^m)$$.
-Since $$\left(A^TA\right)^T = A^TA$$, $$A^TA$$ is self-adjoint.
+$$\left(A^TA\right)^T = A^TA$$, thus $$A^TA$$ is self-adjoint.
 Thus $$\mathcal{R}^n$$ has an orthonormal basis
 consisting of eigenvectors of $$A^TA$$:
 
@@ -88,3 +88,86 @@ $$\begin{align*}
 x & = \sum_{i=1}^r \frac{u_i^Tb}{\sigma_i}v_i  \\
 min\|b-Ax\| &= \|P_{U^\bot} b\|^2 = \sum_{i=r+1}^m(u_i^Tb)^2
 \end{align*}$$
+
+## Singular Value Decomposition (SVD)
+
+Suppose $$(v_1,\cdots,v_n)$$ is an orthonormal
+basis of $$A^TA \in \mathcal{L}{\mathcal{R}^n}$$.
+Construct matrix of $$S \in \mathcal{L}{\mathcal{R}^n}$$
+with standard basis:
+
+$$M(S,(e_1,\cdots,e_n)) =
+\begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}$$
+
+And
+
+$$M(S^\ast,(e_1,\cdots,e_n)) =
+\begin{bmatrix}
+v_1^T \\ \vdots \\ v_n^T
+\end{bmatrix}$$
+
+Thus
+
+$$\begin{align*}
+x        & = a_1v_1 + \cdots + a_nv_n \\
+S^\ast x & = a_1S^\ast v_1 + \cdots + a_nS^\ast v_n \\
+         & = a_1e_1 + \cdots + a_ne_n \\
+\end{align*}$$
+
+Thus $$\|S^\ast x\|  = \|x\|$$, in other words,
+$$S^\ast$$ is an isometry. Thus we have
+
+$$\begin{align*}
+S^\ast S & = SS^\ast = I \\
+S^\ast   & = S^{-1}
+\end{align*}$$
+
+Now turn to SVD.
+
+Suppose $$(v_1,\cdots,v_n)$$ is an orthonormal
+basis of $$A^TA \in \mathcal{L}({\mathcal{R}^n})$$.
+And $$(u_1,\cdots,u_m)$$ is an orthonormal
+basis of $$AA^T \in \mathcal{L}({\mathcal{R}^m})$$.
+
+$$A \begin{bmatrix} v_1 & \cdots & v_n \end{bmatrix}
+= \begin{bmatrix} u_1 & \cdots & u_m \end{bmatrix}
+\begin{bmatrix}
+\sigma_1 \\
+ & \ddots \\
+ & & \sigma_r \\
+ & & & 0  \\
+ & & & & \ddots  \\
+ & & & & & 0  \\
+\end{bmatrix}_{mn}
+$$
+
+We can write it in another form $$AV=U\Sigma$$,
+thus we get the Singular Value Decomposition:
+
+$$A=U\Sigma V^T$$
+
+How to get min of $$\|b - A_{mn}x\|$$ ?
+
+$$\begin{align*} \|b-Ax\|
+& = \|U^T(b-Ax)\| \\
+& = \|U^Tb-U^TAx\| \\
+& = \|U^Tb-\Sigma V^Tx\| \\
+& = \|U^Tb-\Sigma z\| \\
+\|b-Ax\|^2 & = \sum_{i=1}^r(u_i^Tb-\sigma_iz_i)^2 + \sum_{i=r+1}^m(u_i^Tb)^2
+\end{align*}$$
+
+To get $$min \|b-Ax\|$$, we need the first slot equal 0,
+in other words, $$z_i=\frac{u_i^Tb}{\sigma_i}$$.
+From $$V^Tx=z$$, we get
+
+$$x = Vz =
+\begin{bmatrix}v_1 & \cdots & v_n \end{bmatrix}
+\begin{bmatrix}
+\frac{1}{\sigma_1}u_1^Tb \\ \vdots \\ \frac{1}{\sigma_r} u_r^Tb\\
+0 \\ \vdots \\ 0
+\end{bmatrix}
+= \sum_{i=1}^r \frac{1}{\sigma_i}u_i^Tbv_i$$
+
+Thus we have
+
+$$min\|b-Ax\| = \sum_{i=r+1}^m(u_i^Tb)^2$$
