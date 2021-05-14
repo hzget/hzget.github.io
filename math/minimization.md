@@ -1,6 +1,6 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-# Minimization
+# Minimization Problem
 
 ***End goal*** :  
 Suppose $$A \in \mathcal{L}(\mathcal{R}^n, \mathcal{R}^m)$$
@@ -30,8 +30,8 @@ We get an orthonormal list $$(u_1, \cdots, u_r)$$.
 It is an orthonormal basis of rangeA:
 
 $$\begin{align*}
-v   & = a_1 v_1 + \cdots + a_r v_r + a_{r+1} v_{r+1} + \cdots + a_n v_n \\
-Av  & = a_1Av_1 + \cdots + a_rAv_r + 0 + \cdots + 0 \\
+x   & = a_1 v_1 + \cdots + a_r v_r + a_{r+1} v_{r+1} + \cdots + a_n v_n \\
+Ax  & = a_1Av_1 + \cdots + a_rAv_r + 0 + \cdots + 0 \\
     & = a_1 \sigma_1 u_1 + \cdots + a_r \sigma_r u_r
 \end{align*}$$
 
@@ -77,9 +77,7 @@ If $$Ax=P_Ub \,(U = \mbox{range} A)$$, we get the min:
 $$min\|b-Ax\|=\|P_{U^\bot}b\|$$. Because
 
 $$\begin{align*}
-x    & = a_1v_1 + \cdots + a_nv_n \\
-Ax   & = a_1Av_1 + \cdots + a_rAv_r \\
-     & = a_1\sigma_1u_1 + \cdots + a_r\sigma_ru_r \\
+Ax   & = a_1\sigma_1u_1 + \cdots + a_r\sigma_ru_r \\
 P_Ub & = \langle b, u_1 \rangle u_1 + \cdots +\langle b, u_r \rangle u_r
 \end{align*}$$
 
