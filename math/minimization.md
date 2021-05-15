@@ -16,18 +16,18 @@ consisting of eigenvectors of $$A^TA$$:
 $$A^TA(v_1,\cdots,v_r,v_{r+1},\cdots,v_n)
 = (\lambda_1 v_1,\cdots,\lambda_r v_r,0v_{r+1},\cdots,0v_n)$$
 
-And each eigenvalue is no less than 0: $$\lambda_i \geq 0$$.
-
 Now explore the vector $$Av_i$$.
 
-$$(Av_i)^T(Av_j)=v^T_i A^T A v_j = \lambda_j v^T_i v_j$$
+$$(Av_i)^T(Av_j)=v^T_i A^T A v_j = \lambda_j v^T_i v_j = \lambda_j \mbox{ or } 0$$
 
-If k > r, $$\|Av_k\|^2 = 0 \rightarrow Av_k=0$$.  
-If i <= r, suppose
+If i > r, $$\|Av_i\|^2 = 0 \rightarrow Av_i=0$$  
+If i <= r, $$\|Av_k\|^2 = \lambda_i \gt 0 \rightarrow \|Av_i\|=\sqrt{\lambda_i}$$  
+Suppose
+
 $$u_i = \frac{Av_i}{\|Av_i\|}=\frac{Av_i}{\sqrt{\lambda_i}}=\frac{Av_i}{\sigma_i}$$ .
 
 We get an orthonormal list $$(u_1, \cdots, u_r)$$.
-It is an orthonormal basis of rangeA:
+It is an orthonormal basis of $$range A$$:
 
 $$\begin{align*}
 x   & = a_1 v_1 + \cdots + a_r v_r + a_{r+1} v_{r+1} + \cdots + a_n v_n \\
@@ -35,7 +35,8 @@ Ax  & = a_1Av_1 + \cdots + a_rAv_r + 0 + \cdots + 0 \\
     & = a_1 \sigma_1 u_1 + \cdots + a_r \sigma_r u_r
 \end{align*}$$
 
-We also get an orthonormal basis of nullA: $$(v_{r+1},\cdots, v_n)$$.
+We also get an orthonormal basis of $$null A$$:
+$$(v_{r+1},\cdots, v_n)$$.
 
 And because $$null A^\ast = (range A)^\bot$$ and
 $$null A = (range A^\ast)^\bot$$, we have that:
@@ -173,6 +174,8 @@ $$x = Vz =
 0 \\ \vdots \\ 0
 \end{bmatrix}
 = \sum_{i=1}^r \frac{1}{\sigma_i}u_i^Tbv_i$$
+
+(With a matrix form: $$x = V{\Sigma}^{+} U^Tb$$)
 
 Thus we have
 
