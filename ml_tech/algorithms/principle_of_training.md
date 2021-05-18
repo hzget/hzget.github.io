@@ -75,7 +75,7 @@ eventually approaches close to the global minimum.
 
 For each step,
 
-$$\Delta \mbox{MSE}(\theta) = \Delta \theta \cdot {\nabla}_{\theta} \mbox{MSE}(\theta)$$
+$$\Delta \mbox{MSE}(\theta) = \langle \Delta \theta \; , {\nabla}_{\theta} \mbox{MSE}(\theta) \rangle$$
 
 From [Cauchy–Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality),
 we can get maximum absolute value of $$\Delta \mbox{MSE}(\theta)$$ if
