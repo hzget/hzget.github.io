@@ -5,4 +5,5 @@ training a model. And then show cases of
 different models/algorithms and introduce
 underlying pinciples of each algorithm.
 
-[under the hood of training a model](./principle_of_training.md)
+[training a model](./principle_of_training.md)  
+[linear model](./linear.md)  
