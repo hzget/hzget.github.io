@@ -27,4 +27,10 @@ cross-validation, fune-tuning the model, and so on.
 Pack these steps in one pipeline and run the pipeline
 with one command.
 
-## Algorithms
+## [Algorithms](./algorithms/algorithms.md)
+
+Having a good understanding of how algorithms work can
+help you quickly home in appropriate model, the right
+training algorithm to use, and a good set of hyperparams
+for the task. Furthermore, the engineers can
+make some improvement of the algorithms for specific tasks.
