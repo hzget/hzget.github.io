@@ -84,7 +84,7 @@ From [Cauchy–Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93
 we can get maximum absolute value of $$\Delta \mbox{MSE}(\theta)$$ if
 $$\Delta \theta$$ and $${\nabla}_{\theta} \mbox{MSE}(\theta)$$ are linear
 dependent. And if they're of opposite direction, the delta will be
-negative --- in other words, it will decrease.
+negative --- in other words, the cost function decreases.
 Thus we have the Gradient Descent step:
 
 $$\theta^{\small\mbox{(next step)}} = \theta - \eta {\nabla}_{\theta} \mbox{MSE}(\theta)$$
