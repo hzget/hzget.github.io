@@ -5,5 +5,6 @@ training a model. And then show cases of
 different models/algorithms and introduce
 underlying pinciples of each algorithm.
 
-[training a model](./principle_of_training.md)  
-[linear model](./linear.md)  
+[Training a model](./principle_of_training.md)  
+[Linear Regression model](./linear.md)  
+[Linear Classification model](./linear_classification.md)  
