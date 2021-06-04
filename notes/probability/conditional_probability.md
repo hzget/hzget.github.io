@@ -38,9 +38,9 @@ have been updated in accordance with the observed evidence B.
 
 If A and B are events with $$P(B)>0$$, then the
 ***conditional probability*** of A given evidence B,
-denoted by $$P(A|B)$$, is defined as
+denoted by $$P(A\mid B)$$, is defined as
 
-$$P(A|B)=\frac{P(A \cap B)}{P(B)}$$
+$$P(A\mid B)=\frac{P(A \cap B)}{P(B)}$$
 
 * $$P(A)$$ is the prior probability of A (***prior*** means before updating based on the evidence)
-* $$P(A|B)$$ is the posterior probability of A (***posterior*** means after updating based on the evidence)
+* $$P(A\mid B)$$ is the posterior probability of A (***posterior*** means after updating based on the evidence)
