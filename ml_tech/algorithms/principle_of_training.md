@@ -48,9 +48,10 @@ There're two different ways to train it:
    Gradient Descent (GD) that gradually tweaks the model params
    to minimize the cost function, eventually converging
    to the same set of params as the first method.
-   There're a few variants of Gradient Descent: Batch GD,Mini-batch GD and Stochastic GD (SGD).
+   There're a few variants of Gradient Descent:
+   Batch GD,Mini-batch GD and Stochastic GD (SGD).
 
-## The method of close-form equation
+## Close-Form Solution
 
 If it is a Linear Regression model, we can get params
 via the following method.
@@ -67,7 +68,10 @@ $$\theta = \sum_{i=1}^r \frac{1}{\sigma_i}u_i^Tyv_i$$
 
 With a matrix form: $$\theta = X^{+}y = V{\Sigma}^{+} U^Ty$$
 
-## The method of Gradient Descent
+The bias is $$min\|X{\theta}-y\|^2 = \sum_{i=r+1}^m(u_i^Ty)^2$$.
+If the bias is accepted, linear model is an appropriate model.
+
+## Gradient Descent Solution
 
 Gradient Descent (GD) gradually tweaks the
 model params to minimize the cost function.
@@ -80,7 +84,7 @@ For each step,
 
 $$\Delta \mbox{MSE}(\theta) = \langle \Delta \theta \; , {\nabla}_{\theta} \mbox{MSE}(\theta) \rangle$$
 
-From [Cauchy–Schwarz inequality](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality),
+From [Cauchy–Schwarz inequality][Cauchy–Schwarz inequality],
 we can get maximum absolute value of $$\Delta \mbox{MSE}(\theta)$$ if
 $$\Delta \theta$$ and $${\nabla}_{\theta} \mbox{MSE}(\theta)$$ are linear
 dependent. And if they're of opposite direction, the delta will be
@@ -109,3 +113,4 @@ $${\nabla}_{\theta} \mbox{MSE}(\theta) =
 $$
 
 [Neural Networks tutorial]: ../../neural_networks/neural_networks.md
+[Cauchy–Schwarz inequality]: https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality
