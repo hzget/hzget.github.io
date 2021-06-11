@@ -89,5 +89,72 @@ Here is the plotting image:
 
 ![linear regression](../pic/linear_regression.png)
 
+## Algorithms
+
+The learning algorithms are discussed in [Training a model][Principle of training].
+The [scikit-learn doc][scikit-learn linear algorithms]
+gives more algorithms for the linear model.
+
+If we look deeply at the previous algorithms and
+we'll find that they may not work well on some cases.
+
+The coefficient estimates for Ordinary Least Squares
+rely on the independence of the features. When features
+are correlated and the columns of the design matrix **X**
+have an approximate linear dependence, the
+design matrix becomes close to singular and
+as a result, the least-squares estimate becomes
+highly sensitive to random errors in the observed target,
+producing a large variance. This situation of
+multicollinearity can arise, for example,
+when data are collected without an experimental design.
+
+### SVD solution's perspective
+
+The SVD solution gives the model params:
+
+$$\theta = \sum_{i=1}^r \frac{1}{\sigma_i}u_i^Tyv_i$$
+
+If the sigular value $$\sigma_i$$ is very small,
+then the model params will be very large. Any noise
+in the ovserved target will lead to
+very large variance of the model params.
+
+### condition number's perspective
+
+One should think of the ***condition number***
+as being (very roughly) the rate at which the solution
+will change with respect to a change in the observed target.
+
+The wikipedia [condition number][condition number]
+gives more detail of it. For a linear equation Ax = b.
+Let e be the error in b. Assuming that A is a
+nonsingular matrix, the error in the solution
+$$A^{−1}b$$ is $$A^{−1}e$$. The ratio of the relative error
+in the solution to the relative error in b is
+
+$${\frac {\|A^{-1}e\|}{\|A^{-1}b\|}}/{\frac {\|e\|}{\|b\|}}
+= {\frac {\|A^{-1}e\|}{\|e\|}}{\frac {\|b\|}{\|A^{-1}b\|}}
+\leq \|A^{-1}\|\,\|A\|
+= \kappa (A)$$
+
+If $$\|\cdot \|$$ is the norm defined in the
+square-summable sequence space, then
+
+$$\kappa (A)={\frac {\sigma_{\text{max}}(A)}{\sigma_{\text{min}}(A)}}$$
+
+where $$\sigma_{\text{max}}(A)$$ and $$\sigma_{\text{min}}(A)$$
+are maximal and minimal singular values of A respectively.
+
+As we can see, small minimal singular value leads to
+big condition number, which means a
+big variance of the model params.
+
+How to resolve this issue? We can take the
+Ridge Regression into consideration.
+
+[conditon number]: https://en.wikipedia.org/wiki/Condition_number#Matrices
+[scikit-learn linear algorithms]: https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares
+[Principle of training]: ./principle_of_training.md
 [LinearRegression]: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 [SGDRegressor]: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDRegressor.html

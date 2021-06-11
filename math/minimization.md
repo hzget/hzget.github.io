@@ -181,3 +181,10 @@ $$x = Vz =
 Thus we have
 
 $$min\|b-Ax\|^2 = \sum_{i=r+1}^m(u_i^Tb)^2$$
+
+## Normal Equation
+
+If the matrix A is invertible, we can solve
+the issue with Normal Equation:
+
+$$\hat x = (A^TA)^{-1} A^T b$$

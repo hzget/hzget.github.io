@@ -51,13 +51,13 @@ There're two different ways to train it:
    There're a few variants of Gradient Descent:
    Batch GD,Mini-batch GD and Stochastic GD (SGD).
 
+We'll take the Linear Regression model as an example
+of how to train the model via these two method.
+
 ## Close-Form Solution
 
 If it is a Linear Regression model, we can get params
 via the following method.
-
-To minimize the cost function MSE, we need to
-find the value of $$\theta$$ that makes
 
 $$min\|X{\theta}-y\|^2$$
 

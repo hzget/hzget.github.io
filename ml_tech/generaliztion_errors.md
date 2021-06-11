@@ -66,13 +66,17 @@ data set or because that the
 data set is not representative.
 
 The former case happens when there's
-an underlying issue.
+an underlying issue. For the latter case, the user
+shall collect enough data set.
 
 ## Variance
 
-Ihis part is due to the model's excessive
+This part is due to the model's excessive
 sensitivity to small variantions in the
 training data. It happens when there's
-an overfitting issue.
+an overfitting issue. It can also because
+that the learning algorithm is not
+robust to the [ill-condition][condition number] matrix.
 
 [Bias-Variance Tradeoff]: http://fourier.eng.hmc.edu/e176/lectures/ch7/node11.html
+[condition number]: https://en.wikipedia.org/wiki/Condition_number#Matrices
