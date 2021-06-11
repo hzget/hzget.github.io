@@ -6,5 +6,5 @@ different models/algorithms and introduce
 underlying pinciples of each algorithm.
 
 [Training a model](./principle_of_training.md)  
-[Linear Regression model](./linear.md)  
+[Linear Regression model](./linear.md), [Ridge Regression](./ridge_regression.md)  
 [Linear Classification model](./linear_classification.md)  

@@ -51,18 +51,41 @@ There're two different ways to train it:
    There're a few variants of Gradient Descent:
    Batch GD,Mini-batch GD and Stochastic GD (SGD).
 
-We'll take the Linear Regression model as an example
-of how to train the model via these two method.
+We'll take the Linear Regression model $$X\theta = y$$
+as an example of how to train the model via these two method.
+
+## Prerequisites
+
+The following equations are used for both solutions.
+
+***Partial derivatives of the cost function***
+
+$$\frac{\partial}{\partial \theta_j}\mbox{MSE}(\theta)
+= \frac{2}{m}\sum_{i=1}^m(\theta^T x^{(i)}-y^{(i)})x_j^{(i)}$$
+
+***Gradient vector of the cost function***
+
+$${\nabla}_{\theta} \mbox{MSE}(\theta) =
+\begin{bmatrix}
+\frac{\partial}{\partial \theta_0}\mbox{MSE}(\theta) \\
+\frac{\partial}{\partial \theta_1}\mbox{MSE}(\theta) \\
+\vdots \\
+\frac{\partial}{\partial \theta_n}\mbox{MSE}(\theta)
+\end{bmatrix}
+= \frac{2}{m}X^T(X\theta - y)
+$$
 
 ## Close-Form Solution
 
-If it is a Linear Regression model, we can get params
-via the following method.
+To get minimal cost function $$\min_{\theta}\|X{\theta}-y\|^2$$,
+we can just make partial derivatioves of the
+cost function equal 0. And then we get the normal equation:
 
-$$min\|X{\theta}-y\|^2$$
+$$\hat \theta = (X^TX)^{-1} X^T y$$
 
-It's a [minimization problem](../../math/minimization.md)
-and we can get the params:
+However, it does not work if the matrix $$X^TX$$
+is not invertible. [minimization problem](../../math/minimization.md)
+gives a solution:
 
 $$\theta = \sum_{i=1}^r \frac{1}{\sigma_i}u_i^Tyv_i$$
 
@@ -70,6 +93,11 @@ With a matrix form: $$\theta = X^{+}y = V{\Sigma}^{+} U^Ty$$
 
 The bias is $$min\|X{\theta}-y\|^2 = \sum_{i=r+1}^m(u_i^Ty)^2$$.
 If the bias is accepted, linear model is an appropriate model.
+
+However, it may be a bad solution even when
+the matrix $$X^TX$$ is invertible. We need to
+make some changes. For the detail, please refer to
+[linear regression](./linear.md) and [ridge regression](./ridge_regression.md).
 
 ## Gradient Descent Solution
 
@@ -94,23 +122,6 @@ Thus we have the Gradient Descent step:
 $$\theta^{\small\mbox{(next step)}} = \theta - \eta {\nabla}_{\theta} \mbox{MSE}(\theta)$$
 
 where $$\eta$$ is the learning rate.
-
-***Partial derivatives of the cost function***
-
-$$\frac{\partial}{\partial \theta_j}\mbox{MSE}(\theta)
-= \frac{2}{m}\sum_{i=1}^m(\theta^T x^{(i)}-y^{(i)})x_j^{(i)}$$
-
-***Gradient vector of the cost function***
-
-$${\nabla}_{\theta} \mbox{MSE}(\theta) =
-\begin{bmatrix}
-\frac{\partial}{\partial \theta_0}\mbox{MSE}(\theta) \\
-\frac{\partial}{\partial \theta_1}\mbox{MSE}(\theta) \\
-\vdots \\
-\frac{\partial}{\partial \theta_n}\mbox{MSE}(\theta)
-\end{bmatrix}
-= \frac{2}{m}X^T(X\theta - y)
-$$
 
 [Neural Networks tutorial]: ../../neural_networks/neural_networks.md
 [Cauchy–Schwarz inequality]: https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality

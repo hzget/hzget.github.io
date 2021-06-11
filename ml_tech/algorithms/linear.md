@@ -117,18 +117,18 @@ $$\theta = \sum_{i=1}^r \frac{1}{\sigma_i}u_i^Tyv_i$$
 
 If the sigular value $$\sigma_i$$ is very small,
 then the model params will be very large. Any noise
-in the ovserved target will lead to
-very large variance of the model params.
+in the observed target will be enlarged. Thus it lead to
+large variance of the model params.
 
-### condition number's perspective
+### Condition number's perspective
 
 One should think of the ***condition number***
 as being (very roughly) the rate at which the solution
 will change with respect to a change in the observed target.
 
 The wikipedia [condition number][condition number]
-gives more detail of it. For a linear equation Ax = b.
-Let e be the error in b. Assuming that A is a
+gives more detail of it. For a linear equation Ax = b,
+let e be the error in b. Assuming that A is a
 nonsingular matrix, the error in the solution
 $$A^{−1}b$$ is $$A^{−1}e$$. The ratio of the relative error
 in the solution to the relative error in b is
@@ -151,9 +151,9 @@ big condition number, which means a
 big variance of the model params.
 
 How to resolve this issue? We can take the
-Ridge Regression into consideration.
+[Ridge Regression](./ridge_regression.md) into consideration.
 
-[conditon number]: https://en.wikipedia.org/wiki/Condition_number#Matrices
+[condition number]: https://en.wikipedia.org/wiki/Condition_number#Matrices
 [scikit-learn linear algorithms]: https://scikit-learn.org/stable/modules/linear_model.html#ordinary-least-squares
 [Principle of training]: ./principle_of_training.md
 [LinearRegression]: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
