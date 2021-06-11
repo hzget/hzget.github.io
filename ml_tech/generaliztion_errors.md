@@ -77,6 +77,7 @@ training data. It happens when there's
 an overfitting issue. It can also because
 that the learning algorithm is not
 robust to the [ill-condition][condition number] matrix.
+In this case, it can be resolved by [ridge regression](./algorithms/ridge_regression.md).
 
 [Bias-Variance Tradeoff]: http://fourier.eng.hmc.edu/e176/lectures/ch7/node11.html
 [condition number]: https://en.wikipedia.org/wiki/Condition_number#Matrices

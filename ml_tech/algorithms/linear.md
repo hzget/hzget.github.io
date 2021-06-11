@@ -122,7 +122,7 @@ large variance of the model params.
 
 ### Condition number's perspective
 
-One should think of the ***condition number***
+One shall think of the ***condition number***
 as being (very roughly) the rate at which the solution
 will change with respect to a change in the observed target.
 
