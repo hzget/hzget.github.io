@@ -77,8 +77,8 @@ $$
 
 ## Close-Form Solution
 
-To get minimal cost function $$\min_{\theta}\|X{\theta}-y\|^2$$,
-we can just make partial derivatioves of the
+To get minimal cost function $$\min \|X{\theta}-y\|^2$$,
+we can just make partial derivatives of the
 cost function equal 0. And then we get the normal equation:
 
 $$\hat \theta = (X^TX)^{-1} X^T y$$

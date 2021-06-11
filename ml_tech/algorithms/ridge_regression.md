@@ -51,11 +51,11 @@ the coefficients become more robust to collinearity.
 With this shrinkage, ridge regression reduces
 variance of the model params. To summarize:
 
-* Small $\alpha$: the solution is more accurate
+* Small $$\alpha$$: the solution is more accurate
   but also more prone to noise and therefore less stable,
   i.e., large variance error but small bias error,
   or overfitting.
-* Large $\alpha$: the solution is more stable as
+* Large $$\alpha$$: the solution is more stable as
   it is less affacted by noise, but it may be less
   accurate, i.e., small variance error but large
   bias error, or underfitting.
