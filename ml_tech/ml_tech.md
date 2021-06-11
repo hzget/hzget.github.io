@@ -11,8 +11,7 @@ in his actual works:
 The end goal of ML is to make the trained model
 perform well on new cases (in production).
 Thus we need to find ways to reduce the generalization
-error: Bias, Variance and Irreducible errors (i.e., fix
-the underfitting and overfitting issue).
+error: Bias, Variance and Irreducible errors.
 
 ## [Challenges of Machine Learning](./challenges.md)
 

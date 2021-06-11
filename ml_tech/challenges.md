@@ -10,18 +10,16 @@ are mainly two important things to deal with:
 ***Most works of ML project are to resolve the challenges*** :
 bad data, bad algorithms, performance, and so on.
 
-## bad data
+## Bad Data
 
 * Nonrepresentative training data. (sampling noise & sampling bias)
 * Poor-quality data (outliers, errors, noise) solution: data cleaning
 * Irrelevant features. solution: feature engineering
   
-## bad algorithms
+## Bad Algorithms
 
 Bad algorithm means that the model has the
 overfitting and/or underfitting issue.
-
-## Underfitting and Overfitting
 
 Suppose we have a data set generated
 using a quadratic model with gaussian noise.
@@ -93,10 +91,10 @@ the learning curves of the linear model and 10-th degree polynomial model.
 The above picture shows that it has a high ***bias***,
 which means that the model underfits the training data.
 The below picture shows that the bias is low but there
-is a gap between the curves -- high ***variance***, which means
+is a gap between the curves, which means
 that the model overfits the training data.
 
-## Reduce Variance (overfitting issue) by Strategy
+## Reduce Overfitting issue by Strategy
 
 We can find ways to "reduce" the subtle patterns
 that only belong to the training data,

@@ -20,11 +20,12 @@ by a regression function $$\hat{f}({\bf x})$$,
 based on a set of given training data $${\cal D}=\{({\bf x}_n,\,y_n)\;n=1,\cdots,N\}$$
 containing a set of observed data samples inevitably
 contaminated by some random noise $$e$$.
+
 Now corresponding to a noisy $${\bf x}$$, the observed value
 $$y=f({\bf x})+e$$ is also random and so is the
 regresson model $$\hat{f}({\bf x})$$.
-We assume the random noise $e$ has zero mean
-and is independent of $\hat{f}$.
+We assume the random noise $$e$$ has zero mean
+and is independent of $$\hat{f}$$.
 
 Measure how well the model $$\hat{f}({\bf x})$$ fits
 the noisy data $$y=f({\bf x})+e$$ by the mean squared error (MSE):
