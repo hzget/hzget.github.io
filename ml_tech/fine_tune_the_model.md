@@ -1,4 +1,4 @@
-# Fine-Tunea hyperparameters
+# Fine-Tune the hyper-parameters
 
 Since we have a shortlist of promising models, it's
 time to fine-tune hyper-parameters. We will discuss
