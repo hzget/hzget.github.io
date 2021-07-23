@@ -15,6 +15,8 @@ learnt within estimators. In scikit-learn they are
 passed as arguments to the constructor of the
 estimator classes. Typical examples include learning rate
 for SGD, n_hidden and n_neurons for MLP, etc.
+(Examples in this tutorial:
+[Hyperparamters in Keras model][Hyperparamters in Keras model])
 
 It is possible and recommended to search the
 hyper-parameter space for the best cross validation score.
@@ -314,3 +316,4 @@ In [161]:
 ```
 
 [GridSearchCV]: https://scikit-learn.org/stable/modules/grid_search.html
+[Hyperparamters in Keras model]: ./fine_tune_keras_model.md
