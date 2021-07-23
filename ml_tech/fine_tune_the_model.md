@@ -1,16 +1,34 @@
-# Fine-Tune the model
+# Fine-Tunea hyperparameters
 
 Since we have a shortlist of promising models, it's
-time to fine-tune the models. We will discuss
+time to fine-tune hyper-parameters. We will discuss
 following topics:
 
-* fine-tune the model with GridSearchCV
-* fine-tune data preparation steps
+* fine-tune hyper-parameters of an estimator
+* fine-tune "hyper-parameters" of other objects
 * automate the whole process in one pipeline
 
-## Fine-Tune the model with GridSearchCV
+## Fine-Tune hyperparameters of an estimator
 
-GridSearchCV can help us
+Hyper-parameters are parameters that are not directly
+learnt within estimators. In scikit-learn they are
+passed as arguments to the constructor of the
+estimator classes. Typical examples include learning rate
+for SGD, n_hidden and n_neurons for MLP, etc.
+
+It is possible and recommended to search the
+hyper-parameter space for the best cross validation score.
+
+Any parameter provided when constructing an estimator
+may be optimized in this manner. Specifically, to find
+the names and current values for all parameters
+for a given estimator, use:
+
+`estimator.get_params()`
+
+### Fine-Tune hyperparameters with GridSearchCV
+
+[GridSearchCV][GridSearchCV] can help us
 for this task. We just need to give it a list of
 hyperparameters to experiment, it will evaluate
 all combinations of these hyperparameter values during
@@ -60,7 +78,7 @@ for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
 51009.495668875716 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
 ```
 
-## Evaluate the System on the Test Set
+#### Evaluate the System on the Test Set
 
 After treaking the models for a while, we eventually
 have a system that performs sufficiently well. Now
@@ -82,7 +100,21 @@ In [134]: final_rmse
 Out[134]: 47730.22690385927
 ```
 
-## Fine-Tune data preparation "hyperparameters"
+## Fine-Tune "hyperparameters" of other objects
+
+You can treat some of the data preparation steps as
+hyperparameters. For example, the grid search will automatically
+find out whether or not to add a feature you were not sure about
+(e.g., using the add_bedrooms_per_room hyperparameter of your
+CombinedAttributesAdder transformer). It may similarly be used
+to automatically find the best way to handle outliers, missing
+features, feature selection, and more.
+
+This part will introduce a method to fine-tune
+the "hyperparameters" of data preparation stage and
+automate the whole process in one pipeline.
+
+### Fine-Tune data preparation "hyperparameters"
 
 There're a lot more to improve the model after the "first round" fine-tuning.
 We can gain good insights on the problem by inspecting
@@ -280,3 +312,5 @@ In [160]: cvres = grid_search_prep.cv_results_
 
 In [161]:
 ```
+
+[GridSearchCV]: https://scikit-learn.org/stable/modules/grid_search.html

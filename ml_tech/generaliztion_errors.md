@@ -58,7 +58,7 @@ type of error is to clean up the data (e.g.,
 fix the data source, such as broken sensors,
 or detect and remove outliers).
 
-## Bias
+## Bias Error
 
 The bias may because the model does not
 detect enough underlying patterns in the
@@ -66,10 +66,10 @@ data set or because that the
 data set is not representative.
 
 The former case happens when there's
-an underlying issue. For the latter case, the user
+an underfitting issue. For the latter case, the user
 shall collect enough data set.
 
-## Variance
+## Variance Error
 
 This part is due to the model's excessive
 sensitivity to small variantions in the
