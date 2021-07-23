@@ -71,15 +71,9 @@ param_distribs = {
 # Fitting 3 folds for each of 10 candidates, totalling 30 fits
 rnd_search_cv = RandomizedSearchCV(keras_reg, param_distribs, n_iter=10, cv=3, verbose=2)
 
-# note that RandomizedSearchCV uses K-fold cross-validation,
-# so it does not use X_valid and y_valid, which are
-# only used for early stopping
-rnd_search_cv.fit(X_train, y_train, epochs=100,
-                  validation_data=(X_valid, y_valid),
-                  callbacks=[keras.callbacks.EarlyStopping(patience=10)])
-
-# output:
-RandomizedSearchCV(cv=3,
+In [7]: rnd_search_cv.get_params
+Out[7]:
+<bound method BaseEstimator.get_params of RandomizedSearchCV(cv=3,
                    estimator=<tensorflow.python.keras.wrappers.scikit_learn.KerasRegressor object at 0x000001F0C3560550>,
                    param_distributions={'learning_rate': <scipy.stats._distn_infrastructure.rv_frozen object at 0x000001F0C35DA4C0>,
                                         'n_hidden': [0, 1, 2, 3],
@@ -89,7 +83,15 @@ RandomizedSearchCV(cv=3,
        52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
        69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
        86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99])},
-                   verbose=2)
+                   verbose=2)>
+
+# note that RandomizedSearchCV uses K-fold cross-validation,
+# so it does not use X_valid and y_valid, which are
+# only used for early stopping
+rnd_search_cv.fit(X_train, y_train, epochs=100,
+                  validation_data=(X_valid, y_valid),
+                  callbacks=[keras.callbacks.EarlyStopping(patience=10)])
+
 ```
 
 The hyper-parameters will get relayed to the underlying
