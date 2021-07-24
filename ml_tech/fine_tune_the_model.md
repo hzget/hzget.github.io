@@ -8,6 +8,26 @@ following topics:
 * fine-tune "hyper-parameters" of other objects
 * automate the whole process in one pipeline
 
+Hyperparameters are the variables that govern
+the training process and the topology of an ML model.
+These variables remain constant over the training process
+and directly impact the performance of your ML program.
+Hyperparameters are of two types:
+
+* Model hyperparameters which influence model selection
+such as the number and width of hidden layers
+* Algorithm hyperparameters which influence the
+speed and quality of the learning algorithm
+such as the learning rate for Stochastic Gradient Descent (SGD)
+and the number of nearest neighbors for a k
+Nearest Neighbors (KNN) classifier.
+
+useful links:
+
+1. [scikit-learn tuning method][sl-tuning] GridSearchCV or RandomizedSearchCV
+2. [KerasTuner][KerasTuner]: it is the KerasTuner official site
+3. [KerasTuner examples in tensorflow.org][KerasTuner tf examples]
+
 ## Fine-Tune hyperparameters of an estimator
 
 Hyper-parameters are parameters that are not directly
@@ -15,7 +35,7 @@ learnt within estimators. In scikit-learn they are
 passed as arguments to the constructor of the
 estimator classes. Typical examples include learning rate
 for SGD, n_hidden and n_neurons for MLP, etc.
-(Examples in this tutorial:
+(Other examples in this tutorial:
 [Hyperparamters in Keras model][Hyperparamters in Keras model])
 
 It is possible and recommended to search the
@@ -316,4 +336,7 @@ In [161]:
 ```
 
 [GridSearchCV]: https://scikit-learn.org/stable/modules/grid_search.html
+[sl-tuning]: https://scikit-learn.org/stable/modules/grid_search.html
 [Hyperparamters in Keras model]: ./fine_tune_keras_model.md
+[KerasTuner]: https://keras.io/keras_tuner/
+[KerasTuner tf examples]: https://www.tensorflow.org/tutorials/keras/keras_tuner
