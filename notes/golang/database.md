@@ -59,7 +59,14 @@ that a connection could be established, call Ping or PingContext.
 A [prepared statement][prepare statement] is SQL that is parsed
 and saved by the DBMS, typically containing placeholders
 but with no actual parameter values. Later, the statement
-can be executed with a set of parameter values.
+can be executed with a set of parameter values. ***Example:***
+
+```sql
+INSERT INTO products (name, price) VALUES (?, ?);
+```
+
+The prepare statement is a feature used to pre-compile SQL code,
+separating it from data.
 
 A common workflow for prepared statements is:
 
@@ -74,6 +81,12 @@ A common workflow for prepared statements is:
    request the DBMS to execute the statement many times with different values.
 
 Be sure that stmt.Close is called when your code is finished with a statement.
+
+Benefits of prepared statements are:
+
+* efficiency, because they can be used repeatedly without re-compiling
+* security, by reducing or eliminating SQL injection attacks
+
 
 The following example comes from the golang tutorial [Using prepared statements][golang prepare stmt]
 
