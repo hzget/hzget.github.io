@@ -64,11 +64,12 @@ func main() {
     }
 
     ctx, cancel := context.WithCancel(context.Background())
-    defer cancel() // cancel when we are finished consuming integers
+    defer cancel() // cancel when we want to quit the outer function
 
     for n := range gen(ctx) {
         fmt.Println(n)
         if n == 5 {
+//            cancel() // or cancel whenever we want 
             break
         }
     }

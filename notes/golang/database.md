@@ -54,6 +54,56 @@ it may create the connection when your code needs it (access database).
 If you won’t be using the database right away and want to confirm
 that a connection could be established, call Ping or PingContext.
 
+## Using prepared statements
+
+A [prepared statement][prepare statement] is SQL that is parsed
+and saved by the DBMS, typically containing placeholders
+but with no actual parameter values. Later, the statement
+can be executed with a set of parameter values.
+
+A common workflow for prepared statements is:
+
+1. Prepare. The application creates the statement template
+   and sends it to the DBMS. Certain values are left unspecified,
+   called parameters or placeholders
+2. Compile. The DBMS compiles (parses, optimizes and translates)
+   the statement template, and stores the result without executing it.
+3. Execute. The application supplies (or binds) values for
+   the parameters of the statement template, and the DBMS executes
+   the statement (possibly returning a result). The application may
+   request the DBMS to execute the statement many times with different values.
+
+Be sure that stmt.Close is called when your code is finished with a statement.
+
+The following example comes from the golang tutorial [Using prepared statements][golang prepare stmt]
+
+```golang
+// AlbumByID retrieves the specified album.
+func AlbumByID(id int) (Album, error) {
+    // Define a prepared statement. You'd typically define the statement
+    // elsewhere and save it for use in functions such as this one.
+    stmt, err := db.Prepare("SELECT * FROM album WHERE id = ?")
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    var album Album
+
+    // Execute the prepared statement, passing in an id value for the
+    // parameter whose placeholder is ?
+    err := stmt.QueryRow(id).Scan(&album.ID, &album.Title, &album.Artist, &album.Price, &album.Quantity)
+    if err != nil {
+        if err == sql.ErrNoRows {
+            // Handle the case of no rows returned.
+        }
+        return album, err
+    }
+    return album, nil
+}
+```
+
 [sql]: https://pkg.go.dev/database/sql
 [sql.DB]: https://pkg.go.dev/database/sql#DB
 [database access]: https://golang.google.cn/doc/tutorial/database-access
+[prepare statement]: https://en.wikipedia.org/wiki/Prepared_statement
+[golang prepare stmt]: https://golang.google.cn/doc/database/prepared-statements
