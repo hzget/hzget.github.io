@@ -54,7 +54,9 @@ it may create the connection when your code needs it (access database).
 If you won’t be using the database right away and want to confirm
 that a connection could be established, call Ping or PingContext.
 
-## Using prepared statements
+## Advanced topics
+
+### Using prepared statements
 
 A [prepared statement][prepare statement] is SQL that is parsed
 and saved by the DBMS, typically containing placeholders
@@ -115,8 +117,65 @@ func AlbumByID(id int) (Album, error) {
 }
 ```
 
+### Database Transactions
+
+You can execute database transactions using an sql.Tx.
+A [database transaction][execute transactions] groups multiple operations
+as part of a larger goal. All of the operations must
+succeed or none can, with the data’s integrity preserved
+in either case. Typically, a transaction workflow includes:
+
+1. Beginning the transaction. tx, err := db.BeginTx(ctx, nil)
+2. Performing a set of database operations. tx.ExecContext(ctx, xxx); ...
+3. If no error occurs, committing the transaction to make database changes. tx.Commit()
+4. Otherwise, rolling back the transaction to leave the database unchanged. defer tx.Rollback()
+
+The users can refer to an example of [executing transactions][execute transactions].
+
+### Avoiding SQL injection risk
+
+[SQL injection][sql injection] is a code injection
+technique used to attack data-driven applications,
+in which malicious SQL statements are inserted into
+an entry field for execution. (e.g. to dump the
+database contents to the attacker).
+
+You can avoid an SQL injection risk by providing
+SQL parameter values as sql package function arguments.
+
+```golang
+// case 1
+// Correct format for executing an SQL statement with parameters.
+rows, err := db.Query("SELECT * FROM user WHERE id = ?", id)
+
+// case 2
+// SECURITY RISK!
+rows, err := db.Query(fmt.Sprintf("SELECT * FROM user WHERE id = %s", id))
+```
+
+For the correct case, you enable the database/sql package
+to send the values separate from the SQL text,
+removing any SQL injection risk.
+
+For the insecure case, Go assembles the entire SQL statement,
+replacing the %s format verb with the parameter value,
+before sending the full statement to the DBMS. The code’s caller could
+send an unexpected SQL snippet as the id argument.
+That snippet could complete the SQL statement in
+unpredictable ways that are dangerous to your application.
+
+For example, by passing a certain %s value,
+you might end up with something like the following,
+which could return all user records in your database:
+
+```sql
+SELECT * FROM user WHERE id = 1 OR 1=1;
+```
+
 [sql]: https://pkg.go.dev/database/sql
 [sql.DB]: https://pkg.go.dev/database/sql#DB
 [database access]: https://golang.google.cn/doc/tutorial/database-access
 [prepare statement]: https://en.wikipedia.org/wiki/Prepared_statement
 [golang prepare stmt]: https://golang.google.cn/doc/database/prepared-statements
+[execute transactions]: https://golang.google.cn/doc/database/execute-transactions
+[sql injection]: https://en.wikipedia.org/wiki/SQL_injection
