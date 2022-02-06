@@ -39,12 +39,9 @@ we can join hands with it.
 The following two links just give an ***intuition*** about
 what ML looks like and how it works under the hood.
 
-[Machine Learning](./ml_tutorials/ml_tutorials.md):
-A technique that learns rules from examples automatically,
-which can be applied on new cases.  
-[Neural Networks](./neural_networks_intuition/neural_networks.md):
-A subfield of ML. An implementation:
-[online handwritten recognition](./neural_networks_intuition/implementation.md).
+|[Machine Learning][Machine Learning]| |[Neural Networks][Neural Networks]| |
+|:--------------|:---------------|:---------------|:---------------|
+|[![apple classifier][apple classifier]][Machine Learning]|A technique that learns rules from examples automatically, which can be applied on new cases.|[![neural network][neural network]][Neural Networks]|A subfield of ML. An implementation: [online handwritten recognition](./neural_networks_intuition/implementation.md). |
 
 ### Tutorials
 
@@ -62,3 +59,8 @@ what a professional engineer deals with in his actual work.
 ## Reading Notes
 
 [notes](./notes/note.md)
+
+[apple classifier]: ./ml_tutorials/pic/apple_classifier.png
+[neural network]: ./neural_networks_intuition/pic/neural_network.png
+[Machine Learning]: ./ml_tutorials/ml_tutorials.md
+[Neural Networks]: ./neural_networks_intuition/neural_networks.md
