@@ -34,19 +34,23 @@ deserves great attention. If we don't care about it, we'll be
 replaced before long. To avoid being defected by AI,
 we can join hands with it.
 
-I have written tutorials to introduce two topics in AI:
-[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md) and
-[Neural Networks tutorial](./neural_networks/neural_networks.md).
-Machine Learning is a technique that learns rules from examples automatically.
-Neural Networks makes a good job as a subfield of ML.
-These two tutorials just give an ***intuition*** about what ML looks like
-and how it works under the hood. The neural networks tutorial also gives
-an implementation to recognize hand-written digit:
-[online handwritten recognition](./neural_networks/implementation.md).
+### Intuition
 
-I have written another tutorial to introduce what
-a professional engineer deals with in his actual work:
-[Machine Learning tech](./ml_tech/ml_tech.md).
+The following two links just give an ***intuition*** about
+what ML looks like and how it works under the hood.
+
+[Machine Learning](./ml_tutorials/ml_tutorials.md):
+A technique that learns rules from examples automatically,
+which can be applied on new cases.  
+[Neural Networks](./neural_networks_intuition/neural_networks.md):
+A subfield of ML. An implementation:
+[online handwritten recognition](./neural_networks_intuition/implementation.md).
+
+### Tutorials
+
+[Machine Learning tech](./ml_tech/ml_tech.md):
+what a professional engineer deals with in his actual work.  
+[Neural Networks](./neural_networks/neural_networks.md):
 
 ## Programming
 

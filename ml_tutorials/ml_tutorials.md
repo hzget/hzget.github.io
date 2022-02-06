@@ -1,5 +1,5 @@
 
-# Machine Learning Tutorial
+# Machine Learning Intuition
 
 It's a quick guide of Machine Learning.
 From this blog, We'll learn the basic concept and get some intuition.
