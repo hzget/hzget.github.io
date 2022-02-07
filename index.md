@@ -46,8 +46,9 @@ what ML looks like and how it works under the hood.
 ### Tutorials
 
 [Machine Learning tech](./ml_tech/ml_tech.md):
-what a professional engineer deals with in his actual work.  
+training workflow, algrithms, examples, related techs  
 [Neural Networks](./neural_networks/neural_networks.md):
+training workflow, pytorch/tensorflow frameworks
 
 ## Programming
 
