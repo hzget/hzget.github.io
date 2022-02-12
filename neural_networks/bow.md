@@ -166,6 +166,7 @@ Let's examine some examples.
 As we know, classes = ['World', 'Sports', 'Business', 'Sci/Tech']
 
 ```python
+net.eval()
 s = torch.stack([to_bow("Let's play football")]); o = net(s); print(o)
 # output:
 # tensor([[-1.5573, -0.7191, -1.8730, -1.9076]], grad_fn=<LogSoftmaxBackward0>)
