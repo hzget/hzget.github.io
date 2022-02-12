@@ -29,7 +29,7 @@ We can create a dictionary:
 {"John","likes","to","watch","movies","Mary","too","also","football","games"}
 
 Representing each bag-of-words as a JSON object, and
-attributing to the respective JavaScript variable: 
+attributing to the respective JavaScript variable:
 
 ```javascript
 BoW1 = {"John":1,"likes":2,"to":1,"watch":1,"movies":2,"Mary":1,"too":1};
@@ -160,6 +160,19 @@ train_epoch(net,train_loader,epoch_size=15000)
 9600: acc=0.8578125
 12800: acc=0.863671875
 Out[14]: (0.026340738796730285, 0.8640724946695096)
+```
+
+Let's examine some examples.
+As we know, classes = ['World', 'Sports', 'Business', 'Sci/Tech']
+
+```python
+s = torch.stack([to_bow("Let's play football")]); o = net(s); print(o)
+# output:
+# tensor([[-1.5573, -0.7191, -1.8730, -1.9076]], grad_fn=<LogSoftmaxBackward0>)
+
+s = torch.stack([to_bow("the stock market")]); o = net(s); print(o)
+# output:
+# tensor([[-2.8083, -2.6868, -0.5916, -1.1453]], grad_fn=<LogSoftmaxBackward0>
 ```
 
 [Bag of Words]: https://en.wikipedia.org/wiki/Bag-of-words_model
