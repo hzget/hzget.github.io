@@ -167,11 +167,11 @@ As we know, classes = ['World', 'Sports', 'Business', 'Sci/Tech']
 
 ```python
 net.eval()
-s = torch.stack([to_bow("Let's play football")]); o = net(s); print(o)
+x = torch.stack([to_bow("Let's play football")]); y = net(x); print(y)
 # output:
 # tensor([[-1.5573, -0.7191, -1.8730, -1.9076]], grad_fn=<LogSoftmaxBackward0>)
 
-s = torch.stack([to_bow("the stock market")]); o = net(s); print(o)
+x = torch.stack([to_bow("the stock market")]); y = net(x); print(y)
 # output:
 # tensor([[-2.8083, -2.6868, -0.5916, -1.1453]], grad_fn=<LogSoftmaxBackward0>
 ```
