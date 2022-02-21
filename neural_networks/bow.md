@@ -11,11 +11,11 @@ as a feature for training a classifier.
 
 Specifically,
 
-* create a dictionary from dataset
+* create a vacabulary (with length vocab_size) from dataset
 * construct a vector, (transform input text into a "bag of words"), where
-  * each word in the dictionary corresponds to an index of the vector
+  * each word in the vacabulary corresponds to an index of the vector
   * each elem in the vector is the (frequency of) occurrence of that word in the input text
-* take that vector and its label as a "(***features, label***)" sample example
+* take that vector and its label as a "(***features, label***)" sample
 
 ## An Example of BoW
 
@@ -24,7 +24,7 @@ Here are two simple text documents:
 1. John likes to watch movies. Mary likes movies too.
 2. Mary also likes to watch football games.
 
-We can create a dictionary:
+We can create a vacabulary:
 
 {"John","likes","to","watch","movies","Mary","too","also","football","games"}
 
@@ -41,7 +41,42 @@ Create corresponding vectors of these two text docs:
 1. [1, 2, 1, 1, 2, 1, 1, 0, 0, 0]
 2. [0, 1, 1, 1, 0, 1, 0, 1, 1, 1]
 
+We can think of BoW as a sum of all one-hot-encoded vectors
+for individual words in the text.
+
 We can then take a vector and its label as a sample for training a classifier
+
+## Drawbacks
+
+### not memory-efficient
+
+BoW explicitly converts from low-dimensional
+positional representation vectors into high-dimensional
+sparse one-hot representation.
+
+Solutions: embedding
+
+### frenquency
+
+In BoW representation, word occurrences are evenly weighted,
+regardless of the word itself. However, it is clear that
+frequent words, such as a, in, etc. are much less important
+for the classification, than specialized terms.
+In fact, in most NLP tasks some words are more relevant than others.
+
+Solutions: Term Frequency Inverse Document Frequency TF-IDF
+
+### word independency
+
+Each word is treated independently from each other,
+i.e. one-hot encoded vectors do not express any
+semantic similarity between words.
+
+Solutions: embedding, ...
+
+### word ordering
+
+Solutions: Ngram, ...
 
 ## Text Classification via BoW
 
