@@ -11,44 +11,11 @@ Interests:
 The blog is intended to keep track of the learning progress
 and review some knowledge learnt in the past.
 
-## Network Protocols
+## [#Network Protocols](./protocols.md)
 
-Devices on the networks talk with each other.
-Network protocols make the rule of the dialogue.
-It tells who can send which command and who will respond.
-For example, the server may request status of the client
-and the client may respond with that info.
+## [#Aritificial Intelligence](./ai.md)
 
-In my past jobs, I worked with the following two protocols.
-They're used as the machanism to manage network devices:
-auto-configuration, status collection and so on.
-
-[Netconf/Yang](https://en.wikipedia.org/wiki/NETCONF) - RFC 6241, RFC 7950 by IETF  
-[CWMP](https://en.wikipedia.org/wiki/TR-069) - TR069 by Broadband Forum  
-Security: ssh, https
-
-## Aritificial Intelligence
-
-AI plays an increasingly important role in the society and
-deserves great attention. If we don't care about it, we'll be
-replaced before long. To avoid being defected by AI,
-we can join hands with it.
-
-### Intuition
-
-The following two links just give an ***intuition*** about
-what ML looks like and how it works under the hood.
-
-|[Machine Learning][Machine Learning]| |[Neural Networks][Neural Networks]| |
-|:--------------|:---------------|:---------------|:---------------|
-|[![apple classifier][apple classifier]][Machine Learning]|A technique that learns rules from examples automatically, which can be applied on new cases.|[![neural network][neural network]][Neural Networks]|A subfield of ML. An implementation: [online handwritten recognition](./neural_networks_intuition/implementation.md). |
-
-### Tutorials
-
-[Machine Learning tech](./ml_tech/ml_tech.md):
-training workflow, algrithms, examples, related techs  
-[Neural Networks](./neural_networks/neural_networks.md):
-training workflow, pytorch/tensorflow frameworks
+## [#Blockchain](./blockchain/blockchain.md)
 
 ## Programming
 
@@ -57,11 +24,4 @@ training workflow, pytorch/tensorflow frameworks
 * security
 * [Program](./programming/program.md)
 
-## Reading Notes
-
-[notes](./notes/note.md)
-
-[apple classifier]: ./ml_tutorials/pic/apple_classifier.png
-[neural network]: ./neural_networks_intuition/pic/neural_network.png
-[Machine Learning]: ./ml_tutorials/ml_tutorials.md
-[Neural Networks]: ./neural_networks_intuition/neural_networks.md
+## [#Reading Notes](./notes/note.md)
