@@ -17,6 +17,17 @@ and review some knowledge learnt in the past.
 
 ## Cases
 
-Goblog  |  |
-:----:|:----:|
-<a href="https://github.com/hzget/goblog"> <img src="./pics/goblog/view.png" width="139" height="302" /> </a> | A blog system used for sharing ideas and analyzing these articles via AI algorithms.
+<table>
+<tr><td> <a href="https://github.com/hzget/goblog">
+<img src="./pics/goblog/view.png" width="139" height="302" /> </a></td>
+<td>A blog system used for sharing ideas and analyzing these articles via AI algorithms.
+Techniques:
+<br /> <ul>
+<li>datastore: mysql &amp; redis</li>
+<li>blog frontend: html/css/javascript/w3.css framework</li>
+<li>blog backend: http server via golang</li>
+<li>restful api: for any http client that contains access tokens, e.g., curl/testscript/...</li>
+<li>data center: AI analysis server via python, NLP algrithms via pytorch</li>
+<li>container: they can run in respective docker containers</li>
+</ul> </td> </tr>
+</table>
