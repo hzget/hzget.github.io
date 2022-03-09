@@ -5,9 +5,9 @@ blockchain to a cryptocurrency.
 
 A transaction contains the following info:
 
-* where the coins come
-* where the coins go
-* the amount
+* where the coins come (wallet of the sender)
+* where the coins go (wallet of the receiver)
+* amount of the coins
 
 ## workflow
 
