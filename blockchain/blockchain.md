@@ -14,7 +14,7 @@ than it must be. Especially source-code-wisely.
 
 ## [#Naivechain][naivechain]
 
-## [#transactions](./transaction.md)
+## [#Cryptocurrency](./cryptocurrency.md)
 
 [naivechain]: https://github.com/hzget/naivechain
 [blockchain]: https://en.wikipedia.org/wiki/Blockchain
