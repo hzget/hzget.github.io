@@ -1,7 +1,7 @@
 # Cryptocurrency
 
 With ***transactions***, we go from a “general purpose”
-blockchain to a cryptocurrency.
+blockchain to a [cryptocurrency][cryptocurrency].
 
 A transaction contains the following info:
 
@@ -83,3 +83,5 @@ the transaction is valid.
 In a word, only the owner of this uTxOut can trigger the transaction.
 Anyone else's signature will not be verified and thus
 the transaction will fail.
+
+[cryptocurrency]: https://en.wikipedia.org/wiki/Cryptocurrency
