@@ -19,7 +19,7 @@ and review some knowledge learnt in the past.
 
 <table>
 <tr><td> <a href="https://github.com/hzget/goblog">
-<img src="./pics/goblog/view.png" width="139" height="302" /> </a></td>
+<img src="./pics/goblog/view.png"/> </a></td>
 <td>A blog system used for sharing ideas and analyzing these articles via AI algorithms.
 Techniques:
 <br /> <ul>
