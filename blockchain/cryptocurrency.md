@@ -3,6 +3,11 @@
 With ***transactions***, we go from a “general purpose”
 blockchain to a [cryptocurrency][cryptocurrency].
 
+Reference projects:
+
+* [naivecoin (by typescript)][naivecoin typescript]
+* [naivecoin (by javascript)][naivecoin javascript]
+
 A transaction contains the following info:
 
 * where the coins come (wallet of the sender)
@@ -85,3 +90,5 @@ Anyone else's signature will not be verified and thus
 the transaction will fail.
 
 [cryptocurrency]: https://en.wikipedia.org/wiki/Cryptocurrency
+[naivecoin typescript]: https://github.com/lhartikk/naivecoin
+[naivecoin javascript]: https://github.com/conradoqg/naivecoin
