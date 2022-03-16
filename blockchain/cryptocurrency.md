@@ -58,7 +58,7 @@ the transaction works. He only needs to know how to:
 
 * check the balance in his wallet
 * send some coins to others
-* recv some coins from others
+* check transactions detail
 
 The balance info can be obtained from the blockchain.
 It is the sum of a list of unspent transaction outputs (uTxOuts)

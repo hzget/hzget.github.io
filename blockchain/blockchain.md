@@ -8,7 +8,7 @@ being tempered by illegal user.
 
 ## [#Naivechain][naivechain]
 
-Naivechain is a simple and excellent tutorial to begin
+[Naivechain][naivechain] is a simple and excellent tutorial to begin
 the tour of blockchain.
 
 Just as naivechain said, all the current
@@ -21,10 +21,16 @@ By contrast, naivechain gives a simple intuition
 of the concept of blockchain. It removes the
 concepts or code of infrastructure of some specific application.
 
-## [#Cryptocurrency](./cryptocurrency.md)
+Additional links:
 
-Cryptocurrency is one of the application that
-makes use of blockchain.
+* [Mininal Working Blockchain][Mininal Blockchain]
+* [Proof of Work (PoW)][PoW]
+
+## Applications
+
+### [#Cryptocurrency](./cryptocurrency.md)
 
 [naivechain]: https://github.com/hzget/naivechain
 [blockchain]: https://en.wikipedia.org/wiki/Blockchain
+[Mininal Blockchain]: https://lhartikk.github.io/jekyll/update/2017/07/14/chapter1.html
+[PoW]: https://lhartikk.github.io/jekyll/update/2017/07/13/chapter2.html
