@@ -2,7 +2,7 @@
 
 ## Performance
 
-[garbage collection][garbagecollection],
+[garbage collection][garbage collection],
 cache, network, battleneck
 
 ## Security
@@ -20,4 +20,4 @@ cache, network, battleneck
 * [Tools](./tools/tools.md)
 * [Program](./program.md)
 
-[garbagecollection]: ./performance/garbage%20collection.md
+[garbage collection]: ./performance/garbagecollection.md
