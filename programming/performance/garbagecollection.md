@@ -28,6 +28,10 @@ To achieve that, operations on byte slices take place,
 therefore entries (de)serialization in front of the cache
 will be needed in most use cases.
 
+Specifically, for the key-value pair, just hash the key to
+an index of an array. And (de)serialize the entry as an item
+in the array.
+
 [sync.Pool]: https://pkg.go.dev/sync#Pool
 [Using Sync.Pool]: https://developer20.com/using-sync-pool/
 [Bigcache]: https://github.com/allegro/bigcache
