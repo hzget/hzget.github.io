@@ -27,6 +27,8 @@ Here're the questions:
 You see, `1-2 == 23` and `1+23 == 0`. It can explain
 the phenomenon of unsigned integer overflow.
 
+![unsigned integer clockface][unsigned integer clockface]
+
 Here's a video of [unsigned integer overflow][unsigned integer overflow].
 
 ## Complement Code & Integer Overflow
@@ -108,3 +110,4 @@ fmt.Println(d, e, f, d-e, d+f, e+f)
 [Complement Code]: https://www.bilibili.com/video/BV16U4y1t7LD?spm_id_from=333.999.0.0&vd_source=db99336273bc60b960a922e981c6b9d0
 [integer overflow]: https://www.bilibili.com/video/BV1P541197N2?spm_id_from=333.999.0.0&vd_source=db99336273bc60b960a922e981c6b9d0
 [integer_clockface]: ../../pics/programming/integerclockface.png
+[unsigned integer clockface]: ../../pics/programming/unsignedintegerclockface.png
