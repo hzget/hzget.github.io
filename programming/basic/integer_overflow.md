@@ -49,11 +49,7 @@ Add them together:
 
 The result is not 0. Why?
 
-In fact, the computer takes corresponding
-complement code for Arithmetic operation.
-
-Suppose the complement code of positive integer does not change,
-to get the rule of complement code of negative integers, consider the following:
+In fact, the computer uses complement code for Arithmetic operation.
 
 ```golang
 to make the following work:
@@ -86,10 +82,27 @@ from complement code:    1000 0001
 
 ```
 
-There's a clockface for the integer arithmetic operation
-(with complement code as the rule):
+There's a clockface for the integer arithmetic operation.
 
 ![integer clockface][integer_clockface]
+
+From the CPU's point of view, it does not care
+about what is 1 or -1. It only concentrates on
+the machine code inside the circle. Increase
+a machine code by 1 will move clockwise by 1 step.
+Eventually, it will move to the origin - zero.
+
+From a human's point of view, there're positive and
+negative integers with zero in the middle.
+
+```golang
+..., -3, -2, -1, 0, 1, 2, 3, ...
+```
+
+To make the arithmatic operation works as expected
+both in the cpu's and human's points of view,
+we relate each machine code (complement code) to a digit
+(as was shown in the picture).
 
 Here're related video (the above picture is from the latter video):
 
