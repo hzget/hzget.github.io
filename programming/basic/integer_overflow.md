@@ -117,6 +117,21 @@ var d, e, f int8 = 0x1, 0x2, 0x7f
 fmt.Println(d, e, f, d-e, d+f, e+f)
 // Output:
 //    1 2 127 -1 -128 -127
+g := int16(0xff)
+h := int8(g)
+i := int16(h)
+j, k := uint16(h), uint16(g)
+fmt.Println(j==k, g==i)
+fmt.Printf("0x%X, 0x%X, 0x%X, 0x%X, 0x%X\n", g, h, i, j, k)
+// Output:
+//    false false
+//    0xFF, 0x-1, 0x-1, 0xFFFF, 0xFF
+l := int8(0xff)
+// Compiler Error:
+//    cannot convert 0xff (untyped int constant 255) to type int8
+if h == 0xff {}
+// Compilier Error:
+//    0xff (untyped int constant 255) overflows int8
 ```
 
 [unsigned integer overflow]: https://www.bilibili.com/video/BV1kA4y1Z77h?spm_id_from=333.999.0.0&vd_source=db99336273bc60b960a922e981c6b9d0
