@@ -2,7 +2,7 @@
 
 ## Basics
 
-[Integer Overflow][Integer Overflow]
+[Integer Arithmetic Operation][Integer Overflow]
 
 ## Performance
 
