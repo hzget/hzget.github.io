@@ -9,6 +9,8 @@
 [garbage collection][garbage collection],
 cache, network, battleneck
 
+[Multicore][multicore]
+
 ## CPU, thread, coroutine/goroutine
 
 ## Security
@@ -28,3 +30,5 @@ cache, network, battleneck
 
 [garbage collection]: ./performance/garbagecollection.md
 [Integer Overflow]: ./basic/integer_overflow.md
+[multicore]: ./performance/multicore.md
+
