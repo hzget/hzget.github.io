@@ -2,7 +2,7 @@
 
 (Some links: [Schedule in Go][Schedule in Go])
 
-To improve the performance we can make use of
+To improve the performance, we can make use of
 the multicore CPU in the hardware.
 
 ## Multiple cores and Multiple threads
@@ -10,11 +10,23 @@ the multicore CPU in the hardware.
 One logic CPU can only run one thread -- It runs machine code
 in sequence from that thread.
 It's a waste of hardware to leave some cores sleeping.
-An ideal situation is that the application opens
+An ideal situation is that the applications open
 as many threads as the cores in the hardware and all
 the threads run in parellel for the task of the app.
 
-However, the program is not simple.
+However, the thing is not simple.
+
+There may be many apps running at the same time and
+each does not know how many threads other apps are using.
+Usually there're more opened threads than cores.
+
+Even when there's only one app running on the machine,
+we cannot simplely open as many threads as cores.
+The app may need open several threads for its task while
+there's only one core. And the app may open one thread while
+there're several cores. It depends on properties of the tasks.
+
+We need to take into consideration some important issues.
 
 ## Side-effects
 
@@ -24,7 +36,7 @@ Switching the thread on the core is called context switch.
 The CPU needs to store and restore registers to save context.
 Some instructions will be wasted for this task.
 
-Further more, there're CPU caches to fill the gap
+Further more, there're CPU cache lines to fill the gap
 between CPU and memory. Switching context will usually
 update caches for the threads -- another waste.
 
@@ -35,20 +47,23 @@ lower down the waste.
 
 The golang dev environ provides goroutines to run
 slides of codes. The GPM mechnism helps to make sure
-that goroutines works correctly with the system.
+that goroutines works correctly with the os scheduler.
 
 * G - goroutine
-* P - the thread
-* M - the core to run a thread
+* P - a queue consisting of G's (goroutines)
+* M - OS thread, M stands for machine
 
-Suppose there're only one core in the hardware, but 
+One P connects with one M. Each time the Go Scheduler takes
+one G from the P and run it on the M.
+
+Suppose there're only one core in the hardware, and 
 the app can opens one thread but many goroutines.
 
 Specifically, the thread runs on the core, and the goroutines
-take turns to make use of the thread to run. Switching goroutines
+take turns to be run in the thread. Switching goroutines
 will not stop the thread -- it is always in the running status.
 There's no context switch, thus no wastes of instructions
-for (re)storing registers and updating caches.
+for (re)storing registers and updating cache lines.
 
 Here's the question:
 
