@@ -1,0 +1,72 @@
+# Data structures and Algorithms
+
+Well-designed data structures and algorithms help to
+improve the performance of a program. For example,
+fast and stable computing, simple and compatible interface,
+easy maintenace, scalability and so on.
+
+Every program depends on data structures and algorithms,
+but few programs depend on the invention of brand new ones.
+Even within an intricate program like a complier or
+a web browser, most data structures are arrays, lists,
+trees and hash tables. When a program needs something
+more elaborate, it will likely be based on these simpler ones.
+
+There're only a handful of basic algorithms that show up in almost
+every program --- primarily searching and sorting --- and even
+those are often included in libraries.
+
+We need to be familier with these basic structures and algorithms
+so that we can choose the appropriate ones in our programs.
+
+* data structures: arrays, lists, trees, hash tables
+* algorithms: searching and sorting
+
+## Arrays
+
+Arrays are unbeatable for fix-sized data set or for guaranteed
+small collection of data. Arrays have following
+properties:
+
+* easy to use
+* provide O(1) random access
+* work well with binary search and quick sort
+* have little space overhead
+
+For example, an event-driven program will trigger correspoding
+handlers for each incoming event, with its type in a known
+range of integers. If we store the corresponding relationships
+in an array, we can get O(1) handler access for any event type.
+
+However, the operations such as adding or deleting items in the middle
+of an array are inefficent, and we need the ***links*** structure for that.
+
+## Lists
+
+If the set of items will change frequently, particularly if
+the number of items is unpredictable, a list is the way to store
+them; by comparison, an array is better for relatively static data.
+
+A list has the following properties:
+
+* easy to use
+* takes O(n) times to search for a specific item
+* per-item storage overhead to hold pointers
+* when items are inserted or deleted, other items aren't moved
+* lists can be rearranged by exchanging a few pointers
+* suitable for constructing stacks or queues
+
+## Arrays and Lists
+
+Both the array and list structure are sequential struture
+in that we can traverse the data set from head to tail in sequential.
+We can also call it a linear struture in that, for some operations,
+the run-time is a linear function of data size.
+
+For example, the insertion operation in the middle of an array
+need O(n) times movements of items in the array. An item search for
+the list needs O(n) times comparisons.
+
+To combine ***frequent update*** with ***random access***, however,
+it would be wiser to use a less insistently linear data structure,
+such as a tree or hash table.
