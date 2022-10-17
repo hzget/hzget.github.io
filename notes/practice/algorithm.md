@@ -70,3 +70,64 @@ the list needs O(n) times comparisons.
 To combine ***frequent update*** with ***random access***, however,
 it would be wiser to use a less insistently linear data structure,
 such as a tree or hash table.
+
+## Hash Tables
+
+When used properly, a hash table has O(1) operation
+for lookup, inserting and deletion. It's unmatched
+by other techniques.
+
+The idea is to ***hash*** a KEY to a VALUE, the index
+of an array with each element being a list that chains together
+the items that share a hash value.
+Along the list, we can lookup/add/delete a specific item.
+Just like the following (from wikipedia [hash table](https://en.wikipedia.org/wiki/Hash_table) ):
+
+![hash table](../../pics/programming/Hash_collision_resolved_by_separate_chaining.png)
+
+A hash table of n items is an array of lists whose
+average length is "n / (size of array)". Thus retrieving
+an item is an O(1) operation. The key point is
+
+* all hashed values shall be evenly distributed along the array
+* the array size is "modest"
+
+On the contrary, if the hash function is poor
+or the table size is too small, one or more lists
+can grow long. That leads to O(n) behavior for operations.
+
+Hash tables also have limitations. It's elements are
+not directly ordered.
+
+Applicatons:
+
+The [map type][golang map] in golang is [implemented][golang map implementation]
+by a hash table. We can access a specific item
+by ***indexing*** the map object:
+
+```golang
+type Vertex struct {
+	Lat, Long float64
+}
+
+var m = map[string]Vertex{
+	"Bell Labs": {40.68433, -74.39967},
+	"Google":    {37.42202, -122.08408},
+}
+
+func main() {
+	fmt.Println(m["Google"])
+}
+```
+
+Another example is the golang [net/http][golang net/http] package, which registers
+routers via the map structure `map[string]muxEntry`.
+
+```golang
+	http.HandleFunc("/", func1)
+	http.HandleFunc("/endpoint", func2)
+```
+
+[golang map]: https://golang.google.cn/ref/spec#Map_types
+[golang map implementation]: https://go.dev/src/runtime/map.go
+[golang net/http]: https://pkg.go.dev/net/http
