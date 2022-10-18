@@ -34,9 +34,9 @@ properties:
 * have little space overhead
 
 For example, an event-driven program will trigger correspoding
-handlers for each incoming event, with its type in a known
-range of integers. If we store the corresponding relationships
-in an array, we can get O(1) handler access for any event type.
+handlers for each incoming event, with event types being in a known
+continuous range of integers. Storing these correspondences
+in an array, we can get O(1) access of handler for any event type.
 
 However, the operations such as adding or deleting items in the middle
 of an array are inefficent, and we need the ***lists*** structure for that.
