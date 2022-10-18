@@ -39,7 +39,7 @@ range of integers. If we store the corresponding relationships
 in an array, we can get O(1) handler access for any event type.
 
 However, the operations such as adding or deleting items in the middle
-of an array are inefficent, and we need the ***links*** structure for that.
+of an array are inefficent, and we need the ***lists*** structure for that.
 
 ## Lists
 
@@ -73,10 +73,12 @@ such as a tree or hash table.
 
 ## Hash Tables
 
-When used properly, a hash table has O(1) operation
-for lookup, inserting and deletion. It's unmatched
-by other techniques.
+When used properly, a hash table has O(1)-time
+lookup, insertion and deletion operations,
+which are unmatched by other techniques.
 
+A hash table is an unordered collection of key-value pairs,
+where each key is unique.
 The idea is to ***hash*** a KEY to a VALUE, the index
 of an array with each element being a list that chains together
 the items that share a hash value.
@@ -94,7 +96,7 @@ an item is an O(1) operation. The key point is
 
 On the contrary, if the hash function is poor
 or the table size is too small, one or more lists
-can grow long. That leads to O(n) behavior for operations.
+can grow very long. And that leads to O(n) behavior for operations.
 
 Hash tables also have limitations. It's elements are
 not directly ordered.
