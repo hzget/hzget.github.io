@@ -24,9 +24,8 @@ so that we can choose the appropriate ones in our programs.
 
 ## Arrays
 
-Arrays are unbeatable for fix-sized data set or for guaranteed
-small collection of data. Arrays have following
-properties:
+Arrays are unbeatable for fix-sized static data set or for guaranteed
+small collection of data. Arrays have following properties:
 
 * easy to use
 * provide O(1) random access
@@ -130,6 +129,39 @@ routers via the map structure `map[string]muxEntry`.
 	http.HandleFunc("/endpoint", func2)
 ```
 
+## Trees
+
+A tree in which each path from the root to a leaf has
+approximately the same length is called ***balanced***.
+The advantage of a balanced tree is that searching it for an
+item is an O(log n) process, since, as in binary search,
+the number of possibilities is halved at each step.
+
+Applications:
+
+[epoll][epoll] is a Linux kernel system call for
+a scalable I/O event notification mechanism (in
+I/O multiplexing tech).
+It uses a red–black tree (RB-tree) data structure to
+keep track of all file descriptors that are currently being monitored.
+
+A [red–black tree][red-black tree] is a kind of
+self-balancing binary search tree. The re-balancing is not perfect,
+but guarantees searching in O(log n) time. The insert and delete
+operations, along with the tree rearrangement and recoloring, are
+also performed in O(log n) time.
+
+some links:
+[红黑树原理][红黑树原理], [红黑树操作][红黑树操作],
+
+Here is a picture from [wikipedia red-black tree][red-black tree]:
+
+![red black tree](../../pics/programming/Red-black_tree_example_with_NIL.svg.png)
+
 [golang map]: https://golang.google.cn/ref/spec#Map_types
 [golang map implementation]: https://go.dev/src/runtime/map.go
 [golang net/http]: https://pkg.go.dev/net/http
+[epoll]: https://en.wikipedia.org/wiki/Epoll
+[red-black tree]: https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
+[红黑树原理]: https://www.bilibili.com/video/BV1zU4y1H77f?spm_id_from=333.999.0.0
+[红黑树操作]: https://www.bilibili.com/video/BV17J411P7aJ?spm_id_from=333.999.0.0
