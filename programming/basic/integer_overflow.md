@@ -60,9 +60,9 @@ to make the following work:
 
 we get the complement code:
 
--1 : 1111 1110
--2 : 1111 1101
--3 : 1111 1100
+-1 : 1111 1111
+-2 : 1111 1110
+-3 : 1111 1101
 
 Find the pattern (take -1 as an example) of origin code to complement code:
 
