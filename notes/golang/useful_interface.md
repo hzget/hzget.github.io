@@ -114,13 +114,17 @@ for it.
 ```golang
 // in standard pkg flag
 func (f *FlagSet) TextVar(p encoding.TextUnmarshaler, name string, value encoding.TextMarshaler, usage string)
+func (v textValue) Set(s string) error {
+	return v.p.UnmarshalText([]byte(s))
+}
 
 // an example of parsing the net.Ip type that implement
 // encoding.TextUnmarshaler
 // TextVar binds the flag "ip" to the variable ip := net.IP
 var ip net.IP
 fs.TextVar(&ip, "ip", net.IPv4(192, 168, 0, 100), "`IP address` to parse")
-fs.Parse([]string{"-ip", "127.0.0.1"})
+// Parse will call flag.Value.Set(value) for each flag
+fs.Parse([]string{"-ip", "127.0.0.1"}) 
 fmt.Printf("{ip: %v}\n\n", ip)
 ```
 
