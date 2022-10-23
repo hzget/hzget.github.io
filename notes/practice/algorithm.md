@@ -1,7 +1,7 @@
 # Data structures and Algorithms
 
 Well-designed data structures and algorithms help to
-improve the performance of a program. For example,
+improve the performance of a program and other benefits. For example,
 fast and stable computing, simple and compatible interface,
 easy maintenace, scalability and so on.
 
@@ -32,13 +32,63 @@ small collection of data. Arrays have following properties:
 * work well with binary search and quick sort
 * have little space overhead
 
-For example, an event-driven program will trigger correspoding
+Applications
+
+An event-driven program will trigger correspoding
 handlers for each incoming event. If event types are
 designed to range from 0 to N, we can store their correspondences
 in an array to get O(1) access of handler for any event type.
 
-However, the operations such as adding or deleting items in the middle
-of an array are inefficent, and we need the ***lists*** structure for that.
+Package [sort][std/sort] provides primitives for sorting slices and
+user-defined collections. Thus we can create a slice containing
+the data set and make use of sort.Slice() to sort the items.
+
+Here is an example.
+Package [flag][std/flag] implements command-line flag parsing. It's
+usage messages are printed in lexicographical order by
+PrintDefaults() which traverses all flags in that order
+and prints informations of each flag.
+
+However, the FlagSet structure contains flags messages in a map
+structure `formal map[string]*Flag`. We need to copy them
+to a slice structure and make use of sort.Slice() to sort
+these items.
+
+```golang
+func (f *FlagSet) PrintDefaults() {
+	...
+	f.VisitAll(func(flag *Flag) {
+		...
+		fmt.Fprint(f.Output(), b.String(), "\n")
+		...
+	})
+	...
+}
+// VisitAll visits the flags in lexicographical order, calling fn for each.
+// It visits all flags, even those not set.
+func (f *FlagSet) VisitAll(fn func(*Flag)) {
+	for _, flag := range sortFlags(f.formal) {
+		fn(flag)
+	}
+}
+
+// sortFlags returns the flags as a slice in lexicographical sorted order.
+func sortFlags(flags map[string]*Flag) []*Flag {
+	result := make([]*Flag, len(flags))
+	i := 0
+	for _, f := range flags {
+		result[i] = f
+		i++
+	}
+	sort.Slice(result, func(i, j int) bool {
+		return result[i].Name < result[j].Name
+	})
+	return result
+}
+```
+
+Operations such as adding or deleting items in the middle
+of an array are inefficent, thus we need the ***lists*** structure for that.
 
 ## Lists
 
@@ -165,3 +215,5 @@ Here is a picture from [wikipedia red-black tree][red-black tree]:
 [red-black tree]: https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
 [红黑树原理]: https://www.bilibili.com/video/BV1zU4y1H77f?spm_id_from=333.999.0.0
 [红黑树操作]: https://www.bilibili.com/video/BV17J411P7aJ?spm_id_from=333.999.0.0
+[std/sort]: https://pkg.go.dev/sort@go1.19.2
+[std/flag]: https://pkg.go.dev/flag
