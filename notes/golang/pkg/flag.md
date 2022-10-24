@@ -1,6 +1,6 @@
 # flag
 
-Package flag implements command-line flag parsing.
+Package [flag][std/flag] implements command-line flag parsing.
 
 It provides a mechnism to ***parse a slice of textual input***,
 which can be used in many situations other than command-line.
@@ -21,7 +21,7 @@ fs.IntVar(&nSuccess, "success", 100, "number of success")
 fs.Parse([]string{"-success", "500"}) // nSuccess is 500 in this case
 ```
 
-The process to parse a slice of texts:
+The mechnism to parse a slice of texts:
 
 1. bind a variable to the expected flag
 2. create a Flag structure to store parsing its rules
@@ -66,3 +66,5 @@ func (f *FlagSet) Parse(arguments []string) error {
         }
 }
 ```
+
+[std/flag]: https://pkg.go.dev/flag@go1.19.2

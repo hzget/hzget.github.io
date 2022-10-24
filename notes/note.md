@@ -12,7 +12,7 @@ The Practice of Programming:
 Golang:  
 [database](./golang/database.md), [context](./golang/context.md),
 [useful interface](./golang/useful_interface.md),  
-standard packages:
+go pkg:
 [flag](./golang/pkg/flag.md),
 
 Container: [concept](./container/concept.md),
