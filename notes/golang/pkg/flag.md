@@ -3,7 +3,7 @@
 Package [flag][std/flag] implements command-line flag parsing.
 
 It provides a mechnism to ***parse a slice of textual input***,
-which can be used in many situations other than command-line.
+which can be used in many situations besides command-line.
 Here is an example:
 
 ```golang
