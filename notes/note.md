@@ -14,5 +14,6 @@ Golang:
 [useful interface](./golang/useful_interface.md),  
 go pkg:
 [flag](./golang/pkg/flag.md),
+[log](./golang/pkg/log.md),
 
 Container: [concept](./container/concept.md),
