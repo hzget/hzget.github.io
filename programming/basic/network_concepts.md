@@ -9,6 +9,10 @@ A tcp connection is identified by two endpoint: local endpoint
 and remote endpoint. Thus a tcp socket is not a connection,
 but an endpoint of a connection.
 
+A port is a ***service endpoint*** by which a server can
+provide a service. A port is not a socket, but a component
+of a socket.
+
 A server process creates a socket on startup that are in the
 listening state, waiting for initiatives from client programs.
 Once a connection is established, a new socket (the conn's local
@@ -17,13 +21,13 @@ whereby the process can read and write byte data from and to
 the peer.
 
 The server process can serve multiple clients concurrently via
-maintaining each connection in a single thread. However, the
+maintaining each connection with a single thread. However, the
 cost of context switching (of threads) is high, thus the
 multi-threads method is not applicable when there're many clients.
 The issue is addressed by the I/O multiplexing technique.
 
 Here's an example of tcp programming in golang. The socket details
-are hidden.
+are hidden in the underlying structure.
 
 ```golang
 // client side
@@ -36,26 +40,24 @@ status, err := bufio.NewReader(conn).ReadString('\n')
 // ...
 
 // server side
-// Listen announces on the local network address.
-// ln is of type TCPListener
+// ln is of type TCPListener that contains local socket
+// port 8080 is the service endpoint
 ln, err := net.Listen("tcp", ":8080")
 if err != nil {
 	// handle error
 }
 for {
-    // conn is of type net.TCPConn that implements
-    // io.Reader and io.Writer
+	// conn is of type net.TCPConn that implements
+	// io.Reader and io.Writer
 	conn, err := ln.Accept()
 	if err != nil {
 		// handle error
 	}
-	// open a new goroutine to handle the conn
+	// open a new goroutine to handle this conn
 	go handleConnection(conn)
 }
 
 // source code in package net
-// TCPConn is an implementation of the Conn interface for TCP network
-// connections.
 type TCPConn struct {
 	conn
 }
@@ -66,16 +68,13 @@ type conn struct {
 type netFD struct {
 	pfd poll.FD
 
-	// immutable until Close
 	family      int
 	sotype      int
-	isConnected bool // handshake completed or use of association with peer
+	isConnected bool
 	net         string
-	laddr       Addr
+	laddr       Addr // local endpoint of the network
 	raddr       Addr
 }
-// TCPListener is a TCP network listener. Clients should typically
-// use variables of type Listener instead of assuming TCP.
 type TCPListener struct {
 	fd *netFD
 	lc ListenConfig
