@@ -15,5 +15,6 @@ Golang:
 go pkg:
 [flag](./golang/pkg/flag.md),
 [log](./golang/pkg/log.md),
+[http](./golang/pkg/http.md),
 
 Container: [concept](./container/concept.md),
