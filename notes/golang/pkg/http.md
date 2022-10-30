@@ -47,7 +47,7 @@ func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
 ```
 
 The function `ListenAndServe` hides details of the underlying
-tcp interaction:
+tcp interaction (pls refer to [socket example][tcp interaction]):
 
 [1] listen to the service port  
 [2] accept a new request and create a new conn object (which
@@ -55,3 +55,4 @@ contains local and remote endpoints, i.e., sockets)
 [3] open a new goroutine to handle this conn, and then go to [2]
 
 [net/http]: https://pkg.go.dev/net/http
+[tcp interaction]: ../../../programming/basic/network_concepts.md

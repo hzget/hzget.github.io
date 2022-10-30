@@ -15,16 +15,23 @@ of a socket.
 
 A server process creates a socket on startup that are in the
 listening state, waiting for initiatives from client programs.
-Once a connection is established, a new socket (the conn's local
-endpoint) exists and it provides a duplex byte stream
+Once a connection is established, a new socket (local endpoint
+of the conn) exists and it provides a duplex byte stream
 whereby the process can read and write byte data from and to
 the peer.
 
 The server process can serve multiple clients concurrently via
-maintaining each connection with a single thread. However, the
+maintaining connections with distinct threads. However, the
 cost of context switching (of threads) is high, thus the
 multi-threads method is not applicable when there're many clients.
-The issue is addressed by the I/O multiplexing technique.
+The issue is addressed by the I/O multiplexing technique. Only one
+thread is needed in this case.
+
+The Golang env goes further, it opens as many goroutines
+as connections. Once a new conn is established, register its socket
+to the underlying I/O multiplexing routine. The goroutine goes to
+sleep status when the socket i/o is not ready. Otherwise, it wakes
+up to read from or write to the endpoint.
 
 Here's an example of tcp programming in golang. The socket details
 are hidden in the underlying structure.
@@ -49,6 +56,7 @@ if err != nil {
 for {
 	// conn is of type net.TCPConn that implements
 	// io.Reader and io.Writer
+	// a new conn means a local socket is created
 	conn, err := ln.Accept()
 	if err != nil {
 		// handle error
