@@ -1,5 +1,16 @@
 # Abstract
 
+## 2003
+
+### Reading Comprehension
+
+#### Text 2
+
+Animal rights misinformation confuse the public and threaten
+advances in health care. Scientists must communicate with the
+public and make clear the connection between animal research
+and health care.
+
 ## 2004
 
 ### Use of English
