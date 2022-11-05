@@ -6,10 +6,17 @@
 
 #### Text 2
 
-Animal rights misinformation confuse the public and threaten
+Animal rights misinformation confuses the public and threatens
 advances in health care. Scientists must communicate with the
 public and make clear the connection between animal research
 and health care.
+
+#### Text 3
+
+It talks about the monopoly on the rail industry, as well as
+the resulting rate discrimination against captive shippers.
+These shippers also worry about a round of huge rate increase
+because of the continuing acquisition.
 
 ## 2004
 
