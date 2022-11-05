@@ -87,6 +87,42 @@ func TestOutput(t *testing.T) {
 }
 ```
 
+Package [net/http][net/http] provides HTTP client and server
+implementations.
+
+`Handler` is an interface to handle incoming request. Its first
+argument is an object implementing `ResponseWriter` interface,
+which is also an io.Writer.
+
+```golang
+// user code
+// register a handler function
+// (It will be converted to HandlerFunc somewhere when necessary)
+http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
+	// w is also an io.Writer and
+	// w.Write() will be called inside fmt.Fprintf()
+	fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
+})
+
+// src code in pkg net/http
+type Handler interface {
+	ServeHTTP(ResponseWriter, *Request)
+}
+
+type ResponseWriter interface {
+	Header() Header
+	// it makes a http.ResponseWriter work as an io.Writer
+	Write([]byte) (int, error)
+	WriteHeader(statusCode int)
+}
+
+type HandlerFunc func(ResponseWriter, *Request)
+func (f HandlerFunc) ServeHTTP(w ResponseWriter, r *Request) {
+	f(w, r)
+}
+
+```
+
 ## encoding.TextUnmarshaler
 
 Package [encoding][std/encoding] defines interfaces shared by
@@ -133,3 +169,4 @@ fmt.Printf("{ip: %v}\n\n", ip)
 [std/flag]: https://pkg.go.dev/flag@go1.19.2
 [std/bytes]: https://pkg.go.dev/bytes@go1.19.2
 [std/encoding]: https://pkg.go.dev/encoding
+[net/http]: https://pkg.go.dev/net/http
