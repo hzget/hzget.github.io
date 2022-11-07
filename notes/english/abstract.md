@@ -2,11 +2,17 @@
 
 ## 2003
 
+### Use of English
+
+Teenagers have been experiencing the emotional, intellectual
+and physical changes. And teachers need to give serious
+thoughts to how students can best accommodate such changes.
+
 ### Reading Comprehension
 
 #### Text 1
 
-These days Internet is reshaping the spying profession.
+The emergence of the Net has remolded the intelligence services.
 It has given birth to a whole industry of point-and-click spying,
 the so-called "open-source intelligence".
 
