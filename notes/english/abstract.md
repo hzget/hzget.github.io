@@ -4,10 +4,16 @@
 
 ### Reading Comprehension
 
+#### Text 1
+
+These days Internet is reshaping the spying profession.
+It has given birth to a whole industry of point-and-click spying,
+the so-called "open-source intelligence".
+
 #### Text 2
 
 Animal rights misinformation confuses the public and threatens
-advances in health care. Scientists must communicate with the
+advances in health care. Scientists must communicate more with the
 public and make clear the connection between animal research
 and health care.
 
