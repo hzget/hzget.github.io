@@ -34,7 +34,7 @@ because of the continuing acquisition.
 
 Americans treat death as a problem to be solved, which is
 costly and unsustainable for the society, as well as
-ineffective and painful for the patients. The nation should
+ineffective and painful for the patients. Instead, the nation should
 fund more research on humbler therapies that could improve
 people's lives.
 
