@@ -30,6 +30,14 @@ the resulting rate discrimination against captive shippers.
 These shippers also worry about a round of huge rate increase
 because of the continuing acquisition.
 
+#### Text 4
+
+Americans treat death as a problem to be solved, which is
+costly and unsustainable for the society, as well as
+ineffective and painful for the patients. The nation should
+fund more research on humbler therapies that could improve
+people's lives.
+
 ## 2004
 
 ### Use of English
