@@ -32,6 +32,9 @@ small collection of data. Arrays have following properties:
 * work well with binary search and quick sort
 * have little space overhead
 
+Operations such as adding or deleting items in the middle
+of an array are inefficent, thus we need the ***lists*** structure for that.
+
 ### Applications
 
 Package [sort][std/sort] provides primitives for sorting slices and
@@ -131,6 +134,7 @@ func (mux *ServeMux) Handle(pattern string, handler Handler) {
 }
 ```
 
+We will focus on how the slice works in this case.
 In the parsing process, to find the
 pattern "that most closely matches the URL", just need to
 traverse the slice from top to end. And in the registration
@@ -153,9 +157,6 @@ func appendSorted(es []muxEntry, e muxEntry) []muxEntry {
 	return es
 }
 ```
-
-Operations such as adding or deleting items in the middle
-of an array are inefficent, thus we need the ***lists*** structure for that.
 
 ## Lists
 
