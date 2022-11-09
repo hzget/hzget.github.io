@@ -32,12 +32,7 @@ small collection of data. Arrays have following properties:
 * work well with binary search and quick sort
 * have little space overhead
 
-Applications
-
-An event-driven program will trigger correspoding
-handlers for each incoming event. If event types are
-designed to range from 0 to N, we can store their correspondences
-in an array to get O(1) access of handler for any event type.
+### Applications
 
 Package [sort][std/sort] provides primitives for sorting slices and
 user-defined collections. Thus we can create a slice containing
@@ -84,6 +79,78 @@ func sortFlags(flags map[string]*Flag) []*Flag {
 		return result[i].Name < result[j].Name
 	})
 	return result
+}
+```
+
+Another example is the type ServeMux in pkg [net/http][golang net/http].
+ServeMux is a multiplexer that matches the URL of each incoming request
+against a list of registered patterns and calls the handler for
+the pattern that most closely matches the URL.
+
+```golang
+type ServeMux struct {
+	mu    sync.RWMutex
+	m     map[string]muxEntry
+	es    []muxEntry // slice of entries sorted from longest to shortest.
+	hosts bool       // whether any patterns contain hostnames
+}
+```
+
+It contains a map struture `m` to save exactly matched patterns,
+and a slice `es` to save subtree patterns. The partial-matching rule
+is that "Longer patterns take precedence over shorter ones".
+
+```golang
+// here is the parsing process
+func (mux *ServeMux) match(path string) (h Handler, pattern string) {
+	// Check for exact match first.
+	v, ok := mux.m[path]
+	if ok {
+		return v.h, v.pattern
+	}
+
+	// Check for longest valid match.  mux.es contains all patterns
+	// that end in / sorted from longest to shortest.
+	for _, e := range mux.es {
+		if strings.HasPrefix(path, e.pattern) {
+			return e.h, e.pattern
+		}
+	}
+	return nil, ""
+}
+
+// here is the registration process
+func (mux *ServeMux) Handle(pattern string, handler Handler) {
+	...
+	e := muxEntry{h: handler, pattern: pattern}
+	mux.m[pattern] = e
+	if pattern[len(pattern)-1] == '/' {
+		mux.es = appendSorted(mux.es, e)
+	}
+	...
+}
+```
+
+In the parsing process, to find the
+pattern "that most closely matches the URL", just need to
+traverse the slice from top to end. And in the registration
+process, just perform binary search via sort.Search() to find
+the place where to insert the pattern. It's very convenient.
+
+```golang
+func appendSorted(es []muxEntry, e muxEntry) []muxEntry {
+	n := len(es)
+	i := sort.Search(n, func(i int) bool {
+		return len(es[i].pattern) < len(e.pattern)
+	})
+	if i == n {
+		return append(es, e)
+	}
+	// we now know that i points at where we want to insert
+	es = append(es, muxEntry{}) // try to grow the slice in place, any entry works.
+	copy(es[i+1:], es[i:])      // Move shorter entries down
+	es[i] = e
+	return es
 }
 ```
 
