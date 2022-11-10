@@ -15,6 +15,7 @@ listen and serve requests on incoming connections.
 http.HandleFunc("/hello", helloHandler)
 log.Fatal(http.ListenAndServe(":8080", nil))
 
+// the underlying implementation
 // src code in pkg net/http
 func HandleFunc(pattern string, handler func(ResponseWriter, *Request)) {
 	...
@@ -55,7 +56,7 @@ tcp interaction (pls refer to [socket example][tcp interaction]):
 contains local and remote endpoints, i.e., sockets)  
 [3] open a new goroutine to handle this conn, and then go to [2]
 
-## Use a Multiplex as a Middleware
+## Multiplexer
 
 The Server structure contains a Handler to handle a connection.
 
@@ -71,24 +72,28 @@ type Handler interface {
 }
 ```
 
-We can just write a function to implment the Handler interface.
-However, we need to manually parse the uri pattern in the
-request line of the http message, and then trigger corresponding
-actions. Here's an example of the Request Line:
+We can just write a function to implement the Handler interface.
 
-```golang
-GET /admin/users HTTP/1.1
-```
+1. abstract uri in the request line, e.g., `GET /admin/users HTTP/1.1`
+2. run a code block of `if-else` conditions
+3. trigger corresponding actions
 
-A more appropriate way is to add a multiplex which matches the
+However, the `if-else` block would be complicated and
+difficult to maintain. A more appropriate way is to add a
+***multiplexer***, working as a ***middleware***, which matches the
 URL of each incoming request against a list of ***registered*** patterns
-and calls the handler for the pattern that most closely matches
-the URL.
+and calls the corresponding handler.
 
-The type ServeMux does this job. It implements the Handler
-interface and works as a ***middleware*** in the handling process.
-Once a conn is established, ServeMux will invoke its ServeHTTP()
-method which ***multiplexes*** the conn.
+The type ServeMux does this job.
+
+1. registration stage: save handlers for each pattern via `ServeMux.HandleFunc()`
+2. dispatching stage: match uri in request line and trigger its handler
+
+It implements the Handler interface. When a Server is created,
+a ServeMux, with registered handlers, is assigned to its
+Handler member. Once a conn is established,
+`ServeMux.ServeHTTP()` will be called to dispatch the request.
+If the user does not specify a Handler, a default ServeMux is used.
 
 ```golang
 type ServeMux struct {
@@ -103,8 +108,6 @@ func (mux *ServeMux) ServeHTTP(w ResponseWriter, r *Request) {
 }
 
 ```
-
-The registration mechnism is described in the above "Usage" Section.
 
 [net/http]: https://pkg.go.dev/net/http
 [tcp interaction]: ../../../programming/basic/network_concepts.md
