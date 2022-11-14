@@ -48,3 +48,10 @@ It introduced a kind of search agent on career-related sites.
 A visitor just keys in his job criteria and the agent will e-mail
 him when a matching position is posted on the site.
 The agent also helps the employed to "keep their eyes open".
+
+***Text 2*** :
+Alphabetism is an insidious form of descrimination that continues
+to thrive. In many occasions, the list of speakers is drawn up
+alphabetically -- sorted by the first letter of their surnames --
+and the audience will lose interest by the time they reach
+the second half.
