@@ -55,3 +55,7 @@ to thrive. In many occasions, the list of speakers is drawn up
 alphabetically -- sorted by the first letter of their surnames --
 and the audience will lose interest by the time they reach
 the second half.
+
+***Text 3*** :
+The slowing economy slightly affects people's lives. And
+they remain optimistic about the its long-term prospects.
