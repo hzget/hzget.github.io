@@ -58,4 +58,11 @@ the second half.
 
 ***Text 3*** :
 The slowing economy slightly affects people's lives. And
-they remain optimistic about the its long-term prospects.
+the public remain optimistic about the its long-term prospects.
+
+***Text 4*** :
+Intellect is undervalued in both the society and the schools.
+They pay more attention to praciticality, common sense
+and natve intelligence, instead of intellect.
+While practical is more important in the society, schools
+should be a counterbanlance.
