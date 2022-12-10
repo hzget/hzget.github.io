@@ -66,3 +66,8 @@ They pay more attention to praciticality, common sense
 and natve intelligence, instead of intellect.
 While practical is more important in the society, schools
 should be a counterbanlance.
+
+***Part B*** :
+It talks about the relation of language to mind. Whorf developed
+the idea that the structure of language determines the structure
+of habitual thought in a society.
