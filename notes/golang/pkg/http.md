@@ -89,18 +89,25 @@ The type ServeMux does this job.
 1. registration stage: save handlers for each pattern via `ServeMux.HandleFunc()`
 2. dispatching stage: match uri in request line and trigger its handler
 
-It implements the Handler interface. When a Server is created,
-a ServeMux, with registered handlers, is assigned to its
-Handler member. Once a conn is established,
-`ServeMux.ServeHTTP()` will be called to dispatch the request.
-If the user does not specify a Handler, a default ServeMux is used.
-
 ```golang
+// data structure
 type ServeMux struct {
 	mu    sync.RWMutex
 	m     map[string]muxEntry // store handlers for each pattern
 }
 
+// registtration stage
+// HandleFunc() --> DefaultServeMux.HandleFunc() --> DefaultServeMux.Handle()
+http.HandleFunc("/hello", helloHandler)
+// underlyig mechnism
+func (mux *ServeMux) Handle(pattern string, handler Handler) {
+	...
+	e := muxEntry{h: handler, pattern: pattern}
+	mux.m[pattern] = e
+	...
+}
+
+// dispatching stage
 func (mux *ServeMux) ServeHTTP(w ResponseWriter, r *Request) {
 	...
 	h, _ := mux.m[path]
@@ -109,5 +116,27 @@ func (mux *ServeMux) ServeHTTP(w ResponseWriter, r *Request) {
 
 ```
 
+When a Server is created,
+a ServeMux, with registered handlers, is assigned to its
+Handler member. Once a conn is established,
+`ServeMux.ServeHTTP()` will be called to dispatch the request.
+If the user does not specify a Handler, a default ServeMux is used.
+
+## MiddleWare
+
+The multiplexer ServeMux is also a middleware in the architecture.
+There're places that the user can manipulate:
+
+* embed another middleware, e.g., log request info in the Handler
+* replace the default multiplexer ServeMux with another one, e.g., httprouter
+
+[HttpRouter][HttpRouter] is a lightweight high performance
+HTTP request router (also called multiplexer or just mux for short).
+
+In contrast to the default mux of Go's net/http package,
+this router supports variables in the routing pattern and
+matches against the request method. It also scales better.
+
 [net/http]: https://pkg.go.dev/net/http
 [tcp interaction]: ../../../programming/basic/network_concepts.md
+[HttpRouter]: https://github.com/julienschmidt/httprouter
