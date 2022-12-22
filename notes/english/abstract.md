@@ -76,3 +76,11 @@ of habitual thought in a society.
 
 ***Use of English*** :
 It talks about sensitivity, of the human nose, to smells.
+
+***Reading Comprehension***
+
+***Text 1*** :
+A Research suggests that resenting unfairness is capuchin
+monkeys' nature. Capuchins are co-operative, group-living species.
+Such cooperation is likely to be stable only when each animal
+feels it is not being cheated.
