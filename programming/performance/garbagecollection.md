@@ -8,6 +8,15 @@ the number of allocations in our application.
 ***[sync.Pool][sync.Pool]***
 caches allocated but unused items for later reuse,
 relieving pressure on the garbage collector.
+An appropriate use of a Pool is to manage a group of
+temporary items silently shared among and potentially
+reused by concurrent independent clients of a package.
+Pool provides a way to amortize allocation overhead
+across many clients.
+
+* relieve pression on the garbage collector
+* amortize allocation overhead across many clients
+
 The real power of it is visible when there're
 frequent allocations and deallocations of
 the same data structure
