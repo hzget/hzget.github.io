@@ -11,12 +11,6 @@ aims:
 * "intecept" methods of another type
 * downgrade an implementation
 
-issues:
-
-* conflict
-* overload
-* hidding
-
 ## Normal Usage
 
 [Effective Go][effective go embedding] :
@@ -61,12 +55,83 @@ type Job struct {
     Command string
     *log.Logger
 }
+// we can now use Job.Println(),... directly.
 ```
+
+## Issues
+
+Embedding types introduces the problem of name conflicts
+but the rules to resolve them are simple.
+
+* ***overridden :*** a field or method X hides any other item X
+in a more deeply nested part of the type.
+* ***name conflict :*** duplicate name inside embedded subtypes of
+the same level is okey if they're never used. Otherwise,
+it reports an error: "ambiguous selector".
+This qualification provides some protection against changes
+made to types embedded from outside; there is no problem if
+a field is added that conflicts with another field in
+another subtype if neither field is ever used.
+* ***overload :*** a method of an embedded type has the same
+name but different signature with the one of another embedded
+type. It is not supported now.
 
 ## Intercept
 
-Embedding provides a convenience to intercept methods
-of the embedded type. We can change its function.
+Embedding provides a convenience for intercepting methods
+of the embedded type. We can change its functionality.
+
+Here're examples by an GitHub user valyala, taken from
+[this comment][github commit for embedding].
+
+```golang
+// Example 1: interface in struct
+// StatsConn is a `net.Conn` that counts the number of bytes read
+// from the underlying connection.
+type StatsConn struct {
+    net.Conn
+
+    BytesRead uint64
+}
+
+func (sc *StatsConn) Read(p []byte) (int, error) {
+    n, err := sc.Conn.Read(p)
+    sc.BytesRead += uint64(n)
+    return n, err
+}
+
+// use case
+conn, err := net.Dial("tcp", u.Host+":80")
+if err != nil {
+  log.Fatal(err)
+}
+sconn := &StatsConn{conn, 0}
+
+resp, err := ioutil.ReadAll(sconn)
+if err != nil {
+  log.Fatal(err)
+}
+log.Printf("recv %d bytes", sconn.BytesRead)
+
+// Example 2
+// AuthListener is a `net.Listener` that rejects unauthorized connections
+type AuthListener struct {
+    net.Listener
+}
+
+func (al *AuthListener) Accept() (net.Conn, error) {
+    for {
+        c, err := al.Listener.Accept()
+        if err != nil {
+            return c, err
+        }
+        if authorizeConn(c) {
+            return c, nil
+        }
+        c.Close()
+    }
+}
+```
 
 [sort.Sort][pkg sort] sorts data in ascending order as determined by
 the Less method. The type `reverse` embeds the interface and intercepts
@@ -74,6 +139,7 @@ its Less() methods: the modified version returns the opposite
 of the embedded implementation's Less method.
 
 ```golang
+// Example: interface in struct
 // in std pkg: sort
 type Interface interface {
     Len() int
@@ -104,7 +170,7 @@ fmt.Println(s) // output: [6 5 4 3 2 1]
 
 ## Downgrade an implementation
 
-Downgrading intends to use only some part of an implemention.
+Downgrading intends to use only some parts of an implemention.
 
 ```golang
 io.Copy(struct{ io.Writer }{sw}, r)
@@ -114,3 +180,4 @@ io.Copy(struct{ io.Writer }{sw}, r)
 [pkg sort]: https://pkg.go.dev/sort#Sort
 [embedding in go]: https://eli.thegreenplace.net/2020/embedding-in-go-part-3-interfaces-in-structs/
 [struct and interface embedding]: https://ankur-a22.medium.com/struct-and-interface-embedding-f0da8517fa8a
+[github commit for embedding]: https://github.com/golang/go/issues/22013#issuecomment-331886875
