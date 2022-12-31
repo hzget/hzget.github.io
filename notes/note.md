@@ -12,6 +12,8 @@ The Practice of Programming:
 Golang:  
 [database](./golang/database.md), [context](./golang/context.md),
 [useful interface](./golang/useful_interface.md),  
+tech:
+[embedding](./golang/tech/embedding.md),  
 go pkg:
 [flag](./golang/pkg/flag.md),
 [log](./golang/pkg/log.md),
