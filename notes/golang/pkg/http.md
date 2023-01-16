@@ -155,12 +155,16 @@ func Hello(w http.ResponseWriter, r *http.Request) {
         fmt.Fprintf(w, "hello, you request for %s!\n", r.Host)
 }
 
+func Hi(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+        fmt.Fprintf(w, "hi, %s!\n", ps.ByName("name"))
+}
+
 func main() {
 
         // mux from pkg net/http
         serveMux := http.NewServeMux()
         serveMux.HandleFunc("/hello", Hello)
-        // client get: hello, you request for localhost:8081!
+        // response: hello, you request for localhost:8081!
         go func() {
                 log.Fatal(http.ListenAndServe(":8081", serveMux))
         }()
@@ -168,7 +172,10 @@ func main() {
         // replace it with another one
         router := httprouter.New()
         router.HandlerFunc(http.MethodGet, "/hello", Hello)
-        // client get: hello, you request for localhost:8080!
+        // response: hello, you request for localhost:8080!
+        router.GET("/hi/:name", Hi)
+        // request: http://localhost:8080/hi/Jack
+        // response: hi, Jack!
         log.Fatal(http.ListenAndServe(":8080", router))
 }
 ```
