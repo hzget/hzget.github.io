@@ -125,10 +125,12 @@ If the user does not specify a Handler, a default ServeMux is used.
 ## MiddleWare
 
 The multiplexer ServeMux is also a middleware in the architecture.
-There're places that the user can manipulate:
+The midddleware structure provides more space to manipulate:
 
-* embed another middleware, e.g., log request info in the Handler
+* chain another middleware, e.g., log request info in the Handler
 * replace the default multiplexer ServeMux with another one, e.g., httprouter
+
+### replace a middleware
 
 [HttpRouter][HttpRouter] is a lightweight high performance
 HTTP request router (also called multiplexer or just mux for short).
@@ -136,6 +138,40 @@ HTTP request router (also called multiplexer or just mux for short).
 In contrast to the default mux of Go's net/http package,
 this router supports variables in the routing pattern and
 matches against the request method. It also scales better.
+We can replace default mux with this one:
+
+```golang
+package main
+
+import (
+        "fmt"
+        "log"
+        "net/http"
+
+        "github.com/julienschmidt/httprouter"
+)
+
+func Hello(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprintf(w, "hello, you request for %s!\n", r.Host)
+}
+
+func main() {
+
+        // mux from pkg net/http
+        serveMux := http.NewServeMux()
+        serveMux.HandleFunc("/hello", Hello)
+        // client get: hello, you request for localhost:8081!
+        go func() {
+                log.Fatal(http.ListenAndServe(":8081", serveMux))
+        }()
+
+        // replace it with another one
+        router := httprouter.New()
+        router.HandlerFunc(http.MethodGet, "/hello", Hello)
+        // client get: hello, you request for localhost:8080!
+        log.Fatal(http.ListenAndServe(":8080", router))
+}
+```
 
 [net/http]: https://pkg.go.dev/net/http
 [tcp interaction]: ../../../programming/basic/network_concepts.md
