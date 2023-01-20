@@ -166,15 +166,18 @@ if h == 0xff {}
 //    0xff (untyped int constant 255) overflows int8
 
 l := uint8(i)    //       ff ff --> ff ff ff ff --> ff
-m := uint16(i)
+m := uint16(i)   //       ff ff --> ff ff ff ff --> ff ff
 n := int16(l)
 // zero extended:            ff --> 00 00 00 ff
 // truncate:        00 00 00 ff --> 00 ff
-fmt.Printf("0x%X, 0x%X, 0x%X\n", l, m, n)
-fmt.Println(l, m, n)
+o := int8(m)
+// zero extended:         ff ff --> 00 00 ff ff
+// truncate:        00 00 ff ff --> ff
+fmt.Printf("0x%X, 0x%X, 0x%X, 0x%X\n", l, m, n, o)
+fmt.Println(l, m, n, o)
 // Output:
-//      0xFF, 0xFFFF, 0xFF
-//      255 65535 255
+//      0xFF, 0xFFFF, 0xFF, 0x-1
+//      255 65535 255 -1
 ```
 
 [unsigned integer overflow]: https://www.bilibili.com/video/BV1kA4y1Z77h?spm_id_from=333.999.0.0&vd_source=db99336273bc60b960a922e981c6b9d0
