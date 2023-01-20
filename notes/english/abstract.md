@@ -89,3 +89,9 @@ feels it is not being cheated.
 There's definitely a growing threat of global warming. To protect
 the atmosphere, we should take actions as well as press forward on
 scientific research.
+
+***Text 3*** :
+Present research shows that dreams help to work through
+negative feelings generated during the day. And a leading
+authority suggests that the process can be brought under
+conscious control with special exercise.
