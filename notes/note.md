@@ -17,7 +17,9 @@ tech:
 go pkg:
 [flag](./golang/pkg/flag.md),
 [log](./golang/pkg/log.md),
-[http](./golang/pkg/http.md),
+[http](./golang/pkg/http.md),  
+performance:
+[escape analysis](./golang/performance/escape.md),
 
 Container: [concept](./container/concept.md),
 
