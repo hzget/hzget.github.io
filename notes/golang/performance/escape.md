@@ -26,9 +26,9 @@ There's only two rules to keep in mind:
   8 }
   9
  10 //go:noinline
- 11 func getInt() (int, *int) {
- 12         m, n := 1, 2
- 13         return m, &n
+ 11 func getInt() (int, *int, int, *int) {
+ 12         m, n, x, y := 1, 2, new(int), new(int)
+ 13         return m, &n, *x, y
  14 }
  15
  16 //go:noinline
@@ -46,6 +46,8 @@ There's only two rules to keep in mind:
 //  main.go:5:15: make([]int, 100, 100) does not escape
 //  main.go:6:15: make([]int, 10000, 10000) escapes to heap
 //  main.go:12:5: moved to heap: n
+//  main.go:12:32: new(int) does not escape
+//  main.go:12:42: new(int) escapes to heap
 //  main.go:20:12: make([]int, vsize, vsize) escapes to heap
 //  main.go:21:12: make([]int, csize, csize) does not escape
 ```
