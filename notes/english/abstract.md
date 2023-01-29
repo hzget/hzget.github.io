@@ -91,7 +91,12 @@ the atmosphere, we should take actions as well as press forward on
 scientific research.
 
 ***Text 3*** :
-Present research shows that dreams help to work through
+Present research shows that ***dreams*** help to work through
 negative feelings generated during the day. And a leading
 authority suggests that the process can be brought under
 conscious control with special exercise.
+
+***The Word***. Some area of the brain is especially ***active***
+when most vivid dreams occur, suggesting that there maybe a link
+between dreams and this specific area. (In this case, it is the
+limbic system that represents the "emotional brain").
