@@ -100,3 +100,9 @@ conscious control with special exercise.
 when most vivid dreams occur, suggesting that there maybe a link
 between dreams and this specific area. (In this case, it is the
 limbic system that represents the "emotional brain").
+
+***Text 4*** :
+The gradual disappearance of Formal English is natural and
+inevitable during language development.
+Mr. McWhorter is really grieving over the loss
+of something beautiful more than useful.
