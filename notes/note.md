@@ -12,6 +12,8 @@ The Practice of Programming:
 Golang:  
 [database](./golang/database.md), [context](./golang/context.md),
 [useful interface](./golang/useful_interface.md),  
+diagnostics:
+[profiling](./golang/diagnostics/profile/profile.md),  
 pitfalls:
 [pitfalls](./golang/pitfalls/pitfall.md),  
 tech:
