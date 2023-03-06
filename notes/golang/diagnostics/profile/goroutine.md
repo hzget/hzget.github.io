@@ -3,6 +3,8 @@
 [up &uarr; profiling](./profile.md)
 
 The following is an example of finding goroutine leaks via [pprof][diagnistics profiling].
+pprof visualize and analyze the goroutine profile that
+reports the stack traces of all current goroutines.
 It examines the issue from different points of views.
 
 main.go is a http server containing goroutine leak.
@@ -240,6 +242,61 @@ To check the frame graph, visit <http://localhost:6061/ui/flamegraph>
 
 ![v1 graph](./pic/goroutine_fixed_flamegraph.png)
 
-[hey]: https://github.com/rakyll/hey
+## check with grmon
 
+Another way to check goroutine - [grmon][grmon]:
+Command line monitoring for goroutines.
+
+```bash
+# initial program
+# before http load
+> grmon -host localhost:6060
+  # result:
+  #    state               desc
+  1    IO wait             internal/poll.runtime_pollWait(0x208d3ae0958, 0x72)
+  24   running             runtime/pprof.writeGoroutineStacks({0x1344fa0, 0xc000528000})
+  50   IO wait             internal/poll.runtime_pollWait(0x208d3ae0868, 0x72)
+
+  total: 3                 last update: 15:07:10 CST
+
+# after http load with hey
+> hey -d "{\"user\":\"Jack\", \"age\":17}" http://localhost:6060/log
+Status code distribution:
+  [200] 111 responses
+  [408] 89 responses
+
+# grmon result:
+# As we can see there're 89 extra goroutine blocked in "chan send".
+  #    state               desc
+  1    IO wait             internal/poll.runtime_pollWait(0x208d3ae0958, 0x72)
+  24   running             runtime/pprof.writeGoroutineStacks({0x1344fa0, 0xc0000900e0})
+  151  chan send           main.logHandler.func1()
+  161  chan send           main.logHandler.func1()
+  167  chan send           main.logHandler.func1()
+  190  chan send           main.logHandler.func1()
+  192  chan send           main.logHandler.func1()
+  ...
+  total: 92                last update: 15:10:29 CST
+
+# fixed code
+# after http load with hey
+> hey -d "{\"user\":\"Jack\", \"age\":17}" http://localhost:6060/log
+Status code distribution:
+  [200] 108 responses
+  [408] 92 responses
+
+#
+> grmon -host localhost:6060
+# result:
+  #    state               desc
+  1    IO wait             internal/poll.runtime_pollWait(0x208f7580918, 0x72)
+  463  IO wait             internal/poll.runtime_pollWait(0x208f7580828, 0x72)
+  471  running             runtime/pprof.writeGoroutineStacks({0x3d4fa0, 0xc00032e1c0})
+
+  total: 3                 last update: 15:23:10 CST
+
+```
+
+[hey]: https://github.com/rakyll/hey
+[grmon]: https://github.com/bcicen/grmon
 [diagnistics profiling]: https://golang.google.cn/doc/diagnostics#profiling
