@@ -2,20 +2,28 @@
 
 Profiling helps to analyze run-time performance of a program.
 
-It is useful for identifying expensive or frequently called
-sections of code.
+It provides critical execution insights in various dimensions
+which enable resolving performance issues, locating memory leaks,
+thread contention and more.
+Users need to collect the profiling data (in profile.proto format)
+and then use pprof tools to filter and visualize the top code paths.
 Kinds of profiles to analyze: cpu, heap, goroutine, block, mutex, threadcreate.
-Users need to collect the profiling data and use pprof tools
-to filter and visualize the top code paths.
 
 Useful links:
 
 * [diagnistics profiling][diagnistics profiling] gives basic concepts of profiling
 
-Involved packages or tools:
+other links:
+
+* [Program Profiling][Program Profiling] gives a profiling tutorial and an example of optimizing cpu time
+* [Go: The Complete Guide to Profiling Your Code][goroutine profiling] gives an example of goroutine profiling
+* [golang pprof 实战][golang pprof 实战] give clear examples of profiling cpu, heap, goroutine, muxtex, block
+
+Involved packages or tools
 
 * Package [net/http/pprof][net/http/pprof] serves via its HTTP server runtime profiling data
 * Package [runtime/pprof][runtime/pprof] writes runtime profiling data
+* `go test` can also collect these data, e.g., `go test -cpuprofile cpu.prof -memprofile mem.prof -bench .`
 * [go tool pprof] is a tool for visualization and analysis of profiling data
 
 ## Quick Start
@@ -88,3 +96,6 @@ After that, profile the fixed program, we can see there's no goroutine leaks.
 [runtime/pprof]: https://pkg.go.dev/runtime/pprof
 [go tool pprof]: https://github.com/google/pprof/blob/main/doc/README.md
 [diagnistics profiling]: https://golang.google.cn/doc/diagnostics#profiling
+[Program Profiling]: https://www.practical-go-lessons.com/chap-36-program-profiling#heap-profiling
+[goroutine profiling]: https://hackernoon.com/go-the-complete-guide-to-profiling-your-code-h51r3waz
+[golang pprof 实战]: https://blog.wolfogre.com/posts/go-ppof-practice/
