@@ -1,5 +1,13 @@
 # Programming
 
+## [Unit Test][unit test tech]
+
+Automatic testcases make life easer for developers.
+After adding a new feature, the programmer can add
+new cases to the pool of the existing testcases.
+And then run (corresponding) testcases to keep
+code quality.
+
 ## Basics
 
 [Integer Arithmetic Operation][Integer Overflow],
@@ -35,3 +43,4 @@ cache, network, battleneck
 [multicore]: ./performance/multicore.md
 [data structure and algorithms]: ../notes/practice/algorithm.md
 [network concepts]: ./basic/network_concepts.md
+[unit test tech]: https://github.com/hzget/tech/tree/main/testing
