@@ -1,6 +1,8 @@
-# Abstract
+Abstract
+========
 
-## 2003
+2003
+----
 
 ***Use of English*** :
 Teenagers have been experiencing the emotional, intellectual
@@ -33,7 +35,8 @@ ineffective and painful for the patients. Instead, the nation should
 fund more research on humbler therapies that could improve
 people's lives.
 
-## 2004
+2004
+----
 
 ***Use of English*** :
 It discussed the causes of juvenile delinquency. While many
@@ -72,7 +75,8 @@ It talks about the relation of language to mind. Whorf developed
 the idea that the structure of language determines the structure
 of habitual thought in a society.
 
-## 2005
+2005
+----
 
 ***Use of English*** :
 It talks about sensitivity, of the human nose, to smells.
@@ -106,3 +110,33 @@ The gradual disappearance of Formal English is natural and
 inevitable during language development.
 Mr. McWhorter is really grieving over the loss
 of something beautiful more than useful.
+
+2006
+----
+
+***Reading Comprehension***
+
+***Text 3*** :
+Large sea animals are in danger of extinction. Researchers
+suggest that biomass of large predators is reduced by 80%
+in a new fishery and by 90% in a long-fished area.
+
+***Method***. They examine half a century of data and get the changes
+in catch sizes and, by that, estimate the changes in biomass.
+
+***Text 4*** :
+Anti-happy art functions as a reminder of misery to save
+people from the illusion of easy happiness created by the
+mass media.
+
+***Part B*** :
+Gambling make people have serious mental problems --
+personality disorders. They pursue the thrill
+from gambling and are helplessly addicted to it.
+However, the government is addicted to the venenues
+from casinos, thus supports this industry.
+
+***Lure***. Casinos attract people with coupons and mailings, and then
+maintain clients by the FUN card which earns poits
+for meals and drinks. As time goes by, people are addicted
+and can not control their behavior.
