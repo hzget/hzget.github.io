@@ -114,10 +114,24 @@ of something beautiful more than useful.
 2006
 ----
 
+***Use of English*** :
+The number of ***homeless*** is increasing and the government
+shall help them toward independence: low-cost housing,
+survival skills, mental treatment and so on.
+
 ***Reading Comprehension***
 
+***Text 1*** :
+The American society has a great power for ***homogenizing*** people.
+And the immigration is successful according to three indices of
+assimilation: language, home ownership and intermarriage.
+
+***Forces***. Shopping, mass media, advertizing and sports
+are the forces for homogination. They influence people's
+daily life.
+
 ***Text 3*** :
-Large sea animals are in danger of extinction. Researchers
+Large sea animals are in danger of ***extinction***. Researchers
 suggest that biomass of large predators is reduced by 80%
 in a new fishery and by 90% in a long-fished area.
 
@@ -125,12 +139,12 @@ in a new fishery and by 90% in a long-fished area.
 in catch sizes and, by that, estimate the changes in biomass.
 
 ***Text 4*** :
-Anti-happy art functions as a reminder of misery to save
+Anti-happy art functions as ***a reminder of misery*** to save
 people from the illusion of easy happiness created by the
 mass media.
 
 ***Part B*** :
-Gambling make people have serious mental problems --
+***Gambling*** make people have serious mental problems --
 personality disorders. They pursue the thrill
 from gambling and are helplessly addicted to it.
 However, the government is addicted to the venenues
