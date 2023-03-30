@@ -154,3 +154,12 @@ from casinos, thus supports this industry.
 maintain clients by the FUN card which earns poits
 for meals and drinks. As time goes by, people are addicted
 and can not control their behavior.
+
+***Part C*** :
+Intellectuals today have become anti-intellectual themselves.
+They shall think in a Socratic way: first ask factual questions,
+then ask moral questions, finally suggest actions. But this
+excludes the average scientist, the majority of teachers
+and scolars --- they may do well in the first step but stop there.
+They take the everyday ***marol code*** for granted rather than
+living in public and illustrious thought.
