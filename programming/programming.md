@@ -10,27 +10,17 @@ code quality.
 
 ## Basics
 
-[Integer Arithmetic Operation][Integer Overflow],
-[Data Structure and Algorithms][data structure and algorithms],
-[Network Concepts][network concepts],
+[Integer Arithmetic Operation][Integer Overflow] demonstrates
+the "overflows" and sign extention  
+[Network Concepts][network concepts] shows how a socket is established  
+[Data Structure and Algorithms][data structure and algorithms]  
 
 ## Performance
 
-[garbage collection][garbage collection],
-cache, network, battleneck
-
+[Profiling][profiling] helps to analyze run-time performance of a program  
+[Atomic][Atomic] helps to avoid contention issue with a "lock" in CPU instruction level  
+[garbage collection][garbage collection]  
 [Multicore][multicore]
-
-## CPU, thread, coroutine/goroutine
-
-## Security
-
-## concurrency
-
-* Some operation is not safe. For golang, parallel operations on map or slice are not safe.
-* some parellel operation increase efficiency
-
-## Database
 
 ## Others
 
@@ -44,3 +34,5 @@ cache, network, battleneck
 [data structure and algorithms]: ../notes/practice/algorithm.md
 [network concepts]: ./basic/network_concepts.md
 [unit test tech]: https://github.com/hzget/tech/tree/main/testing
+[Atomic]: https://github.com/hzget/go-investigation/tree/main/performance/atomic
+[profiling]: ../notes/golang/diagnostics/profile/profile.md
