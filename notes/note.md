@@ -4,35 +4,35 @@ Reading notes
 Golang
 ------
 
-diagnostics:
-[profiling](./golang/diagnostics/profile/profile.md),  
-pitfalls:
-[pitfalls](./golang/pitfalls/pitfall.md),  
-tech:
-[embedding](./golang/tech/embedding.md),  
-go pkg:
-[flag](./golang/pkg/flag.md),
-[log](./golang/pkg/log.md),
-[http](./golang/pkg/http.md),  
-performance:
-[escape analysis](./golang/performance/escape.md),
-[atomic operation][Atomic],  
-others:
-[database](./golang/database.md), [context](./golang/context.md),
-[useful interface](./golang/useful_interface.md),  
+|topics|articles|
+|------|--------|
+|diagnostics|[profiling](./golang/diagnostics/profile/profile.md)|
+|pitfalls|[pitfalls](./golang/pitfalls/pitfall.md)|
+|tech|[embedding](./golang/tech/embedding.md)|
+|go pkgs|[flag](./golang/pkg/flag.md), [log](./golang/pkg/log.md), [http](./golang/pkg/http.md)|
+|performance|[escape analysis](./golang/performance/escape.md), [atomic operation][Atomic]|
+|others|[database](./golang/database.md), [context](./golang/context.md), [useful interface](./golang/useful_interface.md)|
 
-Container: [concept](./container/concept.md),
+Container
+---------
 
-Linear Algebra Done Right:  
-Introduction to probability:
+[concept](./container/concept.md),
+
+Introduction to probability
+---------------------------
+
 [random variable](./probability/random_variable.md),
 [conditional probability](./probability/conditional_probability.md),
 
-The Practice of Programming:
+The Practice of Programming
+---------------------------
+
 [style](./practice/style.md),
 [data structures and algorithms](./practice/algorithm.md),
 
-English Learning:
+English Learning
+----------------
+
 [abstract](./english/abstract.md),
 
 
