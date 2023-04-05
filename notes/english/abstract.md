@@ -1,6 +1,13 @@
 Abstract
 ========
 
+2002
+----
+
+***Use of English*** :
+It shows the process of the ***communication revolution***
+which influenced our daily lifes a lot.
+
 2003
 ----
 
@@ -12,7 +19,7 @@ thoughts to how students can best accommodate such changes.
 ***Reading Comprehension***
 
 ***Text 1*** :
-The emergence of the Net has remolded the intelligence services.
+The emergence of the Net has remolded the ***intelligence*** services.
 It has given birth to a whole industry of point-and-click spying,
 the so-called "open-source intelligence".
 
