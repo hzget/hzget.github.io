@@ -6,7 +6,7 @@ Abstract
 
 ***Use of English*** :
 It shows the process of the ***communication revolution***
-which influenced our daily lifes a lot.
+which influences our daily lifes a lot.
 
 2003
 ----

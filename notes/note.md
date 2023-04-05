@@ -1,17 +1,9 @@
-# Reading notes
+Reading notes
+=============
 
-Linear Algebra Done Right:  
-Introduction to probability:
-[random variable](./probability/random_variable.md),
-[conditional probability](./probability/conditional_probability.md),
+Golang
+------
 
-The Practice of Programming:
-[style](./practice/style.md),
-[data structures and algorithms](./practice/algorithm.md),
-
-Golang:  
-[database](./golang/database.md), [context](./golang/context.md),
-[useful interface](./golang/useful_interface.md),  
 diagnostics:
 [profiling](./golang/diagnostics/profile/profile.md),  
 pitfalls:
@@ -24,8 +16,25 @@ go pkg:
 [http](./golang/pkg/http.md),  
 performance:
 [escape analysis](./golang/performance/escape.md),
+[atomic operation][Atomic],  
+others:
+[database](./golang/database.md), [context](./golang/context.md),
+[useful interface](./golang/useful_interface.md),  
 
 Container: [concept](./container/concept.md),
 
+Linear Algebra Done Right:  
+Introduction to probability:
+[random variable](./probability/random_variable.md),
+[conditional probability](./probability/conditional_probability.md),
+
+The Practice of Programming:
+[style](./practice/style.md),
+[data structures and algorithms](./practice/algorithm.md),
+
 English Learning:
 [abstract](./english/abstract.md),
+
+
+[Atomic]: https://github.com/hzget/go-investigation/tree/main/performance/atomic
+
