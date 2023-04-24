@@ -3,10 +3,9 @@
 ## [Unit Test][unit test tech]
 
 Automatic testcases make life easer for developers.
-After adding a new feature, the programmer can add
+After adding a new feature, the programmer shall add
 new cases to the pool of the existing testcases.
-And then run (corresponding) testcases to keep
-code quality.
+And then run related cases to avoid any new bugs.
 
 ## Basics
 
