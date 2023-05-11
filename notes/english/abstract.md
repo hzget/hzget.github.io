@@ -8,6 +8,29 @@ Abstract
 It shows the process of the ***communication revolution***
 which influences our daily lifes a lot.
 
+***Reading Comprehension***
+
+***Text 1*** :
+To make your ***humor*** work, you should identify shared experiences
+and show the audience that you are one of them.
+
+***Text 2*** :
+Robots help to ***remove much human labor*** in modern times and
+the next stage is to respond ***independently*** to a changing world.
+
+***Text 3*** :
+In the past, oil shocks resulted in inflation and global economic
+decline. But this time the ecomomic consequence is less severe and
+people should be optimistic.
+
+***Text 4*** :
+***Physician-assisted suicide*** is still illegal but the
+medical priciple of "double effect" is supported: if a
+high dose of a medication can reduce the dying patient's pain
+but will eventually kill the patient, the physician can
+prescribe it. As long as the physician use it
+for medical purpose, he/she has done nothing illegal.
+
 2003
 ----
 
