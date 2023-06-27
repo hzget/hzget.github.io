@@ -1,6 +1,9 @@
 Reading notes
 =============
 
+[Operating System](./os/README.md)
+----------------
+
 Golang
 ------
 
