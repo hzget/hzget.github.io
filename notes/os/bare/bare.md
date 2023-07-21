@@ -88,6 +88,6 @@ It is ***isolated I/O*** .
 [graphics pic]: ./pics/mbr_graphics.png
 [printString pic]: ./pics/mbr_printString.png
 [harddisk pic]: ./pics/mbr_harddisk.png
-[printString.asm]: https://github.com/hzget/os/bare/printString.asm
-[graphics.asm]: https://github.com/hzget/os/bare/graphics.asm
-[harddisk.asm]: https://github.com/hzget/os/bare/harddisk.asm
+[printString.asm]: https://github.com/hzget/os/blob/main/bare/printString.asm
+[graphics.asm]: https://github.com/hzget/os/blob/main/bare/graphics.asm
+[harddisk.asm]: https://github.com/hzget/os/blob/main/bare/harddisk.asm
