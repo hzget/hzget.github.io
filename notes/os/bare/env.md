@@ -50,6 +50,15 @@ configure the bochsrc, add following lines
 
     > dd if=boot.bin of=master.img
 
+***note*** : current command just write a bin file to the 1st
+sector which is usually reserved for MBR bin file. The harddisk
+may contain other programs such as a "loader" in other sectors.
+To write a "loader" to the 3rd sector, use the following command
+
+    > dd if=loader.bin of=master.img seek=2
+
+The argument "seek" specifies the starting offset of the output file (of).
+
 [4] start bochs
 
     > bochs -q
