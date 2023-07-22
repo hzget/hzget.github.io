@@ -35,7 +35,8 @@ Programmed I/O:
 The CPU interacts with I/O devices via kinds of I/O interfaces.
 There're 2 catagories:
 
-***memory-maped I/O*** : reserve a part of the address space for I/O devices.
+***memory-maped I/O*** :
+reserve a part of the memory address space for I/O devices.
 The cpu visits I/O devices just like visiting computer memory.
 They have the same set of instructions such as `mov` op.
 Please refer to [graphics.asm][graphics.asm].
@@ -52,8 +53,8 @@ may use `in` or `out` instead of `mov` for memory op.
 Please refer to [harddisk.asm][harddisk.asm].
 
 useful links about I/O operation:  
-https://www.baeldung.com/cs/memory-mapped-vs-isolated-io#Overview  
-https://www.geeksforgeeks.org/memory-mapped-i-o-and-isolated-i-o/  
+<https://www.baeldung.com/cs/memory-mapped-vs-isolated-io#Overview>  
+<https://www.geeksforgeeks.org/memory-mapped-i-o-and-isolated-i-o/>  
 
 Environment
 -----------
