@@ -14,6 +14,8 @@ into memory and run it. Now the Operating System (the kernel) is running.
 Concepts
 --------
 
+[BIOS][BIOS], [MBR][MBR], [Real Mode & Protected Mode][pmode]
+
 ***[BIOS][BIOS]*** is used during bootup. It checks hardware conditions,
 fills in interrupt tables, and loads MBR to memory.
 BIOS services works in Real Mode and it can be accessed
@@ -86,9 +88,11 @@ It is ***isolated I/O*** .
 
 [BIOS]: https://wiki.osdev.org/BIOS
 [MBR]: https://wiki.osdev.org/MBR
+[pmode]: ./pmode.md
 [graphics pic]: ./pics/mbr_graphics.png
 [printString pic]: ./pics/mbr_printString.png
 [harddisk pic]: ./pics/mbr_harddisk.png
 [printString.asm]: https://github.com/hzget/os/blob/main/bare/printString.asm
 [graphics.asm]: https://github.com/hzget/os/blob/main/bare/graphics.asm
 [harddisk.asm]: https://github.com/hzget/os/blob/main/bare/harddisk.asm
+
