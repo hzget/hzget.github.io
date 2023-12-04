@@ -6,6 +6,12 @@ keyword:
 [GDT][GDT] (Global Descriptor Table), 
 [A20 line][whyA20line], 
 
+code:  
+[RealMode to ProtectedMode][rm2pm], 
+
+Introduction
+------------
+
 **[Real Mode][RealMode]** is an operating mode of all x86-compatible CPUs.
 It was first used for [intel 8086][Intel8086], which gave rise to the
 x86 architecture.
@@ -85,4 +91,5 @@ Useful links:
 [GDT Tutorial]: https://wiki.osdev.org/GDT_Tutorial
 [Switching to Protected Mode]: https://huichen-cs.github.io/course/CISC3320/19FA/lecture/modeswitch.html
 [Intel Manual]: https://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.html
+[rm2pm]: https://github.com/hzget/os/blob/main/bare/main_pm.asm
 
