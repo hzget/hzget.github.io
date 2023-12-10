@@ -35,6 +35,9 @@ A CPU that is initialized by the BIOS starts in Real Mode.
 When kernel loader is running, it will change from Real Mode
 to Protected Mode.
 
+Since [i386][i386], data width is 32bits, address width is 32 bits,
+thus memory space is 4 Gigabytes.
+
 To protect a specific memory segment, we can set some rules
 in some place. [GDT][GDT] (Global Descriptor Table) does this work.
 Each entry in GDT describes such rules.
@@ -84,7 +87,7 @@ Useful links:
 [Why enable A20 line?][whyA20line]
 
 [RealMode]: https://wiki.osdev.org/Real_Mode#Real_Mode_Memory_Addressing
-[Protected Mode]: https://wiki.osdev.org/Protected_Mode
+[Protected Mode]: https://en.wikipedia.org/wiki/Protected_mode
 [Intel8086]: https://en.wikipedia.org/wiki/Intel_8086
 [whyA20line]: https://stackoverflow.com/questions/13893056/why-enable-disable-a20-line
 [GDT]: https://wiki.osdev.org/Global_Descriptor_Table
@@ -92,4 +95,5 @@ Useful links:
 [Switching to Protected Mode]: https://huichen-cs.github.io/course/CISC3320/19FA/lecture/modeswitch.html
 [Intel Manual]: https://www.intel.com/content/www/us/en/architecture-and-technology/64-ia-32-architectures-software-developer-vol-3a-part-1-manual.html
 [rm2pm]: https://github.com/hzget/os/blob/main/bare/main_pm.asm
+[i386]: https://en.wikipedia.org/wiki/I386
 
