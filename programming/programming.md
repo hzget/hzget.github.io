@@ -35,7 +35,7 @@ Performance
 
 [Profiling][profiling] helps to analyze run-time performance of a program  
 [Atomic][Atomic] helps to avoid contention issue with a "lock" in CPU instruction level  
-[garbage collection][garbage collection]  
+[Allocation][allocation]  
 [Multicore][multicore]
 
 Others
@@ -45,7 +45,7 @@ Others
 * [Tools](./tools/tools.md)
 * [Program](./program.md)
 
-[garbage collection]: ./performance/garbagecollection.md
+[allocation]: ./performance/allocation.md
 [Integer Overflow]: ./basic/integer_overflow.md
 [multicore]: ./performance/multicore.md
 [data structure and algorithms]: ../notes/practice/algorithm.md
