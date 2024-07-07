@@ -10,7 +10,7 @@ Golang
 |topics|articles|
 |------|--------|
 |diagnostics|[profiling](./golang/diagnostics/profile/profile.md)|
-|pitfalls|[pitfalls](./golang/pitfalls/pitfall.md)|
+|pitfalls|[pitfalls](./golang/pitfalls/pitfall.md), [slice](./golang/pitfalls/slice.md)|
 |tech|[embedding](./golang/tech/embedding.md)|
 |go pkgs|[flag](./golang/pkg/flag.md), [log](./golang/pkg/log.md), [http](./golang/pkg/http.md)|
 |performance|[escape analysis](./golang/performance/escape.md), [atomic operation][Atomic]|
