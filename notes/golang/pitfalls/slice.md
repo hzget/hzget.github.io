@@ -46,8 +46,11 @@ may realloc underlying array for that:
 > array that fits both the existing slice elements and the
 > additional values. Otherwise, append re-uses the underlying array.
 
-The key point is that, the new array may have some "extra" space
-for furture use.
+The ***KEY POINT*** is that, the new array may have some "extra" space
+for furture use. If the user only **appends** one value to the original
+slice, it will re-use the underlying array, i.e., use that "extra" space.
+And then, if the user only **appends** one value to the "copied" slice,
+it will also use that "extra" space, i.e., new value overwrites that space.
 
 Another example is the Record struct in standard pkg slog.
 A Record holds information about a log event. Copies of a Record share state.
@@ -65,6 +68,10 @@ of original record and modifying one record will affect another.
 
 func main() {
 
+	/* The following code uses assignment to create a copy with
+	 * shared state, and then the original record and the copy
+	 * may interfer with each other.
+	 */
 	r1 := slog.NewRecord(time.Now(), slog.LevelDebug, "hello", 0)
 	r1.Add("s1", 1, "s2", 2, "s3", 3, "s4", 4, "s5", 5)
 	r1.Add("b1", 1)
@@ -84,25 +91,44 @@ func main() {
 	r1.Attrs(gets1)
 	r2.Attrs(gets2)
 
-	fmt.Printf("r1last attr: %v\n", s1[len(s1)-1]) // r1last attr: b7=7
-	fmt.Printf("r2last attr: %v\n", s2[len(s2)-1]) // r2last attr: b7=7
+	fmt.Printf("r1 last attr: %v\n", s1[len(s1)-1]) // r1 last attr: b7=7
+	fmt.Printf("r2 last attr: %v\n", s2[len(s2)-1]) // r2 last attr: b7=7
 
 	r1.Add("b8", 8)
 	s1 = []slog.Attr{}
 	s2 = []slog.Attr{}
 	r1.Attrs(gets1)
 	r2.Attrs(gets2)
-	fmt.Printf("r1last attr: %v\n", s1[len(s1)-1]) // r1last attr: b8=8
-	fmt.Printf("r2last attr: %v\n", s2[len(s2)-1]) // r2last attr: b7=7
+	fmt.Printf("r1 last attr: %v\n", s1[len(s1)-1]) // r1 last attr: b8=8
+	fmt.Printf("r2 last attr: %v\n", s2[len(s2)-1]) // r2 last attr: b7=7
 
-	r2.Add("b8", 99999)  // <--- it will change r1 
+	r2.Add("b8", 99999) // <--- it will change r1
 	s1 = []slog.Attr{}
 	s2 = []slog.Attr{}
 	r1.Attrs(gets1)
 	r2.Attrs(gets2)
-	fmt.Printf("r1last attr: %v\n", s1[len(s1)-1]) // r1last attr: b8=99999
-	fmt.Printf("r2last attr: %v\n", s2[len(s2)-1]) // r2last attr: b8=99999
+	fmt.Printf("r1 last attr: %v\n", s1[len(s1)-1]) // r1 last attr: b8=99999
+	fmt.Printf("r2 last attr: %v\n", s2[len(s2)-1]) // r2 last attr: b8=99999
 
+	/* The following code uses Record.Clone to create a copy with
+	 * no shared state, and then the original record and the clone
+	 * can both be modified without interfering with each other.
+	 */
+	r1 = slog.NewRecord(time.Now(), slog.LevelDebug, "hello", 0)
+	r1.Add("s1", 1, "s2", 2, "s3", 3, "s4", 4, "s5", 5)
+	r1.Add("b1", 1)
+	r1.Add("b2", 2, "b3", 3, "b4", 4, "b5", 5, "b6", 6, "b7", 7)
+	r2 = r1.Clone()
+
+	r1.Add("b8", 8)
+	r2.Add("b8", 99999) // <--- it will not change r1
+
+	s1 = []slog.Attr{}
+	s2 = []slog.Attr{}
+	r1.Attrs(gets1)
+	r2.Attrs(gets2)
+	fmt.Printf("r1 last attr: %v\n", s1[len(s1)-1]) // r1 last attr: b8=8
+	fmt.Printf("r2 last attr: %v\n", s2[len(s2)-1]) // r2 last attr: b8=99999
 }
 ```
 
@@ -110,6 +136,22 @@ If we dig into the details of Record.Add() method, we will find that `append`
 is used for assembling the slice.
 
 ```golang
+type Record struct {
+	Time time.Time
+	Message string
+	Level Level
+	PC uintptr
+
+	// It holds the start of the list of Attrs.
+	front [nAttrsInline]Attr
+
+	// The number of Attrs in front.
+	nFront int
+
+	// The list of Attrs except for those in front.
+	back []Attr
+}
+
 func (r *Record) Add(args ...any) {
 	// ..
 	// other codes
@@ -123,6 +165,9 @@ func (r *Record) Add(args ...any) {
 
 If we dig into the details of Record.Clone() method, will find that the slice
 will be "re-sliced" and remove extra space in the underlying array.
+When the user adds a new attribute, `append` will allocate a new
+array to store data. Thus original slice and the clone will have
+distinct underlying arrays. It is the mechnism of "cloning".
 
 ```golang
 func (r Record) Clone() Record {
