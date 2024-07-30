@@ -35,6 +35,7 @@ Performance
 
 [Profiling][profiling] helps to analyze run-time performance of a program  
 [Atomic][Atomic] helps to avoid contention issue with a "lock" in CPU instruction level  
+[Deferment][deferment] helps to avoid unnecessary expense  
 [Allocation][allocation]  
 [Multicore][multicore]
 
@@ -52,4 +53,5 @@ Others
 [network concepts]: ./basic/network_concepts.md
 [unit test tech]: https://github.com/hzget/tech/tree/main/testing
 [Atomic]: https://github.com/hzget/go-investigation/tree/main/performance/atomic
+[deferment]: ./performance/deferment.md
 [profiling]: ../notes/golang/diagnostics/profile/profile.md
