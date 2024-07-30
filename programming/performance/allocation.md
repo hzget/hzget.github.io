@@ -24,13 +24,18 @@ the same data structure
 The article [Using Sync.Pool][Using Sync.Pool] gives
 a clear explanation of the power of the pool.
 
-Examples:
+Examples
+---
 
-Standard Package [log][log] use a buffer to assemble
+* std pkg [log][log] use a buffer to assemble
 a logged message for each "print" function. And 
 [c3b4c27][log c3b4c27] introduce sync.Pool to
 relieve pressure on GC.
 This approach is identical to how fmt does.
+* std pkg [slog][slog] defines handlers that use
+a [buffer][slog buffer] to assemble msg.
+This buffer also makes use of sync.Pool to avoid
+unnecessary allocations.
 
 ***[Bigcache][Bigcache]*** gives another solution:
 just omit the garbage collection.
@@ -51,5 +56,7 @@ an index of a hash table. Store the entry on an array.
 [Using Sync.Pool]: https://developer20.com/using-sync-pool/
 [Bigcache]: https://github.com/allegro/bigcache
 [log c3b4c27]: https://cs.opensource.google/go/go/+/c3b4c27fd31b51226274a0c038e9c10a65f11657
-[log]: https://pkg.go.dev/log@go1.21.5
+[log]: https://pkg.go.dev/log
+[slog]: https://pkg.go.dev/log/slog
+[slog buffer]: https://pkg.go.dev/log/slog/internal/buffer
 
