@@ -1,6 +1,6 @@
 # log
 
-Package [log][std/log] implements a simple logging package.
+Package [log][log] implements a simple logging package.
 
 A Logger represents an active logging object that generates
 lines of ***formatted output*** to an io.Writer, which writes
@@ -42,7 +42,8 @@ const (
 
 The format is very simple, thus the pkg is used in very simple
 situation. For complex format, like "leveled" log, we need to
-refer to other log packages such as [zerolog][zerolog].
+refer to other log packages such as [slog][slog] and [zerolog][zerolog].
 
-[std/log]: https://pkg.go.dev/log@go1.19.2
+[log]: https://pkg.go.dev/log
+[slog]: https://pkg.go.dev/log/slog
 [zerolog]: https://github.com/rs/zerolog
