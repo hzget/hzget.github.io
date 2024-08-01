@@ -80,6 +80,73 @@ func main() {
 }
 ```
 
+Logger, Record & Handler
+---
+
+Here's the details that show how a "log" is transferred to
+a handler.
+
+```golang
+
+// Suppose we run a Logger.Info() method.
+logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
+logger.Info("hello", "count", 3)
+// Output:
+//   time=2024-08-01T18:16:37.637+08:00 level=INFO msg=hello count=3
+
+
+// pkg slog source code
+// Info logs at [LevelInfo].
+func (l *Logger) Info(msg string, args ...any) {
+	l.log(context.Background(), LevelInfo, msg, args...)
+}
+
+func (l *Logger) log(ctx context.Context, level Level, msg string, args ...any) {
+	if !l.Enabled(ctx, level) {
+		return
+	}
+
+	var pcs [1]uintptr
+	// skip [runtime.Callers, this function, this function's caller]
+	runtime.Callers(3, pcs[:])
+	r := NewRecord(time.Now(), level, msg, pcs[0])
+	r.Add(args...)
+
+	_ = l.Handler().Handle(ctx, r)
+}
+```
+
+Options
+---
+
+Options help to customize the handler's behavior.
+[HandlerOptions][HandlerOptions] are options for a TextHandler or JSONHandler. A zero HandlerOptions consists entirely of default values.
+
+Suppose we set the [HandlerOptions.Level] field to control
+the minimum level for logging.
+
+```golang
+// a Level value fixes the handler's minimum level throughout its lifetime.
+h := slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{Level: slog.LevelWarn})
+slog.SetDefault(slog.New(h))
+slog.Info("hello")
+slog.Warn("Shanghai")
+// Output:
+//  {"time":"2024-08-01T18:40:19.5315339+08:00","level":"WARN","msg":"Shanghai"}
+
+// Setting it to a LevelVar allows the level to be varied dynamically.
+var programLevel = new(slog.LevelVar) // Info by default
+h = slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{Level: programLevel})
+slog.SetDefault(slog.New(h))
+programLevel.Set(slog.LevelError)
+slog.Info("hi")
+slog.Warn("NewYork")
+slog.Error("America")
+// Output:
+//  {"time":"2024-08-01T18:40:19.5315339+08:00","level":"ERROR","msg":"America"}   
+
+```
+
 [slog]: https://pkg.go.dev/log/slog
 [Logger]: https://pkg.go.dev/log/slog#Logger
 [Handler]: https://pkg.go.dev/log/slog#Handler
@@ -87,4 +154,6 @@ func main() {
 [Logger.Info]: https://pkg.go.dev/log/slog#Logger.Info
 [New]: https://pkg.go.dev/log/slog#New
 [JSONHandler]: https://pkg.go.dev/log/slog#JSONHandler
+[TextHandler]: https://pkg.go.dev/log/slog#TextHandler
+[HandlerOptions]: https://pkg.go.dev/log/slog#HandlerOptions
 [slog-handler-guide]: https://golang.org/s/slog-handler-guide
