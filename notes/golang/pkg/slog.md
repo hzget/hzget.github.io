@@ -43,43 +43,6 @@ passes it to the "backend"
  * A "backend", an implementation of the [Handler][Handler]
 interface, handles the record
 
-
-The following example shows how to log a http request.
-It uses [New][New] to create a new logger with a [JSONHandler][JSONHandler]
-which writes structured records in json form to standard output.
-
-```golang
-logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
-reqlogger := logger.WithGroup("request")
-
-http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-    reqlogger.Info("http request", "method", r.Method, "remote", r.RemoteAddr)
-})
-
-// output
-//   {"time":"2024-07-31T22:08:42.0681172+08:00","level":"INFO","msg":"http request","request":{"method":"GET","remote":"[::1]:54393"}}
-```
-
-Another example
-
-```golang
-// Infof is an example of a user-defined logging function that wraps slog.
-func Infof(logger *slog.Logger, format string, args ...any) {
-	if !logger.Enabled(context.Background(), slog.LevelInfo) {
-		return
-	}
-	var pcs [1]uintptr
-	runtime.Callers(2, pcs[:]) // skip [Callers, Infof]
-	r := slog.NewRecord(time.Now(), slog.LevelInfo, fmt.Sprintf(format, args...), pcs[0])
-	_ = logger.Handler().Handle(context.Background(), r)
-}
-
-func main() {
-	logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
-	Infof(logger, "message, %s", "formatted")
-}
-```
-
 Logger, Record & Handler
 ---
 
@@ -87,13 +50,11 @@ Here's the details that show how a "log" is transferred to
 a handler.
 
 ```golang
-
 // Suppose we run a Logger.Info() method.
 logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 logger.Info("hello", "count", 3)
 // Output:
 //   time=2024-08-01T18:16:37.637+08:00 level=INFO msg=hello count=3
-
 
 // pkg slog source code
 // Info logs at [LevelInfo].
@@ -145,6 +106,123 @@ slog.Error("America")
 // Output:
 //  {"time":"2024-08-01T18:40:19.5315339+08:00","level":"ERROR","msg":"America"}   
 
+// pkg slog source code
+//
+// enabled reports whether l is greater than or equal to the
+// minimum level.
+func (h *commonHandler) enabled(l Level) bool {
+	minLevel := LevelInfo
+	if h.opts.Level != nil {
+		minLevel = h.opts.Level.Level()
+	}
+	return l >= minLevel
+}
+```
+
+Construct the output
+---
+
+handleState holds state for a single call to commonHandler.handle.
+It uses a [Buffer][Buffer], of the type []byte, to construct and
+hold the output.
+All the "appendxx" methods will call `s.buf.WriteByte()`
+or `s.buf.WriteString()` to append msg to the output buffer.
+
+```golang
+// pkg slog source code
+//
+// handleState holds state for a single call to commonHandler.handle.
+// The initial value of sep determines whether to emit a separator
+// before the next key, after which it stays true.
+type handleState struct {
+	h       *commonHandler
+	buf     *buffer.Buffer // <------- used for constructing the output
+	freeBuf bool           // should buf be freed?
+	sep     string         // separator to write before next key
+	prefix  *buffer.Buffer // for text: key prefix
+	groups  *[]string      // pool-allocated slice of active groups, for ReplaceAttr
+}
+
+func (h *commonHandler) newHandleState(buf *buffer.Buffer, freeBuf bool, sep string) handleState {
+	s := handleState{
+		h:       h,
+		buf:     buf,
+		freeBuf: freeBuf,
+		sep:     sep,
+		prefix:  buffer.New(),
+	}
+	if h.opts.ReplaceAttr != nil {
+		s.groups = groupPool.Get().(*[]string)
+		*s.groups = append(*s.groups, h.groups[:h.nOpenGroups]...)
+	}
+	return s
+}
+
+// handle is the internal implementation of Handler.Handle
+// used by TextHandler and JSONHandler.
+func (h *commonHandler) handle(r Record) error {
+	state := h.newHandleState(buffer.New(), true, "")
+	defer state.free()
+	if h.json {
+		state.buf.WriteByte('{')
+	}
+
+	// ...
+
+	// level
+	key := LevelKey
+	val := r.Level
+	if rep == nil {
+		state.appendKey(key)
+		state.appendString(val.String())
+	} else {
+		state.appendAttr(Any(key, val))
+	}
+
+	// ...
+
+	key = MessageKey
+	msg := r.Message
+	if rep == nil {
+		state.appendKey(key)
+		state.appendString(msg)
+	} else {
+		state.appendAttr(String(key, msg))
+	}
+
+	state.groups = stateGroups // Restore groups passed to ReplaceAttrs.
+	state.appendNonBuiltIns(r)
+	state.buf.WriteByte('\n')
+
+	h.mu.Lock()
+	defer h.mu.Unlock()
+	_, err := h.w.Write(*state.buf) // <---- buf holds the output
+	return err
+}
+
+func (s *handleState) appendNonBuiltIns(r Record) {
+	// preformatted Attrs
+	if pfa := s.h.preformattedAttrs; len(pfa) > 0 {
+		s.buf.WriteString(s.sep)
+		s.buf.Write(pfa)
+		s.sep = s.h.attrSep()
+		if s.h.json && pfa[len(pfa)-1] == '{' {
+			s.sep = ""
+		}
+	}
+
+	// Attrs in Record -- unlike the built-in ones, they are in groups started
+	// from WithGroup.
+	r.Attrs(func(a Attr) bool {
+		if s.appendAttr(a) {
+			empty = false
+		}
+		return true
+	})
+
+	// ...
+
+}
 ```
 
 [slog]: https://pkg.go.dev/log/slog
@@ -152,6 +230,7 @@ slog.Error("America")
 [Handler]: https://pkg.go.dev/log/slog#Handler
 [Record]: https://pkg.go.dev/log/slog#Record
 [Logger.Info]: https://pkg.go.dev/log/slog#Logger.Info
+[Buffer]: https://pkg.go.dev/log/slog/internal/buffer#Buffer
 [New]: https://pkg.go.dev/log/slog#New
 [JSONHandler]: https://pkg.go.dev/log/slog#JSONHandler
 [TextHandler]: https://pkg.go.dev/log/slog#TextHandler
