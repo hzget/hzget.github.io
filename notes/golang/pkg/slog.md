@@ -41,7 +41,26 @@ In summary, slog has a two-part design.
 gathers stuctured log information, constructs a [Record][Record], and then
 passes it to the "backend"
  * A "backend", an implementation of the [Handler][Handler]
-interface, handles the record
+interface, handles the record.
+
+This design allows to replace the "backend" handler.
+
+slog provides [TextHandler][TextHandler] and [JSONHandler][JSONHandler].
+It's default Logger uses a defaultHandler. They have different behavior:
+
+```golang
+// defaultLogger with defaultHandler
+2024/07/31 19:18:28 INFO hello count=3
+
+// a logger with TextHandler
+time=2024-08-01T18:16:37.637+08:00 level=INFO msg=hello count=3
+
+// a logger with JSONHandler
+{"time":"2024-08-01T18:40:19.5315339+08:00","level":"INFO","msg":"hello"}
+```
+
+For more control over the output format, create a user-specific
+handler. And then create a logger via [New][New].
 
 Logger, Record & Handler
 ---
@@ -119,7 +138,7 @@ func (h *commonHandler) enabled(l Level) bool {
 }
 ```
 
-Construct the output
+Assemble the output
 ---
 
 handleState holds state for a single call to commonHandler.handle.
