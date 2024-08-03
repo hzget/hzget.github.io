@@ -16,6 +16,9 @@ Useful links
 ---
 
  - [slog][slog] official documents
+ - [go blog slog][go blog slog] comes into being
+ - [slog proposal][slog proposal] proposes adding structured logging with levels to the standard library
+ - [projects][projects] that use or enhance slog
  - [slog-handler-guide][slog-handler-guide] is a guide for
 writing a custom handler. It also covers the mechnism of
 Logger, performance considerations.
@@ -255,3 +258,6 @@ func (s *handleState) appendNonBuiltIns(r Record) {
 [TextHandler]: https://pkg.go.dev/log/slog#TextHandler
 [HandlerOptions]: https://pkg.go.dev/log/slog#HandlerOptions
 [slog-handler-guide]: https://golang.org/s/slog-handler-guide
+[go blog slog]: https://go.dev/blog/slog
+[slog proposal]: https://github.com/golang/go/issues/56345
+[projects]: https://go.dev/wiki/Resources-for-slog
