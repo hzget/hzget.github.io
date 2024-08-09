@@ -1,52 +1,50 @@
-## Intro
+Intro
+=====
 
-Hello, I'm a software engineer and live in shanghai currently.
-I'm interested in machine learning and deep learning and I write blogs about it.
-Welcome to discuss with me!
+A software engineer with years of experiences on network devices.
 
-I begin with a tutorial video created by ***Josh Gordon*** and
-write a blog about what I get from it.
-After that I will read the book ***Hands-On Machine Learning with Scikit-Learn & TensorFlow***
-and then record the progress. Besides, I begin the study of **Neural Networks and Deep learning**.
+The blog is intended to keep track of the learning progress
+and review some knowledge learnt in the past.
 
-[Machine Learning tutorial](./ml_tutorials/ml_tutorials.md)
+[#Network Protocols](./protocols.md)
+--------------------
 
-[Neural Networks tutorial](./neural_networks/neural_networks.md)
+[#Aritificial Intelligence](./ai.md)
+---------------------------
 
-## Welcome to GitHub Pages
+[#Blockchain](./blockchain/blockchain.md)
+-------------
 
-You can use the [editor on GitHub](https://github.com/hzget/hzget.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+[#Programming](./programming/programming.md)
+--------------
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[#Reading Notes](./notes/note.md)
+----------------
 
-### Markdown
+Cases
+-----
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[Goblog][goblog]
+--------
 
-```markdown
-Syntax highlighted code block
+A blog system used for recording ideas and analyzing
+these articles via AI algorithms.
 
-# Header 1
-## Header 2
-### Header 3
+                            +--------+
+    WebUI        ---->      |        |  ---->  mysql
+                            |        |
+    pprof        ---->      | goblog |  ---->  redis
+                            |        |
+    Test Suite   ---->      |        |  ---->  data center (AI analysis)
+                            +--------+
 
-- Bulleted
-- List
+Techniques:
 
-1. Numbered
-2. List
+* datastore: mysql &amp; redis
+* blog frontend: html/css/javascript/w3.css framework
+* blog backend: http server via golang
+* restful api: for any http client that contains access tokens, e.g., curl/testscript/...
+* data center: AI analysis server via python, NLP algrithms via pytorch
+* container: they can run in respective docker containers
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hzget/hzget.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[goblog]: https://github.com/hzget/goblog

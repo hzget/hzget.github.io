@@ -1,17 +1,13 @@
 
-# Machine Learning Tutorial
+# Machine Learning Intuition
 
 It's a quick guide of Machine Learning.
-I learned from a video ***Machine Learning Recipes with Josh Gordon***
-and write what I got & thought. I will write something new
-after reading other materials.
-
-From this blog, We'll learn the basic concept of Machine Learning and get some intuition via examples.
+From this blog, We'll learn the basic concept and get some intuition.
 
 Lession 1 gives the basic concept of ML and shows how it resolves a problem.  
-[Lession 2](./02.md) shows what a ML classifier looks like and how it classifies an input.  
+[Lession 2](./02.md) shows what a ML classifier looks like.  
 [Lession 3](./03.md) shows what makes a good feature.  
-[Lession 4](./04.md) shows how a classifier is trained -- how params are adjusted for the model.  
+[Lession 4](./04.md) shows how to train a classifier -- how params are adjusted for the model.  
 [Lession 5](./05.md) shows how to code a classifier -- implement the interface fit() and predict()  
 [Lession 6](./06.md) code another classifier from scratch -- a decision tree classifier  
 [Summary](./summary.md) review the knowledge
@@ -20,12 +16,14 @@ Lession 1 gives the basic concept of ML and shows how it resolves a problem.
 
 ### what is machine learning
 
-we can take ML as subfield of Artificial Intelligence:
+To find a solution for common issues, the traditional method
+is that the engineers or scientists study cases in the context,
+find rules and then apply rules to the issues.
+Machine Learning just makes the ***learning process***
+run automatically (without effort from human).
 
-* early AI program: one AI program resolves one problem - Example: Deep Blue
-* today AI program: one AI program resolves many problems without even to be written - Example: Alpha Go
-
-ML makes that possible. It's the study of algorithms that ***learn from examples and experience*** instead of relying on hard-coded rules.
+In a word, Machine Learning is a technique that
+learns rules from examples automatically.
 
 ### An example
 
@@ -35,10 +33,14 @@ how to tell the differece between an apple and an orange?
 
 #### Traditional method
 
-The programmer writes hard code rules - rate of green and yellow pixels. The drawbacks:
+The programmer studies their properties and finds rules
+to distinguish them - ratio of green and yellow pixels.
+After that, he writes a hard coded program that contains this rule.
+The drawbacks:
 
+* have to find rules and write code manually
 * can not handle new situations: grey image; images do not contain apples or oranges in them at all
-* A new problem needs to write new code (rules)
+* can not handle new problems (need to re-write the code -- new rules)
 
 ![hard coded rules](./pic/hard_coded_rules.png)
 
@@ -47,8 +49,10 @@ instead of writing them by hand. That is what ML does.
 
 #### ML method
 
-The ML program finds patterns (rules) from examples - train the classifier (create a function).
-The classifier takes the input (the problem), analyzes it (run the function) and then gives an output (type of the fruit).
+The ML program finds patterns (rules) from examples **automatically** - it
+is a process of training the classifier (in other words, creating a function).
+The observed rules can then be used to resolve problems. For example,
+to classify an object, the classifier takes the input (the problem), analyzes it (run the function) and then gives an output (type of the fruit).
 
 ![ml classify apple](./pic/apple_classifier.png)
 
@@ -58,6 +62,7 @@ advantages:
 2. can resolve new situations of this problem (just update the training data)
 3. can resolve different problems (no need to be rewritten, just only re-train the classifier with new examples)
 4. can resolve problems that cannot be resolved with traditional way
+5. the computer runs fast than human and can upgrade constantly.
 
 steps for ML:
 
@@ -88,12 +93,12 @@ and gives the result - the label.
 
 ```python
 from sklearn import tree
-# feature : smooth: 0; bumpy: 1;
-# label:    orange: 0; apple: 1;
-features = [[140, 1], [130, 1], [150, 0], [170, 0]]
+# smooth: 0; bumpy: 1;
+# orange: 0; apple: 1;
+features = [[140, 1], [130, 1], [150, 0], [170, 0]] # collect examples
 labels = [0, 0, 1, 1]
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(features, labels)
+clf = tree.DecisionTreeClassifier()  # select the model of the classifier
+clf = clf.fit(features, labels)      # train the classifier with examples
 print(clf.predict([[150, 0]]))
 
 # the following is to run the program
