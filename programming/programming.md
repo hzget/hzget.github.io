@@ -33,6 +33,7 @@ the "overflows" and sign extention
 Performance
 -----------
 
+[Benchmark Testing][benchmark] measures the performance by running a series of standardized tests  
 [Profiling][profiling] helps to analyze run-time performance of a program  
 [Atomic][Atomic] helps to avoid contention issue with a "lock" in CPU instruction level  
 [Deferment][deferment] helps to avoid unnecessary expense  
@@ -55,3 +56,4 @@ Others
 [Atomic]: https://github.com/hzget/go-investigation/tree/main/performance/atomic
 [deferment]: ./performance/deferment.md
 [profiling]: ../notes/golang/diagnostics/profile/profile.md
+[benchmark]: ./performance/benchmark.md
