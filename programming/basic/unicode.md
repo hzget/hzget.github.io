@@ -45,6 +45,11 @@ Range
 
 This makes the total number of valid Unicode scalar values 1,112,064.
 
+[grapheme cluster](./grapheme_cluster.md)
+---
+
+A grapheme cluster is a concept used in Unicode to represent what a user perceives as a single character, even though it might be composed of multiple Unicode code points. In simpler terms, it’s the smallest unit of a writing system that represents a single, visible character to the end user.
+
 Unicode in golang
 ---
 
