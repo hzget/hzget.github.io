@@ -2,8 +2,8 @@ Unicode
 ===
 
 [Unicode][wikipedia] is a universal character encoding standard
-that assigns a unique code to every character or symbol, regardless
-of the platform, program, or language.
+that ***assigns a Unique Code to every Character or Symbol***,
+regardless of the platform, program, or language.
 This system allows computers to consistently represent and manipulate
 text from any writing system, including alphabets, ideograms,
 symbols, and more.
@@ -14,7 +14,8 @@ Unicode Representation
 * Code Points: Unicode characters are represented by code points,
 which are written in the form U+XXXX (e.g., U+0041 for the character 'A').
 * Encodings: Unicode can be encoded in different formats,
-such as UTF-8, UTF-16, and UTF-32. UTF-8 is the most widely used
+such as UTF-8, UTF-16, and UTF-32.
+[UTF-8][wikipedia utf-8] is the most widely used
 encoding, especially on the web, because it is efficient and
 backward-compatible with ASCII.
 
@@ -111,7 +112,49 @@ In C, there isn't a specific built-in type dedicated exclusively to Unicode code
 Unicode in Rust
 ---
 
+The ***string slice*** [str][rust str],
+usually seen in its borrowed form `&str`,
+is a reference to some UTF-8 encoded string data stored elsewhere.
+It's the only one string type in the core language.
+
+The [String][rust String] type is a growable, mutable, owned, UTF-8 encoded
+string type. It is provided by Rust’s standard library rather than
+coded into the core language.
+
+Both String and string slices are UTF-8 encoded.
+
+```rust
+let s = String::from("hello world");
+
+let hello: &str = &s[0..5];
+let world: &str = &s[6..11];
+```
+
+The [char][rust char] type represents a single character,
+a ***Unicode scalar value***.
+If you try to create a char from an invalid code point
+(such as a surrogate), Rust will not allow it, and you would
+typically get a compile-time error or runtime panic depending on
+how you're attempting to create the char.
+
+```rust
+fn main() {
+    // 0xD7FF is a Unicode scalar value
+    // 0xD800 is a surrogate code point
+
+    let _a: char = '\u{D7FF}';
+    let _b: char = '\u{D800}'; // fail to compile
+
+    let _c = char::from_u32(0xD7FF).unwrap();
+    let _d = char::from_u32(0xD800).unwrap(); // panic: called `Option::unwrap()` on a `None` value
+}
+```
+
 [wikipedia]: https://en.wikipedia.org/wiki/Unicode
+[wikipedia utf-8]: https://en.wikipedia.org/wiki/UTF-8#Encoding
 [go rune literal]: https://golang.google.cn/ref/spec#Rune_literals
 [go string literal]: https://golang.google.cn/ref/spec#String_literals
 [go pkg utf8]: https://pkg.go.dev/unicode/utf8
+[rust str]: https://doc.rust-lang.org/core/primitive.str.html
+[rust String]: https://doc.rust-lang.org/std/string/struct.String.html
+[rust char]: https://doc.rust-lang.org/core/primitive.char.html
