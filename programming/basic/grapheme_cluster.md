@@ -1,7 +1,11 @@
-grapheme cluster
+Grapheme Cluster
 ===
 
-A grapheme cluster is a concept used in Unicode to represent what a user perceives as a single character, even though it might be composed of multiple Unicode code points. In simpler terms, it’s the smallest unit of a writing system that represents a single, visible character to the end user.
+A grapheme cluster is a concept used in Unicode to represent what
+a user "***Perceives***" as a single character, even though it
+might be composed of multiple Unicode code points. In simpler terms,
+it’s the smallest unit of a writing system that represents a single,
+visible character to the end user.
 
 Examples of Grapheme Clusters
 ---

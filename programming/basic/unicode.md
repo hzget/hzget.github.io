@@ -11,9 +11,9 @@ symbols, and more.
 Unicode Representation
 ---
 
-* Code Points: Unicode characters are represented by code points,
+* ***Code Points:*** Unicode characters are represented by code points,
 which are written in the form U+XXXX (e.g., U+0041 for the character 'A').
-* Encodings: Unicode can be encoded in different formats,
+* ***Encodings:*** Unicode can be encoded in different formats,
 such as UTF-8, UTF-16, and UTF-32.
 [UTF-8][wikipedia utf-8] is the most widely used
 encoding, especially on the web, because it is efficient and
