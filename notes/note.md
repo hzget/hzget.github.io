@@ -4,6 +4,13 @@ Reading notes
 [Operating System](./os/README.md)
 ----------------
 
+Rust
+---
+
+|topics|articles|
+|------|--------|
+|concept | [lifetimes][lifetime]|
+
 Golang
 ------
 
@@ -45,3 +52,4 @@ English Learning
 [log]: ./golang/pkg/log.md
 [slog]: ./golang/pkg/slog.md
 [http]: ./golang/pkg/http.md
+[lifetime]: ./rust/lifetime.md
