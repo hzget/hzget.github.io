@@ -10,6 +10,15 @@ Every reference in Rust has a ***lifetime***, which is the
 The Rust compiler's borrow checker will compare scopes to determine
 whether all borrows are valid.
 
+When returning a reference from a function, the lifetime parameter
+for the return type needs to match the lifetime parameter for one
+of the parameters.
+If the reference returned does not refer to one of the parameters,
+it must refer to a value created within this function, in which
+case it would be a dangling reference because the value will go
+out of scope at the end of the function.
+(Just like the case in Example: Lifetime Errors)
+
 Key Concepts of Lifetimes
 ---
 
@@ -93,7 +102,7 @@ fn dangling_reference() -> &String {
 }
 ```
 
-Example: How borrower checker works with lifetime
+Example: How borrow checker works with lifetime
 ---
 
 Consider a function that returns a reference to the larger
@@ -167,11 +176,130 @@ error: could not compile `chapter10` due to previous error
 
 ```
 
+Example with Partially Annotated Lifetimes
+---
+
+The way in which you need to specify lifetime parameters depends on
+what your function is doing.
+
+**case 1**
+
+```rust
+fn longest<'a>(x: &'a str, y: &str) -> &'a str {
+    x
+}
+```
+
+We wouldn’t need to specify a lifetime on the y parameter because
+the lifetime of y has no ***relationship*** with the lifetime of x
+or the return value.
+
+**case 2**
+
+```rust
+pub fn search<'a>(query: &'a str, contents: &str) -> Vec<&'a str> {
+    let mut results = Vec::new();
+
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
+}
+
+// result:
+error[E0621]: explicit lifetime required in the type of `contents`
+  --> src\lib.rs:41:5
+   |
+32 | pub fn search<'a>(query: &'a str, contents: &str) -> Vec<&'a str> {
+   |                                             ---- help: add explicit lifetime `'a` to the type of `contents`: `&'a str`
+...
+41 |     results
+   |     ^^^^^^^ lifetime `'a` required
+
+```
+
+The returned reference has to do with the 'contents' parameter.
+The user shall specify lifetime to tell their relationship.
+And then borrow checker will compare scopes to determine
+whether all borrows are valid. Otherwise the compiler will
+automatically give it a distinct lifetime that does not
+tell that relationship. Just like the following:
+
+```rust
+pub fn search<'a, 'b>(query: &'a str, contents: &'b str) -> Vec<&'a str> {
+    let mut results = Vec::new();
+
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
+}
+
+// result:
+error: lifetime may not live long enough
+  --> src\lib.rs:41:5
+   |
+32 | pub fn search<'a, 'b>(query: &'a str, contents: &'b str) -> Vec<&'a str> {
+   |               --  -- lifetime `'b` defined here
+   |               |
+   |               lifetime `'a` defined here
+...
+41 |     results
+   |     ^^^^^^^ function was supposed to return data with lifetime `'a` but it is returning data with lifetime `'b`
+   |
+   = help: consider adding the following bound: `'b: 'a`
+```
+
+As we can see, the lifetime of contents parameter has no relationship
+with the lifetime of returned value. It is not the case.
+
+Our solution is to specify lifetimes to make clear the relationship.
+
+```rust
+// solution 1
+pub fn search<'a, 'b>(query: &'a str, contents: &'b str) -> Vec<&'b str> {
+    let mut results = Vec::new();
+
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
+}
+
+// solution 2
+pub fn search<'b>(query: &str, contents: &'b str) -> Vec<&'b str> {
+    let mut results = Vec::new();
+
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
+}
+
+```
+
+
 Summary
 ---
 
-Lifetimes are a way of telling the Rust compiler how long references should be valid.
-Annotations: While Rust can often infer lifetimes, sometimes you need to annotate them explicitly, particularly in more complex scenarios.
-Enforcement: Lifetimes are enforced at compile time to ensure that references do not outlive the data they refer to, preventing dangling references and ensuring memory safety.
-'static Lifetime: A special lifetime indicating that the reference is valid for the entire duration of the program.
+Lifetimes are a way of telling the Rust compiler how long references
+should be valid.
+* Annotations: While Rust can often infer lifetimes, sometimes you
+need to annotate them explicitly, particularly in more complex scenarios.
+* Enforcement: Lifetimes are enforced at compile time to ensure that
+references do not outlive the data they refer to, preventing dangling
+references and ensuring memory safety.
+* `'static` Lifetime: A special lifetime indicating that the reference is valid for the entire duration of the program.
 
