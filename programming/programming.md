@@ -1,8 +1,13 @@
 Programming
 ===========
 
-[Unit Test][unit test tech]
----------------------------
+Testing
+---
+
+**keyword**:
+[Unit Testing][unit test tech],
+[Benchmark Testing][benchmark],
+[Test Coverage][coverage],
 
 Automatic testcases make life easer for developers.
 After adding a new feature, the programmer shall add
@@ -60,3 +65,4 @@ Others
 [deferment]: ./performance/deferment.md
 [profiling]: ../notes/golang/diagnostics/profile/profile.md
 [benchmark]: ./performance/benchmark.md
+[coverage]: ./testing/coverage.md
