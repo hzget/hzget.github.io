@@ -11,17 +11,15 @@ needs explicit information to ensure memory safety and lifetime correctness.
 This is why you need to explicitly specify lifetimes
 when dealing with trait objects in function returns.
 
-1. Trait Object Lifetimes Are Ambiguous
+1. Trait Object Lifetimes Are ***Ambiguous***
 
-* Trait objects (dyn Trait) involve dynamic dispatch, which adds complexity in terms of lifetimes. The compiler cannot always infer which lifetime to apply, especially when multiple lifetimes might be involved in the references contained within the type implementing the trait.
-
-* The relationship between the input lifetimes and the trait object's lifetime may not be straightforward or may depend on how the trait is implemented.
+    * Trait objects (dyn Trait) involve dynamic dispatch, which adds complexity in terms of lifetimes. The compiler cannot always infer which lifetime to apply, especially when multiple lifetimes might be involved in the references contained within the type implementing the trait.
+    * The relationship between the input lifetimes and the trait object's lifetime may not be straightforward or may depend on how the trait is implemented.
 
 2. Boxed Trait Objects Need an Explicit Lifetime:
 
-* Unlike a reference, a Box<dyn Trait> is an owned value that can encapsulate a type with references that have their own lifetimes. When converting a concrete type to a trait object, the compiler must know how long the trait object (and any references inside it) should live.
-
-* Because of this, when returning a Box<dyn Trait>, the function must specify a lifetime explicitly. The compiler needs to understand how long the trait object needs to be valid in relation to the input lifetimes, and this often cannot be determined from the context alone.
+    * Unlike a reference, a Box<dyn Trait> is an owned value that can encapsulate a type with references that have their own lifetimes. When converting a concrete type to a trait object, the compiler must know how long the trait object (and any references inside it) should live.
+    * Because of this, when returning a Box<dyn Trait>, the function must specify a lifetime explicitly. The compiler needs to understand how long the trait object needs to be valid in relation to the input lifetimes, and this often cannot be determined from the context alone.
 
 Examples
 ---
