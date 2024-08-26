@@ -19,6 +19,9 @@ case it would be a dangling reference because the value will go
 out of scope at the end of the function.
 (Just like the case in Example: Lifetime Errors)
 
+For furture reading:  
+[lifetime for trait object](./lifetime_traitobject.md),
+
 Key Concepts of Lifetimes
 ---
 
