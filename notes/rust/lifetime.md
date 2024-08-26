@@ -10,6 +10,8 @@ Every reference in Rust has a ***lifetime***, which is the
 The Rust compiler's borrow checker will compare scopes to determine
 whether all borrows are valid.
 
+> Wherever ***borrowing*** happens, the ***lifetime*** should be considered.
+
 When returning a reference from a function, the lifetime parameter
 for the return type needs to match the lifetime parameter for one
 of the parameters.
@@ -33,6 +35,7 @@ Key Concepts of Lifetimes
     * Since Rust guarantees memory safety, it needs to ensure that references
     never outlive the data they point to. Lifetimes help enforce this rule.
 
+
 * Lifetime Annotations:
 
     * Lifetime annotations are a way to explicitly specify how long
@@ -41,6 +44,7 @@ Key Concepts of Lifetimes
     * Lifetime annotations do not change the lifetime of references;
     they simply describe the relationships between lifetimes.
 
+
 * Ownership and Lifetimes:
 
     * When a reference is created, Rust must ensure that the data
@@ -48,6 +52,7 @@ Key Concepts of Lifetimes
     of the reference's use.
     * Lifetimes are particularly important when dealing with functions,
     structs, and any situation where references are passed around and returned.
+
 
 * Lifetime Inference:
 
@@ -58,6 +63,7 @@ Key Concepts of Lifetimes
     ambiguity as to what lifetimes the references have,
     the compiler will give you an error that you can resolve by
     adding the lifetime annotations.
+
 
 * Safety
 

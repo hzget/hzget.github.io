@@ -1,6 +1,13 @@
 Lifetime for Trait Object
 ===
 
+> If your trait objects ***DO NOT contain references***,
+you generally don't need to worry about specifying lifetimes explicitly.
+
+> If your trait objects ***DO contain references***, you'll need to
+ensure that the lifetimes are correctly specified, using the appropriate
+lifetime annotations in the function signature.
+
 ***Lifetime elision rules*** in Rust are designed to handle simple cases
 where lifetimes can be ***unambiguously*** inferred.
 However, returning a `Box<dyn Trait>` is a more complex scenario that
