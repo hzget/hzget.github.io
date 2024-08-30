@@ -16,7 +16,7 @@ Further reading:
 
 [Difference between FFI and ABI](./ffi_vs_abi.md)
 
-Example: use c code from rust
+Example: use c code from within rust code
 ---
 
 Suppose we have a c code:
@@ -106,7 +106,7 @@ The sum is: 12
 D:\proj\example.com\rust\hello>
 ```
 
-Example: use rust code from golang
+Example: use rust code from within golang code
 ---
 
 suppose we generate a lib of "add":
