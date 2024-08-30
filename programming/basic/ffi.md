@@ -12,6 +12,10 @@ Common use cases for FFI include:
 * Reusing existing libraries written in other languages.
 * Implementing performance-sensitive code in a lower-level language.
 
+Further reading:
+
+[Difference between FFI and ABI](./ffi_vs_abi.md)
+
 Example: use c code from rust
 ---
 
