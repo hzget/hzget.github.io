@@ -36,6 +36,7 @@ for every character and it is very important concept in programming
 the "overflows" and sign extention  
 [Network Concepts][network concepts] shows how a socket is established  
 [Data Structure and Algorithms][data structure and algorithms]  
+[FFI][ffi] - Foreign Function Interface
 
 Performance
 -----------
@@ -57,6 +58,7 @@ Others
 [allocation]: ./performance/allocation.md
 [Integer Overflow]: ./basic/integer_overflow.md
 [unicode]: ./basic/unicode.md
+[ffi]: ./basic/ffi.md
 [multicore]: ./performance/multicore.md
 [data structure and algorithms]: ../notes/practice/algorithm.md
 [network concepts]: ./basic/network_concepts.md
