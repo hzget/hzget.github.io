@@ -9,7 +9,7 @@ Rust
 
 |topics|articles|
 |------|--------|
-|concept | [lifetimes][lifetime]|
+|concept|[lifetimes][lifetime], [trait object vs trait bound][trait]|
 
 Golang
 ------
@@ -53,3 +53,4 @@ English Learning
 [slog]: ./golang/pkg/slog.md
 [http]: ./golang/pkg/http.md
 [lifetime]: ./rust/lifetime.md
+[trait]: ./rust/trait.md
