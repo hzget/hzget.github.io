@@ -60,9 +60,15 @@ impl Draw for Square {
     }
 }
 
-fn draw_shape<T: Draw>(shape: T) {
+fn draw_shape(shape: impl Draw) {
     shape.draw();
 }
+
+// the same thing with:
+/*
+fn draw_shape<T: Draw>(shape: T) {
+    shape.draw();
+} */
 
 fn main() {
     let circle = Circle;
