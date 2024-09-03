@@ -30,14 +30,13 @@ object-c, python and so on.
 Basics
 ------
 
-[Unicode][unicode] provides a unique number (called a code point)
-for every character and it is very important concept in programming  
-[Integer Arithmetic Operation][Integer Overflow] demonstrates
-the "overflows" and sign extention  
-[Network Concepts][network concepts] shows how a socket is established  
-[Data Structure and Algorithms][data structure and algorithms]  
-[FFI][ffi] - Foreign Function Interface,
-[ABI][abi] - Application Binary Interface,
+| topic | contents |
+|:---:|:---|
+|standards|[Unicode][unicode]|
+|Language| [Integer Overflow][Integer overflow], [Sign Extention][sign]|
+|Networks| [socket][network concepts]|
+|Algorithms| [Data Structure and Algorithms][data structure and algorithms] |
+|compliants| [FFI][ffi] - Foreign Function Interface,<br /> [ABI][abi] - Application Binary Interface, |
 
 Performance
 -----------
@@ -58,6 +57,7 @@ Others
 
 [allocation]: ./performance/allocation.md
 [Integer Overflow]: ./basic/integer_overflow.md
+[sign]: ./basic/sign_extention.md
 [unicode]: ./basic/unicode.md
 [ffi]: ./basic/ffi.md
 [abi]: ./basic/abi.md
