@@ -8,6 +8,7 @@ Testing
 [Unit Testing][unit test tech],
 [Benchmark Testing][benchmark],
 [Test Coverage][coverage],
+[Test-Driven Development (TDD)][tdd],
 
 Automatic testcases make life easer for developers.
 After adding a new feature, the programmer shall add
@@ -37,6 +38,7 @@ Basics
 |Networks| [socket][network concepts]|
 |Algorithms| [Data Structure and Algorithms][data structure and algorithms] |
 |compliants| [FFI][ffi] - Foreign Function Interface,<br /> [ABI][abi] - Application Binary Interface, |
+|Development| [BDD][bdd], [TDD][tdd], [CDD][cdd], [CI/CD][ci/cd]|
 
 Performance
 -----------
@@ -61,6 +63,10 @@ Others
 [unicode]: ./basic/unicode.md
 [ffi]: ./basic/ffi.md
 [abi]: ./basic/abi.md
+[bdd]: ./basic/bdd.md
+[cdd]: ./basic/cdd.md
+[tdd]: ./basic/tdd.md
+[ci/cd]: ./basic/ci_cd.md
 [multicore]: ./performance/multicore.md
 [data structure and algorithms]: ../notes/practice/algorithm.md
 [network concepts]: ./basic/network_concepts.md
