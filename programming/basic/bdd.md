@@ -66,7 +66,7 @@ Further reading:
 
 3. **Run the Tests**:
    - The scenarios are run as part of the automated test suite. If the implementation of the feature matches the expected behavior, the tests pass.
-   - If the tests fail, it indicates that the application¡¯s behavior does not match the expectations, guiding the development process to address the issues.
+   - If the tests fail, it indicates that the application's behavior does not match the expectations, guiding the development process to address the issues.
 
 4. **Refactor and Iterate**:
    - Like in TDD, after the tests pass, the code can be refactored to improve quality while ensuring that the behavior remains consistent.
@@ -106,10 +106,10 @@ Further reading:
 
 ### BDD in Practice
 
-BDD is particularly useful in complex projects where clear communication between business and technical teams is crucial. It is also beneficial in environments where requirements change frequently, as BDD¡¯s emphasis on living documentation helps ensure that the software evolves with the needs of the business.
+BDD is particularly useful in complex projects where clear communication between business and technical teams is crucial. It is also beneficial in environments where requirements change frequently, as BDD's emphasis on living documentation helps ensure that the software evolves with the needs of the business.
 
 Some industries where BDD is commonly applied include finance, healthcare, and e-commerce, where the behavior of the system must be well-understood and predictable.
 
 ### Conclusion
 
-Behavior-Driven Development (BDD) is a powerful methodology that aligns development with business goals by focusing on the behavior of the software from the user¡¯s perspective. Through collaboration, clear communication, and a shared understanding of what the software should do, BDD helps teams deliver high-quality software that meets the needs of its users.
+Behavior-Driven Development (BDD) is a powerful methodology that aligns development with business goals by focusing on the behavior of the software from the user's perspective. Through collaboration, clear communication, and a shared understanding of what the software should do, BDD helps teams deliver high-quality software that meets the needs of its users.

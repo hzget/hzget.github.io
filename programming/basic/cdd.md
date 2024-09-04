@@ -55,7 +55,7 @@ A typical compiler-driven development workflow in Rust might look like this:
 
 3. **Refine Based on Compiler Feedback**:
    - The Rust compiler might complain about borrowing rules, unused variables, or missing error handling.
-   - Developers refine the code to satisfy the compiler, ensuring that it adheres to Rust¡¯s strict safety guarantees.
+   - Developers refine the code to satisfy the compiler, ensuring that it adheres to Rust's strict safety guarantees.
 
 4. **Finalize with Confidence**:
    - Once the compiler stops reporting errors, developers can be confident that many classes of bugs have been eliminated.

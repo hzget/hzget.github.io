@@ -22,7 +22,7 @@ Further reading:
    - The focus is on simplicity and functionality, without worrying about optimizations or additional features.
 
 4. **Run All Tests**:
-   - Run all the tests, including the new one, to ensure that the new code doesn¡¯t break any existing functionality.
+   - Run all the tests, including the new one, to ensure that the new code doesn't break any existing functionality.
    - If any tests fail, adjust the code until all tests pass.
 
 5. **Refactor the Code**:
@@ -36,12 +36,12 @@ Further reading:
 
 - **Improved Code Quality**: TDD encourages developers to write cleaner, more modular code since the focus is on passing small, specific tests.
 - **Reduced Bugs**: Writing tests first ensures that the code meets its requirements, reducing the likelihood of bugs.
-- **Confidence in Changes**: Tests provide a safety net when making changes to the codebase, ensuring that existing functionality isn¡¯t broken.
+- **Confidence in Changes**: Tests provide a safety net when making changes to the codebase, ensuring that existing functionality isn't broken.
 - **Better Design**: TDD naturally leads to a more thoughtful design process, as developers must consider how the code will be tested from the outset.
 
 ### Example in Practice (Using Python)
 
-Here¡¯s a simple example of how TDD might be used to develop a function that adds two numbers.
+Here's a simple example of how TDD might be used to develop a function that adds two numbers.
 
 1. **Write a Test**:
    ```python
@@ -50,7 +50,7 @@ Here¡¯s a simple example of how TDD might be used to develop a function that add
    ```
 
 2. **Run the Test**:
-   - At this point, running the test will result in an error because the `add` function doesn¡¯t exist yet.
+   - At this point, running the test will result in an error because the `add` function doesn't exist yet.
 
 3. **Write the Minimum Code to Pass the Test**:
    ```python
@@ -69,4 +69,4 @@ Here¡¯s a simple example of how TDD might be used to develop a function that add
 
 ### Conclusion
 
-Test-Driven Development is a disciplined and systematic approach to software development that ensures functionality is built incrementally and verified from the start. By writing tests first, developers can be confident that their code does exactly what it¡¯s supposed to do, leading to more reliable and maintainable software.
+Test-Driven Development is a disciplined and systematic approach to software development that ensures functionality is built incrementally and verified from the start. By writing tests first, developers can be confident that their code does exactly what it's supposed to do, leading to more reliable and maintainable software.
