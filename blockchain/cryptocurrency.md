@@ -1,4 +1,5 @@
-# Cryptocurrency
+Cryptocurrency
+===
 
 With ***transactions***, we go from a “general purpose”
 blockchain to a [cryptocurrency][cryptocurrency].
@@ -14,7 +15,8 @@ A transaction contains the following info:
 * where the coins go (wallet of the receiver)
 * amount of the coins
 
-## Workflow
+Workflow
+---
 
 A transaction (object) is stored in a transaction pool which will
 broadcast to the network.
@@ -28,7 +30,8 @@ verify this block and update their local blockchain.
 
 In this way, the blockchain contains all verified transactions.
 
-## Transaction
+Transaction
+---
 
 The seller may collect coins from several places
 for the deal. And the buyer may cut the overall coins
@@ -51,7 +54,8 @@ The bellow picture shows the workflow of a transaction:
 Three uTxOuts of the owner are spent and two TxOut are generated.
 The unspent transaction outputs list will be updated.
 
-## Wallet
+Wallet
+---
 
 From the user's point of view, he does not care how
 the transaction works. He only needs to know how to:
@@ -64,7 +68,12 @@ The balance info can be obtained from the blockchain.
 It is the sum of a list of unspent transaction outputs (uTxOuts)
 that belongs to him.
 
-## Signature
+Verification
+---
+
+> TxId guarantees ***Integrity*** and signature guarantees
+> ***Authentication***.
+> This helps to verify a transaction.
 
 How to verify that a uTxOut belongs to someone?
 How to verify that the transaction indeed triggered
@@ -73,7 +82,7 @@ by the owner of the specific uTxOut?
 The ***address*** of a uTxOut is in fact a public-key.
 It corresponds to a private-key owned by the owner of this uTxOut.
 
-A TxIn object contains:
+A `TxIn` object contains:
 
 * a reference to an uTxOut
 * signature of the transaction id (TxId)
