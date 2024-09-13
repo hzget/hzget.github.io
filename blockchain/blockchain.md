@@ -14,7 +14,7 @@ Tutorials
 of the concept of blockchain. It removes the
 concepts or code of infrastructure of some specific application
 (e.g. Bitcoin or Ethereum).
-
+Thus it is a good place to begin the tour.
 
 Additional links:
 
