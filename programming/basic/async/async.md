@@ -42,13 +42,22 @@ Under the hood
 ---
 
 Suppose there is only one thread to run several tasks concurrently.
-There should be a scheduler to give cpu time to each task.
+There should be a scheduler to give some cpu time to each task.
 Specificaly, it can pause one task and
 switch to others before eventually cycling back to that first task again.
 
 To make that work, each task shall have **STATE**: available or unavailable.
-Each time, the schedule will pick up a task to run.
-If it is **unavailable**, skip it. It is **available**, run it.
+Each time, the scheduler will pick up a task to run.
+
+* If it is **unavailable**, skip it.
+* If it is **available**, run it.
+  * If it becomes **unavailable** again, then skip it and turn to next task.
+  * If it is **completed**, then exit the task and turn to next one.
+
+The **unavailable** state maybe because
+
+* data is not ready yet
+* time peroid has passed
 
 ### **How Asynchronous Programming Works**
 #### Example 1: Synchronous Code
