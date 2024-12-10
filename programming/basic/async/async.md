@@ -10,7 +10,9 @@ external resources, such as file I/O, network requests, or user input.
 
 Implementation:
 
-* [scheduler in c](./scheduler.md)
+* [scheduler in C](./scheduler.md)
+* [async in Golang](./async_golang.md)
+* [Golang vs Rust for Async](./async_golang_vs_rust.md)
 
 ---
 
