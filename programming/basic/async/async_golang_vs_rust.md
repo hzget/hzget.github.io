@@ -58,7 +58,7 @@ The **asynchronous programming implementations in Go and Rust** differ significa
 ---
 
 #### 2. **Rust: Async/Await with Futures**
-- **How it Works**: Rust¡¯s `async` functions return a `Future`, a state machine that represents a value not yet computed. Runtimes like `tokio` or `async-std` drive these futures.
+- **How it Works**: Rust's `async` functions return a `Future`, a state machine that represents a value not yet computed. Runtimes like `tokio` or `async-std` drive these futures.
 - **Example**:
   ```rust
   use tokio::time::{sleep, Duration};
