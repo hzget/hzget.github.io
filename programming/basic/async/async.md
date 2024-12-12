@@ -13,6 +13,7 @@ Implementation:
 * [scheduler in C](./scheduler.md)
 * [async in Golang](./async_golang.md)
 * [Golang vs Rust for Async](./async_golang_vs_rust.md)
+* [Concurrency Model: preemptive or cooperative](./concurrency_model.md)
 
 ---
 
