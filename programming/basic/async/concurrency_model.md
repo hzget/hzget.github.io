@@ -16,6 +16,7 @@ Rust does not natively support **preemptive asynchronous programming** in the sa
 - Unlike Go, Rust does not have a runtime that can preempt a misbehaving task; the programmer is responsible for ensuring fairness by designing code that yields control appropriately.
 
 ### **Comparison**
+
 | Feature                | Go                          | Rust                        |
 |------------------------|-----------------------------|-----------------------------|
 | Concurrency Model      | Preemptive                  | Cooperative                 |
