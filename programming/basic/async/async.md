@@ -16,6 +16,7 @@ Useful links:
 * [Concurrency Model: preemptive or cooperative](./concurrency_model.md)
 * [Async Tasks vs Threads](./threads_vs_async_tasks.md)
 * [Avoid indefinite blocking tasks for Cooperative Concurrency model](./avoid_indefinite_blocking_tasks.md)
+* [Manually Implementing Future Trait](./manually_implementing_future_trait.md)
 
 ---
 
