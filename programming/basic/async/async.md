@@ -8,12 +8,13 @@ without blocking the execution of the entire program.
 It is particularly useful in situations where tasks involve waiting for
 external resources, such as file I/O, network requests, or user input.
 
-Implementation:
+Useful links:
 
 * [scheduler in C](./scheduler.md)
 * [async in Golang](./async_golang.md)
 * [Golang vs Rust for Async](./async_golang_vs_rust.md)
 * [Concurrency Model: preemptive or cooperative](./concurrency_model.md)
+* [Async Tasks vs Threads](./threads_vs_async_tasks.md)
 
 ---
 
