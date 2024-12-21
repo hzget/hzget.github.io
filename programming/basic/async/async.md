@@ -10,13 +10,17 @@ external resources, such as file I/O, network requests, or user input.
 
 Useful links:
 
-* [scheduler in C](./scheduler.md)
-* [async in Golang](./async_golang.md)
+* [Concurrency Model: Preemptive or Cooperative](./concurrency_model.md)
+* [Cooperative Scheduler in C](./scheduler.md)
+* [Preemptive Runtime in Golang](./async_golang.md)
 * [Golang vs Rust for Async](./async_golang_vs_rust.md)
-* [Concurrency Model: preemptive or cooperative](./concurrency_model.md)
 * [Async Tasks vs Threads](./threads_vs_async_tasks.md)
 * [Avoid indefinite blocking tasks for Cooperative Concurrency model](./avoid_indefinite_blocking_tasks.md)
 * [Manually Implementing Future Trait](./manually_implementing_future_trait.md)
+
+Relevant Concepts
+
+* [Parallelism and Concurrency](https://rust-book.cs.brown.edu/ch17-00-async-await.html#parallelism-and-concurrency)
 
 ---
 
@@ -48,22 +52,12 @@ Under the hood
 ---
 
 Suppose there is only one thread to run several tasks concurrently.
-There should be a scheduler to give some cpu time to each task.
+There should be a scheduler/runtime to give some cpu time to each task.
 Specificaly, it can pause one task and
 switch to others before eventually cycling back to that first task again.
 
-To make that work, each task shall have **STATE**: available or unavailable.
-Each time, the scheduler will pick up a task to run.
-
-* If it is **unavailable**, skip it.
-* If it is **available**, run it.
-  * If it becomes **unavailable** again, then skip it and turn to next task.
-  * If it is **completed**, then exit the task and turn to next one.
-
-The **unavailable** state maybe because
-
-* data is not ready yet
-* time peroid has passed
+There're two kinds of concurrency models for such **pause-and-resume** mechanisms:  
+[preemptive or cooperative](./concurrency_model.md)
 
 ### **How Asynchronous Programming Works**
 #### Example 1: Synchronous Code

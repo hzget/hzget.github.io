@@ -1,4 +1,17 @@
-To enable tasks to be **paused and resumed** in a task scheduler in C, we need to manage the state of each task explicitly. Tasks will have states like **running**, **paused**, and **completed**, and the scheduler will control transitions between these states. Below is an implementation that supports pausing and resuming tasks.
+Cooperative Scheduler in C
+===
+
+To enable tasks to be **paused and resumed** in a task scheduler in C,
+we need to manage the state of each task explicitly. Tasks will have
+states like **running**, **paused**, and **completed**,
+and the scheduler will control transitions between these states.
+
+Below is an implementation that supports pausing and resuming tasks.
+It is a Cooperative Scheduler.
+
+Relevant Concepts:
+
+* [Concurrency Model: preemptive or cooperative](./concurrency_model.md)
 
 ---
 
