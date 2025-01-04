@@ -10,7 +10,8 @@ external resources, such as file I/O, network requests, or user input.
 
 Useful links:
 
-* [Concurrency Model: Preemptive or Cooperative](./concurrency_model.md)
+* [Concurrency Model: Preemptive and Cooperative](./concurrency_model.md)
+* [Choice: Preemptive or Cooperative?](./model_choice.md)
 * [Cooperative Scheduler in C](./scheduler_in_c.md)
 * [Preemptive Runtime in Golang](./async_golang.md)
 * [Golang vs Rust for Async](./async_golang_vs_rust.md)
