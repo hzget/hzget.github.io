@@ -9,7 +9,7 @@ Rust
 
 |topics|articles|
 |------|--------|
-|concept|[lifetimes][lifetime], [trait object vs trait bound][trait], [function pointer vs closure][closure]|
+|concept|[lifetimes][lifetime], [trait object vs trait bound][trait], [trait object][trait_object], [function pointer vs closure][closure]|
 
 Golang
 ------
@@ -54,4 +54,5 @@ English Learning
 [http]: ./golang/pkg/http.md
 [lifetime]: ./rust/lifetime.md
 [trait]: ./rust/trait.md
+[trait_object]: ./rust/trait_object.md
 [closure]: ./rust/closure.md
