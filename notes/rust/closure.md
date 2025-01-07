@@ -92,116 +92,122 @@ Performance:
 Practical Example:
 
 ```rust
+
 fn main() {
-    let z = get_fn_get_one();
-    println!("z() = {}", z()); // output: z() = 1
-
-    let z = get_fn_get_two();
-    println!("z() = {}", z()); // output: z() = 2
-
-    let z = get_fn_get_one_v2();
-    println!("z() = {}", z()); // output: z() = 1
+    println!("{}", closure_to_fn()());
+    println!("{}", fn_to_closure()());
+    println!("{}", fn_to_closure_in_box()());
+    println!("{}", closure_to_closure()());
+    println!("{}", closure_in_box_to_closure_in_box()());
 }
 
-fn get_fn_get_one() -> fn() -> i32 {
+fn closure_to_fn() -> fn() -> i32 {
     || 1
 }
 
-fn get_fn_get_two() -> Box<dyn Fn() -> i32> {
-    let a = 2;
-    Box::new(move || a)
+fn foo() -> i32 {
+    2
 }
 
-fn get_fn_get_one_v2() -> Box<dyn Fn() -> i32> {
-    Box::new(get_fn_get_one())
+fn fn_to_closure() -> impl Fn() -> i32 {
+    foo
+}
+
+fn fn_to_closure_in_box() -> Box<dyn Fn() -> i32> {
+    Box::new(foo)
+}
+
+fn closure_to_closure() -> impl Fn() -> i32 {
+    let a = 2;
+    move || a
+}
+
+fn closure_in_box_to_closure_in_box() -> Box<dyn Fn() -> i32> {
+    let a = 2;
+    Box::new(move || a)
 }
 
 //
 // the following will get compiling error
 //
-
-// case 3: mismatched types
-//   = note: expected fn pointer `fn() -> i32`
-//                 found closure `{closure@src/main.rs:34:5: 34:7}`
-fn get_fn_get_three() -> fn() -> i32 {
-    let b = 3;
-    || b
-}
-
-// case 4: mismatched types
-//   = note:  expected struct `Box<(dyn Fn() -> i32 + 'static)>`
-//           found fn pointer `fn() -> i32`
-fn get_fn_get_one_v3() -> Box<dyn Fn() -> i32> {
-    get_fn_get_one()
-}
-
-// case 5:
-//   error[E0746]: return type cannot have an unboxed trait object
-//                 which doesn't have a size known at compile-time
-fn get_fn_get_five() -> Fn() -> i32 {
-    let a = 5;
+//  = note: expected fn pointer `fn() -> i32`
+//                found closure `{closure@src/main.rs:43:5: 43:7}`
+//    note: closures can only be coerced to `fn` types if they do not capture any variables
+fn closure_to_fn_fail() -> fn() -> i32 {
+    let a = 1;
     || a
 }
 
-// compiling errors:
+// error[E0746]: return type cannot have an unboxed trait object
+//               doesn't have a size known at compile-time
+fn closure_to_closure_in_dyn() -> dyn Fn() -> i32 {
+    let a = 2;
+    move || a
+}
+
+// error[E0746]: return type cannot have an unboxed trait object
+//               doesn't have a size known at compile-time
+fn fn_to_closure_in_dyn_fail() -> dyn Fn() -> i32 {
+    foo
+}
+
+// compiling errors
 /*
-$ cargo build
+D:\proj\example.com\rust\hello>cargo build
    Compiling hello v0.1.0 (D:\proj\example.com\rust\hello)
 error[E0308]: mismatched types
-  --> src/main.rs:34:5
+  --> src/main.rs:43:5
    |
-32 | fn get_fn_get_three() -> fn() -> i32 {
-   |                          ----------- expected `fn() -> i32` because of return type
-33 |     let b = 3;
-34 |     || b
+41 | fn closure_to_fn_fail() -> fn() -> i32 {
+   |                            ----------- expected `fn() -> i32` because of return type
+42 |     let a = 1;
+43 |     || a
    |     ^^^^ expected fn pointer, found closure
    |
    = note: expected fn pointer `fn() -> i32`
-                 found closure `{closure@src/main.rs:34:5: 34:7}`
+                 found closure `{closure@src/main.rs:43:5: 43:7}`
 note: closures can only be coerced to `fn` types if they do not capture any variables
-  --> src/main.rs:34:8
+  --> src/main.rs:43:8
    |
-34 |     || b
-   |        ^ `b` captured here
-
-error[E0308]: mismatched types
-  --> src/main.rs:41:5
-   |
-40 | fn get_fn_get_one_v3() -> Box<dyn Fn() -> i32> {
-   |                           -------------------- expected `Box<(dyn Fn() -> i32 + 'static)>` because of return type
-41 |     get_fn_get_one()
-   |     ^^^^^^^^^^^^^^^^ expected `Box<dyn Fn() -> i32>`, found fn pointer
-   |
-   = note:  expected struct `Box<(dyn Fn() -> i32 + 'static)>`
-           found fn pointer `fn() -> i32`
-   = note: for more on the distinction between the stack and the heap, read https://doc.rust-lang.org/book/ch15-01-box.html, https://doc.rust-lang.org/rust-by-example/std/box.html, and https://doc.rust-lang.org/std/boxed/index.html
-help: store this in the heap by calling `Box::new`
-   |
-41 |     Box::new(get_fn_get_one())
-   |     +++++++++                +
+43 |     || a
+   |        ^ `a` captured here
 
 error[E0746]: return type cannot have an unboxed trait object
-  --> src/main.rs:47:25
+  --> src/main.rs:48:35
    |
-47 | fn get_fn_get_five() -> Fn() -> i32 {
-   |                         ^^^^^^^^^^^ doesn't have a size known at compile-time
+48 | fn closure_to_closure_in_dyn() -> dyn Fn() -> i32 {
+   |                                   ^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
    |
+help: return an `impl Trait` instead of a `dyn Trait`, if all returned values are the same type
+   |
+48 | fn closure_to_closure_in_dyn() -> impl Fn() -> i32 {
+   |                                   ~~~~
 help: box the return type, and wrap all of the returned values in `Box::new`
    |
-47 | fn get_fn_get_five() -> Fn() -> i32 {
-   |                         ^^^^^^^^^^^
+48 ~ fn closure_to_closure_in_dyn() -> Box<dyn Fn() -> i32> {
+49 |     let a = 2;
+50 ~     Box::new(move || a)
    |
-help: use `impl Fn() -> i32` to return an opaque type, as long as you return a single underlying type
-   |
-47 | fn get_fn_get_five() -> impl Fn() -> i32 {
-   |                         ++++
-help: alternatively, you can return an owned trait object
-   |
-47 | fn get_fn_get_five() -> Box<dyn Fn() -> i32> {
-   |                         +++++++            +
 
-Some errors have detailed explanations: E0308, E0746, E0782.
+error[E0746]: return type cannot have an unboxed trait object
+  --> src/main.rs:55:35
+   |
+55 | fn fn_to_closure_in_dyn_fail() -> dyn Fn() -> i32 {
+   |                                   ^^^^^^^^^^^^^^^ doesn't have a size known at compile-time
+   |
+help: return an `impl Trait` instead of a `dyn Trait`, if all returned values are the same type
+   |
+55 | fn fn_to_closure_in_dyn_fail() -> impl Fn() -> i32 {
+   |                                   ~~~~
+help: box the return type, and wrap all of the returned values in `Box::new`
+   |
+55 ~ fn fn_to_closure_in_dyn_fail() -> Box<dyn Fn() -> i32> {
+56 ~     Box::new(foo)
+   |
+
+Some errors have detailed explanations: E0308, E0746.
 For more information about an error, try `rustc --explain E0308`.
-error: could not compile `hello` (bin "hello") due to 4 previous errors
+error: could not compile `hello` (bin "hello") due to 3 previous errors
 */
+
 ```
