@@ -10,7 +10,7 @@ Rust
 |topics|articles|
 |------|--------|
 |concept|[lifetimes][lifetime], [trait object vs trait bound][trait], [trait object][trait_object], [function pointer vs closure][closure]|
-|commonly used| [enum][useful enum]s, |
+|commonly used| [enum][useful enum]s, [type][useful types]s|
 
 Golang
 ------
@@ -58,3 +58,4 @@ English Learning
 [trait_object]: ./rust/trait_object.md
 [closure]: ./rust/closure.md
 [useful enum]: ./rust/useful_enum.md
+[useful types]: ./rust/useful_types.md
