@@ -3,7 +3,7 @@ Useful types
 
 * [`Box<T>`][Box] - A pointer type that uniquely owns a heap allocation of type T.
 
-`Box<T>`
+Box&lt;T&gt;
 ---
 
 Rust provides a construct called [`Box<T>`][Box] for putting data on the heap.
