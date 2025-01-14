@@ -9,7 +9,8 @@ Rust
 
 |topics|articles|
 |------|--------|
-|concept|[lifetimes][lifetime], [trait object vs trait bound][trait], [trait object][trait_object], [function pointer vs closure][closure]|
+|concepts|[lifetimes][lifetime], [safety][rust safety], |
+|confusion|[trait object vs trait bound][trait], [trait object][trait_object], [function pointer vs closure][closure]|
 |commonly used| [enum][useful enum]s, [type][useful types]s|
 
 Golang
@@ -53,7 +54,8 @@ English Learning
 [log]: ./golang/pkg/log.md
 [slog]: ./golang/pkg/slog.md
 [http]: ./golang/pkg/http.md
-[lifetime]: ./rust/lifetime.md
+[lifetime]: ./rust/concepts/lifetime.md
+[rust safety]: ./rust/concepts/safety.md
 [trait]: ./rust/trait.md
 [trait_object]: ./rust/trait_object.md
 [closure]: ./rust/closure.md
