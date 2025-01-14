@@ -1,12 +1,13 @@
 Useful types
 ===
 
-* [`Box<T>`][Box] - A pointer type that uniquely owns a heap allocation of type T.
+* [Box&lt;T&gt;][Box] - A pointer type that uniquely owns a heap allocation of type T.
+* [Vec&lt;T&gt;][Vec] - A contiguous growable array type with heap-allocated contents.
 
 Box&lt;T&gt;
 ---
 
-Rust provides a construct called [`Box<T>`][Box] for putting data on the heap.
+Rust provides a construct called [Box&lt;T&gt;][Box] for putting data on the heap.
 For example, we can wrap the million-element array in Box::new like this:
 
 ```rust
@@ -31,5 +32,7 @@ Examples that using raw pointers:
 
 1. enqueue() and dequeue() methods of [Queue][Queue]
 
+
 [Box]: https://doc.rust-lang.org/std/boxed/index.html
 [Queue]: https://github.com/hzget/rust-apps/blob/main/list/queue.md
+[Vec]: https://doc.rust-lang.org/std/vec/index.html
