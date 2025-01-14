@@ -28,6 +28,8 @@ Related tops:
 * memory layout
 
 Examples that using raw pointers:  
-https://github.com/hzget/rust-apps/blob/main/list/queue.md 
+
+1. enqueue() and dequeue() methods of [Queue][Queue]
 
 [Box]: https://doc.rust-lang.org/std/boxed/index.html
+[Queue]: https://github.com/hzget/rust-apps/blob/main/list/queue.md
