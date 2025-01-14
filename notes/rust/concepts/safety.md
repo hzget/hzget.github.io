@@ -43,7 +43,7 @@ Reference and Borrowing
 ---
 
 **[References][Reference and Borrowing]** provide the ability to read and write data without
-consuming ownership of it. References are created with borrows (\& and \&mut)
+consuming ownership of it. References are created with borrows (& and &mut)
 and used with dereferences (\*), often implicitly.
 To avoid undefined behavior, Rust's policy for pointers:
 
