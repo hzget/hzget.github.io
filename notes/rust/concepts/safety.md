@@ -60,7 +60,7 @@ enforces a system of ***Permissions*** that ensures references are used safely:
 As a part of the ***Pointer Safety Principle***, the borrow checker enforces that
 **data must outlive any references to it**. Rust enforces this property in two ways.
 
-1. Rust knows how long a reference lives - references within a function body
+***case 1*** : Rust knows how long a reference lives - references within a function body
 
 ```rust
 fn main() {
@@ -74,7 +74,7 @@ fn main() {
 Rust knows how long `s_ref` lives.
 The Borrow Checker Finds Permission Violations
 
-2. Rust doesn't know how long a reference lives - input/output references
+***case 2*** : Rust doesn't know how long a reference lives - input/output references
 
 Rust provides a mechanism called [lifetime](./lifetime.md) parameters
 for such case.
