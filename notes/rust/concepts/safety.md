@@ -1,4 +1,4 @@
-The Concept of Safety
+Safety Guarantees
 ===
 
 **A foundational goal of Rust is to ensure that your programs
@@ -16,6 +16,14 @@ For such "safety", Rust comes with the following concepts:
 * Reference and Borrowing
 * Permissions (R, W, O and F), and Lifetimes
 * borrow checker
+
+Cases of Compiling Errors
+---
+
+Learning how to fix an ownership error is a core Rust skill.
+When the borrow checker rejects your code, how should you respond?
+
+click -&gt; [Cases for fixing these errors][ownership errors]
 
 Ownership
 ---
@@ -82,3 +90,4 @@ for such case.
 [undefined behavior]: https://doc.rust-lang.org/reference/behavior-considered-undefined.html
 [Reference and Borrowing]: https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html
 [borrow checker]: https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html#the-borrow-checker-finds-permission-violations
+[ownership errors]: https://rust-book.cs.brown.edu/ch04-03-fixing-ownership-errors.html
