@@ -60,4 +60,4 @@ English Learning
 [trait_object]: ./rust/trait_object.md
 [closure]: ./rust/closure.md
 [useful enum]: ./rust/useful_enum.md
-[useful types]: ./rust/useful_types.md
+[useful types]: ./rust/types/useful_types.md

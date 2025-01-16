@@ -3,7 +3,8 @@ Useful types
 
 * [Box&lt;T&gt;][Box] - A pointer type that uniquely owns a heap allocation of type T.
 * [Vec&lt;T&gt;][Vec] - A contiguous growable array type with heap-allocated contents.
-* [slice][slices] - A reference to a contiguous sequence of elements in a collection
+* [slice][slices] - A reference to a sub-range of a sequence, like a string or a vector.
+* [String][String] and [str][str]
 
 Box&lt;T&gt;
 ---
@@ -42,7 +43,7 @@ At runtime, a slice is represented as a "fat pointe"
 which contains a pointer to the beginning of the range
 and a length of the range.
 
-Here is what a string slice looks like: [string slice][string slice].
+Here is what a string slice looks like: [string slice][string slice structure].
 
 Examples:
 
@@ -63,8 +64,30 @@ fn main() {
 }
 ```
 
+String and str
+---
+
+(For the memory layout, please refer to [string slice][string slice structure]).
+
+The [String][String] type is a growable, mutable, owned, UTF-8 encoded
+string type. It is provided by Rust’s standard library rather tha
+coded into the core language.
+
+The ***string slice*** [str][str], usually seen in its borrowed form &str,
+is a reference to some UTF-8 encoded string data stored elsewhere.
+It’s the only one string type in the core language.
+
+* Both String and string slices are [UTF-8 encoded][Unicode]
+* String type does not support [direct indexing][string no indexing]
+* String type does support [iterating through][string iterating through]
+
 [Box]: https://doc.rust-lang.org/std/boxed/index.html
 [Queue]: https://github.com/hzget/rust-apps/blob/main/list/queue.md
 [Vec]: https://doc.rust-lang.org/std/vec/index.html
-[string slice]: https://rust-book.cs.brown.edu/ch04-04-slices.html#string-slices
+[string slice structure]: https://rust-book.cs.brown.edu/ch04-04-slices.html#string-slices
 [slices]: https://rust-book.cs.brown.edu/ch04-04-slices.html
+[String]: https://doc.rust-lang.org/std/string/struct.String.html
+[str]: https://doc.rust-lang.org/std/primitive.str.html
+[Unicode]: https://hzget.github.io/programming/basic/unicode.html
+[string no indexing]: ./string_no_indexing.md
+[string iterating through]: ./string_iterating_through.md
