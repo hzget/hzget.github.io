@@ -1,16 +1,16 @@
 Iterate Through a String
 ===
 
-You can iterate through a `String` in Rust using a `for` loop. Since a `String` is a UTF-8 encoded collection of characters, there are several ways to iterate over its content depending on what you want to iterate through: **characters**, **bytes**, or **graphemes** (complex characters). Here's how you can do it:
+You can loop through a `String` in Rust using a `for` loop. Since a `String` is a UTF-8 encoded collection of characters, there are several ways to iterate over its content depending on what you want to loop through: **characters**, **bytes**, or **graphemes** (complex characters). Here's how you can do it:
 
 ---
 
-### **1. Iterate Through Characters**
+### **1. Loop Through Characters**
 Use the `.chars()` method to iterate over Unicode scalar values (each "character") in the `String`.
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 
 for c in s.chars() {
     println!("{}", c);
@@ -25,18 +25,18 @@ for c in s.chars() {
   o
   ,
    
-  ÊÀ
-  ½ç
+  ä¸–
+  ç•Œ
   ```
 
 ---
 
-### **2. Iterate Through Bytes**
+### **2. Loop Through Bytes**
 Use the `.bytes()` method to iterate over the raw bytes of the `String`.
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 
 for b in s.bytes() {
     println!("{}", b);
@@ -61,7 +61,7 @@ for b in s.bytes() {
 
 ---
 
-### **3. Iterate Through Graphemes (Complex Characters)**
+### **3. Loop Through Graphemes (Complex Characters)**
 Use the `unicode-segmentation` crate to iterate over extended grapheme clusters (e.g., emojis, accented characters). Add the crate to your `Cargo.toml`:
 
 ```toml
@@ -94,12 +94,12 @@ for g in s.graphemes(true) {
 
 ---
 
-### **4. Iterate Through a `String` with Indices**
+### **4. Loop Through a `String` with Indices**
 If you need the index along with each character, you can combine `.chars()` with `.enumerate()`.
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 
 for (i, c) in s.chars().enumerate() {
     println!("Index: {}, Character: {}", i, c);
@@ -114,18 +114,18 @@ for (i, c) in s.chars().enumerate() {
   Index: 4, Character: o
   Index: 5, Character: ,
   Index: 6, Character:  
-  Index: 7, Character: ÊÀ
-  Index: 8, Character: ½ç
+  Index: 7, Character: ä¸–
+  Index: 8, Character: ç•Œ
   ```
 
 ---
 
-### **5. Iterate Through Slices**
-You can iterate through slices of the string by manually slicing it with valid UTF-8 boundaries.
+### **5. Loop Through Slices**
+You can loop through slices of the string by manually slicing it with valid UTF-8 boundaries.
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 
 for slice in s.chars().collect::<Vec<char>>().chunks(2) {
     println!("{:?}", slice);

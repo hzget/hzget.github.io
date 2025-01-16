@@ -6,10 +6,10 @@ No, Rust's `String` type **does not support direct indexing** using the square b
 ### Why No Indexing?
 1. **UTF-8 Encoding**:
    - A single Unicode character (grapheme cluster) in a `String` may consist of more than one byte.
-   - For example, the string `"hello"` uses one byte per character, but `"ÄãºÃ"` uses three bytes per character.
+   - For example, the string `"hello"` uses one byte per character, but `"ä½ å¥½"` uses three bytes per character.
 
    ```rust
-   let s = String::from("ÄãºÃ");
+   let s = String::from("ä½ å¥½");
    println!("{:?}", s.as_bytes()); // [228, 189, 160, 229, 165, 189]
    ```
 
@@ -27,9 +27,9 @@ The `.chars()` method allows you to iterate over the Unicode scalar values (each
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 if let Some(c) = s.chars().nth(7) { // Access the 8th character (0-based indexing)
-    println!("{}", c); // Outputs: "ÊÀ"
+    println!("{}", c); // Outputs: "ä¸–"
 } else {
     println!("Character not found!");
 }
@@ -43,10 +43,10 @@ You can slice a `String` to get a `&str`, but the indices must be valid UTF-8 bo
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
-// Get the substring containing "ÊÀ"
-let slice = &s[7..10]; // "ÊÀ" occupies 3 bytes in UTF-8
-println!("{}", slice); // Outputs: "ÊÀ"
+let s = String::from("hello, ä¸–ç•Œ");
+// Get the substring containing "ä¸–"
+let slice = &s[7..10]; // "ä¸–" occupies 3 bytes in UTF-8
+println!("{}", slice); // Outputs: "ä¸–"
 ```
 - **Caution**: Rust will panic at runtime if the indices do not align with UTF-8 boundaries.
 
@@ -57,9 +57,9 @@ You can convert the string into a `Vec<char>` if you need random access by index
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 let chars: Vec<char> = s.chars().collect();
-println!("{}", chars[7]); // Outputs: "ÊÀ"
+println!("{}", chars[7]); // Outputs: "ä¸–"
 ```
 - **Downside**: Allocates extra memory to store the `Vec<char>`.
 
@@ -70,9 +70,9 @@ The `.get()` method returns an `Option<&str>`, allowing you to safely slice with
 
 #### Example:
 ```rust
-let s = String::from("hello, ÊÀ½ç");
+let s = String::from("hello, ä¸–ç•Œ");
 if let Some(slice) = s.get(7..10) {
-    println!("{}", slice); // Outputs: "ÊÀ"
+    println!("{}", slice); // Outputs: "ä¸–"
 } else {
     println!("Invalid slice");
 }
