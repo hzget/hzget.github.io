@@ -25,12 +25,13 @@ In Rust, a **string literal** and a **string slice** are closely related but not
   ```
 
 ### Key Differences
-| Aspect                 | String Literal (`&'static str`)          | String Slice (`&str`)                  |
-|------------------------|-------------------------------------------|----------------------------------------|
-| **Storage**            | Stored in the program's binary (static). | Can borrow from literals or heap.      |
-| **Lifetime**           | Always `'static`.                        | Inherits the lifetime of the borrowed string. |
-| **Mutability**         | Immutable by definition.                 | Immutable because it's a borrowed reference. |
-| **Size**               | Fixed at compile time.                   | Depends on what it borrows from.       |
+
+| Aspect  | String Literal (`&'static str`) | String Slice (`&str`) |
+|:---|:---|:---|
+| **Storage**  | Stored in the program's binary (static). | Can borrow from literals or heap.|
+| **Lifetime** | Always `'static`.          | Inherits the lifetime of the borrowed string. |
+| **Mutability** | Immutable by definition. | Immutable because it's a borrowed reference. |
+| **Size**     | Fixed at compile time.     | Depends on what it borrows from.  |
 
 ### Example
 ```rust
