@@ -18,7 +18,7 @@ No, Rust's `String` type **does not support direct indexing** using the square b
 
 ### Accessing Characters in a String
 
-Since Rust's `String` type does not support direct indexing due to its UTF-8 encoding, there are several safe and idiomatic ways to access a specific character or portion of a string. Here¡¯s how you can achieve this:
+Since Rust's `String` type does not support direct indexing due to its UTF-8 encoding, there are several safe and idiomatic ways to access a specific character or portion of a string. Here's how you can achieve this:
 
 ---
 

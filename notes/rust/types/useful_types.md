@@ -70,12 +70,12 @@ String and str
 (For the memory layout, please refer to [string slice][string slice structure]).
 
 The [String][String] type is a growable, mutable, owned, UTF-8 encoded
-string type. It is provided by Rust’s standard library rather tha
+string type. It is provided by Rust's standard library rather tha
 coded into the core language.
 
 The ***string slice*** [str][str], usually seen in its borrowed form &str,
 is a reference to some UTF-8 encoded string data stored elsewhere.
-It’s the only one string type in the core language.
+It's the only one string type in the core language.
 
 * Both String and string slices are [UTF-8 encoded][Unicode]
 * String type does not support [direct indexing][string no indexing]
