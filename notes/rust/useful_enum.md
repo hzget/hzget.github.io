@@ -49,6 +49,17 @@ enum Option<T> {
 }
 ```
 
+Here is an excerpt from [stack][stack]:
+
+```rust
+let mut list = Stack::new();
+list.push(1);
+list.push(2);
+println!("{:?}", list.pop()); // Some(2)
+println!("{:?}", list.pop()); // Some(1)
+println!("{:?}", list.pop()); // None
+```
+
 ***null-reference problems***
 
 `Option<T>` and `T` are different types.
@@ -67,6 +78,27 @@ String s = Name(); // It sometimes return a `null` value by mistake
 System.out.println(s.length());
 ```
 
+By contrast, here is a excerpt from [minigrep][minigrep]
+
+```rust
+let query = match args.next() {
+    Some(arg) => arg,
+    None => return ERROR_MISS_QUERY,
+};
+```
+
+Here is the signature of the method:
+
+```rust
+pub trait Iterator {
+    type Item;
+
+    fn next(&mut self) -> Option<Self::Item>;
+}
+```
+
 [Result]: https://doc.rust-lang.org/std/result/index.html
 [Option]: https://doc.rust-lang.org/std/option/index.html
+[stack]: https://github.com/hzget/rust-apps/blob/main/list/stack.md
+[minigrep]: https://github.com/hzget/rust-apps/tree/main/minigrep
 
