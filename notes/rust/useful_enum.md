@@ -60,45 +60,44 @@ println!("{:?}", list.pop()); // Some(1)
 println!("{:?}", list.pop()); // None
 ```
 
-***null-reference problems***
+`Option<T>` helps to eliminate the ***null-reference problems***
+that exist in other languages which have a `null` value.
+
+> ***null-reference problems*** :
+> e.g., assuming that something isn't null when it actually is
+
+```java
+// java code
+String s = Name();
+System.out.println(s.length());
+```
+
+`Name()` may return a `null` value for some reason. And then
+it will throw a NullPointerException if s is null.
+
+By contrast, Rust does not have `null` value,
+but uses `Option<T>` to express a value being present or **absent**.
+
+For example,
+
+```rust
+fn plus_one(x: Option<i32>) -> Option<i32> {
+    match x {
+        None => None,
+        Some(i) => Some(i + 1),
+    }
+}
+
+let five = Some(5);
+let six = plus_one(five);
+let none = plus_one(None);
+```
 
 `Option<T>` and `T` are different types.
 You have to convert an `Option<T>` to a `T` before you can perform T
 operations with it. Otherwise, the compiler will give an error.
 
-In other words, it helps to eliminate the null-reference problems
-(e.g., assuming that something isn't null when it actually is)
-that exist in other languages which have a `null` value.
-For example,
-
-```java
-// java code
-String s = Name(); // It sometimes return a `null` value by mistake
-// This will throw a NullPointerException if s is null
-System.out.println(s.length());
-```
-
-By contrast, here is a excerpt from [minigrep][minigrep]
-
-```rust
-let query = match args.next() {
-    Some(arg) => arg,
-    None => return ERROR_MISS_QUERY,
-};
-```
-
-Here is the signature of the method:
-
-```rust
-pub trait Iterator {
-    type Item;
-
-    fn next(&mut self) -> Option<Self::Item>;
-}
-```
-
 [Result]: https://doc.rust-lang.org/std/result/index.html
 [Option]: https://doc.rust-lang.org/std/option/index.html
 [stack]: https://github.com/hzget/rust-apps/blob/main/list/stack.md
-[minigrep]: https://github.com/hzget/rust-apps/tree/main/minigrep
 
