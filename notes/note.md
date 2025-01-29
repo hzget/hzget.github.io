@@ -10,7 +10,7 @@ Rust
 |topics|articles|
 |------|--------|
 |concepts|[lifetimes][lifetime], [safety][rust safety], |
-|commonly used| [enum][useful enum]s, [type][useful types]s, [sugar][sugar]s, |
+|commonly used| [enum][useful enum]s, [type][useful types]s, [sugar][sugar]s, [trait][trait]s |
 |others| [confusion][confusion]s, |
 
 Golang
@@ -60,3 +60,4 @@ English Learning
 [useful types]: ./rust/types/useful_types.md
 [confusion]: ./rust/confusion/confusion.md
 [sugar]: ./rust/sugars/sugars.md
+[trait]: ./rust/traits/trait.md
