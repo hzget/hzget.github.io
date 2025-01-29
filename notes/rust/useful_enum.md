@@ -35,8 +35,10 @@ fn main() {
 }
 ```
 
-* commonly used methods: `unwrap()`, `expect()`, `unwrap_or_else()`
+* It may use with `match` or with methods `unwrap()`, `expect()`, `unwrap_or_else()`
 * the `?` operator can be used as a shortcut to propagate errors
+* It is often useful to implement trait [From][From] for error types conversion
+* Other examples using Result: [minigrep][minigrep]
 
 ## Option&lt;T&gt;
 
@@ -100,4 +102,6 @@ operations with it. Otherwise, the compiler will give an error.
 [Result]: https://doc.rust-lang.org/std/result/index.html
 [Option]: https://doc.rust-lang.org/std/option/index.html
 [stack]: https://github.com/hzget/rust-apps/blob/main/list/stack.md
+[From]: https://doc.rust-lang.org/std/convert/trait.From.html
+[minigrep]: https://github.com/hzget/rust-apps/tree/main/minigrep
 
