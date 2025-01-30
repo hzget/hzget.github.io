@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-For `hello(&me)`, Rust does two steps:
+For `hello(&me)`, Rust **compiler** does two steps:
 
 1. turn `&MyBox<String>` into `&String` by calling deref
 2. calls deref again to turn the `&String` into `&str`
