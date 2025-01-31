@@ -2,7 +2,7 @@ Lifetimes
 ===
 
 The concept of ***lifetimes*** is central to Rust's
-ownership and borrowing system, which ensures memory safety
+ownership and borrowing system, which ensures memory [safety][safety]
 without the need for a garbage collector.
 
 Every reference in Rust has a ***lifetime***, which is the
@@ -11,6 +11,10 @@ The Rust compiler's borrow checker will compare scopes to determine
 whether all borrows are valid.
 
 > Wherever ***borrowing*** happens, the ***lifetime*** should be considered.
+
+Most of the time, lifetimes are implicit and inferred.
+But we must annotate lifetimes when the lifetimes of references
+could be related in a few different ways.
 
 When returning a reference from a function, the lifetime parameter
 for the return type needs to match the lifetime parameter for one
@@ -22,51 +26,47 @@ out of scope at the end of the function.
 (Just like the case in Example: Lifetime Errors)
 
 For furture reading:  
-[lifetime for trait object](./lifetime_traitobject.md),
+[Validating References with Lifetimes][lifetime]
 
 Key Concepts of Lifetimes
 ---
 
 * References and Borrowing:
-
     * A reference in Rust is a way of borrowing data, allowing you to
     refer to a value without taking ownership of it. References are denoted
     by `&T` (immutable reference) or `&mut T` (mutable reference).
-    * Since Rust guarantees memory safety, it needs to ensure that references
-    never outlive the data they point to. Lifetimes help enforce this rule.
-
-
+    * Since Rust guarantees memory [safety][safety], it needs to ensure that
+    ***References Never Outlive the Data they Point to*** .
+    Lifetimes help enforce this rule.
+* Lifetime Inference:
+    * Most of the time, lifetimes are implicit and inferred.
+    Rust's lifetime elision rules cover the most common cases.
+    * They don't provide full inference.
+    If Rust deterministically applies the rules but there is still
+    ambiguity as to what lifetimes the references have,
+    the compiler will give you an error that you can resolve by
+    adding the lifetime annotations.
 * Lifetime Annotations:
-
     * Lifetime annotations are a way to explicitly specify how long
     references are valid in your code. They appear in the form of
     `&'a T` where `'a` is the lifetime.
     * Lifetime annotations do not change the lifetime of references;
     they simply describe the relationships between lifetimes.
-
-
+* lifetime elision rules
+    * If the codes are written in the way of some patterns, the borrow checker
+    could infer the lifetimes without explicit annotations.
+    The patterns programmed into Rust's analysis of references are
+    called the [lifetime elision rules][lifetime elision] .
+    * These aren't rules for programmers to follow; they're a set of
+    particular cases that the compiler will consider, and if your code
+    fits these cases, you don't need to write the lifetimes explicitly.
 * Ownership and Lifetimes:
-
     * When a reference is created, Rust must ensure that the data
     it points to lives long enough to be valid for the entire duration
     of the reference's use.
     * Lifetimes are particularly important when dealing with functions,
     structs, and any situation where references are passed around and returned.
-
-
-* Lifetime Inference:
-
-    * Most of the time, lifetimes are implicit and inferred.
-    Rust's lifetime elision rules cover the most common cases.
-    * They don’t provide full inference.
-    If Rust deterministically applies the rules but there is still
-    ambiguity as to what lifetimes the references have,
-    the compiler will give you an error that you can resolve by
-    adding the lifetime annotations.
-
-
 * Safety
-
     * Every reference will have a lifetime (scope) implicitly added by
     the compiler or explicitly added by the user.
     * The Rust compiler's borrow checker will compare scopes to
@@ -185,6 +185,36 @@ error: could not compile `chapter10` due to previous error
 
 ```
 
+Example: Lifetime Elision
+---
+
+The compiler uses three [rules][lifetime elision] to figure out
+the lifetimes of the references when there aren't explicit annotations.
+
+```rust
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+```
+
+The [lifetime elision rules][lifetime elision] applies:
+
+```rust
+fn first_word<'a>(s: &'a str) -> &'a str {
+```
+
+Now all the references in this function signature have lifetimes,
+and the compiler can continue its analysis without needing
+the programmer to annotate the lifetimes in this function signature.
+
 Example with Partially Annotated Lifetimes
 ---
 
@@ -199,7 +229,7 @@ fn longest<'a>(x: &'a str, y: &str) -> &'a str {
 }
 ```
 
-We wouldn’t need to specify a lifetime on the y parameter because
+We wouldn't need to specify a lifetime on the y parameter because
 the lifetime of y has no ***relationship*** with the lifetime of x
 or the return value.
 
@@ -299,16 +329,20 @@ pub fn search<'b>(query: &str, contents: &'b str) -> Vec<&'b str> {
 
 ```
 
-
 Summary
 ---
 
 Lifetimes are a way of telling the Rust compiler how long references
 should be valid.
-* Annotations: While Rust can often infer lifetimes, sometimes you
-need to annotate them explicitly, particularly in more complex scenarios.
 * Enforcement: Lifetimes are enforced at compile time to ensure that
 references do not outlive the data they refer to, preventing dangling
 references and ensuring memory safety.
-* `'static` Lifetime: A special lifetime indicating that the reference is valid for the entire duration of the program.
+* Annotations: While Rust can often infer lifetimes, sometimes you
+need to annotate them explicitly, particularly in more complex scenarios.
+* `'static` Lifetime: A special lifetime indicating that the reference
+is valid for the entire duration of the program.
+
+[lifetime]: https://rust-book.cs.brown.edu/ch10-03-lifetime-syntax.html
+[lifetime elision]: https://rust-book.cs.brown.edu/ch10-03-lifetime-syntax.html#lifetime-elision
+[safety]: ./safety.md
 

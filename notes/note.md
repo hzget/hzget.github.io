@@ -9,7 +9,7 @@ Rust
 
 |topics|articles|
 |------|--------|
-|concepts|[lifetimes][lifetime], [safety][rust safety], |
+|concepts|[safety][rust safety], [lifetimes][lifetime], |
 |commonly used| [enum][useful enum]s, [type][useful types]s, [sugar][sugar]s, [trait][trait]s |
 |others| [confusion][confusion]s, |
 

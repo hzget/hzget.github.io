@@ -87,6 +87,10 @@ The Borrow Checker Finds Permission Violations
 Rust provides a mechanism called [lifetime](./lifetime.md) parameters
 for such case.
 
+In fact, ***case 1*** also has lifetimes which are **inferred** by Rust compiler.
+And in ***case 2***, we need to annotate lifetimes manually to help with
+the compiler.
+
 [undefined behavior]: https://doc.rust-lang.org/reference/behavior-considered-undefined.html
 [Reference and Borrowing]: https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html
 [borrow checker]: https://rust-book.cs.brown.edu/ch04-02-references-and-borrowing.html#the-borrow-checker-finds-permission-violations
