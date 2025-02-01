@@ -1,7 +1,7 @@
 Lifetimes
 ===
 
-**keywords** : safety, borrow checker
+**keywords** : safety, borrow checker, dangling references
 
 The concept of lifetimes is ***central*** to Rust's
 ownership and borrowing system, which ensures memory [safety][safety]
@@ -18,14 +18,9 @@ Most of the time, lifetimes are implicit and inferred.
 But we must annotate lifetimes when the lifetimes of references
 could be related in a few different ways.
 
-When returning a reference from a function, the lifetime parameter
-for the return type needs to match the lifetime parameter for one
-of the parameters.
-If the reference returned does not refer to one of the parameters,
-it must refer to a value created within this function, in which
-case it would be a dangling reference because the value will go
-out of scope at the end of the function.
-(Just like the case in Example: Lifetime Errors)
+The ***Main Aim*** of lifetimes is to prevent ***dangling references***,
+which cause a program to reference data other than the data
+it's intended to reference.
 
 For furture reading:  
 [Validating References with Lifetimes][lifetime]
@@ -101,10 +96,15 @@ fn main() {
 }                         // ----------+
 ```
 
-Example: Lifetime Errors
+Example: Lifetime Errors - Dangling References
 ---
 
-Rust's compiler enforces lifetime rules to prevent errors such as dangling references. If a reference outlives the data it points to, Rust will produce a compile-time error, avoiding issues that could lead to undefined behavior.
+Rust's compiler enforces lifetime rules to prevent errors
+such as ***dangling references***.
+(It is the main aim of lifetime).
+If a reference outlives the data it points to,
+Rust will produce a compile-time error,
+avoiding issues that could lead to undefined behavior.
 
 ```rust
 fn dangling_reference() -> &String {
@@ -341,6 +341,7 @@ references do not outlive the data they refer to, preventing dangling
 references and ensuring memory safety.
 * Annotations: While Rust can often infer lifetimes, sometimes you
 need to annotate them explicitly, particularly in more complex scenarios.
+* The ***Main Aim*** of lifetimes is to prevent ***dangling references***
 * `'static` Lifetime: A special lifetime indicating that the reference
 is valid for the entire duration of the program.
 
