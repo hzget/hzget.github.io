@@ -1,13 +1,15 @@
 Lifetimes
 ===
 
-The concept of ***lifetimes*** is central to Rust's
+**keywords** : safety, borrow checker
+
+The concept of lifetimes is ***central*** to Rust's
 ownership and borrowing system, which ensures memory [safety][safety]
 without the need for a garbage collector.
 
 Every reference in Rust has a ***lifetime***, which is the
 ***scope*** for which that reference is valid.
-The Rust compiler's borrow checker will compare scopes to determine
+The Rust compiler's ***borrow checker*** will compare scopes to determine
 whether all borrows are valid.
 
 > Wherever ***borrowing*** happens, the ***lifetime*** should be considered.
@@ -53,7 +55,7 @@ Key Concepts of Lifetimes
     * Lifetime annotations do not change the lifetime of references;
     they simply describe the relationships between lifetimes.
 * lifetime elision rules
-    * If the codes are written in the way of some patterns, the borrow checker
+    * If the codes are written in some way, the borrow checker
     could infer the lifetimes without explicit annotations.
     The patterns programmed into Rust's analysis of references are
     called the [lifetime elision rules][lifetime elision] .
@@ -72,7 +74,7 @@ Key Concepts of Lifetimes
     * The Rust compiler's borrow checker will compare scopes to
     determine whether all borrows are valid.
 
-Example: Scopes
+Example: Scopes (i.e., the lifetimes)
 ---
 
 ```rust
@@ -264,7 +266,7 @@ The returned reference has to do with the 'contents' parameter.
 The user shall specify lifetime to tell their relationship.
 And then borrow checker will compare scopes to determine
 whether all borrows are valid. Otherwise the compiler will
-automatically give it a distinct lifetime that does not
+***automatically*** give it a distinct lifetime that does not
 tell that relationship. Just like the following:
 
 ```rust
