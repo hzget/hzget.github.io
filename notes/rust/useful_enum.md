@@ -8,6 +8,8 @@ Useful Enums
 
 ## Result&lt;T, E&gt;
 
+user cases: [minigrep][minigrep],
+
 [Result&lt;T, E&gt;][Result]
 is the type used for returning and propagating errors.
 It is an enum with the variants, Ok(T), representing success and containing a value,
@@ -35,12 +37,15 @@ fn main() {
 }
 ```
 
+Other things:
+
 * It may use with `match` or with methods `unwrap()`, `expect()`, `unwrap_or_else()`
 * the `?` operator can be used as a shortcut to propagate errors
 * It is often useful to implement trait [From][From] for error types conversion
-* Other examples using Result: [minigrep][minigrep]
 
 ## Option&lt;T&gt;
+
+user cases: [stack][stack], [threadpool][threadpool],
 
 Type [Option&lt;T&gt;][Option] encodes the concept of a value being present or absent.
 
@@ -104,4 +109,5 @@ operations with it. Otherwise, the compiler will give an error.
 [stack]: https://github.com/hzget/rust-apps/blob/main/list/stack.md
 [From]: https://doc.rust-lang.org/std/convert/trait.From.html
 [minigrep]: https://github.com/hzget/rust-apps/tree/main/minigrep
+[threadpool]: https://github.com/hzget/rust-apps/tree/main/threadpool
 
