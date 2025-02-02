@@ -341,7 +341,6 @@ references do not outlive the data they refer to, preventing dangling
 references and ensuring memory safety.
 * Annotations: While Rust can often infer lifetimes, sometimes you
 need to annotate them explicitly, particularly in more complex scenarios.
-* The ***Main Aim*** of lifetimes is to prevent ***dangling references***
 * `'static` Lifetime: A special lifetime indicating that the reference
 is valid for the entire duration of the program.
 
