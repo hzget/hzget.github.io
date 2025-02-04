@@ -5,8 +5,9 @@ Testing
 ---
 
 **keyword**:
-[Unit Testing][unit test tech],
-[Benchmark Testing][benchmark],
+[Unit Tests][unit test tech],
+[Benchmark Tests][benchmark],
+[Integration Tests][integration],
 [Test Coverage][coverage],
 [Test-Driven Development (TDD)][tdd],
 
@@ -33,20 +34,20 @@ Security
 
 | topic | contents |
 |:---:|:---|
-|concepts|[confidentiality, integrity, and authentication][CIA]|
-|tools| ssh, https |
+|Concepts|[Confidentiality, Integrity, and Authentication][cia]|
+|Tools| ssh, https |
 
 Basics
 ------
 
 | topic | contents |
 |:---:|:---|
-|standards|[Unicode][unicode]|
+|Standards|[Unicode][unicode]|
 |Language| [Integer Overflow][Integer overflow], [Sign Extention][sign]|
 |Concepts| [Asynchronous][async]|
 |Networks| [socket][network concepts]|
 |Algorithms| [Data Structure and Algorithms][data structure and algorithms] |
-|compliants| [FFI][ffi] - Foreign Function Interface,<br /> [ABI][abi] - Application Binary Interface, |
+|Compliants| [FFI][ffi] - Foreign Function Interface,<br /> [ABI][abi] - Application Binary Interface, |
 |Development| [BDD][bdd], [TDD][tdd], [CDD][cdd], [CI/CD][ci/cd]|
 
 Performance
@@ -87,3 +88,4 @@ Others
 [benchmark]: ./performance/benchmark.md
 [coverage]: ./testing/coverage.md
 [cia]: ./security/cia.md
+[integration]: https://rust-book.cs.brown.edu/ch11-03-test-organization.html#integration-tests
