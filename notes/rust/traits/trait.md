@@ -1,14 +1,45 @@
 Useful Traits
 ===
 
-* [From][From] - Used to do value-to-value conversions
-* [Deref][Deref] - Used for immutable dereferencing operations, like `*v`
+* [From][From] - helps to do value-to-value conversions
+* [Deref][Deref] - allows you to ***Treat Smart Pointers Like Regular References***
+
+[From][From]
+---
+
+Used to do value-to-value conversions while consuming the input value.
+
+It is especially useful when performing error handling.
+The '?' operator automatically converts the underlying error type
+with [From::from][From].
+Here is a snippet from [minigrep][minigrep]:
+
+```rust
+/// takes a configuration and runs the grep functionaly.
+pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
+    let text = fs::read_to_string(config.file_path)?;
+
+    // --snippet--
+
+    Ok(())
+}
+```
+
+The `?` operator works for the error type conversion because of the following:
+
+* If `read_to_string` fails, it will return `std::io::Error`.
+* `std::io::Error` implements `std::error::Error`
+* `Box<dyn std::error::Error>` implement `From`:
+  ```rust
+  impl<'a, E: Error + 'a> From<E> for Box<dyn Error + 'a> {/* --snippet-- */}
+  ```
+
 
 [Deref][Deref]
 ---
 
 Implementing the [Deref][Deref] trait allows you to
-***Treating Smart Pointers Like Regular References*** .
+***Treat Smart Pointers Like Regular References*** .
 In other words, you can write code that operates on references
 and use that code with smart pointers too.
 
@@ -61,3 +92,4 @@ For `hello(&me)`, Rust **compiler** does two steps:
 [From]: https://doc.rust-lang.org/std/convert/trait.From.html
 [Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
 [deref coercion]: https://doc.rust-lang.org/std/ops/trait.Deref.html#deref-coercion
+[minigrep]: https://github.com/hzget/rust-apps/blob/main/minigrep
