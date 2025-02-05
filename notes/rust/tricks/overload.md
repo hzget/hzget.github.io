@@ -14,8 +14,9 @@ and comparability is handled via [`std::cmp`](https://doc.rust-lang.org/std/cmp/
 i.e., the so-called **overloadable operators** and **comparable/orderable utilities**.
 
 ### **Examples**
-| **Operator** | **Trait**                 | **Example Implementation** |
-|-------------|---------------------------|----------------------------|
+
+| Operator | Trait | Example Implementation |
+|---|---|---|
 | `+`         | `std::ops::Add`            | `impl Add for MyType {}` |
 | `-`         | `std::ops::Sub`            | `impl Sub for MyType {}` |
 | `*`         | `std::ops::Mul`            | `impl Mul for MyType {}` |
@@ -31,6 +32,7 @@ i.e., the so-called **overloadable operators** and **comparable/orderable utilit
 | `+=` / `-=` | `std::ops::AddAssign` etc. | `impl AddAssign for MyType {}` |
 
 ### **Example: Overloading `+` Operator**
+
 ```rust
 use std::ops::Add;
 
@@ -136,6 +138,7 @@ fn main() {
 ---
 
 ## **🔹 5. Implicit Type Coercion (`From` and `Into`)**
+
 Rust provides implicit type coercion via `From` and `Into`.
 
 ### **Example: `From` and `Into` Overloading**
@@ -184,6 +187,7 @@ fn main() {
 ---
 
 ## **🔹 Summary Table**
+
 | **Overloading Type**    | **Rust Mechanism** |
 |-------------------------|------------------|
 | **Operator Overloading** | Implementing `std::ops::*` traits |
@@ -193,6 +197,7 @@ fn main() {
 | **Implicit Overloading of `*` and `.`** | Implementing `Deref` and `DerefMut` |
 | **Implicit Type Coercion** | Implementing `From` & `Into` |
 | **Custom Formatting Overloading** | Implementing `std::fmt::Display` and `std::fmt::Debug` |
+
 ---
 
 ### **🚀 Conclusion**
