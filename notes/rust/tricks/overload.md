@@ -16,7 +16,7 @@ i.e., the so-called **overloadable operators** and **comparable/orderable utilit
 ### **Examples**
 
 | Operator | Trait | Example Implementation |
-|---|---|---|
+|:---|:---|:---|
 | `+`         | `std::ops::Add`            | `impl Add for MyType {}` |
 | `-`         | `std::ops::Sub`            | `impl Sub for MyType {}` |
 | `*`         | `std::ops::Mul`            | `impl Mul for MyType {}` |
@@ -189,7 +189,7 @@ fn main() {
 ## **🔹 Summary Table**
 
 | **Overloading Type**    | **Rust Mechanism** |
-|-------------------------|------------------|
+|:---|:---|
 | **Operator Overloading** | Implementing `std::ops::*` traits |
 | **Comparable & Orderable** | Implementing `std::cmp::{PartialEq, Eq, PartialOrd, Ord}` |
 | **Method Overloading** | Using generics or associated types |
