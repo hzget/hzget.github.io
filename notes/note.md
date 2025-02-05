@@ -12,7 +12,7 @@ Rust
 |concepts|[safety][rust safety], [lifetimes][lifetime], |
 |commonly used| [enum][useful enum]s, [type][useful types]s, [syntax sugar][sugar]s, [trait][trait]s |
 |usages| [trait bound][trait bound]s, |
-|others| [confusion][confusion]s, |
+|others| [confusion][confusion]s, [overload][overload]s|
 
 Golang
 ------
@@ -63,3 +63,4 @@ English Learning
 [sugar]: ./rust/sugars/sugars.md
 [trait]: ./rust/traits/trait.md
 [trait bound]: ./rust/usages/trait_bound.md
+[overload]: ./rust/tricks/overload.md
