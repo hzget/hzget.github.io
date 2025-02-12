@@ -44,7 +44,7 @@ Basics
 |:---:|:---|
 |Standards|[Unicode][unicode]|
 |Language| [Integer Overflow][Integer overflow], [Sign Extention][sign]|
-|Concepts| [Asynchronous][async], [Functional][functional]|
+|Concepts| [Async][async], [Functional][functional], [RAII][RAII]|
 |Networks| [socket][network concepts]|
 |Algorithms| [Data Structure and Algorithms][data structure and algorithms] |
 |Compliants| [FFI][ffi] - Foreign Function Interface,<br /> [ABI][abi] - Application Binary Interface, |
@@ -72,6 +72,7 @@ Others
 [sign]: ./basic/sign_extention.md
 [unicode]: ./basic/unicode.md
 [async]: ./basic/async/async.md
+[RAII]: ./basic/raii.md
 [functional]: ./basic/functional/functional.md
 [ffi]: ./basic/ffi.md
 [abi]: ./basic/abi.md
