@@ -2,10 +2,12 @@
 
 ## Socket
 
-A tcp socket, consisting of an IP address and a port,
+keywords: ***socket, endpoint, connection, port, service***
+
+A tcp ***socket***, consisting of an IP address and a port,
 is an ***endpoint instance*** in the context of either
 a specific tcp connection or a listenning state.
-A tcp connection is identified by two endpoint: local endpoint
+A tcp ***connection*** is identified by two endpoint: local endpoint
 and remote endpoint. Thus a tcp socket is not a connection,
 but an endpoint of a connection.
 
