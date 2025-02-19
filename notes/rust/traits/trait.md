@@ -1,13 +1,12 @@
-Useful Traits
-===
+# Useful Traits
 
-* [From][From] - helps to do value-to-value conversions
+* [From][From] - helps to do value-to-value ***Conversions***
 * [Deref][Deref] - allows you to ***Treat Smart Pointers Like Regular References***
+* [Drop][Drop] - allows you to custom code within the ***Destructor*** which is useful for [RAII][RAII]
 
-[From][From]
----
+## [From][From]
 
-Used to do value-to-value conversions while consuming the input value.
+Used to do value-to-value **conversions** while consuming the input value.
 
 It is especially useful when performing error handling.
 The '?' operator automatically converts the underlying error type
@@ -35,8 +34,7 @@ The `?` operator works for the error type conversion because of the following:
   ```
 
 
-[Deref][Deref]
----
+## [Deref][Deref]
 
 Implementing the [Deref][Deref] trait allows you to
 ***Treat Smart Pointers Like Regular References*** .
@@ -92,4 +90,6 @@ For `hello(&me)`, Rust **compiler** does two steps:
 [From]: https://doc.rust-lang.org/std/convert/trait.From.html
 [Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
 [deref coercion]: https://doc.rust-lang.org/std/ops/trait.Deref.html#deref-coercion
+[Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
 [minigrep]: https://github.com/hzget/rust-apps/blob/main/minigrep
+[RAII]: ../../../programming/basic/raii.md
