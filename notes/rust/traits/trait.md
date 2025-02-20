@@ -36,10 +36,12 @@ The `?` operator works for the error type conversion because of the following:
 
 ## [Deref][Deref]
 
+* explicit: dereferencing operations with the (unary) `*` operator, like `*v`
+* implicit: [deref coercion][deref coercion]
+
+[Deref][Deref] is used for immutable dereferencing operations, like `*v`.
 Implementing the [Deref][Deref] trait allows you to
 ***Treat Smart Pointers Like Regular References*** .
-In other words, you can write code that operates on references
-and use that code with smart pointers too.
 
 It has the concept of [deref coercion][deref coercion].
 Deref coercion is a convenience Rust performs on
@@ -82,10 +84,17 @@ fn main() {
 }
 ```
 
-For `hello(&me)`, Rust **compiler** does two steps:
+* explicit dereferencing operation:
 
-1. turn `&MyBox<String>` into `&String` by calling deref
-2. calls deref again to turn the `&String` into `&str`
+  ```rust
+  *m ---> *(m.deref())
+  ```
+
+* implicit deref coercion:
+
+  For `hello(&me)`, Rust **compiler** does two steps:
+  1. turn `&MyBox<String>` into `&String` by inserting deref
+  2. insert deref again to turn the `&String` into `&str`
 
 [From]: https://doc.rust-lang.org/std/convert/trait.From.html
 [Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
