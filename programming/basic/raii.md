@@ -73,7 +73,9 @@ fn main() {
 Rust provides smart pointers that use RAII for memory management:
 
 ### **`Box<T>` (Heap Allocation)**
+
 - Automatically deallocates heap memory.
+
 ```rust
 struct Data {
     value: i32,
@@ -85,7 +87,9 @@ fn main() {
 ```
 
 ### **`Rc<T>` (Reference Counting)**
+
 - Uses RAII to track reference counts.
+
 ```rust
 use std::rc::Rc;
 
@@ -96,6 +100,7 @@ fn main() {
 ```
 
 ### **`Arc<T>` (Thread-Safe Reference Counting)**
+
 - Works like `Rc<T>`, but is safe for multi-threading.
 
 ---
