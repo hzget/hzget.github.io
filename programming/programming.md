@@ -41,7 +41,7 @@ Basics
 ------
 
 | topic | contents |
-|:---:|:---|
+|:---|:---|
 |Standards|[Unicode][unicode]|
 |Language| [Integer Overflow][Integer overflow], [Sign Extention][sign]|
 |Concepts| [Async][async], [Functional][functional], [RAII][RAII]|
@@ -49,6 +49,7 @@ Basics
 |Algorithms| [Data Structure and Algorithms][data structure and algorithms] |
 |Compliants| [FFI][ffi] - Foreign Function Interface,<br /> [ABI][abi] - Application Binary Interface, |
 |Development| [BDD][bdd], [TDD][tdd], [CDD][cdd], [CI/CD][ci/cd]|
+|Other| [Panicking][panicking], [Compile-time checks][compile-time]|
 
 Performance
 -----------
@@ -91,3 +92,5 @@ Others
 [coverage]: ./testing/coverage.md
 [cia]: ./security/cia.md
 [integration]: https://rust-book.cs.brown.edu/ch11-03-test-organization.html#integration-tests
+[panicking]: ./basic/panicking.md
+[compile-time]: ./basic/compile_time.md
