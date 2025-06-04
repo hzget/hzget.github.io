@@ -62,7 +62,12 @@ for b in s.bytes() {
 ---
 
 ### **3. Loop Through Graphemes (Complex Characters)**
-Use the `unicode-segmentation` crate to iterate over extended grapheme clusters (e.g., emojis, accented characters). Add the crate to your `Cargo.toml`:
+
+Use the `unicode-segmentation` crate to iterate over extended grapheme clusters, e.g., emojis.
+
+The "family" emoji 👨‍👩‍👧 (U+1F468 U+200D U+1F469 U+200D U+1F467) is a grapheme cluster made up of several code points, including "man" (U+1F468), "woman" (U+1F469), and "girl" (U+1F467), joined by zero-width joiners (U+200D).
+
+Add the crate to your `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -73,7 +78,7 @@ unicode-segmentation = "1.10.0"
 ```rust
 use unicode_segmentation::UnicodeSegmentation;
 
-let s = String::from("hello, ??");
+let s = String::from("hello, 👨‍👩‍👧");
 
 // true indicates extended graphemes
 for g in s.graphemes(true) {
@@ -89,7 +94,7 @@ for g in s.graphemes(true) {
   o
   ,
    
-  ??
+  👨‍👩‍👧
   ```
 
 ---

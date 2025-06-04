@@ -10,13 +10,15 @@
 - `enum` **mimics FP-style lists** (`Nil` is the base case, `Cons` is the recursion).
 - `struct` **feels more imperative** (explicitly managing `Option` instead of using pattern matching).
 
-Here are two implementations of a **linked list** in Rust:  
-1. Using a **struct**  
+Here are two implementations of a **linked list** in Rust:
+
+1. Using a **struct**
 2. Using an **enum**  
 
 ---
 
 ## **1️⃣ Implementation Using `struct`**
+
 In this approach, we explicitly define `Node` and `LinkedList` structs.
 
 ```rust
@@ -193,6 +195,7 @@ enum List<T> {
 ---
 
 ## **3️⃣ Key Differences**
+
 | Feature        | `struct` + `Option` | `enum` (`Cons/Nil`) |
 |---------------|--------------------|---------------------|
 | **Explicitness** | Uses `Option` for `None` | `Nil` is built into the enum |
@@ -202,6 +205,7 @@ enum List<T> {
 ---
 
 ## **4️⃣ Which One Should You Use?**
+
 - Use `struct` + `Option` when you want **more flexibility** (e.g., using `Node<T>` in different structures).
 - Use `enum` when defining **recursive lists**, as it avoids redundancy and feels more **idiomatic in functional programming**.
 
