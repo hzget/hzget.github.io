@@ -30,9 +30,33 @@ The `?` operator works for the error type conversion because of the following:
 * `std::io::Error` implements `std::error::Error`
 * `Box<dyn std::error::Error>` implement `From`:
   ```rust
-  impl<'a, E: Error + 'a> From<E> for Box<dyn Error + 'a> {/* --snippet-- */}
+  impl<'a, E: Error + 'a> From<E> for Box<dyn Error + 'a> {
+      /// Converts a type of [`Error`] into a box of dyn [`Error`].
+      fn from(err: E) -> Box<dyn Error + 'a> {
+          Box::new(err)
+      }
+  }
   ```
 
+***Qeustion*** :
+
+> Does the `?` operator automatically call `From::from()`?
+
+***Answer*** :
+
+The `?` operator does not automatically call `From::from()` on its own;
+instead, it calls `From::from()` **only when needed to convert between error types**
+— specifically **when the error returned by the `?` operator does not
+directly match the function's return type, but there exists a
+`From` implementation between them**.
+
+A list just for clear explanation:
+
+✅ The `?` operator uses `From::from()` **only when converting between error types**.  
+✅ The error type conversion happens at **compile time**,
+relying on the `From` trait implementation.  
+✅ If there is no `From` implementation between the error type returned
+by the expression and the function's error type, the compiler gives an error.
 
 ## [Deref][Deref]
 
@@ -92,7 +116,7 @@ fn main() {
 
 * implicit deref coercion:
 
-  For `hello(&me)`, Rust **compiler** does two steps:
+  For `hello(&m)`, Rust **compiler** does two steps:
   1. turn `&MyBox<String>` into `&String` by inserting deref
   2. insert deref again to turn the `&String` into `&str`
 
