@@ -111,14 +111,16 @@ fn main() {
 * explicit dereferencing operation:
 
   ```rust
-  *m ---> *(m.deref())
+  *m ---> *Deref::deref(&m)
   ```
 
 * implicit deref coercion:
 
   For `hello(&m)`, Rust **compiler** does two steps:
-  1. turn `&MyBox<String>` into `&String` by inserting deref
-  2. insert deref again to turn the `&String` into `&str`
+
+  ```rust
+  &MyBox<String> ---> &String ---> &str
+  ```
 
 [From]: https://doc.rust-lang.org/std/convert/trait.From.html
 [Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
