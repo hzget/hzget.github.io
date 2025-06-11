@@ -122,9 +122,14 @@ fn main() {
   &MyBox<String> ---> &String ---> &str
   ```
 
+Additional links:
+
+[Autodereferencing and autoborrowing][auto borrow]
+
 [From]: https://doc.rust-lang.org/std/convert/trait.From.html
 [Deref]: https://doc.rust-lang.org/std/ops/trait.Deref.html
 [deref coercion]: https://doc.rust-lang.org/std/ops/trait.Deref.html#deref-coercion
 [Drop]: https://doc.rust-lang.org/std/ops/trait.Drop.html
 [minigrep]: https://github.com/hzget/rust-apps/blob/main/minigrep
 [RAII]: ../../../programming/basic/raii.md
+[auto borrow]: ../confusion/autoderef_and_autoborrow.md
