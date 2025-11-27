@@ -10,6 +10,7 @@ Thus we list it here.
 * [string slice vs string literal][string slice vs literal]
 * [Is string slice mutable?][str immutable]
 * [auto deref and auto borrow][auto borrow]
+* [`Box<dyn Error>`][dyn Error]
 
 [trait]: ./trait.md
 [trait_object]: ./trait_object.md
@@ -17,3 +18,4 @@ Thus we list it here.
 [string slice vs literal]: ./string_slice_vs_literal.md
 [str immutable]: ./str_immutable.md
 [auto borrow]: ./autoderef_and_autoborrow.md
+[dyn Error]: ./Box_dyn_Error.md
