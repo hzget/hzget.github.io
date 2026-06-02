@@ -1,5 +1,4 @@
-slog
-===
+# slog
 
 Package [slog][slog] provides ***structured*** and ***leveled*** logging.
 A log record consists of a time, a level, a message, and a set
@@ -11,9 +10,17 @@ slog.Info("hello", "count", 3)
 // output:
 //  2024/07/31 19:18:28 INFO hello count=3 
 ```
+# Contents
 
-Useful links
----
+1. [Useful links](#useful-links)
+1. [Design](#design)
+	1. [Logger, Record & Handler](#logger-record--handler)
+	1. [Options](#options)
+	1. [Assemble the output](#assemble-the-output)
+
+## Logger, Record & Handler
+
+# Useful links
 
  - [slog][slog] official documents
  - [go blog slog][go blog slog] comes into being
@@ -27,8 +34,7 @@ compares the usage of popular Go Logging Libraries
  - [go-logging-benchmarks](https://github.com/betterstack-community/go-logging-benchmarks)
 compares the performance of popular Go Logging Libraries
 
-Design
----
+# Design
 
 Package slog defines a type, [Logger][Logger], which provides output methods
 for reporting events of interest.
@@ -65,8 +71,7 @@ time=2024-08-01T18:16:37.637+08:00 level=INFO msg=hello count=3
 For more control over the output format, create a user-specific
 handler. And then create a logger via [New][New].
 
-Logger, Record & Handler
----
+## Logger, Record & Handler
 
 Here's the details that show how a "log" is transferred to
 a handler.
@@ -99,8 +104,7 @@ func (l *Logger) log(ctx context.Context, level Level, msg string, args ...any) 
 }
 ```
 
-Options
----
+# Options
 
 Options help to customize the handler's behavior.
 [HandlerOptions][HandlerOptions] are options for a TextHandler or JSONHandler. A zero HandlerOptions consists entirely of default values.
@@ -141,8 +145,7 @@ func (h *commonHandler) enabled(l Level) bool {
 }
 ```
 
-Assemble the output
----
+# Assemble the output
 
 handleState holds state for a single call to commonHandler.handle.
 It uses a [Buffer][Buffer], of the type []byte, to construct and
