@@ -13,12 +13,10 @@ slog.Info("hello", "count", 3)
 # Contents
 
 1. [Useful links](#useful-links)
-1. [Design](#design)
-	1. [Logger, Record & Handler](#logger-record--handler)
-	1. [Options](#options)
-	1. [Assemble the output](#assemble-the-output)
-
-## Logger, Record & Handler
+2. [Design](#design)
+	* [Logger, Record & Handler](#logger-record--handler)
+	* [Options](#options)
+	* [Assemble the output](#assemble-the-output)
 
 # Useful links
 

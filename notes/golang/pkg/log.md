@@ -4,19 +4,17 @@ Package [log][log] implements a simple logging package.
 
 A Logger represents an active logging object that generates
 lines of ***formatted output*** to an io.Writer, which writes
-to the underlying data stream. Besides writing log messages,
-it can also be used in many other situations such as sending
-messages to the client.
+to the underlying data stream.
 
-The output "format" is a line of plain text --- the log message
+The output "format" is a line of plain text
 prefixed with a "header". Here is an example:
 
 ```golang
-// write to standard error
+// default logger writes to the standard error
 log.Println("here is a log to std err")
 // output: 2022/10/24 22:45:49 here is a log to std err
 
-// write to bytes.Buffer that implements io.Writer
+// a customized logger writes to bytes.Buffer that implements io.Writer
 var buf bytes.Buffer
 logger := log.New(&buf, "[logger] ", log.Ltime|log.Lmicroseconds)
 logger.Printf("here is a log to bytes.Buffer")
