@@ -2,28 +2,19 @@
 
 Package [log][log] implements a simple logging package.
 
-A Logger represents an active logging object that generates
-lines of ***formatted output*** to an io.Writer, which writes
-to the underlying data stream.
-
-The output "format" is a line of plain text
-prefixed with a "header". Here is an example:
+***Behavior***
 
 ```golang
-// default logger writes to the standard error
-log.Println("here is a log to std err")
-// output: 2022/10/24 22:45:49 here is a log to std err
-
-// a customized logger writes to bytes.Buffer that implements io.Writer
-var buf bytes.Buffer
-logger := log.New(&buf, "[logger] ", log.Ltime|log.Lmicroseconds)
-logger.Printf("here is a log to bytes.Buffer")
-fmt.Print(&buf)
-// output: [logger] 22:45:49.141439 here is a log to bytes.Buffer
+2026/09/08 17:58:02 starting...
+2026/09/08 17:58:02 [httpd] a new signup from 192.168.0.5
+2026/09/08 17:58:02 main.go:13: [cwmpd] the user requests to upload the image
+2026/09/08 09:58:02.369944 exit...
 ```
 
+***Design***
+
 The header of each log entry are controlled by "flags" that can
-be or'ed together. Here is the design:
+be or'ed together.
 
 ```golang
 const (
@@ -38,10 +29,27 @@ const (
 )
 ```
 
-The format is very simple, thus the pkg is used in very simple
-situation. For complex format, like "leveled" log, we need to
-refer to other log packages such as [slog][slog] and [zerolog][zerolog].
+A Logger represents an active logging object that generates
+lines of ***formatted output*** to an ***io.Writer***,
+which writes to the underlying data stream.
+
+```golang
+// default logger writes to the standard error
+log.Println("here is a log to std err")
+// output: 2022/10/24 22:45:49 here is a log to std err
+
+// a customized logger writes to bytes.Buffer that implements io.Writer
+var buf bytes.Buffer
+logger := log.New(&buf, "[logger] ", log.Ltime|log.Lmicroseconds)
+logger.Printf("here is a log to bytes.Buffer")
+fmt.Print(&buf)
+// output: [logger] 22:45:49.141439 here is a log to bytes.Buffer
+```
+
+
+The format is very simple.
+For complex structured and leveled logging, we need to
+turn to [slog][slog].
 
 [log]: https://pkg.go.dev/log
-[slog]: https://pkg.go.dev/log/slog
-[zerolog]: https://github.com/rs/zerolog
+[slog]: slog.md
