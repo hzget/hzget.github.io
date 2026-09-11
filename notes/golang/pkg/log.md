@@ -29,21 +29,27 @@ const (
 )
 ```
 
+***api***
+
 A Logger represents an active logging object that generates
 lines of ***formatted output*** to an ***io.Writer***,
 which writes to the underlying data stream.
 
 ```golang
-// default logger writes to the standard error
-log.Println("here is a log to std err")
-// output: 2022/10/24 22:45:49 here is a log to std err
-
-// a customized logger writes to bytes.Buffer that implements io.Writer
-var buf bytes.Buffer
-logger := log.New(&buf, "[logger] ", log.Ltime|log.Lmicroseconds)
-logger.Printf("here is a log to bytes.Buffer")
-fmt.Print(&buf)
-// output: [logger] 22:45:49.141439 here is a log to bytes.Buffer
+/*
+ * New creates a new Logger. The header is controlled by the flag.
+ * 
+ *   func New(out io.Writer, prefix string, flag int) *Logger
+ *
+ */
+  9 logger1 := log.New(os.Stderr, "[httpd] ", log.LstdFlags|log.Lmsgprefix)
+ 10 logger1.Println("a new signup from 192.168.0.5")
+ 11
+ 12 logger2 := log.New(os.Stderr, "[cwmpd] ", log.LstdFlags|log.Lmsgprefix|log.Lshortfile)
+ 13 logger2.Println("the user requests to upload the image")
+ 14
+ 15 logger := log.New(os.Stderr, "", log.LstdFlags|log.Lmicroseconds|log.LUTC)
+ 16 logger.Println("exit...")
 ```
 
 
