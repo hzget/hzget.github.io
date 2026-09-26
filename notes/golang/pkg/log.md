@@ -2,7 +2,14 @@
 
 Package [log][log] implements a simple logging package.
 
-***Behavior***
+
+## Contents
+
+1. [Behavior](#behavior)
+2. [Design](#design)
+3. [API](#api)
+
+### Behavior
 
 ```golang
 2026/09/08 17:58:02 starting...
@@ -11,10 +18,11 @@ Package [log][log] implements a simple logging package.
 2026/09/08 09:58:02.369944 exit...
 ```
 
-***Design***
+### Design
 
-The header of each log entry are controlled by "flags" that can
-be or'ed together.
+Each time to assemble the log entry, the ***flags***
+control what is printed in the header.
+Bits are or'ed together.
 
 ```golang
 const (
@@ -29,7 +37,7 @@ const (
 )
 ```
 
-***api***
+### API
 
 A Logger represents an active logging object that generates
 lines of ***formatted output*** to an ***io.Writer***,
@@ -37,7 +45,7 @@ which writes to the underlying data stream.
 
 ```golang
 /*
- * New creates a new Logger. The header is controlled by the flag.
+ * New creates a new Logger. Rules are encoded in flag.
  * 
  *   func New(out io.Writer, prefix string, flag int) *Logger
  *
@@ -52,6 +60,19 @@ which writes to the underlying data stream.
  16 logger.Println("exit...")
 ```
 
+The flags are stored in the logging object.
+They can be changed by [SetFlags](https://pkg.go.dev/log#Logger.SetFlags) when necessary.
+
+```golang
+  9 logger := log.New(os.Stderr, "", log.LstdFlags)
+ 10 logger.Println("good night")
+ 11 logger.SetFlags(log.LstdFlags | log.Lshortfile)
+ 12 logger.Println("good night")
+
+Output:
+2026/09/27 03:39:53 good night
+2026/09/27 03:39:53 main.go:12: good night
+```
 
 The format is very simple.
 For complex structured and leveled logging, we need to
