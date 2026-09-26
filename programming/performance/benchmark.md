@@ -16,7 +16,8 @@ measurable, comparable, and actionable insights.
 Key Aspects of Benchmark Testing
 ---
 
-* Performance Measurement: Benchmark tests focus on key performance metrics, such as execution time, throughput, memory usage, and resource utilization. These metrics help determine how well a system or code performs under various conditions.
+* Performance Measurement: Benchmark tests focus on key
+performance [metrics][metrics], such as execution time, throughput, memory usage, and resource utilization. These metrics help determine how well a system or code performs under various conditions.
 
 * Standardized Tests: The tests used in benchmarking are typically well-defined and repeatable, allowing for consistent and comparable results. These tests can be based on real-world scenarios or synthetic workloads designed to stress specific parts of the system.
 
@@ -112,4 +113,5 @@ ok  	example.com/go/main	6.409s
 compares the performance of popular Go Logging Libraries
 
 [golang benchmark]: https://pkg.go.dev/testing#hdr-Benchmarks
+[metrics]: ./metrics.md
 
