@@ -20,6 +20,13 @@ Package [log][log] implements a simple logging package.
 
 ### Design
 
+Since it outputs log messages, it should specify a ***Writer***
+to print messages.
+
+Besides, the header of each log entry is flexible.
+It may contain datetime and/or filename and/or line number, and so forth.
+These rules shall be stored somewhere and can be changed when necessary:
+
 Each time to assemble the log entry, the ***flags***
 control what is printed in the header.
 Bits are or'ed together.
@@ -42,6 +49,8 @@ const (
 A Logger represents an active logging object that generates
 lines of ***formatted output*** to an ***io.Writer***,
 which writes to the underlying data stream.
+The formatting ***rules*** are encoded in flags that are
+stored in the logging object.
 
 ```golang
 /*
@@ -60,8 +69,7 @@ which writes to the underlying data stream.
  16 logger.Println("exit...")
 ```
 
-The flags are stored in the logging object.
-They can be changed by [SetFlags](https://pkg.go.dev/log#Logger.SetFlags) when necessary.
+The flags can be changed by [SetFlags](https://pkg.go.dev/log#Logger.SetFlags) when necessary.
 
 ```golang
   9 logger := log.New(os.Stderr, "", log.LstdFlags)
