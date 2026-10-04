@@ -31,17 +31,17 @@ Container
 
 [concept](./container/concept.md),
 
-Introduction to probability
----------------------------
-
-[random variable](./probability/random_variable.md),
-[conditional probability](./probability/conditional_probability.md),
-
 The Practice of Programming
 ---------------------------
 
 [style](./practice/style.md),
 [data structures and algorithms](./practice/algorithm.md),
+
+Math Learning
+-------------
+
+[Linear Algebra Done Right](./math/ladr/ladr.md)  
+[Introduction to Probability](./math/probability/probability.md)
 
 English Learning
 ----------------
