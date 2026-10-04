@@ -7,4 +7,4 @@ second exposure to linear algebra.
 
 ## Solutions to Exercises in Fourth Edition
 
-[Chapter 2](./Chapter2.md) Finite-Dimensional Vector Spaces
+[Chapter 2](./chapter2.md) Finite-Dimensional Vector Spaces
