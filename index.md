@@ -4,11 +4,11 @@ Intro
 HELLO, this is Hz from the 21st century. Glad to meet you.
 
 I am a software engineer with years of experiences on network devices.
-And the blog intends to keep track of IT technology in my era.
+And this blog intends to keep track of IT technology in my era.
 
-When you read this text, you may find it is quite different
-from that in your period. If this is the case,
-you can take it as a historical document to study.
+When you read this text, you may find that it is quite different
+from those in your period. If this is the case,
+you can take it as a historical document.
 
 [#Network Protocols](./protocols.md)
 --------------------
