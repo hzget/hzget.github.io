@@ -34,23 +34,19 @@ compares the performance of popular Go Logging Libraries
 
 # Design
 
-Package slog defines a type, [Logger][Logger], which provides output methods
-for reporting events of interest.
+slog has a two-part design:
 
-Each [Logger][Logger] is associated with a [Handler][Handler].
-A Logger output method, such as [Logger.Info][Logger.Info], creates
-a [Record][Record] from the method arguments and passes it to the
-[Handler][Handler], which decides how to handle it.
-
-In summary, slog has a two-part design.
-
- * A "frontend," implemented by the [Logger][Logger] type,
-gathers stuctured log information, constructs a [Record][Record], and then
-passes it to the "backend"
+ * A "frontend", an output method of a [Logger][Logger].
+It collects information, assembles a [Record][Record], and then
+passes it to the "backend".
  * A "backend", an implementation of the [Handler][Handler]
-interface, handles the record.
+interface. It handles a record and outputs formatted message.
+It determines the logging behavior.
 
-This design allows to replace the "backend" handler.
+The "backend" handler can be replaces.
+It allows the slog user to
+change logging behavior while keeping snippets of
+logging codes untouched.
 
 slog provides [TextHandler][TextHandler] and [JSONHandler][JSONHandler].
 It's default Logger uses a defaultHandler. They have different behavior:
@@ -148,7 +144,7 @@ func (h *commonHandler) enabled(l Level) bool {
 handleState holds state for a single call to commonHandler.handle.
 It uses a [Buffer][Buffer], of the type []byte, to construct and
 hold the output.
-All the "appendxx" methods will call `s.buf.WriteByte()`
+All the "appendXxx" methods will call `s.buf.WriteByte()`
 or `s.buf.WriteString()` to append msg to the output buffer.
 
 ```golang
