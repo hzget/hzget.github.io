@@ -1,7 +1,7 @@
 # slog
 
 Package [slog][slog] provides ***structured*** and ***leveled*** logging.
-A log record consists of a time, a level, a message, and a set
+A log record consists of a time, a severity level, a message, and a set
 of key-value pairs. For example,
 
 ```golang
@@ -34,17 +34,17 @@ compares the performance of popular Go Logging Libraries
 
 # Design
 
-slog has a two-part design:
+slog has a **Two-Part** design:
 
- * A "frontend", an output method of a [Logger][Logger].
-It collects information, assembles a [Record][Record], and then
+ * A "frontend", one of the output methods of the [Logger][Logger].
+It collects information, assembles a [record][Record], and then
 passes it to the "backend".
  * A "backend", an implementation of the [Handler][Handler]
-interface. It handles a record and outputs formatted message.
+interface. It receives the record and outputs formatted logging message.
 It determines the logging behavior.
 
-The "backend" handler can be replaces.
-It allows the slog user to
+The "backend" handler can be replaced.
+It allows users of slog package to
 change logging behavior while keeping snippets of
 logging codes untouched.
 
