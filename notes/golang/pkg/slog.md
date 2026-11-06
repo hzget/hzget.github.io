@@ -36,17 +36,16 @@ compares the performance of popular Go Logging Libraries
 
 slog has a **Two-Part** design:
 
- * A "frontend", one of the output methods of the [Logger][Logger].
-It collects information, assembles a [record][Record], and then
-passes it to the "backend".
- * A "backend", an implementation of the [Handler][Handler]
+ * A **frontend**, output methods of the [Logger][Logger] type.
+It collects information, assembles a ***[Record][Record]***, and then
+passes it to the backend.
+ * A **backend**, an implementation of the [Handler][Handler]
 interface. It receives the record and outputs formatted logging message.
 It determines the logging behavior.
 
-The "backend" handler can be replaced.
-It allows users of slog package to
-change logging behavior while keeping snippets of
-logging codes untouched.
+The backend handler can be replaced.
+This allows users of the slog package to change logging behavior while
+keeping snippets of logging codes untouched.
 
 slog provides [TextHandler][TextHandler] and [JSONHandler][JSONHandler].
 It's default Logger uses a defaultHandler. They have different behavior:
@@ -67,11 +66,11 @@ handler. And then create a logger via [New][New].
 
 ## Logger, Record & Handler
 
-Here's the details that show how a "log" is transferred to
+Here's the detail of how a log record is transferred to
 a handler.
 
 ```golang
-// Suppose we run a Logger.Info() method.
+// user interface
 logger := slog.New(slog.NewTextHandler(os.Stdout, nil))
 logger.Info("hello", "count", 3)
 // Output:
